@@ -1,0 +1,27 @@
+.image_container {
+  position: relative;
+  height: 900px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.icon_image_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.playButton {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

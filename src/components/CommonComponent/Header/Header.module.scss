@@ -1,0 +1,29 @@
+.main_container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    // border:1px solid black;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    position:relative;
+    z-index: 1;
+}
+
+.toggler_page_header{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+.wallet_headers{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+.image_container{
+    position: relative;
+    max-width: 135px;
+    max-height: 81px;
+    margin: 0rem 1rem;
+}
