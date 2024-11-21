@@ -29,8 +29,3 @@ const CustomCarousel = () => {
 };
 
 export default CustomCarousel;
-// const defaultGame={
-//     "name": "HelixJump",
-//     "backgroundImage": "https://assets.gamingarcade.io/loading-images/helixJumpBg.webp",
-//     "IconImage": "https://assets.gamingarcade.io/loading-images/HelixJump-logo.webp"
-//     }

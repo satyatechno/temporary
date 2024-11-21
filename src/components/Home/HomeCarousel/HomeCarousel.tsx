@@ -2,7 +2,7 @@
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { fetchGamesNew } from "@/services/GameServices";
+import { fetchGames } from "@/services/GameServices";
 import { useEffect, useState } from "react";
 import styles from "./homeCarousel.module.scss";
 // import { defaultGame } from "@/utils/Utils";
@@ -10,11 +10,11 @@ import React from "react";
 import Image from "next/image";
 import Buttons from "@/components/CommonComponent/CustomButton/Buttons";
 
-const HomeCarousel : React.FC= () => {
+const HomeCarousel: React.FC = () => {
   const [gameData, setGameData] = useState();
 
   const getGameData = async () => {
-    const data: any = await fetchGamesNew();
+    const data: any = await fetchGames();
     // if(!data)return ;
     setGameData(data?.data);
   };
@@ -31,8 +31,8 @@ const HomeCarousel : React.FC= () => {
     zIndex: 2,
     transform: "translateY(-50%)",
     background: "#ffffffa2",
-    borderRadius:'22px',
-    fontSize:"1rem",
+    borderRadius: "22px",
+    fontSize: "1rem",
     color: "#000",
     border: "none",
     padding: "16px",
@@ -70,13 +70,12 @@ const HomeCarousel : React.FC= () => {
         &#8594; {/* Right arrow symbol */}
       </button>
     );
-  
 
   return (
     <main>
       <Carousel
-      renderArrowPrev={renderCustomArrowPrev}
-      renderArrowNext={renderCustomArrowNext}
+        renderArrowPrev={renderCustomArrowPrev}
+        renderArrowNext={renderCustomArrowNext}
         autoPlay
         infiniteLoop
         interval={5000}

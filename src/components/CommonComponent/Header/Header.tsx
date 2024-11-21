@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className={styles.main_container}>
       <div className={styles.image_container}>
-        <Link href="/home">
+        <Link href="/">
           <Image
             alt="gaming-arcde"
             src="https://assets.gamingarcade.io//Assets/logo.webp"
@@ -18,7 +18,7 @@ const Header = () => {
       <div className={styles.toggler_page_header}>
         {header_element?.map((value) => (
           <Link href={value?.link} key={value?.title}>
-            <p key={value?.title}>{value?.title}</p>
+            <p className={styles.header_title} key={value?.title}>{value?.title}</p>
           </Link>
         ))}
       </div>
