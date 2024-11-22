@@ -2,28 +2,27 @@
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { fetchGames } from "@/services/GameServices";
-import { useEffect, useState } from "react";
+
 import styles from "./homeCarousel.module.scss";
-// import { defaultGame } from "@/utils/Utils";
 import React from "react";
 import Image from "next/image";
 import Buttons from "@/components/CommonComponent/CustomButton/Buttons";
 
-const HomeCarousel: React.FC = () => {
-  const [gameData, setGameData] = useState();
+// Define types for game data
+type GameData = {
+  _id: string;
+  backgroundImage: string;
+  backgroundImageAlt: string;
+  IconImage: string;
+  IconImageAlt: string;
+};
 
-  const getGameData = async () => {
-    const data: any = await fetchGames();
-    // if(!data)return ;
-    setGameData(data?.data);
-  };
+type HomeCarouselProps = {
+  games?: GameData[];
+};
 
-  useEffect(() => {
-    getGameData();
+const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
 
-    return () => {};
-  }, []);
 
   const customArrowStyles: React.CSSProperties = {
     position: "absolute",
@@ -82,17 +81,17 @@ const HomeCarousel: React.FC = () => {
         showStatus={false}
         showArrows
       >
-        {gameData?.map((data: any) => (
-          <div key={data?._id}>
+        {games?.map((data) => (
+          <div key={data._id}>
             <div className={styles.image_container}>
               <Image
-                src={data?.backgroundImage}
-                alt={data?.backgroundImageAlt}
+                src={data.backgroundImage}
+                alt={data.backgroundImageAlt}
                 fill
               />
             </div>
             <div className={styles.icon_image_container}>
-              <Image src={data?.IconImage} alt={data?.IconImageAlt} fill />
+              <Image src={data.IconImage} alt={data.IconImageAlt} fill />
             </div>
             <div className={styles.playButton}>
               <Buttons />

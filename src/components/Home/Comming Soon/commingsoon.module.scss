@@ -1,0 +1,34 @@
+.section9 {
+    /* background-color: gray; */
+    padding: 100px 120px;
+    
+}
+
+.heading {
+    text-align: center;
+    font-family: "Poppins";
+    font-size: 120px;
+    font-weight: 800;
+    letter-spacing: -3.873px;   
+     background: #ff00c7;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 45px;
+
+}
+
+.section9__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: -50px;
+}
+
+.section9__bottom > img {
+    width: 100%;
+    /* width: auto; */
+    height: 350px;
+    border-radius: 30px;
+}

@@ -1,0 +1,26 @@
+.alphaPassCard {
+    border-radius: 20px;
+    border: 1px solid #FFD427;
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(10px);
+}
+
+.alphaPassCard__container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.alphaPassCard__container > img {
+    margin-right: 20px;
+    margin-top: -30px;
+}
+
+.alphaPassCard__container > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}

@@ -1,0 +1,77 @@
+.alpha_heading{
+    font-family: "Poppins";
+    font-size: 260px;
+    font-weight: 800;
+    letter-spacing: -8.323px;
+    background: linear-gradient(183deg, #00A3FF 16.06%, rgba(255, 0, 245, 0.61) 25.53%, rgba(56, 38, 255, 0.00) 63.08%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* mix-blend-mode: hard-light; */
+    text-align: center;
+}
+
+.content_container{
+    background: url("https://assets.gamingarcade.io/loading-images/alphaPassBgImage.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
+    padding-top: 250px;
+    margin-top: -300px;
+}
+
+.container_top{
+    display: flex;
+    padding: 0px 120px;
+    justify-content: flex-start;
+    /* background-color: pink; */
+    height: 60vh;
+}
+.content_text{
+    width: 30%;
+}
+
+.alpha_pass_h3{
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: -1.951px;
+}
+.alpha_pass_p{
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 184.9%; /* 29.584px */
+    letter-spacing: -0.48px;
+    margin: 20px 0px 50px 0px;
+}
+.alpha_pass_gif{
+      /* padding: 0px 100px; */
+      margin-left: 6%;
+      /* background-color: pink; */
+      /* z-index: 1; */
+}
+.alpha_pass_gif > img {
+    height: 450px;
+}
+.container_bottom {
+    padding: 0px 120px;
+}
+
+.cards_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    margin: 50px 0px 30px 0px;
+}
+
+.cards_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}

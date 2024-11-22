@@ -1,0 +1,193 @@
+.footerDesktop {
+    background-image: url('https://assets.gamingarcade.io/Assets/Footer-bg.webp');
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.footerDesktop .mainContainer {
+    margin: 0 auto;
+    max-width: 85.71vw !important;
+}
+.footer_content_container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+
+}
+
+.footerLogo {
+    align-items: center;
+}
+
+.footerLogo span img {
+    width: 100%;
+}
+.footer_logo{
+    display: block;
+}
+.footer_logo img{
+    width: 100%;
+    max-width: 5.5vw;
+}
+ul.footerList {
+    padding: 0;
+    list-style: none;
+}
+
+footer.footerDesktop p.std_p.light a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+ul.footerList li a {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: .82vw;
+    line-height: 1.7vw;
+    display: block;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+footer.footerDesktop p.std_p {
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 0.5vw;
+    font-family: Montserrat, sans-serif;
+    font-size: .85vw;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.mt-6 {
+    padding-top: 6rem;
+}
+
+.footerLogo {
+    padding: 50px 0;
+}
+
+.light {
+    font-weight: 400 !important;
+    font-family: "Montserrat";
+}
+
+.btmBar p {
+    margin-top: 70px;
+}
+
+.btmBar p.std_p.light {
+    text-align: center;
+    cursor: pointer;
+}
+
+p.std_p.light {
+    margin-top: 40px;
+}
+
+ul.footerList.icons i,  ul.footerList.icons svg{
+    font-family: 'FontAwesome';
+    font-size: 1.7vw;
+    margin: 1.2vw 1.2vw 0 0;
+}
+
+ul.footerList.icons {
+    display: flex;
+}
+
+a.footerCopyright {
+    text-decoration: none;
+}
+
+p.std_p.light a {
+    color: #fff;
+}
+
+@media(max-width:991px){
+    .footerDesktop .mainContainer {
+        max-width: 88% !important;
+    }
+    div .footer_logo img {
+        width: 100%;
+        max-width: 60px;
+        margin-bottom: 10px;
+    }
+    footer.footerDesktop p.std_p {
+        font-size: 15px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+    ul.footerList li a {
+        font-size: 14px;
+        line-height: 34px;
+    }
+    ul.footerList.icons i {
+        font-family: 'FontAwesome';
+        font-size: 30px;
+        margin: 20px 20px 0 0;
+    }
+    .footerDesktop p.std_p.light {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .footerLogo {
+        position: relative;
+        padding: 20px 0 0;
+    }
+    .footer_logo {
+        padding: 0;
+    }
+    div .footer_logo img {
+        margin-bottom: 0;
+    }
+
+    .footerLogo>div {
+        position: static;
+    }
+    
+    span.gradientBar img {
+        width: 100%;
+    }
+
+    div footer.footerDesktop {
+        background: none;
+        padding: 10px 0;
+    }
+
+    .footerLinksWraper>div {
+        padding-right: 0;
+    }
+
+    .footerDesktop ul.footerList li a {
+        font-size: 13px;
+        line-height: 30px
+    }
+
+    .copyRihgtText>div {
+        padding-right: 0;
+    }
+
+    .copyRihgtText p.std_p.light {
+        text-align: left;
+        margin-top: 20px;
+        line-height: 24px;
+    }
+
+    .madeTxt p.std_p.light {
+        margin: 12px 0 15px;
+        text-align-last: left;
+    }
+    .footerDesktop p.std_p {
+        margin: 12px 0 0;
+    }
+    footer.footerDesktop p.std_p {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,74 @@
+.gamesCard {
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(12.656388282775879px);
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.gamesCard:hover {
+    transform: scale(0.95);
+    transition: all ease-in-out 0.2s;
+}
+
+.gamesCard__imageContainer {
+    position: relative;
+    
+}
+
+.gamesCard__imageContainer > img {
+    height: 250px;
+    width: 100%;
+    /* width: auto; */
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.gamesCard__imageContainer > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; */
+}
+
+.gamesCard > h3 {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.347px;
+    margin: 10px 0px;
+}
+
+.gamesCard__playCount {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+.players{
+    display: flex;
+}
+
+.gamesCard__playCount > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.176px;
+    margin-left: 5px;
+}
