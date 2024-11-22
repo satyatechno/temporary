@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  width: 45%;
+}
+
+.imageContainer {
+  max-width: 400px;
+  max-height: 420px;
+  width: 35%;
+  position: relative;
+  aspect-ratio: 5 / 4;
+  margin: 10;
+}
+
+.imageContainer1 {
+  max-width: 295px;
+  max-height: 210px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  aspect-ratio: 5 / 4;
+  margin: 10;
+}
+
+.imageContainer2 {
+  max-width: 190px;
+  max-height: 170px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  aspect-ratio: 5 / 4;
+  margin: 10;
+}

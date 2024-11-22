@@ -1,0 +1,35 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  border-radius: 10;
+  object-fit: cover;
+}
+
+.video {
+  border-radius: 10;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  text-align: center;
+  background-color: rgba($color: #b2acac, $alpha: 0.5);
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+.videoContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
