@@ -1,0 +1,163 @@
+.dashSec4 {
+  padding: 20px;
+  background: hsla(0, 0%, 100%, 0.08);
+  color: #ffff;
+  
+}
+
+.tournamentSec {
+  // border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.container {
+  // max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffff;
+
+//   margin-top: 50px;
+//   max-height: 60vh;
+//   overflow: auto;
+
+  // background: hsla(0, 0%, 100%, .08);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.col12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.sec4HeadRow1 {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.sunWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+.sec4Head1 {
+  display: flex;
+  // width: 100%;
+  padding: 12px 30px;
+  background-color: #373737;
+  box-shadow: 0 8px 16px rgba(27, 27, 27, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(27, 27, 27, 0.16);
+}
+.gradient_border {
+  position: relative;
+  padding: 10px;
+  -webkit-mask: linear-gradient(132.43deg, #a89436, rgba(255, 0, 0, 0.78))
+    border-box;
+  mask: linear-gradient(132.43deg, #a89436, rgba(255, 0, 0, 0.78)) border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.sec4Head1 h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffff;
+  margin: 0;
+  text-align: start;
+  font-family: Poppins;
+  font-size: 46px;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1em;
+  background: linear-gradient(180deg, #fbc400, #feffb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0;
+  padding: 0.5rem 2rem;
+  // background: linear-gradient(180deg, #fbc400, #feffb8);
+}
+
+.sec4TableRow {
+  margin-top: 20px;
+}
+
+.customTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.responsive_table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.responsive_table thead th {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.responsive_table tbody td {
+  padding: 12px;
+  text-align: center;
+}
+
+.alternateTbl {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.altImg img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.imgFluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.gameThumbnail {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .buttonNew {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .payGas {
+    color: #ff0000;
+  }
+  
+  .playAgain {
+    color: #28a745;
+  }
+  
+  .infoIcon {
+    margin-left: 5px;
+  }
+  
+  .externalLink {
+    margin-left: 5px;
+    margin-bottom: -2px;
+  }

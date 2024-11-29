@@ -1,0 +1,116 @@
+.refer_container {
+  background: hsla(0, 0%, 100%, 0.08);
+  box-shadow: 0 8px 16px rgba(27, 27, 27, 0.3);
+  -webkit-backdrop-filter: blur(80px);
+  backdrop-filter: blur(80px);
+  border-radius: 30px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 30.5% 25% 37.5%;
+  gap: 3rem;
+}
+
+.refer_section1 {
+  // width: 35%;
+  display: flex;
+  align-items: center;
+}
+.refer_section_heading {
+}
+.heading_h3 {
+  color: #ffe600;
+  text-shadow: 0px 0px 20px #000;
+  font-family: "Poppins";
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 108.5%; /* 65.1px */
+  text-transform: uppercase;
+}
+.heading_h2 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffe600;
+  font-family: "Poppins";
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 108.5%; /* 104.16px */
+  text-transform: uppercase;
+  /* background: linear-gradient(180deg, #00FFD1 0%, #1153B5 100%); */
+  background: var(
+    --Gradient-G16,
+    linear-gradient(180deg, #00ffd1 0%, #1153b5 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0px;
+}
+.image_container {
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid #ffffff5e;
+  background: linear-gradient(
+    90deg,
+    rgba(36, 36, 36, 0.5) -75.13%,
+    rgba(0, 0, 0, 0.5) 49.56%,
+    #090909 127.63%
+  );
+  width: fit-content;
+  padding: 5px 10px 5px 5px;
+}
+.how_refer_works {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.refer_section3_container {
+}
+
+.refer_section3 {
+ display: flex;
+  width: 100%;
+}
+.refer_section4 {
+  display: grid;
+  width: 100%;
+  background-color: #17142e;
+  text-align: center;
+  padding: 5px 18px;
+  border-radius: 30px;
+  border: 1px solid #272fed;
+  margin-top: 20px;
+//   height: 100%;
+
+}
+.section4_text{
+    color: #ffff;
+    font-size: 1.4rem;
+}
+.refer_container1 {
+  border-radius: 20px;
+  border: 1px solid #ff9700;
+  background: linear-gradient(180deg, #f29f11 0%, #923516 100%);
+  width: 50%;
+  padding: 10px 0px 0px 20px;
+  color:#fff;
+}
+.refer_container2 {
+  border-radius: 20px;
+  border: 1px solid #01f0ce;
+  background: linear-gradient(270deg, #07baf2 -28.76%, #4407f2 126.75%);
+  width: 50%;
+  margin-left: 10px;
+  padding: 10px 0px 0px 20px;
+  color:#fff;
+
+}
+.referal_image_container{
+    position: relative;
+    max-width: 50px;
+    max-height: 50px;
+    width: 100%;
+    height: 100%;
+    
+}

@@ -1,0 +1,63 @@
+
+.sunWrap {
+    padding: 1px;
+    position: relative;
+    background: linear-gradient(
+      132.43deg,
+      #a89436 0%,
+      rgba(255, 0, 0, 0.78) 100%
+    );
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    border-radius: 18px;
+    box-shadow: 0px 8px 16px rgb(27 27 27 / 30%);
+    width: fit-content;
+    border: none;
+    border-image-source: linear-gradient(
+        132.43deg,
+        #a89436 0%,
+        rgba(255, 0, 0, 0.78) 100%
+      ),
+      linear-gradient(
+        132.43deg,
+        rgba(255, 255, 255, 0.24) 0%,
+        rgba(255, 255, 255, 0) 61.87%
+      );
+  }
+  
+  .sunWrap.wallet {
+    border-radius: 10px;
+    max-width: 85%;
+    position: relative;
+  }
+  
+  .sunChild {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 12px !important;
+    background-color: #373737;
+    box-shadow: 0px 8px 16px rgb(27 27 27 / 30%);
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+  }
+  
+  .sunWrap.wallet .sunChild {
+    border-radius: inherit;
+    max-width: 100%;
+  }
+  
+  .sunWrap.wallet .sunChild > span {
+    display: inline-block;
+    max-width: 300px;
+    padding-right: 15px;
+  }
+  
+  .sunWrap.ref-link span > span,
+  .sunWrap.wallet .sunChild > span {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

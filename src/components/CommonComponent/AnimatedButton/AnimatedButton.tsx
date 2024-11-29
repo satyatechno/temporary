@@ -1,17 +1,36 @@
-import styles from "./animatedButton.module.scss";
+import React from "react";
+import "./animatedButton.module.scss"; 
+import styles from "./animatedButton.module.scss"
 
+interface ButtonProps {
+  value: string;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+  icon?: string;
+  imageClass?: string;
+  iconNew?: string;
+}
 
-const AnimatedButton = ({text}:any) => {
+const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <section className={styles.buttons}>
-      <div className={styles.container}>
-        <h3 className={`${styles.btn} ${styles.btn_effect} ${styles.disableBtn}`}>
-          <span>{text}</span>
-        </h3>
-      </div>
-    </section>
+    <a
+      className={`${styles.hz_linear_button} ${props?.className} ${
+        props.disabled ? "disabled" : ""
+      } `}
+      onClick={props.disabled ? undefined : props.onClick}
+    >
+      {props.icon && <img src={props.icon} alt="Icon" className={props.imageClass} />}
+      <span>{props.value}</span>
+      {props.iconNew && (
+        <img
+          src={props.iconNew}
+          alt="Icon"
+          className="new-icon"
+        />
+      )}
+    </a>
   );
 };
 
-
-export default AnimatedButton;
+export default Button;

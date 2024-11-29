@@ -1,0 +1,229 @@
+.user_detials_container {
+  background: hsla(0, 0%, 100%, 0.08);
+  box-shadow: 0 8px 16px rgba(27, 27, 27, 0.3);
+  -webkit-backdrop-filter: blur(80px);
+  backdrop-filter: blur(80px);
+  border-radius: 30px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 30.5% 25% 37.5%;
+  gap: 3rem;
+}
+
+.form_layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.heading {
+  margin-bottom: 30px;
+  text-align: left;
+  font-family: poppins;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #fbc400, #feffb8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1em;
+}
+.user_headers {
+  color: #ffff;
+  font-size: 1rem;
+}
+
+.wrapper {
+  // max-width: 940px;
+  margin: 0 auto;
+}
+
+.wrapper > div {
+  border: 2px solid rgb(233 171 88);
+  border-radius: 22px;
+  background-color: rgb(233 171 88 / 50%);
+  padding: 1em;
+  color: #d9480f;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  width: 100%;
+}
+.total_games_played {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  border-radius: 22px;
+}
+.total_matic_won {
+  grid-column: 2 / 3;
+  grid-row: 1.5 / 2;
+  border-radius: 22px;
+}
+.total_tournament_played {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  border-radius: 22px;
+}
+.total_wins {
+  grid-row: 2;
+  border-radius: 22px;
+}
+.total_losses {
+  grid-row: 3;
+  border-radius: 22px;
+}
+.bg1 {
+  background: linear-gradient(
+    180deg,
+    rgba(184, 58, 192, 0.6) 0%,
+    rgba(1, 58, 196, 0.6) 100%
+  );
+}
+
+.bg2 {
+  background: linear-gradient(180deg, #27ffb1 0%, #7d26c6 100%);
+}
+
+.bg3 {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 171, 0, 0.8) -5.64%,
+    rgba(179, 72, 41, 0.8) 100%
+  );
+}
+
+.bg4 {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 255, 129, 0.6) 0%,
+    rgba(0, 0, 0, 0.6) 93.61%
+  );
+}
+
+.bg5 {
+  background: linear-gradient(
+    180deg,
+    rgba(1, 58, 196, 0.6) 0%,
+    rgba(184, 58, 192, 0.6) 100%
+  );
+}
+
+.card__container {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.content_score {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.image_container {
+  position: relative;
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.sunWrap {
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(
+    132.43deg,
+    #a89436 0%,
+    rgba(255, 0, 0, 0.78) 100%
+  );
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border-radius: 18px;
+  box-shadow: 0px 8px 16px rgb(27 27 27 / 30%);
+  width: fit-content;
+  border: none;
+  border-image-source: linear-gradient(
+      132.43deg,
+      #a89436 0%,
+      rgba(255, 0, 0, 0.78) 100%
+    ),
+    linear-gradient(
+      132.43deg,
+      rgba(255, 255, 255, 0.24) 0%,
+      rgba(255, 255, 255, 0) 61.87%
+    );
+}
+
+.sunWrap.wallet {
+  border-radius: 10px;
+  max-width: 85%;
+  position: relative;
+}
+
+.sunChild {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px !important;
+  background-color: #373737;
+  box-shadow: 0px 8px 16px rgb(27 27 27 / 30%);
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+}
+
+.sunWrap.wallet .sunChild {
+  border-radius: inherit;
+  max-width: 100%;
+}
+
+.sunWrap.wallet .sunChild > span {
+  display: inline-block;
+  max-width: 300px;
+  padding-right: 15px;
+}
+
+.sunWrap.ref-link span > span,
+.sunWrap.wallet .sunChild > span {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// .hero_image_container{
+//   width: 50%;
+//   text-align: right;
+//   margin-left: -50px;
+//   position: relative;
+// }
+// .hero_image_container {
+//   ::before {
+//     content: "";
+//     width: 320px;
+//     height: 320px;
+//     border-radius: 50%;
+//     position: absolute;
+//     right: -10px;
+//     bottom: -100px;
+//     z-index: -1;
+//     background: linear-gradient(
+//       180deg,
+//       #efbe0b 12%,
+//       #b35d27bd 51.18%,
+//       rgba(179, 93, 39, 0) 83.46%
+//     );
+//   }
+// }
+.copiedRow{
+  color:#ffc107 ;
+}
+.hero_image_container{
+  position: relative;
+  left: -80px;
+}

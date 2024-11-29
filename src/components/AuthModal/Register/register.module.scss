@@ -1,0 +1,147 @@
+// Typography
+.header_h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fffbfb;
+}
+
+.modal_msg {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #cdcdcd;
+  width: 90%;
+
+  strong {
+    color: #000;
+  }
+
+  span {
+    color: blue;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Input Fields
+.input {
+  border-radius: 100px;
+  // border: 0.5px solid #fff;
+  background: hsla(0, 0%, 100%, 0.08);
+  width: 90%;
+  padding: 0.8rem;
+  color: #fff;
+  margin: 0.7rem 0rem;
+  outline: none;
+}
+
+// Buttons
+.signUp_btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  margin-top: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background: #0056b3;
+  }
+
+  &:active {
+    background: #003d82;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+// Utility Styles
+.text-center {
+  text-align: center;
+}
+
+.text-blue {
+  color: blue;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.modal_close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.upper_section {
+  display: flex;
+  justify-content: space-around;
+}
+.registerModal__contentOption {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+}
+
+.registerModal__contentOption > div {
+  /* width: 174.611px; */
+  width: 100%;
+  height: 0.962px;
+  background: #94a3b8;
+}
+
+.registerModal__contentOption > p {
+  color: #fff;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px 15px;
+}
+
+.registerModal__contentSocials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.registerModal__contentSocials > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 100px;
+  border: 1px solid white;
+}
+
+.account_line {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #ffff;
+}
+.registerModal__contentConnectBtn {
+  width: 90%;
+  margin: 0.5rem 0rem;
+}
+.input_sections_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

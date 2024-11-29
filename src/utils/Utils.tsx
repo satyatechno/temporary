@@ -1,3 +1,5 @@
+import config from "../../config";
+
 export const header_element = [
   //   {
   //     title: "Home",
@@ -16,6 +18,7 @@ export const header_element = [
     link: "/dashboard",
   },
 ];
+
 
 interface gameCarousel {
   name: string;
