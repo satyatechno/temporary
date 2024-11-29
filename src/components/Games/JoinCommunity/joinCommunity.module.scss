@@ -1,0 +1,94 @@
+/* join sec */
+section.joinTextSection {
+  margin: 150px 0 100px;
+  margin-left: 8%;
+  margin-right: 8%;
+  position: relative;
+}
+
+section.joinTextSection h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 80px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #ff00d4;
+  -webkit-transform: rotate(-3.65deg);
+  transform: rotate(-3.65deg);
+  margin: 20px 0;
+}
+
+section.joinTextSection h1 {
+  font-style: normal;
+  font-weight: 900;
+  line-height: 94.52%;
+  letter-spacing: -0.03em;
+  margin: 20px 0;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.joinTextSection p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-top: 40px !important;
+  width: 80%;
+  margin: 0 auto;
+}
+.imageContainer {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 0;
+}
+.person1,
+.person2 {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+}
+.person1 {
+  top: 20;
+  left: 0;
+}
+.person2 {
+  top: -20;
+  right: 0;
+}
+// section.joinTextSection h3:before {
+//   background-image: url(https://assets.gamingarcade.io/Assets/monkey1.webp);
+//   left: 20%;
+//   background-position: 0;
+// }
+
+// section.joinTextSection h3:after {
+//   background-image: url(https://assets.gamingarcade.io/Assets/women1.webp);
+//   right: 20%;
+//   background-position: 100%;
+// }
+
+// h2.activeUser {
+//   position: relative;
+// }
+
+// span.monkey,
+// span.women {
+//   position: absolute;
+//   top: -20px;
+// }
+
+// span.monkey {
+//   left: 20%;
+// }
+
+// span.women {
+//   right: 20%;
+// }

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import styles from './gamecard.module.scss';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 const Game_Loader = 'https://assets.gamingarcade.io/Assets/loader-img.webp';
 
 interface GameCardProps {
@@ -10,19 +11,22 @@ interface GameCardProps {
   alt: string;
   gamePlay: string;
   name: string;
+  gameName: string;
 }
-const GameCard = ({ src, alt, gamePlay, name }: GameCardProps) => {
+const GameCard = ({ src, alt, gamePlay, name, gameName }: GameCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const router = useRouter();
   return (
     <div
       className={styles.container}
       onMouseEnter={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
+      onClick={() => router.push(`/games/${name}`)}
     >
       {isHovered ? (
         <div className={styles.videoContainer}>
           <video src={gamePlay} autoPlay loop muted className={styles.video} />
-          <span className={styles.name}>{name}</span>
+          <span className={styles.name}>{gameName}</span>
         </div>
       ) : (
         <Image

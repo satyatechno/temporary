@@ -1,0 +1,229 @@
+section.challenges {
+  margin: 1.488vw 0vw 3vw 0vw;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+section.challenges h4 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.608vw;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  position: relative;
+}
+section.challenges h4 .customSpan {
+  font-weight: 400;
+  background: linear-gradient(90deg, #ff00c7 5%, #27e2ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cradContainer {
+  position: relative;
+  flex: 0 0 11.98vw;
+  margin: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.98vw;
+  border-radius: 8.5px;
+  max-width: 11.8vw;
+  margin: 0 1.172vw 0 0;
+  padding-bottom: 2%;
+}
+
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gradient0 {
+  background: linear-gradient(
+    240.9deg,
+    rgba(101, 0, 160, 0.8) -13.76%,
+    rgba(16, 29, 116, 0.3) 98.22%
+  );
+  filter: drop-shadow(0px 2.84345px 5.6869px rgba(27, 27, 27, 0.16));
+  backdrop-filter: blur(14.2173px);
+  backdrop-filter: blur(32.492px);
+  border-radius: 4.54px;
+}
+.gradient1 {
+  background: linear-gradient(
+    240.9deg,
+    rgba(36, 255, 106, 0.8) -13.76%,
+    rgba(0, 163, 255, 0) 98.22%
+  );
+  filter: drop-shadow(0px 2.84345px 5.6869px rgba(27, 27, 27, 0.16));
+  backdrop-filter: blur(14.2173px);
+  backdrop-filter: blur(32.492px);
+  border-radius: 4.54px;
+}
+.gradient2 {
+  background: linear-gradient(180deg, #a916e0 0%, rgba(43, 189, 247, 0) 100%);
+}
+.gradient3 {
+  background: linear-gradient(180deg, #ba1729 0%, rgba(43, 189, 247, 0) 100%);
+}
+.leftBar {
+  position: absolute;
+  width: 0.2vw;
+  height: 80%;
+
+  left: 0;
+}
+.leftBar0 {
+  background: linear-gradient(
+    0.03deg,
+    rgba(66, 29, 145, 0.03) -6.14%,
+    #418fe9 99.97%
+  );
+}
+.leftBar1 {
+  background: linear-gradient(180deg, #09c330 0%, rgba(43, 189, 247, 0) 100%);
+}
+.leftBar2 {
+  background: linear-gradient(180deg, #a916e0 0%, rgba(43, 189, 247, 0) 100%);
+}
+.leftBar3 {
+  background: linear-gradient(180deg, #ba1729 0%, rgba(43, 189, 247, 0) 100%);
+}
+.rightBar {
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background: linear-gradient(190deg, #441991, #ffe142, #39ccc6, #2f2988);
+  right: 0;
+}
+.joinBet {
+  font-style: normal;
+  font-weight: '900';
+  font-size: 0.9vw;
+  line-height: 1.2vw;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: #fff;
+  max-width: 100%;
+}
+.reward {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.reward h3 {
+  font-style: normal;
+  font-weight: '900';
+  font-size: 37.8054px;
+  line-height: 121%;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fcda45, #fdfdb1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 0.2vw;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.reward img {
+  width: 1.3vw;
+  height: 1.2vw;
+  margin-left: 0.2vw;
+}
+.targetContainer {
+  margin: 12px 0 0 0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: linear-gradient(
+    150deg,
+    #ffd427cc -3.09%,
+    #c22ef614 45.28%,
+    #497cffcc 92.06%,
+    #497cff00 110.34%
+  );
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 6.62475px 13.2495px #1b1b1b29);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+}
+.targetContainer p {
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1em;
+  font-weight: '500';
+  background: -webkit-linear-gradient(2deg, #ffd427, #c22ef5, #48d400, #497cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px transparent;
+  color: #fff;
+}
+.score h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: '900';
+  margin: 0;
+  text-align: center;
+}
+.score h5 {
+  font-size: 0.417vw;
+  margin: 0;
+  margin-top: -3;
+  background: linear-gradient(180deg, #fbc400, #feffb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  // font-size: 12px;
+  font-weight: '600';
+  text-align: center;
+}
+.cradContainer a {
+  text-transform: capitalize;
+  color: #fff;
+  z-index: 999;
+  height: 15%;
+  display: flex;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0.676vw;
+  line-height: 1.5;
+  background-image: url(https://assets.gamingarcade.io/Assets/btn-bg.webp);
+  background-size: 100% 80%;
+
+  cursor: pointer;
+  padding: 0 0 10 0;
+  max-width: 6.4vw;
+  align-items: center;
+  justify-content: center;
+  bottom: -25;
+  border: 0;
+  vertical-align: baseline;
+  margin: 0;
+}
+.cradContainer a :hover {
+  transition: all 0.5s ease;
+}
+.cradContainer a h5 {
+  content: '';
+  background-image: url('https://assets.gamingarcade.io/Assets/coin.webp');
+  position: absolute;
+  width: 20;
+  height: 20;
+  background-position: center;
+  right: 5;
+  bottom: -12px;
+  background-repeat: no-repeat;
+  transform: rotate(-35.82deg);
+  background-size: 20px;
+}

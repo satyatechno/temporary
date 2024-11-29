@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+/* explore games sec */
+section.exploreGames {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+section.exploreGames h3 {
+  //   font-family: 'gloss_and_bloomregular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 69.3458px;
+  //   line-height: 69px;
+  letter-spacing: -0.03em;
+  color: #ff00d4;
+  -webkit-transform: rotate(-3.65deg);
+  transform: rotate(-3.65deg);
+  margin-bottom: 30px;
+}
+
+.exploreGames h2 {
+  font-weight: 900;
+  font-size: 98.2022px;
+  line-height: 93px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 20;
+  margin-bottom: 0;
+}
+
+.exploreGames p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+}
