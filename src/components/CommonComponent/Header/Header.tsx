@@ -5,25 +5,34 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import { header_element } from "@/utils/Utils";
 import { useState } from "react";
-import Register from "@/components/AuthModal/Register/Register";
-import Login from "@/components/AuthModal/Login/Login";
+// import Register from "@/components/AuthModal/Register/Register";
+// import Login from "@/components/AuthModal/Login/Login";
+import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
+import Button from "../AnimatedButton/AnimatedButton";
+import config from "../../../../config";
 
 const Header = () => {
-  const isSignedIn = true;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentModal, setCurrentModal] = useState(null);
+  const hasSignedInToken =
+    typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
 
-  // const openRegisterModal = () => setCurrentModal("register");
-  // const closeModal = () => setCurrentModal(null);
+  const wallet = {
+    balance: 20,
+  };
+  const userData = {
+    tickets: 50,
+  };
+  const [activeButton, setActive] = useState("CURRENCY");
 
-  console.log("isModalOpen", isModalOpen);
+  console.log("hasSignedInToken", hasSignedInToken);
+
   return (
     <div className={styles.main_container}>
       <div className={styles.image_container}>
         <Link href="/">
           <Image
             alt="gaming-arcde"
-            src="https://assets.gamingarcade.io//Assets/logo.webp"
+            src={`${config.imageDomain}/Assets/logo.webp`}
             fill
           />
         </Link>
@@ -38,27 +47,114 @@ const Header = () => {
         ))}
       </div>
       <div className={styles.wallet_headers}>
-        {!isSignedIn && <p>50.00</p>}
-        <p>notification</p>
-        {!isSignedIn ? (
-          <p>wallet</p>
+        {/* togging of curreny logic */}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          {!hasSignedInToken ? null : wallet?.balance <= 0 ? (
+            <div
+              className={styles.toggleBtnContainerWeb}
+              style={{ marginRight: "30px", padding: "10px 15px" }}
+            >
+              <p>{userData?.tickets?.toFixed(2)}</p>
+              <Image
+                src={`${config?.imageDomain}Assetsticket.webp`}
+                alt=""
+                height={20}
+                width={20}
+              />
+            </div>
+          ) : wallet?.balance > 0 ? (
+            <div
+              className={styles.toggleBtnContainerWeb}
+              style={{ marginRight: "30px" }}
+            >
+              <div
+                className={
+                  activeButton === "TICKETS"
+                    ? styles.activeBtnWeb
+                    : styles.notActiveWeb
+                }
+              >
+                {activeButton === "TICKETS" && (
+                  <p>{userData?.tickets?.toFixed(2)}</p>
+                )}
+                <Image
+                  src={`${config?.imageDomain}Assetsticket.webp`}
+                  alt=""
+                  height={20}
+                  width={20}
+                  onClick={() => setActive("TICKETS")}
+                />
+              </div>
+              <div
+                className={
+                  activeButton === "CURRENCY"
+                    ? styles.activeBtnWeb
+                    : styles.notActiveWeb
+                }
+              >
+                {activeButton === "CURRENCY" && (
+                  <p>{wallet?.balance?.toFixed(2)}</p>
+                )}
+                <Image
+                  src={`${config.imageDomain}Assets/matic.webp`}
+                  alt=""
+                  onClick={() => setActive("CURRENCY")}
+                  height={20}
+                  width={20}
+                />
+              </div>
+            </div>
+          ) : null}
+        </div>
+
+        <div>
+          <Image
+            src={`${config.imageDomain}AssetsnotificationBell.webp`}
+            alt=""
+            width={40}
+            height={15}
+            style={{
+              marginRight: "30px",
+              marginTop: "10px",
+              color: "white",
+              cursor: "pointer",
+              height: "40px",
+            }}
+          />
+        </div>
+
+        {hasSignedInToken ? (
+          <Button
+            value="Wallet"
+            icon={`${config.imageDomain}loading-images/wallet2.webp`}
+            imageClass={styles.walletImage}
+          />
         ) : (
           <p
             onClick={() => {
               setIsModalOpen(true);
             }}
           >
-            Sign In
+            <Button
+              value={"Sign In"}
+              className={styles.otpVerificationModal__contentSaveBtn} // css class not in use
+            />
           </p>
         )}
       </div>
-      {isModalOpen && (
-        <Register setIsModalOpen={setIsModalOpen}/>
-      )}
+      {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
 
 export default Header;
 
- // <Login setIsModalOpen={setIsModalOpen} />
+// will removed in future
+
+// <Login setIsModalOpen={setIsModalOpen} />
+{
+  /* {isModalOpen && (
+        <Register setIsModalOpen={setIsModalOpen}/>
+        
+      )} */
+}

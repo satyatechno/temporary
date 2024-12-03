@@ -1,6 +1,6 @@
 import React from "react";
-import "./animatedButton.module.scss"; 
-import styles from "./animatedButton.module.scss"
+import "./animatedButton.module.scss";
+import styles from "./animatedButton.module.scss";
 
 interface ButtonProps {
   value: string;
@@ -20,14 +20,12 @@ const Button: React.FC<ButtonProps> = (props) => {
       } `}
       onClick={props.disabled ? undefined : props.onClick}
     >
-      {props.icon && <img src={props.icon} alt="Icon" className={props.imageClass} />}
+      {props.icon && (
+        <img src={props.icon} alt="Icon" className={props.imageClass} />
+      )}
       <span>{props.value}</span>
       {props.iconNew && (
-        <img
-          src={props.iconNew}
-          alt="Icon"
-          className="new-icon"
-        />
+        <img src={props.iconNew} alt="Icon" className="new-icon" />
       )}
     </a>
   );

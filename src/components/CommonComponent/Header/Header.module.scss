@@ -1,38 +1,88 @@
-.main_container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 100%;
-    // border:1px solid black;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    position:relative;
-    z-index: 1;
+.main_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 4rem;
+  position: relative;
+  z-index: 1;
 }
 
-.toggler_page_header{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-
+.toggler_page_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.wallet_headers{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    >p{
-        color:#fff;
-        cursor: pointer;
+.wallet_headers {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-    }
-
-}
-.header_title{
+  > p {
     color: #fff;
-    font-size: 1rem;
+    cursor: pointer;
+  }
 }
-.image_container{
-    position: relative;
-    max-width: 135px;
-    max-height: 81px;
-    margin: 0rem 1rem;
+.header_title {
+  color: #fff;
+  font-size: 1rem;
+}
+.image_container {
+  position: relative;
+  max-width: 135px;
+  max-height: 81px;
+  margin: 0rem 1rem;
+}
+
+
+.walletImage {
+  height: 25px;
+  margin-right: 10px;
+  margin-bottom: -8px;
+}
+.toggleBtnContainerWeb {
+  /* display: flex;
+  align-items: center;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 100px;
+  margin-right: 5px; */
+
+  cursor: pointer;
+  border-radius: 100rem;
+  /* padding: 14px 35px; */
+  padding: 5px;
+  color: #fff;
+  border: solid 2px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    linear-gradient(101deg, #0057ff, #9e00ff, #ffe600, #00e0ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #14185d inset;
+  background-size: auto;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  overflow: hidden !important;
+  position: relative;
+  display: flex;
+}
+.toggleBtnContainerWeb > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  gap: 5px;
+}
+
+.toggleBtnContainerWeb > div > img {
+  height: 16px;
+}
+
+.toggleBtnContainerWeb > div > p {
+  font-size: 14px;
 }

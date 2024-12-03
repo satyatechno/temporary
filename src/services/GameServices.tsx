@@ -33,3 +33,17 @@ export const customBetsAll = async (medium: any) => {
     return data;
   } catch (error) {}
 };
+
+
+export const deviceApi = async (body:any) => {
+  try {
+    let data = await axios.post(`${config.baseURL}user/device/register`, body, {
+      headers: {
+          'Authorization': `Bearer ${localStorage.getItem("userToken")}`  
+      }
+    });
+    return data;
+  } catch (error) {
+    console.log(error.message)
+  }
+}
