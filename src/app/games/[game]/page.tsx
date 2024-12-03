@@ -1,16 +1,16 @@
-// 'use client';
-
 import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
 import OpenChallenges from '@/components/Games/OpenChallenges/OpenChallenges';
 import PlayWithFriends from '@/components/Games/PlayWithFriends/PlayWithFriends';
+import { fetchGameDetails, fetchGames } from '@/services/GameServices';
 
-const GameStage = ({ params }: any) => {
+const GameStage: React.FC = async ({ params }: any) => {
+  const games = await fetchGames();
+  const gameDetails = await fetchGameDetails(params?.game);
   return (
     <main>
-      {/* <h1>This is game details of {params?.game}</h1> */}
       <OpenChallenges />
       <OneVsOne />
-      <PlayWithFriends />
+      <PlayWithFriends games={games} gameDetails={gameDetails} />
     </main>
   );
 };

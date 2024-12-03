@@ -2,9 +2,30 @@ import React from 'react';
 import styles from './oneVsOne.module.scss';
 import { inter, poppins } from '@/app/layout';
 interface TOneVsOneCard {
-  item: any;
+  item: {
+    reward: number | string;
+    entryPrice: number;
+  };
   index: number;
 }
+const cardData = [
+  {
+    reward: 1.8,
+    entryPrice: 1,
+  },
+  {
+    reward: '09',
+    entryPrice: 5,
+  },
+  {
+    reward: 18,
+    entryPrice: 10,
+  },
+  {
+    reward: 90,
+    entryPrice: 50,
+  },
+];
 const OneVsOneCard = ({ item, index }: TOneVsOneCard) => {
   return (
     <div className={`${styles.card} ${styles['gradient' + (index % 4)]}`}>
@@ -12,7 +33,7 @@ const OneVsOneCard = ({ item, index }: TOneVsOneCard) => {
       <h3 className={poppins.className}>REWARD</h3>
       <div className={styles.icon} />
       <div className={styles.matic}>
-        <h2>{1.8}</h2>
+        <h2>{item.reward}</h2>
         <img
           src={
             false
@@ -23,7 +44,7 @@ const OneVsOneCard = ({ item, index }: TOneVsOneCard) => {
         />
       </div>
       <a className={poppins.className}>
-        Play 1 {false ? 'Matic' : 'Ticket'}{' '}
+        Play {item.entryPrice} {false ? 'Matic' : 'Ticket'}{' '}
         <img
           style={{ marginLeft: 10 }}
           src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
@@ -49,12 +70,11 @@ const OneVsOne = () => {
         </div>
         <h2 className={`${styles.stage} ${inter.className}`}>STAGES</h2>
       </div>
+
       <div className={styles.cardContainer}>
-        {Array(4)
-          .fill(' ')
-          .map((item, index) => (
-            <OneVsOneCard key={index?.toString()} item={item} index={index} />
-          ))}
+        {cardData.map((item, index) => (
+          <OneVsOneCard key={index?.toString()} item={item} index={index} />
+        ))}
       </div>
 
       <div className={styles.anime}>

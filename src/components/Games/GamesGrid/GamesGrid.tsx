@@ -1,22 +1,7 @@
-import { fetchGames } from '@/services/GameServices';
-import { useEffect, useState } from 'react';
-import styles from './gamesGrid.module.scss';
 import GameCard from '../GameCard/GameCard';
+import styles from './gamesGrid.module.scss';
 const Game_Loader = 'https://assets.gamingarcade.io/Assets/loader-img.webp';
-const GameGrid = () => {
-  const [gameData, setGameData] = useState<Array<any>>([]);
-
-  const getGameData = async () => {
-    const data: any = await fetchGames();
-
-    setGameData(data?.data);
-  };
-
-  useEffect(() => {
-    getGameData();
-
-    return () => {};
-  }, []);
+const GameGrid = ({ gameData }: { gameData: Array<any> }) => {
   return (
     <div className={styles.mainContainer}>
       {Array(Math.ceil(gameData.length / 6))
