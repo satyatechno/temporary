@@ -1,9 +1,8 @@
-import React from 'react';
-import styles from './playWithFriends.module.scss';
-import Link from 'next/link';
 import { inter, poppins } from '@/app/layout';
 import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
 import config from '../../../../config';
+import GamesGrid from './GamesGrid/GamesGrid';
+import styles from './playWithFriends.module.scss';
 interface CardProps {
   title?: string;
   buttonText?: string;
@@ -32,13 +31,7 @@ const Card = ({
     </div>
   );
 };
-const PlayWithFriends = ({
-  games,
-  gameDetails,
-}: {
-  games: Array<any>;
-  gameDetails: any;
-}) => {
+const PlayWithFriends = ({ game }: { game: string }) => {
   return (
     <div className={styles.container}>
       <div className={styles.headingContainer}>
@@ -77,27 +70,7 @@ const PlayWithFriends = ({
           img={`${config.imageDomain}Assets/trophy.webp`}
         />
       </div>
-      <div className={styles.gamesContainer}>
-        <div className={styles.moreGameHeading}>
-          <h4 className={poppins.className}>More </h4>
-          <h4 className={`${styles.moreText} ${poppins.className}`}>Games</h4>
-        </div>
-        <div className={styles.games}>
-          {games
-            .filter((i, e) => gameDetails?.name !== i.name)
-            .map((item: any, index) => {
-              if (index < 6) {
-                return (
-                  <Link key={index?.toString()} href={`/games/${item?.name}`}>
-                    <div className={styles.game}>
-                      <img src={item.thumbnail} alt="gaming" />
-                    </div>
-                  </Link>
-                );
-              }
-            })}
-        </div>
-      </div>
+      <GamesGrid game={game} />
     </div>
   );
 };

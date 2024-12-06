@@ -1,7 +1,55 @@
-import GameCard from '../GameCard/GameCard';
+'use client';
+import { useGamesContext } from '@/app/Context/GamesContext';
+import GameCard, { LoadingCard } from '../GameCard/GameCard';
 import styles from './gamesGrid.module.scss';
 const Game_Loader = 'https://assets.gamingarcade.io/Assets/loader-img.webp';
-const GameGrid = ({ gameData }: { gameData: Array<any> }) => {
+const GameGrid = () => {
+  const { games: gameData, gamesLoading } = useGamesContext();
+
+  if (gamesLoading) {
+    return (
+      <div className={styles.mainContainer}>
+        {Array(2)
+          .fill(' ')
+          ?.map((game: any, index: number) => (
+            <div
+              className={styles.container}
+              style={{ flexDirection: index % 2 ? 'row-reverse' : 'row' }}
+              key={index?.toString()}
+            >
+              <div className={styles.imageContainer}>
+                <LoadingCard />
+              </div>
+
+              <div className={styles.column}>
+                <div className={styles.row}>
+                  <div className={styles.imageContainer1}>
+                    <LoadingCard />
+                  </div>
+
+                  <div className={styles.imageContainer1}>
+                    <LoadingCard />
+                  </div>
+                </div>
+                <div className={styles.row}>
+                  <div className={styles.imageContainer2}>
+                    <LoadingCard />
+                  </div>
+
+                  <div className={styles.imageContainer2}>
+                    <LoadingCard />
+                  </div>
+
+                  <div className={styles.imageContainer2}>
+                    <LoadingCard />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
   return (
     <div className={styles.mainContainer}>
       {Array(Math.ceil(gameData.length / 6))

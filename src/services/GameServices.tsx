@@ -18,6 +18,14 @@ export const fetchGameDetails = async (game: string) => {
     throw error;
   }
 };
+export const openChalangesApi = async (game: string) => {
+  try {
+    const response = await axiosInstance.get(`games/${game}`);
+    return response?.data?.data ?? [];
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const customBetsAll = async (medium: any) => {
   try {
@@ -34,16 +42,15 @@ export const customBetsAll = async (medium: any) => {
   } catch (error) {}
 };
 
-
-export const deviceApi = async (body:any) => {
+export const deviceApi = async (body: any) => {
   try {
     let data = await axios.post(`${config.baseURL}user/device/register`, body, {
       headers: {
-          'Authorization': `Bearer ${localStorage.getItem("userToken")}`  
-      }
+        Authorization: `Bearer ${localStorage.getItem('userToken')}`,
+      },
     });
     return data;
-  } catch (error) {
-    console.log(error.message)
+  } catch (error: any) {
+    console.log(error.message);
   }
-}
+};

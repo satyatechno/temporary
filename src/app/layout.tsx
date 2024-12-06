@@ -1,34 +1,35 @@
-import localFont from "next/font/local";
-import { Inter, Montserrat, Poppins } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/CommonComponent/Header/Header";
-import Footer from "@/components/CommonComponent/Footer/Footer";
-import styles from "./page.module.css";
-import { AppProvider } from "./Context/AuthContext";
+import localFont from 'next/font/local';
+import { Inter, Montserrat, Poppins } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/CommonComponent/Header/Header';
+import Footer from '@/components/CommonComponent/Footer/Footer';
+import styles from './page.module.css';
+import { AppProvider } from './Context/AuthContext';
+import { GamesProvider } from './Context/GamesContext';
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
 export const glossBloom = localFont({
-  src: "./fonts/Gloss_And_Bloom.ttf",
-  variable: "--font-gloss-and-bloom",
+  src: './fonts/Gloss_And_Bloom.ttf',
+  variable: '--font-gloss-and-bloom',
 });
 export const inter = Inter({
-  variable: "--font-inter",
-  weight: ["900", "500", "600"],
+  variable: '--font-inter',
+  weight: ['900', '500', '600'],
 });
 export const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["900", "500", "600"],
+  variable: '--font-poppins',
+  weight: ['900', '500', '600'],
 });
 export const montserrat = Montserrat({
-  variable: "--font-montserrat",
+  variable: '--font-montserrat',
 });
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
@@ -36,15 +37,18 @@ export const montserrat = Montserrat({
 // };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  console.log('lay out called');
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${styles.body} `}
       >
         <AppProvider>
-          <Header />
-          {children}
-          <Footer />
+          <GamesProvider>
+            <Header />
+            {children}
+            <Footer />
+          </GamesProvider>
         </AppProvider>
       </body>
     </html>

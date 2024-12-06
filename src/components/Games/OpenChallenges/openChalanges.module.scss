@@ -159,6 +159,7 @@ section.challenges h4 .customSpan {
   margin-top: 0;
   line-height: 1em;
   font-weight: '500';
+  font-size: 0.7em;
   background: -webkit-linear-gradient(2deg, #ffd427, #c22ef5, #48d400, #497cff);
   -webkit-background-clip: text;
   background-clip: text;
@@ -185,7 +186,7 @@ section.challenges h4 .customSpan {
   font-weight: '600';
   text-align: center;
 }
-.cradContainer a {
+.cradContainer span {
   text-transform: capitalize;
   color: #fff;
   z-index: 999;
@@ -200,7 +201,8 @@ section.challenges h4 .customSpan {
   line-height: 1.5;
   background-image: url(https://assets.gamingarcade.io/Assets/btn-bg.webp);
   background-size: 100% 80%;
-
+  bottom: 0;
+  left: 25%;
   cursor: pointer;
   padding: 0 0 10 0;
   max-width: 6.4vw;
@@ -211,10 +213,10 @@ section.challenges h4 .customSpan {
   vertical-align: baseline;
   margin: 0;
 }
-.cradContainer a :hover {
+.cradContainer span :hover {
   transition: all 0.5s ease;
 }
-.cradContainer a h5 {
+.cradContainer span h5 {
   content: '';
   background-image: url('https://assets.gamingarcade.io/Assets/coin.webp');
   position: absolute;

@@ -1,0 +1,121 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.backgroundImage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.logo {
+  max-width: 200px;
+  //   height: 200px;
+  z-index: 99;
+  margin-bottom: 30px;
+}
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading {
+  display: block;
+  margin: 30px auto;
+  height: 23px;
+  width: 100%;
+  max-width: 100%;
+  background: #14185d;
+  border-radius: 70px;
+  position: relative;
+}
+.loading::before {
+  content: '';
+  width: 102%;
+  height: 140%;
+  position: absolute;
+  top: -4px;
+  bottom: 0;
+  left: -7px;
+  z-index: -1;
+  border-radius: 70px;
+  background: linear-gradient(to right, #0057ff, #9e00ff, #ffe600, #00e0ff);
+  transition: none;
+}
+.loading span {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 70px;
+  background-image: url('https://assets.gamingarcade.io/Assets/loading-line.webp');
+  overflow: hidden;
+  background-size: cover;
+  transition: none;
+  background-position: center;
+}
+.percent {
+  font-weight: 800;
+  font-size: 32.3438px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  background: linear-gradient(72.65deg, #faca1f 25.42%, #89db49 87.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  margin: 0 auto;
+}
+.tips-heading {
+  font-weight: 800;
+  font-size: 27.3614px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #e719cb 13.64%, #2fd9ed 91.48%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  display: block;
+  width: fit-content;
+  padding: 10px 30px;
+  position: relative;
+  line-height: 24px;
+}
+.tips-heading::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    224.8deg,
+    rgba(22, 29, 118, 0.8) -1.69%,
+    rgba(101, 0, 160, 0.8) 94.07%
+  );
+  box-shadow: 0px 6.49841px 12.9968px rgba(27, 27, 27, 0.16);
+  backdrop-filter: blur(32.492px);
+  border-radius: 47px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  z-index: -1;
+}
+.tips-text {
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  line-height: 24px;
+  z-index: 2;
+}
+.tips-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
+}

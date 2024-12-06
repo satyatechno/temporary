@@ -1,11 +1,18 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import styles from './openChalanges.module.scss';
+import { useRouter } from 'next/navigation';
 import { inter, poppins } from '@/app/layout';
+import Link from 'next/link';
+import { useGamesContext } from '@/app/Context/GamesContext';
 interface TChallengeCard {
   item: any;
   index: number;
+  gameDetails: any;
 }
-const ChallengeCard = ({ item, index }: TChallengeCard) => {
+const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
+  const router = useRouter();
   return (
     <div
       className={`${styles.cradContainer} ${styles['gradient' + (index % 4)]}`}
@@ -35,14 +42,36 @@ const ChallengeCard = ({ item, index }: TChallengeCard) => {
           <h5 className={poppins.className}>POINTS</h5>
         </div>
       </div>
-      <a className={poppins.className}>
-        Play Now
-        <h5 />
-      </a>
+      <Link
+        href={{
+          pathname: '/playgame',
+          query: { game: gameDetails?.name },
+        }}
+      >
+        <span
+          // onClick={() => {
+          //   router.push('/playgame');
+          // }}
+          className={poppins.className}
+        >
+          Play Now
+          <h5 />
+        </span>
+      </Link>
     </div>
   );
 };
-const OpenChallenges = () => {
+const OpenChallenges = ({ game }: { game: string }) => {
+  const [gameDetails, setGameDetails] = useState<any>(null);
+  const { fetchGameDetails } = useGamesContext();
+  const fetchOpenChallenges = async () => {
+    setGameDetails(fetchGameDetails(game));
+    // fetch open challenges
+    console.log('game', game);
+  };
+  useEffect(() => {
+    fetchOpenChallenges();
+  }, []);
   return (
     <section className={styles.challenges}>
       <div className={styles.row}>
@@ -62,6 +91,7 @@ const OpenChallenges = () => {
                   key={index?.toString()}
                   item={item}
                   index={index}
+                  gameDetails={gameDetails}
                 />
               ))}
           </div>

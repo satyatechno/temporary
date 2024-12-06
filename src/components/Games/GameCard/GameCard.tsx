@@ -13,6 +13,25 @@ interface GameCardProps {
   name: string;
   gameName: string;
 }
+export const LoadingCard = () => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  return (
+    <div
+      className={styles.container}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseOut={() => setIsHovered(false)}
+    >
+      <Image
+        className={styles.image}
+        src={Game_Loader}
+        alt={'Gaming Arcade'}
+        fill
+      />
+
+      {isHovered && <span className={styles.name}>{'Loading...'}</span>}
+    </div>
+  );
+};
 const GameCard = ({ src, alt, gamePlay, name, gameName }: GameCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const router = useRouter();
