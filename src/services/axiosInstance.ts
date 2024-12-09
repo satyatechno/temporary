@@ -1,5 +1,7 @@
 import axios from 'axios';
 import config from '../../config';
+import Cookies from 'js-cookie'; 
+
 
 const axiosInstance = axios.create({
   baseURL: config.baseURL,
@@ -12,12 +14,12 @@ axiosInstance.interceptors.request.use(
     console.log('congfig-url', config.url);
     console.log('config-data', config.data);
     console.log('config-params', config.params);
-    // console.log('config-header', localStorage.getItem('userToken'));
-    // if (localStorage.getItem('userToken')) {
-    //   config.headers['Authorization'] = `Bearer ${localStorage.getItem(
-    //     'userToken'
-    //   )}`;
-    // }
+    console.log('config-header', Cookies.get('userToken'));
+    if (Cookies.get('userToken')) {
+      config.headers['Authorization'] = `Bearer ${ Cookies.get(
+        'userToken'
+      )}`;
+    }
     return config;
   },
   (err) => {

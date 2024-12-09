@@ -7,6 +7,8 @@ import { deviceApi } from "@/services/GameServices";
 import config from "../../../../config";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import Image from "next/image";
+import Cookies from 'js-cookie'; 
+import { useAppContext } from "@/app/Context/AuthContext";
 
 interface SignInModalProps {
   openRegisterModal: () => void;
@@ -20,10 +22,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ openRegisterModal, onClose, o
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const fetchUser = () => {
-    // Replace with your user fetch logic
-    console.log("Fetching user...");
-  };
+
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,25 +31,22 @@ const SignInModal: React.FC<SignInModalProps> = ({ openRegisterModal, onClose, o
     const formData = {
       email,
       password,
-      fcm_token: localStorage.getItem("fcmToken"),
+      fcm_token: Cookies.get("fcmToken"),
     };
 
     try {
       setLoading(true);
       const response = await axios.post(`${config.baseURL}user/signIn`, formData);
+      // Cookies.set("email", response?.data?.data?.user?.email || "",{ expires: 7, secure: true, sameSite: 'Strict' });
+      // Cookies.set("user", JSON.stringify(response?.data?.data?.user || {}),{ expires: 7, secure: true, sameSite: 'Strict' });
+      Cookies.set("userToken", response?.data?.data?.token || "",{ expires: 7, secure: true, sameSite: 'Strict' });
 
-      localStorage.setItem("email", response?.data?.data?.user?.email || "");
-      localStorage.setItem("user", JSON.stringify(response?.data?.data?.user || {}));
-      localStorage.setItem("userToken", response?.data?.data?.token || "");
-
-      await deviceApi({ fcm_token: localStorage.getItem("fcmToken") || "", deviceType: "web" });
+      await deviceApi({ fcm_token: Cookies.get("fcmToken") || "", deviceType: "web" });
 
       if (response?.data?.statusCode === "10000") {
         setLoading(false);
         onClose();
-        fetchUser();
       }
-
       setEmail("");
       setPassword("");
     } catch (error: any) {

@@ -10,21 +10,27 @@ import { useState } from "react";
 import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
 import Button from "../AnimatedButton/AnimatedButton";
 import config from "../../../../config";
+import Cookies from 'js-cookie'; 
+import { useAppContext } from "@/app/Context/AuthContext";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const hasSignedInToken =
-    typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
-
-  const wallet = {
-    balance: 20,
-  };
-  const userData = {
-    tickets: 50,
-  };
+  const hasSignedInToken = Cookies.get("userToken")
+  const {userData,wallet}=useAppContext();
+  const router=useRouter();
   const [activeButton, setActive] = useState("CURRENCY");
 
-  console.log("hasSignedInToken", hasSignedInToken);
+
+
+  const pathname = usePathname();
+  const noHeaderFooterPaths = ["/userwallet", ];
+
+  const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
+
+  if(!shouldShowHeaderFooter){
+    return null;
+  }
 
   return (
     <div className={styles.main_container}>
@@ -124,10 +130,12 @@ const Header = () => {
         </div>
 
         {hasSignedInToken ? (
+         
           <Button
             value="Wallet"
             icon={`${config.imageDomain}loading-images/wallet2.webp`}
             imageClass={styles.walletImage}
+            onClick={() => router.push("/userwallet")}
           />
         ) : (
           <p

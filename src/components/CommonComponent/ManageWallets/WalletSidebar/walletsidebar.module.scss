@@ -1,0 +1,57 @@
+.manageWallets__containerLeft {
+    width: 20%;
+    /* background-color: pink; */
+}
+
+.manageWallets__sidebar {
+    border-radius: 30px;
+    border: 0.1px solid #ffffff46;
+    background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
+    box-shadow: 0px 2.721px 5.442px 0px rgba(27, 27, 27, 0.16);
+    backdrop-filter: blur(13.751716613769531px);
+    height: 80vh;
+    padding: 20px 0px 20px 50px;
+}
+
+.manageWallets__sidebar > img {
+    cursor: pointer;
+}
+
+.manageWallets__sidebarOptions > div {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    cursor: pointer;
+} 
+
+.manageWallets__sidebarOptions > div > p {
+    color: #EFEFEF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.manageWallets__sidebarLogout > div {
+    display: flex;
+    align-items: center;
+}
+
+.manageWallets__sidebarLogout {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+// .manageWallets__sidebarOptions > div > img {
+//     height: 25px;
+// }
+
+.manageWallets__sidebarLogout > div > p {
+    color: #EFEFEF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}

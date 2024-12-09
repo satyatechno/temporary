@@ -1,17 +1,21 @@
-"use client";
+'use client'
 import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
 import config from "../../../../config";
-// import Whitepaper from '../../../public/Assets/Gaming_Arcade_Whitepaper_compressed.pdf'
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import InstagramIcon from '@mui/icons-material/Instagram';
-// import YouTubeIcon from '@mui/icons-material/YouTube';
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  const openInNewTab = (url: any) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
+  
+  const pathname = usePathname();
+  const noHeaderFooterPaths = ["/userwallet"];
+
+  const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
+
+  if(!shouldShowHeaderFooter){
+    return null;
+  }
 
   return (
     <>
@@ -22,25 +26,31 @@ const Footer = () => {
               <Link
                 href="javascript:void(0)"
                 className={`navbar-brand ${styles.footer_logo}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                // }}
               >
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/logo.webp`}
                   alt="Gaming Arcade Logo"
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                  }}
+                  height={80}
+                  width={80}
+                  style={{width:"100%"}}
+                  // onClick={() => {
+                  //   window.scrollTo(0, 0);
+                  // }}
                 />
+                
               </Link>
             </div>
             <div className="col-lg-10">
               <span className={styles.gradientBar}>
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/bar.webp`}
                   className="img-fluid"
                   alt="bar"
+                  height={8}
+                  width={80}
                 />
               </span>
             </div>
@@ -161,7 +171,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div className="col-lg-2 col-md-6 col-sm-12">
               <p className={styles.std_p}>Follow Us on</p>
               <ul className={`${styles.footerList} ${styles.icons}`}>
@@ -171,16 +181,16 @@ const Footer = () => {
                   </a>
                 </li> */}
                 <li>
-                  <a
+                  <Link
                     href="https://www.instagram.com/gamingarcade.io/"
                     target="_blank"
                   >
                     {/* <i className="fa fa-instagram" aria-hidden="true"></i> */}
                     {/* <InstagramIcon /> */}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://twitter.com/GamingArcade_io" target="_blank">
+                  <Link href="https://twitter.com/GamingArcade_io" target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="1em"
@@ -189,10 +199,10 @@ const Footer = () => {
                     >
                       <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     // onClick={(e) => {
                     //   e.preventDefault();
                     // }}
@@ -201,7 +211,7 @@ const Footer = () => {
                   >
                     {/* <i className="fa fa-youtube-square" aria-hidden="true"></i> */}
                     {/* <YouTubeIcon /> */}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
@@ -233,14 +243,14 @@ const Footer = () => {
             </div>
           </div>
           <div className={`row ${styles.btmBar} ${styles.madeTxt}`}>
-            <a
+            <Link
+              href="https://zeltatech.com"
               className={styles.footerCopyright}
-              onClick={() => openInNewTab("https://zeltatech.com")}
             >
               <p className={`${styles.std_p} ${styles.light}`}>
                 Made with ❤ by Gaming arcade.
               </p>
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

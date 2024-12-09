@@ -1,0 +1,120 @@
+.manage_wallet_container {
+  background-image: url("https://assets.gamingarcade.io/Assets/explore-games-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* height: 100vh; */
+}
+
+.manageWallets__header {
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 50px;
+}
+
+.manageWallets__headerBtn {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6500a0 0%, #ff20f6 100%);
+  padding: 10px 20px;
+}
+
+.manageWallets__backbtn {
+  color: #fff;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: -0.261px;
+  cursor: pointer;
+}
+
+.wallet_content_container {
+  display: flex;
+  gap: 50px;
+  margin: 0px 50px;
+}
+
+
+.manageWallets__container {
+    display: flex;
+    gap: 50px;
+    margin: 0px 50px;
+}
+
+.manageWallets__containerLeft {
+    width: 20%;
+    /* background-color: pink; */
+}
+
+.manageWallets__sidebar {
+    border-radius: 30px;
+    border: 0.1px solid #ffffff46;
+    background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
+    box-shadow: 0px 2.721px 5.442px 0px rgba(27, 27, 27, 0.16);
+    backdrop-filter: blur(13.751716613769531px);
+    height: 80vh;
+    padding: 20px 0px 20px 50px;
+}
+
+.manageWallets__sidebar > img {
+    cursor: pointer;
+}
+
+.manageWallets__sidebarOptions > div {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    cursor: pointer;
+} 
+
+.manageWallets__sidebarOptions > div > p {
+    color: #EFEFEF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.manageWallets__sidebarLogout > div {
+    display: flex;
+    align-items: center;
+}
+
+.manageWallets__sidebarLogout {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+// .manageWallets__sidebarOptions > div > img {
+//     height: 25px;
+// }
+
+.manageWallets__sidebarLogout > div > p {
+    color: #EFEFEF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.manageWallets__containerRight_container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.manageWallets__containerRight {
+    width: 90%;
+    border-radius: 22px;
+    border: 0.1px solid #ffffff46;
+    background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
+    box-shadow: 0px 4.547px 4.547px 0px rgba(107, 103, 103, 0.06);
+    backdrop-filter: blur(15.43067741394043px);
+    padding: 30px 50px;
+    /* margin: 20px 0px; */
+    margin: 0px 0px 20px 0px;
+}

@@ -1,0 +1,195 @@
+.privateKeyModal {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    height: 100vh;
+    /* background-color: pink; */
+    backdrop-filter: blur(10px);
+  }
+
+.privateKeyModalContainer {
+    position: fixed;
+    /* bottom: 0; */
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    /* max-width: 600px; */
+    /* background-color: white; */
+    /* padding: 20px; */
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    /* transition: opacity 0.3s ease, transform 0.3s ease; */
+    transition: all 0.3s ease;
+
+    /* background-image: url("https://assets.gamingarcade.io/Assets/game-stage-mbl.webp");
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+    background-image: url("https://assets.gamingarcade.io/Assets/modalWebBg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  .privateKeyModal__content {
+    /* border-radius: 30px 30px 0px 0px;
+    max-width: 100%;
+    background: rgba(0, 0, 3, 0.781);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+
+    background: rgba(255, 255, 255, 0.047);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.081);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 40px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    max-width: 100%;
+  }
+
+  .privateKeyModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .privateKeyModal__header > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .privateKeyModal__header > div > img {
+    height: 30px;
+  }
+
+  .privateKeyModal__header > div > h2 {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+
+  .privateKeyModal__header > span {
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  .privateKeyModal__warning {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 0.5px solid #E44944;
+    background: #9C4242;
+    margin: 0px 20px;
+    padding: 10px 5px 10px 10px;
+  }
+
+  .privateKeyModal__warningText > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 10px;
+  }
+
+  .privateKeyModal__showPrivateKey {
+    margin: 20px;
+  }
+
+  .privateKeyModal__showPrivateKey > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .privateKeyModal__showPrivateKey > div > h2 {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .privateKeyModal__showPrivateKey > div > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .privateKeyModal__showPrivateKey > div > p > span {
+    margin-left: 5px;
+  }
+
+  .privateKeyModal__showPrivateKey  > textarea {
+    border-radius: 5px;
+    border: 0.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(23.43900489807129px);
+    width: 100%;
+    max-height: 90px;
+    min-height: 90px;
+    padding: 10px;
+    outline: none;
+    color: #FFF;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.6px;
+  }
+
+  .privateKeyModal__form {
+    padding: 0px 20px;
+    margin-top: 20px;
+    width: 85%;
+  }
+
+  .privateKeyModal__form > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .privateKeyModal__form > input {
+    border-radius: 100px;
+    border: 0.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(23.43900489807129px);
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    outline: none;
+    color: #FFF;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.6px;
+  }
+
+  .privateKeyModal__importBtn  {
+    padding: 0px 20px;
+    margin: 15px 0px;
+    display: flex;
+  }
+
+  .privateKeyModal__importButton {
+    width: 100%;
+    text-align: center;
+  }

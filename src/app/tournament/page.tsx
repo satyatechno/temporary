@@ -1,9 +1,14 @@
-const Tournament=()=>{
+import Tournament from "@/components/Tournament/Tournament";
+
+const TournamentPage=async()=>{
+
+    
+
     return(
         <main>
-            <h1>This is Tournament</h1>
+            <Tournament/>
         </main>
     )
 }
 
-export default Tournament
+export default TournamentPage;

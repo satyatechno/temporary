@@ -39,7 +39,7 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
       imgLink: `${config.imageDomain}/Assets/gameController.webp`,
       gridName: "total_games_played",
       container_name: "card__container",
-      gameCount:userDetails.totalGamePlayedTicket 
+      gameCount:userDetails?.totalGamePlayedTicket 
     },
   
     {

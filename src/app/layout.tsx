@@ -37,7 +37,6 @@ export const montserrat = Montserrat({
 // };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  console.log('lay out called');
   return (
     <html lang="en">
       <body

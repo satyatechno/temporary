@@ -1,0 +1,166 @@
+.manageWallets__otherWalletsHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.manageWallets__otherWallets {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.manageWallets__otherWalletsHeading > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.manageWallets__otherWalletsHeading > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.linkIcon {
+    rotate: -45deg;
+    color: white;
+}
+
+.manageWallets__otherWalletsHeading > div > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+.manageWallets__otherWalletsList {
+    height: 40vh;
+    background: #292B50;
+    background: linear-gradient(90deg, rgba(158,0,255,1) 25%, rgba(0,87,255,1) 50%, rgba(255,230,0,1) 75%, rgba(0,224,255,1) 100%);
+    border-radius: 8px;
+    padding: 1px;
+    margin-top: 15px;
+}
+
+.manageWallets__otherWalletsListContainer {
+    height: 39.7vh;
+    background: #292B50;
+    border-radius: 8px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    overflow-y: scroll;
+}
+
+.maageWallets__noOtherWallets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.maageWallets__noOtherWallets > p {
+    color: white;
+}
+
+.maageWallets__noOtherWallets > img {
+    height: 80px;
+    width: auto;
+    filter: grayscale(1);
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.manageWallets__hasOtherWallets {
+    /* background-color: pink; */
+    /* width: 100%; */
+
+    border: 0.788px solid var(--Field-Stroke-FS2, #FFF);
+    background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
+    box-shadow: -2px -2px 3px 0px #484B64, 5px 5px 5.773px 0px #232547;
+    /* backdrop-filter: blur(14.586533546447754px); */
+    
+    border: 0.1px solid #ffffff46;
+    border-radius: 100px;
+    margin: 0px 30px;
+    margin-top: 30px;
+}
+
+.manageWallets__hasOtherWalletsBalance {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.manageWallets__hasOtherWalletsBalance > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.walletOptions {
+    position: absolute;
+    /* left: -90px; */
+    right: 0px;
+    top: 25px;
+    /* height: 100px; */
+    /* width: 100px; */
+    width: 180px;
+    border-radius: 5px;
+    border: 0.205px solid #0057FF;
+    background: #292B50;
+    margin-right: 10px;
+}
+
+.walletOptions > div {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.663);
+    padding: 10px;
+}
+
+.walletOptions > div:last-child {
+    border-bottom: none;
+}
+
+.walletOptions > div > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.settingIcon {
+    cursor: pointer;
+    color: white;
+}
+
+.copyIcon {
+    cursor: pointer;
+    color: white;
+}
+
+.manageWallets__ticket {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 0.484px solid #FF00D6;
+    background: rgba(205, 205, 205, 0.01);
+    margin: 10px 0px;
+    padding: 10px 20px;
+}
+
+.manageWallets__ticket > p {
+    font-size: 14px;
+    font-family: "Poppins";
+    color: white;
+}

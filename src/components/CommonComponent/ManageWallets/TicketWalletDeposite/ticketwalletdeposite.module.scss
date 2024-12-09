@@ -1,0 +1,133 @@
+
+.manageWallets__depositAndWithdraw {
+    display: flex;
+    margin-top: 20px;
+}
+
+.manageWallets__depositSection {
+    width: 30%;
+}
+
+.manageWallets__depositSection > hr {
+    margin: 0px;
+} 
+
+.manageWallets__depositSection > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.manageWallet__scanner > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.manageWallet__scanner > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20.622px;
+    margin-bottom: 10px;
+}
+
+.manageWallets__border {
+    width: 0.1px;
+    background-color: #ffffff46;
+    margin: 0px 20px;
+}
+
+.manageWallets__withdrawSection {
+    width: 70%;
+}
+
+.manageWallets__withdrawSection > hr {
+    margin: 0px;
+}
+
+.manageWallets__withdrawSection > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.manageWallets__withdrawInputSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.manageWallets__addressInput > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.manageWallets__addressInput > input {
+    border-radius: 100px;
+    border:  0.1px solid #ffffff46;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(19.42390251159668px);
+    padding: 15px 20px;
+    outline: none;
+    /* width: 120%; */
+    color: white;
+}
+
+.manageWallets__amountInput > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.manageWallets__amountInput > div > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.manageWallets__amountInput > input {
+    border-radius: 100px;
+    border:  0.1px solid #ffffff46;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(19.42390251159668px);
+    padding: 15px 20px;
+    outline: none;
+    color: white;
+}
+
+.manageWallets__withdrawButton {
+    flex: 0.8;
+}
+
+.manageWallets__withdrawButton > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.manageWallets__withdrawButton > div > p {
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.widthdrawBtn {
+    width: 100%;
+    text-align: center;
+}

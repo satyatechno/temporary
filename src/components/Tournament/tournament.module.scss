@@ -1,0 +1,20 @@
+
+.socialMedia {
+    position: relative;
+  }
+  
+  .socialMedia::before {
+    background: linear-gradient(
+      183deg,
+      rgba(0, 163, 255, 0.8) -72.45%,
+      rgba(36, 187, 255, 0) 68.03%
+    );
+    border-radius: 1.818vw;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    content: "";
+    position: absolute;
+    left: 0vw;
+    width: 100vw;
+    height: 12vw;
+    top: 3.03vw;
+  }

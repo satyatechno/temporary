@@ -8,7 +8,7 @@ import config from "../../../../config";
 import axios from "axios";
 import { deviceApi } from "@/services/GameServices";
 import Image from "next/image";
-
+import Cookies from 'js-cookie'; 
 interface RegisterModalProps {
   openSignInModal: () => void;
   onClose: () => void;
@@ -104,7 +104,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
       } catch (error: any) {
         setLoading(false);
 
-        if (error.response?.data?.statusCode === 10001) {
+        if (error.response?.data?.statusCode === '10001') {
           setErrors((prevErrors) => ({
             ...prevErrors,
             email: "User Already Exists",
@@ -117,54 +117,110 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
       }
     }
   };
+  // saving data in local-storage
+  // const verifyOtp = async (event: React.FormEvent) => {
+  //   event.preventDefault();
 
-  const verifyOtp = async (event: React.FormEvent) => {
-    event.preventDefault();
+  //   const formData = {
+  //     email,
+  //     otp,
+  //     type: "SignUp",
+  //   };
 
-    const formData = {
-      email,
-      otp,
-      type: "SignUp",
-    };
+  //   try {
+  //     setLoading(true);
+  //     const response = await axios.post(
+  //       `${config.baseURL}user/verifyOtp`,
+  //       formData
+  //     );
 
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        `${config.baseURL}user/verifyOtp`,
-        formData
+  //     if (response?.data?.statusCode === "10000") {
+  //       const formDataRegister = {
+  //         email,
+  //         password,
+  //       };
+  //       const res = await axios.post(
+  //         `${config.baseURL}user/signUp`,
+  //         formDataRegister
+  //       );
+  //       localStorage.setItem("email", res?.data?.data?.user?.email);
+  //       localStorage.setItem("user", JSON.stringify(res?.data?.data?.user));
+  //       localStorage.setItem("userToken", res?.data?.data?.token);
+  //       await deviceApi({
+  //         fcm_token: localStorage.getItem("fcmToken"),
+  //         deviceType: "web",
+  //       });
+  //       onClose();
+  //     }
+  //   } catch (error: any) {
+  //     console.error("Error verifying OTP:", error);
+
+  //     if (error.response?.data?.statusCode === 10001) {
+  //       setWrongOtp("Incorrect OTP. Please try again.");
+  //       setTimeout(() => setWrongOtp(""), 3000);
+  //     } else {
+  //       alert("An error occurred. Please try again.");
+  //     }
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  
+  // saving data in cookies
+
+const verifyOtp = async (event: React.FormEvent) => {
+  event.preventDefault();
+
+  const formData = {
+    email,
+    otp,
+    type: "SignUp",
+  };
+
+  try {
+    setLoading(true);
+    const response = await axios.post(
+      `${config.baseURL}user/verifyOtp`,
+      formData
+    );
+
+    if (response?.data?.statusCode === "10000") {
+      const formDataRegister = {
+        email,
+        password,
+      };
+      const res = await axios.post(
+        `${config.baseURL}user/signUp`,
+        formDataRegister
       );
 
-      if (response?.data?.statusCode === "10000") {
-        const formDataRegister = {
-          email,
-          password,
-        };
-        const res = await axios.post(
-          `${config.baseURL}user/signUp`,
-          formDataRegister
-        );
-        localStorage.setItem("email", res?.data?.data?.user?.email);
-        localStorage.setItem("user", JSON.stringify(res?.data?.data?.user));
-        localStorage.setItem("userToken", res?.data?.data?.token);
-        await deviceApi({
-          fcm_token: localStorage.getItem("fcmToken"),
-          deviceType: "web",
-        });
-        onClose();
-      }
-    } catch (error: any) {
-      console.error("Error verifying OTP:", error);
+      // Cookies.set('email', res?.data?.data?.user?.email, { expires: 7, secure: true, sameSite: 'Strict' });
+      // Cookies.set('user', JSON.stringify(res?.data?.data?.user), { expires: 7, secure: true, sameSite: 'Strict' });
+      Cookies.set('userToken', res?.data?.data?.token, { expires: 7, secure: true, sameSite: 'Strict' });
 
-      if (error.response?.data?.statusCode === 10001) {
-        setWrongOtp("Incorrect OTP. Please try again.");
-        setTimeout(() => setWrongOtp(""), 3000);
-      } else {
-        alert("An error occurred. Please try again.");
-      }
-    } finally {
-      setLoading(false);
+      // Device API call using the token from cookies
+      await deviceApi({
+        fcm_token: Cookies.get('fcmToken'), 
+        deviceType: 'web',
+      });
+
+      onClose(); 
     }
-  };
+  } catch (error: any) {
+    console.error("Error verifying OTP:", error);
+
+    if (error.response?.data?.statusCode === 10001) {
+      setWrongOtp("Incorrect OTP. Please try again.");
+      setTimeout(() => setWrongOtp(""), 3000);
+    } else {
+      alert("An error occurred. Please try again.");
+    }
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 
   const handleGoogleAuth = () => {
     window.location.replace(
@@ -213,7 +269,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
               <Button
                 value={loading ? "Loading..." : "Verify OTP"}
                 className={styles.otpVerificationModal__contentSaveBtn}
-                onClick={() => verifyOtp}
+                onClick={verifyOtp}
               />
             </div>
           </div>

@@ -435,7 +435,8 @@
 
 .otpVerificationModal__contentSave {
   width: 100%;
-  padding: 0px 20px 20px 20px;
+  display: flex;
+  // padding: 0px 20px 20px 20px;
 }
 
 .otpVerificationModal__contentSaveBtn {
