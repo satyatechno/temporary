@@ -18,7 +18,7 @@ const GamesGrid = ({ game }: { game: string }) => {
           .map((item: any, index) => {
             if (index < 6) {
               return (
-                <Link key={index?.toString()} href={`/games/${item?.name}`}>
+                <Link key={index?.toString()} href={`/games/${item?.name}`} replace>
                   <div className={styles.game}>
                     <img src={item.thumbnail} alt="gaming" />
                   </div>
