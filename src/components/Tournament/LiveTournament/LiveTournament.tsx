@@ -7,7 +7,7 @@ const LiveTournament = ({ tournamentList }: any) => {
   return (
     <>
       {tournamentList?.slice(0, 1).map((value: any) => (
-        <div className={styles.live_tournament_container}>
+        <div className={styles.live_tournament_container} key={value?._id}>
           <div className={styles.left_container}>
             <div>
               <Image src={value?.thumbnail} width={290} height={150} alt="" />
