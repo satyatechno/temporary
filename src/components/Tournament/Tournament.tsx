@@ -5,7 +5,7 @@ import TournamentTabSwitcher from "./TournamentTabSwitcher/TournamentTabSwitcher
 
 const Tournament = () => {
   return (
-    <div>
+    <div style={{display:"flex",flexDirection:"column", justifyContent:"center", alignContent:"center"}}>
       <TournamentTabSwitcher />
       <JoinCommunity />
       <SocialHandles />

@@ -39,7 +39,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ openRegisterModal, onClose, o
       const response = await axios.post(`${config.baseURL}user/signIn`, formData);
       // Cookies.set("email", response?.data?.data?.user?.email || "",{ expires: 7, secure: true, sameSite: 'Strict' });
       // Cookies.set("user", JSON.stringify(response?.data?.data?.user || {}),{ expires: 7, secure: true, sameSite: 'Strict' });
-      Cookies.set("userToken", response?.data?.data?.token || "",{ expires: 7, secure: true, sameSite: 'Strict' });
+      Cookies.set("userToken", response?.data?.data?.token || "",{ secure: true, sameSite: 'Strict' });
 
       await deviceApi({ fcm_token: Cookies.get("fcmToken") || "", deviceType: "web" });
 

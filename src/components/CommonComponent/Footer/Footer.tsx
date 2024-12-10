@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   
   const pathname = usePathname();
-  const noHeaderFooterPaths = ["/userwallet"];
+  const noHeaderFooterPaths = ["/userwallet",'/not-found'];
 
   const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
 

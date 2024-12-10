@@ -1,0 +1,181 @@
+
+
+.live_tournament_container {
+  // border: 2px solid rgba(245, 245, 245, 0.377);
+  width: 100%;
+  border-radius: 22px;
+  max-width: 1018px;
+  // max-height: 576px;
+  display: flex;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-image: url(https://assets.gamingarcade.io/Assets/allAssets1.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  // background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.left_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tournament_end_in {
+  color: #fff;
+  font-size: 11px;
+  line-height: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1rem;
+}
+.entry_close {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.right_container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.reward_container {
+  color: #fff;
+}
+.reward_container_h2 {
+  // font-size: 16px;
+  // line-height: 26px;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
+.reward_container > div {
+  display: flex;
+}
+.reward_image_container {
+  position: relative;
+  height: 120px;
+  width: 230px;
+}
+
+.tournamentReward {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  background: rgba(98, 92, 241, 0.1);
+  mix-blend-mode: normal;
+  border-radius: 26.282px;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1.27px solid;
+  position: relative;
+  // justify-content: space-evenly;
+  width: 100%;
+  // margin-left: -20px;
+  border-bottom: 2px solid #ce359e;
+  background: linear-gradient(
+      0deg,
+      rgba(98, 92, 241, 0.1),
+      rgba(98, 92, 241, 0.1)
+    ),
+    linear-gradient(8.31deg, #ce359e5c -14.54%, rgba(50, 49, 255, 0) 134.41%);
+  // margin: 0.5rem 2rem;
+}
+
+.entry_price_and_player {
+  background: rgba(111, 55, 0, 0.2);
+  mix-blend-mode: normal;
+  box-shadow: inset 5.17542px 6.46927px 38.8156px #c69511;
+  -webkit-backdrop-filter: blur(9.05698px);
+  backdrop-filter: blur(9.05698px);
+  border-radius: 18.125px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+}
+
+.meta_star_container {
+  position: relative;
+  width: 112px;
+  height: 129px;
+}
+
+.entry_price_p1 {
+  background: linear-gradient(168.71deg, #fbc400 -40.4%, #feffb8 91.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 94.52%;
+  margin-bottom: 0;
+}
+
+.entry_price_p2 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+  color: #fff;
+}
+
+.ranking_btn {
+  background: linear-gradient(204deg, #f64a00 -15.17%, #9e00ff 103.25%);
+  box-shadow: 0 1.88156px 10.99553px 0 #0057ff;
+  border: 2.88px solid #272fed;
+  font-size: 18px;
+  padding: 0.7vw 0.5vw;
+  border-radius: 5.091vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ranking_heading {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.playBtn {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.post_on_twitter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+  margin: 0rem 0.5rem;
+}
+.twitter_msg {
+  font-size: 12px;
+  color: white;
+  margin: 5px;
+}
+
+.free_entries {
+  border: 1px solid white;
+  border-radius: 100px;
+  background-color: #000;
+  padding: 5px 15px;
+}
+
+.twitter_left_section {
+  display: flex;
+}

@@ -1,83 +1,123 @@
 .main_container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .textCenter {
-    text-align: center;
-    font-size: 38px;
-    font-weight: bold;
-    margin: 0 0 40px;
-  }
-  
-  .wrapper {
-    border-radius: 37px;
-    backdrop-filter: blur(38.5859px);
-    background: linear-gradient(180deg, #1a3755 0%, #1b5373 100%);
-    width: 100%;
-    max-width: 1216px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .taebSwitch {
-    position: relative;
-    display: flex;
-    width: 100%;
-  }
-  
-  .taebSwitch::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    top: 0;
-    transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
-    border-radius: 27.5px;
-    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
-    background: linear-gradient(112.52deg, #9d1aea -0.85%, #f04ab6 69.22%, #ff9316 104.74%);
-    backdrop-filter: blur(38.5859px);
-    height: 100%;
-    z-index: 0;
-  }
-  
-  .left::after {
-    left: 0;
-  }
-  
-  .right::after {
-    left: 50%;
-  }
-  
-  .taeb {
-    display: inline-block;
-    width: 50%;
-    padding: 18px 0;
-    z-index: 1;
-    position: relative;
-    cursor: pointer;
-    transition: color 200ms;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    user-select: none;
-  }
-  
-  .taeb.active {
-    color: #ffffff;
-  }
-  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
 
-  .past_tournament_container{
-    max-width: 1440px;
-    margin: 0 auto;
-  }
+.textCenter {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 40px;
+}
 
-  .load_more_btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.wrapper {
+  border-radius: 37px;
+  backdrop-filter: blur(38.5859px);
+  background: linear-gradient(180deg, #1a3755 0%, #1b5373 100%);
+  width: 100%;
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.taebSwitch {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.taebSwitch::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  top: 0;
+  transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+  border-radius: 27.5px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    112.52deg,
+    #9d1aea -0.85%,
+    #f04ab6 69.22%,
+    #ff9316 104.74%
+  );
+  backdrop-filter: blur(38.5859px);
+  height: 100%;
+  z-index: 0;
+}
+
+.left::after {
+  left: 0;
+}
+
+.right::after {
+  left: 50%;
+}
+
+.taeb {
+  display: inline-block;
+  width: 50%;
+  padding: 18px 0;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  transition: color 200ms;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+}
+
+.taeb.active {
+  color: #ffffff;
+}
+
+.past_tournament_container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.load_more_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.live_tournament_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.live_tournament_upper_container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 1rem;
+}
+
+.live_tournament_lower_container{
+  padding: 3rem 11rem;
+  // width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+
+}
+
+.tournament_minicard_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 424px;
+}

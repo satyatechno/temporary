@@ -12,7 +12,7 @@ export async function fetchDashboardTournamentHistoryData(
   const baseUrl = config.baseURL;
   try {
     const response = await fetch(`${baseUrl}tournament/user-history/main`, {
-      cache: "no-store",
+      cache:"force-cache",
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -35,7 +35,7 @@ export async function fetchUserDetails(token: string): Promise<HomeData | null> 
   const baseUrl = config.baseURL;
   try {
     const response = await fetch(`${baseUrl}user/get/details`, {
-      cache: "no-store",
+      cache:"force-cache",
       headers: {
         Authorization: `Bearer ${token}`,
       },

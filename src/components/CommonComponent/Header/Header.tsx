@@ -24,13 +24,14 @@ const Header = () => {
 
 
   const pathname = usePathname();
-  const noHeaderFooterPaths = ["/userwallet", ];
+  const noHeaderFooterPaths = ["/userwallet","/not-found" ];
 
   const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
-
   if(!shouldShowHeaderFooter){
     return null;
   }
+if(!hasSignedInToken){return null};
+
 
   return (
     <div className={styles.main_container}>
@@ -149,6 +150,7 @@ const Header = () => {
             />
           </p>
         )}
+        
       </div>
       {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
     </div>

@@ -5,13 +5,17 @@ import PastTournament from "../PastTournament/PastTournament";
 import { FetchPastTournament, FetchTournament } from "@/services/GameServices";
 import { useAppContext } from "@/app/Context/AuthContext";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
+import LiveTournament from "../LiveTournament/LiveTournament";
+import TournamentMiniCard from "../TournamentMiniCard/TournamentMiniCard";
 
 const TournamentTabSwitcher = () => {
   const [activeTab, setActiveTab] = useState<"left" | "right">("left");
   const [loading, setLoading] = useState(false);
-  const [tournamentList, setTournamentList] = useState();
+  const [tournamentList, setTournamentList] = useState<any>();
   const [pastTournament, setPastTournament] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
   const [page, setPage] = useState(1);
+
 
   const { userData }: any = useAppContext();
 
@@ -45,6 +49,10 @@ const TournamentTabSwitcher = () => {
     setPage((prevPage) => prevPage + 1); // Increment page number
   };
 
+  const handleCardSelect = (card: any) => {
+    setSelectedCard(card);
+  };
+
   useEffect(() => {
     if (page > 1) {
       fetchPastTour(page); // Fetch more data when page changes
@@ -67,7 +75,10 @@ const TournamentTabSwitcher = () => {
             className={`${styles.taeb} ${
               activeTab === "left" ? styles.active : ""
             }`}
-            onClick={() => {handleTabClick("left"); fetchTour()}}
+            onClick={() => {
+              handleTabClick("left");
+              fetchTour();
+            }}
           >
             Live Tournament
           </div>
@@ -85,18 +96,34 @@ const TournamentTabSwitcher = () => {
         </div>
       </div>
 
-      <div className={styles.past_tournament_container}>
-        <PastTournament tournamentList={tournamentList} />
-        {tournamentList?.length > 8 && (
-          <div className={styles.load_more_btn}>
-            <Button
-              value="Load More"
-              onClick={handleLoadMore}
-              disabled={loading}
-            ></Button>
+      {activeTab === "right" ? (
+        <div className={styles.past_tournament_container}>
+          <PastTournament tournamentList={tournamentList} />
+          {tournamentList?.length > 8 && (
+            <div className={styles.load_more_btn}>
+              <Button
+                value="Load More"
+                onClick={handleLoadMore}
+                disabled={loading}
+              ></Button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className={styles.live_tournament_container}>
+          <div className={styles.live_tournament_upper_container}>
+            <LiveTournament tournamentList={tournamentList?.tournaments} />
+            <div className={styles.tournament_minicard_container}>
+              <TournamentMiniCard
+                tournamentList={tournamentList?.tournaments}
+              />
+            </div>
           </div>
-        )}
-      </div>
+          <div className={styles.live_tournament_lower_container}>
+          <PastTournament tournamentList={tournamentList?.tournaments} pastTournament={pastTournament}/>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
