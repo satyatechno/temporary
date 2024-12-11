@@ -11,9 +11,12 @@ import ImportAccountModal from "./ImportAccountModal/ImportAccountModal";
 import WalletOTPVerificationModal from "./WalletOTPVerificationModal/WalletOTPVerificationModal";
 import LogoutModal from "@/components/AuthModal/LogoutModal/LogoutModal";
 import PrivateKeyModal from "./PrivateKeyModal/PrivateKeyModal";
+import { useRouter } from "next/navigation";
 
 const ManageUserWallets = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  const router=useRouter()
 
   const closeModal = () => {
     setActiveModal(null);
@@ -27,9 +30,9 @@ const ManageUserWallets = () => {
       <div className={styles.manageWallets__header}>
         <div className={styles.manageWallets__headerBtn}>
           <IoIosArrowBack style={{ color: "white" }} />
-          <Link href={"/"}>
-            <p className={styles.manageWallets__backbtn}>Back</p>
-          </Link>
+          {/* <Link href={"/"} > */}
+            <p className={styles.manageWallets__backbtn} onClick={()=>router.back()} >Back</p>
+          {/* </Link> */}
         </div>
       </div>
 
