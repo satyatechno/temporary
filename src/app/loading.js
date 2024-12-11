@@ -1,5 +1,6 @@
 import styles from "./loading.module.scss";
-import config from "../../config"
+import config from "../../config";
+
 const Loading = () => {
   return (
     <div
