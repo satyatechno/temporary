@@ -71,7 +71,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
     );
 
   return (
-    <main>
+    <main className={styles.main_container}>
       <Carousel
         renderArrowPrev={renderCustomArrowPrev}
         renderArrowNext={renderCustomArrowNext}
