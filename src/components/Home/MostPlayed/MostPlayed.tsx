@@ -1,10 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
-import styles from "./mostplayed.module.scss";
-import { fetchGames } from "@/services/GameServices";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import GamesCard from "../GameCard/GameCard";
+'use client';
+import { useEffect, useState } from 'react';
+import styles from './mostplayed.module.scss';
+import { fetchGames } from '@/services/GameServices';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import GamesCard from '../GameCard/GameCard';
+import { useGamesContext } from '@/app/Context/GamesContext';
 // import GamesCard from "../Cards/GamesCards/GamesCards";
 
 // Define types for game data
@@ -15,13 +16,14 @@ interface Game {
   totalPlayed: number;
 }
 
-const MostPlayed = ({games}:any) => {
-  const [isHovering, setIsHovering] = useState<number | null>(null); 
+const MostPlayed = () => {
+  const { games } = useGamesContext();
+  const [isHovering, setIsHovering] = useState<number | null>(null);
 
   const router = useRouter();
 
   const playGameHandler = (gameName: string) => {
-    router.push(`/playgame/${gameName}`);
+    router.push(`/games/${gameName}`);
   };
 
   const handleMouseOver = (id: number) => {
@@ -31,7 +33,6 @@ const MostPlayed = ({games}:any) => {
   const handleMouseOut = () => {
     setIsHovering(null);
   };
-
 
   return (
     <div className={styles.section5}>
@@ -59,42 +60,40 @@ const MostPlayed = ({games}:any) => {
           )}
         </div>
         <div className={styles.section5__cardsRight}>
-          {games
-            ?.slice(2, 8)
-            ?.map((game:any, index:any) => (
-              <div
-                className={styles.section5__cardRightContainer}
-                style={{ cursor: "pointer" }}
-                key={index}
-                onMouseOver={() => handleMouseOver(index)}
-                onMouseOut={handleMouseOut}
-                onClick={() => playGameHandler(game.name)}
-              >
-                <Image
-                  src={game.thumbnail}
-                  alt="Play to earn"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  style={{
-                    height: "180px",
-                    width: "100%",
-                    borderRadius: "30px",
-                    objectFit: "cover",
-                  }}
-                />
-                <div>
-                  {isHovering === index && (
-                    <button
-                      className={styles.playNowButton}
-                      onClick={() => playGameHandler(game.name)}
-                    >
-                      Play Now
-                    </button>
-                  )}
-                </div>
+          {games?.slice(2, 8)?.map((game: any, index: any) => (
+            <div
+              className={styles.section5__cardRightContainer}
+              style={{ cursor: 'pointer' }}
+              key={index}
+              onMouseOver={() => handleMouseOver(index)}
+              onMouseOut={handleMouseOut}
+              onClick={() => playGameHandler(game.name)}
+            >
+              <Image
+                src={game.thumbnail}
+                alt="Play to earn"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{
+                  height: '180px',
+                  width: '100%',
+                  borderRadius: '30px',
+                  objectFit: 'cover',
+                }}
+              />
+              <div>
+                {isHovering === index && (
+                  <button
+                    className={styles.playNowButton}
+                    onClick={() => playGameHandler(game.name)}
+                  >
+                    Play Now
+                  </button>
+                )}
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

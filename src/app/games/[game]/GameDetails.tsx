@@ -1,0 +1,32 @@
+'use client';
+
+import { useGamesContext } from '@/app/Context/GamesContext';
+import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
+import OpenChallenges from '@/components/Games/OpenChallenges/OpenChallenges';
+import PlayWithFriends from '@/components/Games/PlayWithFriends/PlayWithFriends';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+
+const GameDetails = ({ game }: any) => {
+  const router = useRouter();
+  const [gameDetails, setGameDetails] = useState<any>(null);
+  const { fetchGameDetails } = useGamesContext();
+  useEffect(() => {
+    let gameData = fetchGameDetails(game);
+    if (gameData) {
+      setGameDetails(gameData);
+    } else {
+      //navigate to 404 page
+      //   router.push('/NotFoundPage');
+    }
+  }, []);
+  return (
+    <>
+      <OpenChallenges gameDetails={gameDetails} />
+      <OneVsOne gameDetails={gameDetails} />
+      <PlayWithFriends gameDetails={gameDetails} />
+    </>
+  );
+};
+
+export default GameDetails;

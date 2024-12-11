@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import styles from './openChalanges.module.scss';
-import { useRouter } from 'next/navigation';
 import { inter, poppins } from '@/app/layout';
 import Link from 'next/link';
-import { useGamesContext } from '@/app/Context/GamesContext';
+import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useState } from 'react';
+import styles from './openChalanges.module.scss';
+import { openChalangesApi } from '@/services/GameServices';
 interface TChallengeCard {
   item: any;
   index: number;
@@ -61,16 +61,18 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
     </div>
   );
 };
-const OpenChallenges = ({ game }: { game: string }) => {
-  const [gameDetails, setGameDetails] = useState<any>(null);
-  const { fetchGameDetails } = useGamesContext();
-  const fetchOpenChallenges = async () => {
-    setGameDetails(fetchGameDetails(game));
-    // fetch open challenges
-    console.log('game', game);
-  };
+const OpenChallenges = ({ gameDetails }: { gameDetails: any }) => {
+  const [openChallenges, setOpenChallenges] = useState<Array<any>>([]);
+  const fetchOpenChallenges = useCallback(async () => {
+    try {
+      const res = await openChalangesApi(gameDetails?.name);
+      setOpenChallenges(res);
+    } catch (error: any) {
+      console.log('error', error);
+    }
+  }, [gameDetails?.name]);
   useEffect(() => {
-    fetchOpenChallenges();
+    // fetchOpenChallenges();
   }, []);
   return (
     <section className={styles.challenges}>
@@ -86,7 +88,7 @@ const OpenChallenges = ({ game }: { game: string }) => {
           <div style={{ display: 'flex' }}>
             {Array(4)
               .fill(' ')
-              .map((item, index) => (
+              .map((item: any, index: any) => (
                 <ChallengeCard
                   key={index?.toString()}
                   item={item}

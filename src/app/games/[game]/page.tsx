@@ -1,13 +1,9 @@
-import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
-import OpenChallenges from '@/components/Games/OpenChallenges/OpenChallenges';
-import PlayWithFriends from '@/components/Games/PlayWithFriends/PlayWithFriends';
+import GameDetails from './GameDetails';
 
 const GameStage: React.FC = async ({ params }: any) => {
   return (
     <main>
-      <OpenChallenges game={params?.game} />
-      <OneVsOne game={params?.game} />
-      <PlayWithFriends game={params?.game} />
+      <GameDetails game={params?.game} />
     </main>
   );
 };

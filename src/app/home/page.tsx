@@ -32,11 +32,11 @@ const HomePage: React.FC = async () => {
   const games = await fetchHomeData();
   return (
     <main>
-      <HomeCarousel games={games} />
+      <HomeCarousel />
       <OpenChallenges />
-      <LatestP2EGames games={games} />
+      <LatestP2EGames />
       <AlphaPass />
-      <MostPlayed games={games} />
+      <MostPlayed />
       <PlayToEarn />
       <CommingSoon />
       <TopArcadian />

@@ -58,10 +58,13 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
       <Link
         href={{
           pathname: '/playgame',
-          query: { ...gameDetails },
+          query: { game: gameDetails?.name },
         }}
       >
-        <span onClick={() => onClick(item)} className={poppins.className}>
+        <span
+          // onClick={() => onClick(item) }
+          className={poppins.className}
+        >
           Play {item.entryPrice} {false ? 'Matic' : 'Ticket'}{' '}
           <img
             style={{ marginLeft: 10 }}
@@ -73,17 +76,11 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
     </div>
   );
 };
-const OneVsOne = ({ game }: { game: string }) => {
-  const [gameDetails, setGameDetails] = useState<any>(null);
-  const { fetchGameDetails } = useGamesContext();
-
-  useEffect(() => {
-    setGameDetails(fetchGameDetails(game));
-  }, []);
+const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
   const router = useRouter();
   const handlePlay = (item: TItem) => {
     console.log(item.entryPrice, item.id, gameDetails?.name);
-    router.push('/playgame');
+    router.push('/playgame?game=' + gameDetails?.name);
   };
   return (
     <div className={styles.container}>

@@ -31,7 +31,7 @@ const Card = ({
     </div>
   );
 };
-const PlayWithFriends = ({ game }: { game: string }) => {
+const PlayWithFriends = ({ gameDetails }: { gameDetails: any }) => {
   return (
     <div className={styles.container}>
       <div className={styles.headingContainer}>
@@ -70,7 +70,7 @@ const PlayWithFriends = ({ game }: { game: string }) => {
           img={`${config.imageDomain}Assets/trophy.webp`}
         />
       </div>
-      <GamesGrid game={game} />
+      <GamesGrid game={gameDetails?.name} />
     </div>
   );
 };

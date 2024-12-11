@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
-import styles from "./homeCarousel.module.scss";
-import React from "react";
-import Image from "next/image";
-import Buttons from "@/components/CommonComponent/CustomButton/Buttons";
+import styles from './homeCarousel.module.scss';
+import React from 'react';
+import Image from 'next/image';
+import Buttons from '@/components/CommonComponent/CustomButton/Buttons';
+import { useRouter } from 'next/navigation';
+import { useGamesContext } from '@/app/Context/GamesContext';
 
 // Define types for game data
 type GameData = {
@@ -15,27 +17,28 @@ type GameData = {
   backgroundImageAlt: string;
   IconImage: string;
   IconImageAlt: string;
+  name: string;
 };
 
 type HomeCarouselProps = {
   games?: GameData[];
 };
 
-const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
-
-
+const HomeCarousel: React.FC<HomeCarouselProps> = () => {
+  const { games } = useGamesContext();
+  const router = useRouter();
   const customArrowStyles: React.CSSProperties = {
-    position: "absolute",
-    top: "50%",
+    position: 'absolute',
+    top: '50%',
     zIndex: 2,
-    transform: "translateY(-50%)",
-    background: "#ffffffa2",
-    borderRadius: "22px",
-    fontSize: "1rem",
-    color: "#000",
-    border: "none",
-    padding: "16px",
-    cursor: "pointer",
+    transform: 'translateY(-50%)',
+    background: '#ffffffa2',
+    borderRadius: '22px',
+    fontSize: '1rem',
+    color: '#000',
+    border: 'none',
+    padding: '16px',
+    cursor: 'pointer',
   };
 
   const renderCustomArrowPrev = (
@@ -48,7 +51,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
         type="button"
         onClick={onClickHandler}
         title={label}
-        style={{ ...customArrowStyles, left: "15px" }}
+        style={{ ...customArrowStyles, left: '15px' }}
       >
         &#8592; {/* Left arrow symbol */}
       </button>
@@ -64,14 +67,14 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
         type="button"
         onClick={onClickHandler}
         title={label}
-        style={{ ...customArrowStyles, right: "15px" }}
+        style={{ ...customArrowStyles, right: '15px' }}
       >
         &#8594; {/* Right arrow symbol */}
       </button>
     );
 
   return (
-    <main className={styles.main_container}>
+    <main>
       <Carousel
         renderArrowPrev={renderCustomArrowPrev}
         renderArrowNext={renderCustomArrowNext}
@@ -94,7 +97,11 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({ games }) => {
               <Image src={data.IconImage} alt={data.IconImageAlt} fill />
             </div>
             <div className={styles.playButton}>
-              <Buttons />
+              <Buttons
+                onClick={() => {
+                  router.push(`games/${data?.name}`);
+                }}
+              />
             </div>
           </div>
         ))}
