@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+.gradientContainer {
+  background-image: url(https://assets.gamingarcade.io/Assets/winbg.webp);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative !important;
+  max-width: 54.545vw;
+  // width: 100%;
+  // height: 25vw;
+  margin: 0 auto;
+  padding: 80px 100px 70px 80px;
+  width: 100%;
+  max-width: 60vh;
+}
+.icon {
+  position: absolute;
+  top: 10%;
+  left: -20;
+}
+.icon1 {
+  position: absolute;
+  top: 50%;
+  right: -50;
+}
+.bigWin {
+  width: 30vw;
+  height: 25vh;
+  position: absolute;
+  top: -15vh;
+}
+.score h3,
+.reward h3 {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+.score h2 {
+  font-weight: 700;
+  font-size: 5.48vw;
+  background: linear-gradient(180deg, #fbc400, #feffb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  background-clip: text;
+  margin-top: -20;
+  margin-bottom: 0;
+}
+.reward {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  background: linear-gradient(
+    267.95deg,
+    #955fe4 0.75%,
+    rgba(231, 29, 164, 0) 99.51%
+  );
+  filter: drop-shadow(0 9.5469333vw 19.487818vw rgba(27, 27, 27, 0.16));
+  -webkit-backdrop-filter: blur(49.31424vw);
+  backdrop-filter: blur(49.31424vw);
+  border-radius: 12.22909vw;
+  padding: 5px 20px;
+  min-width: 80%;
+  justify-content: space-around;
+}
+.homeIcon {
+  height: 30;
+  width: 30;
+  margin: 0;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 30%;
+  margin-top: 20;
+}

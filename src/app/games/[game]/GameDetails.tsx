@@ -1,6 +1,7 @@
 'use client';
 
 import { useGamesContext } from '@/app/Context/GamesContext';
+import BackgroundIcons from '@/components/Games/BackgroundIcons/BackgroundIcons';
 import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
 import OpenChallenges from '@/components/Games/OpenChallenges/OpenChallenges';
 import PlayWithFriends from '@/components/Games/PlayWithFriends/PlayWithFriends';
@@ -22,6 +23,7 @@ const GameDetails = ({ game }: any) => {
   }, []);
   return (
     <>
+      <BackgroundIcons img={gameDetails?.gameStageLayerIcon} />
       <OpenChallenges gameDetails={gameDetails} />
       <OneVsOne gameDetails={gameDetails} />
       <PlayWithFriends gameDetails={gameDetails} />

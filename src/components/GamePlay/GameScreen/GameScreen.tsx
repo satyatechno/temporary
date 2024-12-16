@@ -107,7 +107,7 @@ const GameScreen = ({ data }: { data: any }) => {
     setIsGameOver(true);
     setIsNavigate(false);
     // setTransaction(false);
-    router.back();
+    router.replace('/playgame/1');
     setTimeout(() => {
       if (
         true
@@ -127,7 +127,7 @@ const GameScreen = ({ data }: { data: any }) => {
     setIsGameOver(true);
     setIsNavigate(false);
     // setTransaction(false);
-    router.back();
+    router.replace('/playgame/1');
     setTimeout(() => {
       if (true) {
         // freeScoreSubmit(scoreState?.score);
@@ -189,7 +189,7 @@ const GameScreen = ({ data }: { data: any }) => {
     setPopupValue(false);
     //@ts-ignore
     window.unityInstance.SendMessage('PauseGameHandler', 'ResumeGame', 'false'); // quit
-    router.back();
+    router.replace('/playgame/1');
     // unload();
     // setIsGameOver(true);
     // setIsNavigate(false);
