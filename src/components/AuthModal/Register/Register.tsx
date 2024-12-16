@@ -194,7 +194,8 @@ const verifyOtp = async (event: React.FormEvent) => {
         formDataRegister
       );
 
-      
+      // Cookies.set('email', res?.data?.data?.user?.email, { expires: 7, secure: true, sameSite: 'Strict' });
+      Cookies.set('user', JSON.stringify(res?.data?.data?.user));
       Cookies.set('userToken', res?.data?.data?.token, {  secure: true, sameSite: 'Strict' });
 
       // Device API call using the token from cookies

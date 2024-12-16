@@ -22,6 +22,7 @@ const LogoutModal=({onClose}:any)=>{
                 }
             });
             Cookies.remove("userToken")
+            Cookies.remove("user")
             // fetchUser();
             router.push("/")
             // console.log('Signup successful:', response?.data);
@@ -29,7 +30,7 @@ const LogoutModal=({onClose}:any)=>{
         } catch (error) {
             console.error('Error signing up:', error);
             // Cookies.remove("email");
-            // Cookies.remove("user")
+            Cookies.remove("user")
             Cookies.remove("userToken")
             router.push("/")
             // Handle error (show error message to user)

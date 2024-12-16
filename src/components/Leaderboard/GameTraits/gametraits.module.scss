@@ -1,0 +1,65 @@
+
+.game_main_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(https://assets.gamingarcade.io/loading-images/gameLd.webp);
+    border-radius: 1.042vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-size: 100% 100% !important;
+  }
+  .gameImage {
+    height: 370px;
+    width: 370px;
+    position: relative;
+  }
+  
+  .tournament_box {
+    width: 100%;
+    max-width: 564px;
+    //   margin: 0 auto;
+    border-radius: 1.563vw;
+    background: rgba(82, 82, 82, 0.2);
+    -webkit-backdrop-filter: blur(0.625vw);
+    backdrop-filter: blur(0.625vw);
+    padding: 1.5vw 1vw;
+    border: 0.052vw solid #525252;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 1rem;
+    margin-top: 6rem;
+  }
+  
+  .game_traits {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  
+    div > span {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 0;
+    }
+    div > p{
+      margin: 0;
+    }
+   
+  }
+  .image_container{
+      height: 30px;
+      width: 30px;
+      position: relative;
+      >p{
+          font-size: 1.146vw;
+      }
+  }

@@ -1,0 +1,24 @@
+.leaderboard_container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  .user_leaderboard {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    max-width: 1400px;
+  }
+  
+  .user_ranking_box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 764px;
+    gap: 3rem;
+    //   max-height: 384px;
+  }

@@ -24,6 +24,14 @@
   flex-direction: column;
   height: 100%;
 }
+.top_image_container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  max-width: 290px;
+  max-height: 150px;
+}
 
 .tournament_end_in {
   color: #fff;

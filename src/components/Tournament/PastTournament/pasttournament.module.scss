@@ -1,16 +1,17 @@
 .main_container {
-  color: white;
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 20px;
-  padding: 20px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px 0;
+  /* display: grid
+; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
   column-gap: 20px;
   row-gap: 2rem;
+  width: 100%;
 }
 
 .gameCard_container {
@@ -158,42 +159,38 @@
   width: auto;
 }
 
-
-.post_on_twitter{
+.post_on_twitter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   // width: 100%;
   margin: 0rem 0.5rem;
 }
-.twitter_msg{
+.twitter_msg {
   font-size: 12px;
-  color: white; 
+  color: white;
   margin: 5px;
 }
 
-.free_entries{
-  border:1px solid white;
+.free_entries {
+  border: 1px solid white;
   border-radius: 100px;
   background-color: #000;
-  padding:5px 15px;
-  
+  padding: 5px 15px;
 }
 
-.twitter_left_section{
-
+.twitter_left_section {
   display: flex;
-
 }
-.ranking_container{
+.ranking_container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   border: 1px solid #fff;
   border-radius: 100px;
   padding: 5px;
-  >p{
+  > p {
     margin: 0;
   }
 }

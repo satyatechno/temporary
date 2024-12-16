@@ -24,17 +24,23 @@ const Header = () => {
 
 
   const pathname = usePathname();
-  const noHeaderFooterPaths = ["/userwallet","/not-found" ];
+  const noHeaderFooterPaths = ["/userwallet"];
+
+  const absoulte_header=['/']
 
   const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
+
+  const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
+
   if(!shouldShowHeaderFooter){
     return null;
   }
-if(!hasSignedInToken){return null};
+  
+// if(!hasSignedInToken){return null};
 
 
   return (
-    <div className={styles.main_container}>
+    <div className={styles.main_container} style={{ position: shouldShowHeaderFooterAbsolute ? "relative" : "absolute" }}>
       <div className={styles.image_container}>
         <Link href="/">
           <Image

@@ -51,8 +51,10 @@ export const FetchPastTournament = async (page:any, limit = 9) => {
 };
 
 export const TournamentData = async (tournament_id:any, user_id = undefined, page:any, limit:any) => {
+  const useData =  Cookies.get("user") ?? null;
+  const user = JSON.parse(useData)
   try {
-    let { data } = await axios.get(`${config.baseURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`, { params: user_id ? { address: user_id } : {},
+    let { data } = await axios.get(`${config.baseURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`, { params: user?.uuid ? { uuid: user?.uuid } : {},
     headers: {
       'Authorization': `Bearer ${Cookies.get("userToken")}` 
     } });
@@ -60,6 +62,21 @@ export const TournamentData = async (tournament_id:any, user_id = undefined, pag
     return data;
   } catch (error) { }
 };
+
+
+// export const TournamentData = async (tournament_id, user_id = undefined, page, limit) => {
+//   const useData = typeof window !== 'undefined' ? localStorage.getItem("user") : null
+//   const user = JSON.parse(useData)
+//   try {
+//     let { data } = await axios.get(`${config.apiURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`, { params: user?.uuid ? { uuid: user?.uuid } : {},
+//     headers: {
+//       'Authorization': `Bearer ${localStorage.getItem("userToken")}` 
+//     } });
+   
+//     return data;
+//   } catch (error) { }
+// };
+
 
 
 

@@ -9,8 +9,7 @@ const TournamentMiniCard = ({
   return (
     <>
       {tournamentList?.slice(0,3)?.map((tour: any) => (
-        console.log("gameIcon",tour),
-        <div className={styles.tourCardMini} key={tour?.key}>
+        <div className={styles.tourCardMini} key={tour?._id}>
           <div className={styles.tourCardMini__container}>
             <div className={styles.tourCardMini__left}>
               <div className={styles.tournamentCardPast__imageContainer}>

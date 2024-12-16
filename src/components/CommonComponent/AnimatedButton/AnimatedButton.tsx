@@ -1,6 +1,8 @@
-import React from 'react';
-import './animatedButton.module.scss';
-import styles from './animatedButton.module.scss';
+'use client'
+
+import React from "react";
+import "./animatedButton.module.scss";
+import styles from "./animatedButton.module.scss";
 
 interface ButtonProps {
   value: string;
@@ -14,21 +16,20 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
+  const { className = "", disabled = false, onClick, value, icon, imageClass = "", iconNew } = props;
+
   return (
-    <a
-      className={`${styles.hz_linear_button} ${props?.className} ${
-        props.disabled ? 'disabled' : ''
-      } `}
-      onClick={props.disabled ? undefined : props.onClick}
+    <button suppressHydrationWarning
+      className={`${styles.hz_linear_button} ${className} ${
+        disabled ? styles.disabled : ""
+      }`}
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled} 
     >
-      {props.icon && (
-        <img src={props.icon} alt="Icon" className={props.imageClass} />
-      )}
-      <span className={props?.textClass}>{props.value}</span>
-      {props.iconNew && (
-        <img src={props.iconNew} alt="Icon" className="new-icon" />
-      )}
-    </a>
+      {icon && <img src={icon} alt="Icon" className={imageClass} />}
+      <span>{value}</span>
+      {iconNew && <img src={iconNew} alt="Icon New" className="new-icon" />}
+    </button>
   );
 };
 
