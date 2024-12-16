@@ -18,6 +18,99 @@
   overflow: hidden;
 }
 
+.marqueeContainer {
+  position: absolute;
+  overflow: hidden; /* Hide overflow to keep the marquee contained */
+  width: 100%; /* Full width */
+  height: 100px; /* Set the height to match the images */
+  transform: rotate(4deg);
+  bottom: 6.5rem;
+  z-index: 1;
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 10px; /* Space between images */
+  animation: scrollMarquee 15s linear infinite; /* Continuous scrolling */
+}
+
+.marqueeImageWrapper {
+  flex: 0 0 auto; /* Prevent images from shrinking or growing */
+  position: relative; /* Required for Next.js Image with fill */
+}
+
+/* Animation */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the end */
+  }
+}
+
+/* Pause on hover */
+.marqueeContainer:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.marqueeContainer2 {
+  width: 100%;
+  overflow: hidden; /* Ensures the content outside the container is hidden */
+  // height: 100px; /* Adjust height as needed */
+
+  position: absolute;
+  transform: rotate(-4deg);
+  bottom: 6.5rem;
+  z-index: 1;
+
+  background: linear-gradient(
+    271deg,
+    #004ab3 2.31%,
+    #ee00c0 26.19%,
+    rgba(255, 192, 0, 0) 75.39%
+  );
+}
+.marqueeContainer2:hover .marqueeTrack2 {
+  animation-play-state: paused;
+}
+
+.marqueeTrack2 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem; /* Spacing between text and symbols */
+  white-space: nowrap; /* Prevents text from wrapping */
+  animation: marquee 15s linear infinite; /* Adjust speed with duration */
+}
+
+.marqueeSymbol {
+  font-size: 1.5rem; /* Match the size of the text */
+  color: white;
+  margin: 0;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the end */
+  }
+}
+
+.marqueeText {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.75px;
+  margin: 0px 20px;
+  padding: 5px 0px;
+}
+
 .playButton {
   position: absolute;
   top: 80%;
@@ -26,12 +119,11 @@
   z-index: 1;
 }
 
-// .main_container {
-//   position: relative;
-//   bottom: 8rem;
-//   overflow: hidden;
-// }
-
+.main_container {
+  position: relative;
+  // bottom: 8rem;
+  // overflow: hidden;
+}
 
 .user_image {
   width: 1.865vw;
@@ -79,16 +171,30 @@
   border-radius: 1.042vw;
 }
 .ts-bottom-users .userBox:first-child .userBar {
-  background: var(--gradient-g-16, linear-gradient(180deg, #00FFD1 0%, #1153B5 100%));
+  background: var(
+    --gradient-g-16,
+    linear-gradient(180deg, #00ffd1 0%, #1153b5 100%)
+  );
 }
 .ts-bottom-users .userBox:nth-child(2) .userBar {
   height: 8.073vw;
-  background: var(--gradient-g-4, linear-gradient(151deg, #FFD427 0%, #C22EF6 43.75%, #6147FF 75%, #497CFF 100%));
+  background: var(
+    --gradient-g-4,
+    linear-gradient(
+      151deg,
+      #ffd427 0%,
+      #c22ef6 43.75%,
+      #6147ff 75%,
+      #497cff 100%
+    )
+  );
 }
 .ts-bottom-users .userBox:nth-child(3) .userBar {
-  background: var(--gradient-g-12, linear-gradient(273deg, #07BAF2 0%, #4407F2 100%));
+  background: var(
+    --gradient-g-12,
+    linear-gradient(273deg, #07baf2 0%, #4407f2 100%)
+  );
 }
-
 
 .maticNumber {
   position: absolute;
@@ -98,8 +204,8 @@
   width: 100%;
   max-width: 4.427vw;
   border-radius: 0.365vw;
-  background: rgba(217, 217, 217, 0.40);
-  backdrop-filter: blur(32.0.26vw);
+  background: rgba(217, 217, 217, 0.4);
+  backdrop-filter: blur(32.26vw);
   display: flex;
   align-items: center;
   gap: 0.417vw;
@@ -118,11 +224,13 @@
   margin: 0;
 }
 
-
-.top_participant{
+.top_participant {
   display: flex;
 }
 
 .userBar {
-  background: var(--gradient-g-16, linear-gradient(180deg, #00FFD1 0%, #1153B5 100%));
+  background: var(
+    --gradient-g-16,
+    linear-gradient(180deg, #00ffd1 0%, #1153b5 100%)
+  );
 }
