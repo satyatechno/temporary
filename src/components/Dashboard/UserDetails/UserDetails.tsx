@@ -28,9 +28,7 @@ interface dashboardProps {
   };
 }
 
-
-const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
-  console.log("userDetails",userDetails)
+const UserDetails: React.FC<dashboardProps> = ({ userDetails }) => {
   const cardsData: CardData[] = [
     {
       id: "1",
@@ -39,9 +37,9 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
       imgLink: `${config.imageDomain}/Assets/gameController.webp`,
       gridName: "total_games_played",
       container_name: "card__container",
-      gameCount:userDetails?.totalGamePlayedTicket 
+      gameCount: userDetails?.totalGamePlayedTicket,
     },
-  
+
     {
       id: "2",
       text: "Total Matic Won",
@@ -49,21 +47,19 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
       imgLink: `${config.imageDomain}/Assets/maticChainIcon.webp`,
       gridName: "total_matic_won",
       container_name: "card__container",
-      gameCount:userDetails?.totalWinAmount,
-  
+      gameCount: userDetails?.totalWinAmount,
     },
-  
+
     {
       id: "3",
       text: "Total Tournament Played",
       bg: "bg3",
-      imgLink:`${config.imageDomain}/Assets/tourPlayedSword.png`,
+      imgLink: `${config.imageDomain}/Assets/tourPlayedSword.png`,
       gridName: "total_tournament_played",
       container_name: "card__container1",
-      gameCount:userDetails?.totalTournamentPlayed,
-  
+      gameCount: userDetails?.totalTournamentPlayed,
     },
-  
+
     {
       id: "4",
       text: "Total Wins",
@@ -71,10 +67,9 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
       imgLink: `${config.imageDomain}/Assets/awardTrophy.webp`,
       gridName: "total_wins",
       container_name: "card__container",
-      gameCount:userDetails?.totalWinGames
-  
+      gameCount: userDetails?.totalWinGames,
     },
-  
+
     {
       id: "5",
       text: "Total losses",
@@ -82,29 +77,29 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
       imgLink: `${config.imageDomain}/Assets/penShield.webp`,
       gridName: "total_losses",
       container_name: "card__container",
-      gameCount:userDetails?.totalLoseGames
-  
+      gameCount: userDetails?.totalLoseGames,
     },
   ];
+  
   return (
     <div className={styles.user_detials_container}>
       <div className={styles.form_layout}>
         <h3 className={styles.heading}>hello</h3>
         <p className={styles.user_headers}>User Name:</p>
-        <EditUserName userDetails={userDetails}/>
+        <EditUserName userDetails={userDetails} />
         <p className={styles.user_headers}>Wallet Address:</p>
-        <CopyWalletAddress userDetails={userDetails}/>
+        <CopyWalletAddress userDetails={userDetails} />
       </div>
 
       <div className={styles.hero_image_container}>
         <Image
-          height={20}
-          width={20}
-          className={styles.copyText}
+          className={styles.responsive_image}
           src={`${config.imageDomain}Assets/avatarNew.png`}
-          alt="Copy"
-          layout="responsive"
-          // onClick={() => handleCopyClick("wallet?.address")}
+          alt="avatar"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          fill
+          style={{ objectFit: "cover" }}
+          priority
         />
       </div>
       <div className={styles.wrapper}>
@@ -133,30 +128,28 @@ const UserDetails: React.FC<dashboardProps> = ({userDetails}) => {
 
 export default UserDetails;
 
-
-{// score_total,
-// tickets,
-// 49.9999
-// totalGamePlayed,
-// totalGamePlayedTicket,
-// 1
-// totalLoseGames,
-// totalLoseGamesTicket,
-// totalLossAmount,
-// totalLossAmountTicket,
-// totalReward,
-// totalTournamentLoss,
-// totalTournamentLossTicket,
-// totalTournamentPlayed,
-// totalTournamentWin,
-// totalTournamentWinTicket,
-// totalWinAmount,
-// totalWinAmountTicket,
-// totalWinGames,
-// totalWinGamesTicket,
+{
+  // score_total,
+  // tickets,
+  // 49.9999
+  // totalGamePlayed,
+  // totalGamePlayedTicket,
+  // 1
+  // totalLoseGames,
+  // totalLoseGamesTicket,
+  // totalLossAmount,
+  // totalLossAmountTicket,
+  // totalReward,
+  // totalTournamentLoss,
+  // totalTournamentLossTicket,
+  // totalTournamentPlayed,
+  // totalTournamentWin,
+  // totalTournamentWinTicket,
+  // totalWinAmount,
+  // totalWinAmountTicket,
+  // totalWinGames,
+  // totalWinGamesTicket,
 }
-
-
 
 {
   /* <div

@@ -19,6 +19,31 @@
   position: relative;
   text-align: center;
   align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* After effect */
+.hz_linear_button::after {
+  content: '';
+  background: #d8d7d7;
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  width: 30px;
+  z-index: 0; /* Place behind button content */
+  animation: slide 4s infinite;
+}
+@keyframes slide {
+  0% {
+    left: -75px;
+  }
+  100% {
+    left: 120%;
+  }
 }
 
 .hz_linear_button img {
@@ -50,7 +75,7 @@
   border: 1px solid;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  // width: 100%;
   // max-width: 300px;
   span {
     z-index: 20;

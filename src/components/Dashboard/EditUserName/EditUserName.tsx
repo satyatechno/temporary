@@ -6,27 +6,37 @@ import { useState } from "react";
 
 import { MdModeEdit } from "react-icons/md";
 import config from "../../../../config";
+import { useAppContext } from "@/app/Context/AuthContext";
+import Cookies from "js-cookie";
 
 interface DashboardProps {
   userDetails: any | null;
 }
 
-const EditUserName:React.FC<DashboardProps>  = ({userDetails}) => {
+const EditUserName:React.FC<DashboardProps>  = ({userDetails}:any) => {
   
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [userName,setUserName]=useState(userDetails?.userName)
   const closeModal = () => setIsPopupOpen(false);
+  const {userData,setUserData}=useAppContext();
+  const [userName,setUserName]=useState(userData?.userName);
+
+const token = Cookies.get("userToken");
+
 
   const handleSubmit = async (data: Record<string, any>) => {
+    console.log("datadata",data)
+    const newUpdatedUserName={
+      userName:data
+    }
+
     try {
       const response = await fetch(`${config.baseURL}user/update/usernames`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json",Authorization: `Bearer ('')}` },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json",Authorization: `Bearer ${token}` },
+        body: JSON.stringify(newUpdatedUserName),
       });
       const result = await response.json();
-      console.log("Success:", result);
-      // setUserName(result?.name)
+      setUserData(result?.data)
     } catch (error) {
       console.error("Error submitting form data:", error);
     } finally {
@@ -35,11 +45,6 @@ const EditUserName:React.FC<DashboardProps>  = ({userDetails}) => {
   };
 
 
-  const fields = [
-    { name: userDetails?.userName, label: "Username", type: "text", required: true },
-    // { name: "email", label: "Email Address", type: "email", required: true },
-    // { name: "age", label: "Age", type: "number", placeholder: "Optional" },
-  ];
 
   return (
     <>
@@ -48,7 +53,7 @@ const EditUserName:React.FC<DashboardProps>  = ({userDetails}) => {
         style={{ marginBottom: "35px" }}
       >
         <span className={styles.sunChild}>
-          <span>{userName}</span>
+          <span>{userData?.userName}</span>
           <MdModeEdit
             onClick={() => setIsPopupOpen(!isPopupOpen)}
             style={{ cursor: "pointer", color: "#fbc400" }}
@@ -58,9 +63,12 @@ const EditUserName:React.FC<DashboardProps>  = ({userDetails}) => {
       {isPopupOpen && (
         <DynamicModal
           title="User Name"
-          fields={fields}
           onClose={closeModal}
           onSubmit={handleSubmit}
+          userName={userData?.userName}
+          setUserData={setUserData}
+          setUserName={setUserName}
+          newUserName={userName}
         />
       )}
     </>
