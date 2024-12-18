@@ -7,9 +7,11 @@ import ControlMenu from '../ControlMenu/ControlMenu';
 import GameLoading from '../GameLoading/GameLoading';
 import styles from './gameScreen.module.scss';
 import QuitPopup from '../QuitPopPup/QuitPopup';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { gameScoreApi } from '@/services/GameServices';
+import { useAppContext } from '@/app/Context/AuthContext';
 
-const GameScreen = ({ data }: { data: any }) => {
+const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   const {
     unityProvider,
     isLoaded,
@@ -28,7 +30,9 @@ const GameScreen = ({ data }: { data: any }) => {
     webglContextAttributes: { preserveDrawingBuffer: true },
   });
   const devicePixelRatio = useUnityDevicePixelRatio();
+  const searchParams = useSearchParams();
   const router = useRouter();
+  const { userData } = useAppContext();
   const [isGameOver, setIsGameOver] = useState(false);
   const [popupValue, setPopupValue] = useState(false);
   const [isNavigate, setIsNavigate] = useState(true);
@@ -43,58 +47,46 @@ const GameScreen = ({ data }: { data: any }) => {
   }, [UNSAFE__unityInstance?.Module]);
   useEffect(() => {
     if (isLoaded === true) {
-      sendMessage('LoadLevelManager', 'LoadLevel', parseInt('1'));
+      sendMessage(
+        'LoadLevelManager',
+        'LoadLevel',
+        searchParams?.get('stage') ?? 1
+      );
     }
   }, [isLoaded, window.innerWidth]);
 
-  const freeScoreSubmit = async (score: any) => {
+  const scoreSumbitter = async () => {
     const gameId = localStorage.getItem('gameId');
-    setIsNavigate(true);
-    // try {
-    // await  scoreFreeGame(
-    //     gameId,
-    //     {enc_score: score === undefined ? 0 : score}
-    //   )
-    //   setIsNavigate(true)
-    // } catch (err) {
-    //   setIsNavigate(true)
-    // }
+    try {
+      let data: any = {};
+      const res = await gameScoreApi(gameId);
+      data = { ...res.data?.data?.game };
+      let player = '';
+      let oppenent = '';
+      if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
+        player = 'player1';
+        oppenent = 'player2';
+      } else {
+        player = 'player2';
+        oppenent = 'player1';
+      }
+      if (res.data?.data?.game?.winner) {
+        if (res.data?.data?.game?.winner?.uuid == userData?.uuid) {
+          data.status = 'win';
+          data.score = res.data?.data?.game?.player2?.score;
+        } else {
+          data.status = 'loose';
+          data.score = res.data?.data?.game?.player2?.score;
+        }
+      } else {
+        data.score = res.data?.data?.game?.[player]?.score;
+        data.status = 'pending';
+      }
+      //@ts-ignore
+      router.replace(`/playgame/${data?.status}`, { state: data });
+    } catch (error) {}
   };
 
-  const scoreSumbitter = async (score: any, enc_score: any) => {
-    // const gameId = localStorage.getItem("gameId");
-    // console.log(gameId)
-    // try {
-    //   if (gameId !== -1) {
-    //   await  callApi(
-    //       gameId,
-    //       {
-    //         /* API to submit score from frontend is currently off */
-    //         // player_id: userId,
-    //         player_id: wallet?.address,
-    //         // score: score === undefined ? 0 : score,
-    //         enc_score: score === undefined ? 0 : score,
-    //         practice:
-    //           props.practice && props.practice === "true" ? true : false,
-    //       },
-    //       props.practice && props.practice === "true" ? true : false
-    //     );
-    //   }
-    //   localStorage.setItem("transaction", false);
-    //   setTransaction(false);
-    //   if (gameId > 0) {
-    //     setGameType("oneVone");
-    //   }
-    //   if (entryId > 0) {
-    //     setGameType("tournament");
-    //   }
-    //   localStorage.setItem("gameId", -1);
-    //   localStorage.setItem("entryId", -1);
-    // setIsNavigate(true)
-    // } catch (err) {
-    //   setIsNavigate(true)
-    // }
-  };
   const handleGameOver = (score: any, enc_score: any) => {
     let score_obj = { enc_score: enc_score, score: score };
     unload();
@@ -107,17 +99,9 @@ const GameScreen = ({ data }: { data: any }) => {
     setIsGameOver(true);
     setIsNavigate(false);
     // setTransaction(false);
-    router.replace('/playgame/1');
+
     setTimeout(() => {
-      if (
-        true
-        // props.practice === "true"
-      ) {
-        // console.log(scoreState?.score)
-        freeScoreSubmit(score);
-      } else {
-        scoreSumbitter(score, enc_score);
-      }
+      scoreSumbitter();
     }, 3000);
   };
 
@@ -127,13 +111,8 @@ const GameScreen = ({ data }: { data: any }) => {
     setIsGameOver(true);
     setIsNavigate(false);
     // setTransaction(false);
-    router.replace('/playgame/1');
     setTimeout(() => {
-      if (true) {
-        // freeScoreSubmit(scoreState?.score);
-      } else {
-        // scoreSumbitter(scoreState?.score, scoreState.enc_score);
-      }
+      scoreSumbitter();
     }, 3000);
   };
   const handleQuitGame = (score: any, enc_score: any) => {
@@ -189,7 +168,9 @@ const GameScreen = ({ data }: { data: any }) => {
     setPopupValue(false);
     //@ts-ignore
     window.unityInstance.SendMessage('PauseGameHandler', 'ResumeGame', 'false'); // quit
-    router.replace('/playgame/1');
+    setTimeout(() => {
+      scoreSumbitter();
+    }, 3000);
     // unload();
     // setIsGameOver(true);
     // setIsNavigate(false);
@@ -216,6 +197,7 @@ const GameScreen = ({ data }: { data: any }) => {
           </div>
           <div className={styles.controlBar}>
             <ControlMenu
+              scoreToBeat={scoreToBeat}
               actions={{
                 fullScreen: requestFullscreen,
                 quit: (param1: any, param2: any, param3: any) =>

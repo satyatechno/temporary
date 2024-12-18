@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../../config';
 import axiosInstance from './axiosInstance';
-import Cookies from 'js-cookie'; 
+import Cookies from 'js-cookie';
 
 export const fetchGames = async () => {
   try {
@@ -13,56 +13,70 @@ export const fetchGames = async () => {
 };
 
 export const activeWalletApi = async () => {
-    try {
-      let { data } = await axiosInstance.get('user/wallet/active/wallet');
-      return data;
-    } catch (error) { }
+  try {
+    let { data } = await axiosInstance.get('user/wallet/active/wallet');
+    return data;
+  } catch (error) {}
 };
 
 export const getUserApi = async () => {
   try {
     let { data } = await axios.get(`${config.baseURL}user/get/details`, {
       headers: {
-          'Authorization': `Bearer ${Cookies.get("userToken")}`  
-      }
+        Authorization: `Bearer ${Cookies.get('userToken')}`,
+      },
     });
     return data;
-  } catch (error) { }
+  } catch (error) {}
 };
 
-export const FetchTournament = async (userId:any) => {
+export const FetchTournament = async (userId: any) => {
   try {
-    let { data } = await axios.get(`${config.baseURL}tournament?status=RUNNING&address=${userId}`,{
-     headers:{ 
-      'Authorization': `Bearer ${Cookies.get("userToken")}` 
+    let { data } = await axios.get(
+      `${config.baseURL}tournament?status=RUNNING&address=${userId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get('userToken')}`,
+        },
       }
-    });
-    console.log("bearer token", Cookies.get("userToken") );
+    );
+    console.log('bearer token', Cookies.get('userToken'));
     return data;
   } catch (error) {
     console.log(error);
   }
-}
-export const FetchPastTournament = async (page:any, limit = 9) => {
+};
+export const FetchPastTournament = async (page: any, limit = 9) => {
   try {
-    let { data } = await axios.get(`${config.baseURL}tournament?status=PAST&page=${page}&limit=${limit}`);
+    let { data } = await axios.get(
+      `${config.baseURL}tournament?status=PAST&page=${page}&limit=${limit}`
+    );
     return data;
-  } catch (error) { }
+  } catch (error) {}
 };
 
-export const TournamentData = async (tournament_id:any, user_id = undefined, page:any, limit:any) => {
-  const useData =  Cookies.get("user") ?? null;
-  const user = JSON.parse(useData)
+export const TournamentData = async (
+  tournament_id: any,
+  user_id = undefined,
+  page: any,
+  limit: any
+) => {
+  const useData = Cookies.get('user') ?? '';
+  const user = JSON.parse(useData);
   try {
-    let { data } = await axios.get(`${config.baseURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`, { params: user?.uuid ? { uuid: user?.uuid } : {},
-    headers: {
-      'Authorization': `Bearer ${Cookies.get("userToken")}` 
-    } });
-   
-    return data;
-  } catch (error) { }
-};
+    let { data } = await axios.get(
+      `${config.baseURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`,
+      {
+        params: user?.uuid ? { uuid: user?.uuid } : {},
+        headers: {
+          Authorization: `Bearer ${Cookies.get('userToken')}`,
+        },
+      }
+    );
 
+    return data;
+  } catch (error) {}
+};
 
 // export const TournamentData = async (tournament_id, user_id = undefined, page, limit) => {
 //   const useData = typeof window !== 'undefined' ? localStorage.getItem("user") : null
@@ -70,17 +84,12 @@ export const TournamentData = async (tournament_id:any, user_id = undefined, pag
 //   try {
 //     let { data } = await axios.get(`${config.apiURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`, { params: user?.uuid ? { uuid: user?.uuid } : {},
 //     headers: {
-//       'Authorization': `Bearer ${localStorage.getItem("userToken")}` 
+//       'Authorization': `Bearer ${localStorage.getItem("userToken")}`
 //     } });
-   
+
 //     return data;
 //   } catch (error) { }
 // };
-
-
-
-
-
 
 export const fetchGameDetails = async (game: string) => {
   try {
@@ -118,11 +127,13 @@ export const deviceApi = async (body: any) => {
   try {
     let data = await axios.post(`${config.baseURL}user/device/register`, body, {
       headers: {
-          'Authorization': `Bearer ${Cookies.get("userToken")}`  
-      }
+        Authorization: `Bearer ${Cookies.get('userToken')}`,
+      },
     });
     return data;
   } catch (error: any) {
     console.log(error.message);
   }
 };
+export const gameScoreApi = async (gameId: any) =>
+  axiosInstance.post(`challenge/score/${gameId}`);

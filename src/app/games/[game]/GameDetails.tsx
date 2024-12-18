@@ -11,16 +11,18 @@ import React, { useEffect, useState } from 'react';
 const GameDetails = ({ game }: any) => {
   const router = useRouter();
   const [gameDetails, setGameDetails] = useState<any>(null);
-  const { fetchGameDetails } = useGamesContext();
+  const { fetchGameDetails, games } = useGamesContext();
   useEffect(() => {
+    console.log('game=====>', game);
     let gameData = fetchGameDetails(game);
     if (gameData) {
       setGameDetails(gameData);
+      console.log({ gameData });
     } else {
       //navigate to 404 page
       //   router.push('/NotFoundPage');
     }
-  }, []);
+  }, [games]);
   return (
     <>
       <BackgroundIcons img={gameDetails?.gameStageLayerIcon} />

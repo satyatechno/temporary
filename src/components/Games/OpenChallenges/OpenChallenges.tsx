@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import styles from './openChalanges.module.scss';
-import { openChalangesApi } from '@/services/GameServices';
+import { openChallengesApi } from '@/services/challenge';
 interface TChallengeCard {
   item: any;
   index: number;
@@ -13,6 +13,7 @@ interface TChallengeCard {
 }
 const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
   const router = useRouter();
+
   return (
     <div
       className={`${styles.cradContainer} ${styles['gradient' + (index % 4)]}`}
@@ -22,7 +23,7 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
       <div className={styles.main}>
         <h2 className={`${styles.joinBet} ${poppins.className}`}>Join Bet</h2>
         <div className={styles.reward}>
-          <h3 className={poppins.className}>{1}</h3>
+          <h3 className={poppins.className}>{item?.betAmount}</h3>
           <img
             className={styles.matic}
             src={
@@ -38,14 +39,27 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
           <div className={styles.targetContainer}>
             <p className={poppins.className}>Target Score</p>
           </div>
-          <h2 className={poppins.className}>{2000}</h2>
+          <h2 className={poppins.className}>{item?.player1?.score ?? 0}</h2>
           <h5 className={poppins.className}>POINTS</h5>
         </div>
       </div>
       <Link
         href={{
           pathname: '/playgame',
-          query: { game: gameDetails?.name },
+          query: {
+            game: gameDetails?.name,
+            stage: item?.stage,
+            value: parseFloat(item?.betAmount),
+            name: item?.game?.name,
+            gameType: 'OneVSOne',
+            landscape: item?.game?.landscape ? true : false,
+            direct: true,
+            practice: false,
+            isCustomBet: true,
+            gameId: item?.gameId,
+            medium: item?.medium,
+            buildUrl: item?.game?.buildUrl,
+          },
         }}
       >
         <span
@@ -65,15 +79,20 @@ const OpenChallenges = ({ gameDetails }: { gameDetails: any }) => {
   const [openChallenges, setOpenChallenges] = useState<Array<any>>([]);
   const fetchOpenChallenges = useCallback(async () => {
     try {
-      const res = await openChalangesApi(gameDetails?.name);
-      setOpenChallenges(res);
+      const res = await openChallengesApi({
+        gameName: gameDetails?.name,
+        medium: 'ticket',
+      });
+      setOpenChallenges(res?.data?.data?.game ?? []);
+      console.log('open chalanges', res);
     } catch (error: any) {
       console.log('error', error);
     }
   }, [gameDetails?.name]);
   useEffect(() => {
-    // fetchOpenChallenges();
-  }, []);
+    if (gameDetails?.name) fetchOpenChallenges();
+  }, [gameDetails]);
+  if (!openChallenges?.length) return null;
   return (
     <section className={styles.challenges}>
       <div className={styles.row}>
@@ -86,16 +105,14 @@ const OpenChallenges = ({ gameDetails }: { gameDetails: any }) => {
         </div>
         {true ? (
           <div style={{ display: 'flex' }}>
-            {Array(4)
-              .fill(' ')
-              .map((item: any, index: any) => (
-                <ChallengeCard
-                  key={index?.toString()}
-                  item={item}
-                  index={index}
-                  gameDetails={gameDetails}
-                />
-              ))}
+            {openChallenges?.map((item: any, index: any) => (
+              <ChallengeCard
+                key={index?.toString()}
+                item={item}
+                index={index}
+                gameDetails={gameDetails}
+              />
+            ))}
           </div>
         ) : null}
       </div>

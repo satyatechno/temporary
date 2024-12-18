@@ -1,31 +1,33 @@
-"use client";
-import { activeWalletApi, getUserApi } from "@/services/GameServices";
+'use client';
+import { activeWalletApi, getUserApi } from '@/services/GameServices';
 import React, {
   createContext,
   useContext,
   useState,
   ReactNode,
   useEffect,
-} from "react";
+} from 'react';
 
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 interface AppContextType {
-  userData: string | null;
-  setUserData: (user: string | null) => void;
-  wallet: string | null;
-  setWallet: (user: string | null) => void;
+  userData: any;
+  setUserData: (user: any) => void;
+  wallet: any;
+  // setWallet: (user: string | null) => void;
+  fetchUser: () => void;
+  fetchActiveWallet: () => void;
 }
 
 const AppContext = createContext<AppContextType | null>(null);
-const token = Cookies.get("userToken");
+const token = Cookies.get('userToken');
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [wallet, setWallet] = useState(null);
   const [loadingWallet, setLoadingWallet] = useState(false); // currently not in use
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<any>(null);
   const [userLoading, setUserLoading] = useState(false);
 
   // user details
@@ -34,8 +36,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
       setUserLoading(true);
       const res = await getUserApi();
       setUserData(res.data);
-    } catch (error) {
-      console.log("error user details", error?.response?.data);
+    } catch (error: any) {
+      console.log('error user details', error?.response?.data);
     } finally {
       setUserLoading(false);
     }
@@ -50,8 +52,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
       setLoadingWallet(true);
       const res = await activeWalletApi();
       setWallet(res?.data); // Set wallet state
-    } catch (error) {
-      console.log("error wallet details", error?.response?.data);
+    } catch (error: any) {
+      console.log('error wallet details', error?.response?.data);
     } finally {
       setLoadingWallet(false);
     }
@@ -62,7 +64,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   }, [token]);
 
   return (
-    <AppContext.Provider value={{ userData, setUserData, wallet }}>
+    <AppContext.Provider
+      value={{ userData, setUserData, wallet, fetchActiveWallet, fetchUser }}
+    >
       {children}
     </AppContext.Provider>
   );
@@ -71,7 +75,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error("useAppContext must be used within an AppProvider");
+    throw new Error('useAppContext must be used within an AppProvider');
   }
   return context;
 };

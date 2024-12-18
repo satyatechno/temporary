@@ -7,7 +7,8 @@ import styles from './page.module.css';
 import { AppProvider } from './Context/AuthContext';
 import { GamesProvider } from './Context/GamesContext';
 import { Suspense } from 'react';
-import Loading from "@/app/loading";
+import Loading from '@/app/loading';
+import TransactionContextProvider from './Context/TransactionContext';
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -46,11 +47,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <AppProvider>
           <GamesProvider>
-            <Header />
-            <Suspense fallback={<Loading />}>
-            {children}
-          </Suspense>
-            <Footer />
+            <TransactionContextProvider>
+              <Header />
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+              <Footer />
+            </TransactionContextProvider>
           </GamesProvider>
         </AppProvider>
       </body>
