@@ -9,6 +9,7 @@ import Image from "next/image";
 import Buttons from "@/components/CommonComponent/CustomButton/Buttons";
 import { useRouter } from "next/navigation";
 import { useGamesContext } from "@/app/Context/GamesContext";
+import { marqueeImages } from "@/utils/Utils";
 
 // Define types for game data
 type GameData = {
@@ -73,8 +74,45 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
       </button>
     );
 
+
+
+  const repeatCount = 40; // Number of repetitions
+  const text = "Play.Earn.Repeat";
+  const symbol = "✦";
+  
   return (
     <main className={styles.main_container}>
+
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeTrack}>
+          {marqueeImages.concat(marqueeImages).map((image, index) => (
+            <div className={styles.marqueeImageWrapper} key={index}>
+              <Image
+                src={image.src}
+                alt=""
+                height={0}
+                width={0}
+                sizes="100vw"
+                style={{ height: "80px", width: "auto" }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+      <div className={styles.marqueeContainer2}>
+        <div className={styles.marqueeTrack2}>
+          {Array.from({ length: repeatCount }).map((_, index) => (
+            <React.Fragment key={index}>
+              <p className={styles.marqueeText}>{text}</p>
+              <p className={styles.marqueeSymbol}>{symbol}</p>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+     
+
       <Carousel
         renderArrowPrev={renderCustomArrowPrev}
         renderArrowNext={renderCustomArrowNext}

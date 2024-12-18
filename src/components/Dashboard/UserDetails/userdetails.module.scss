@@ -6,7 +6,8 @@
   border-radius: 30px;
   padding: 3rem;
   display: grid;
-  grid-template-columns: 30.5% 25% 37.5%;
+  // grid-template-columns: 30.5% 25% 37.5%;
+  grid-template-columns: auto auto auto;
   gap: 3rem;
 }
 
@@ -223,7 +224,46 @@
 .copiedRow{
   color:#ffc107 ;
 }
-.hero_image_container{
+
+// .hero_image_container{
+//   position: relative;
+//   left: -80px;
+//   width: 363px;
+//   height: 570px;
+// }
+
+.hero_image_container {
   position: relative;
-  left: -80px;
+  width: 100%; /* Responsive container width */
+  max-width: 363px; /* Restrict the max width */
+  height: 500px; /* Height scales with width */
+  aspect-ratio: 363 / 570; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the container */
+  // border: 1px solid white;
+  overflow: hidden; /* Hide overflowing image */
+  left: -1rem;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 320px;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    bottom: -100px;
+    z-index: -1; /* Place it behind the image */
+    background: linear-gradient(
+      180deg,
+      #efbe0b 12%,
+      #b35d27bd 51.18%,
+      rgba(179, 93, 39, 0) 83.46%
+    );
+  }
 }
+
+
+
+.responsive_image {
+  object-fit: cover; /* Ensure image covers the container */
+}
+

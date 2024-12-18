@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <button suppressHydrationWarning
-      className={`${styles.hz_linear_button} ${className} ${
+      className={`${styles.hz_linear_button} ${className}  ${
         disabled ? styles.disabled : ""
       }`}
       onClick={disabled ? undefined : onClick}
@@ -34,3 +34,6 @@ const Button: React.FC<ButtonProps> = (props) => {
 };
 
 export default Button;
+
+
+// ${styles.btn_effect}

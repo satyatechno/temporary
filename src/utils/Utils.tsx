@@ -76,3 +76,19 @@ interface gameCarousel {
 //       "https://assets.gamingarcade.io/loading-images/HelixJump-logo.webp",
 //   },
 // ];
+
+
+export const marqueeImages = [
+  {
+    src: "https://assets.gamingarcade.io/Assets/iconsMarqee.png",
+  },
+  {
+    src: "https://assets.gamingarcade.io/Assets/iconsMarqee.png",
+  },
+  {
+    src: "https://assets.gamingarcade.io/Assets/iconsMarqee.png",
+  },
+  {
+    src: "https://assets.gamingarcade.io/Assets/iconsMarqee.png",
+  },
+];

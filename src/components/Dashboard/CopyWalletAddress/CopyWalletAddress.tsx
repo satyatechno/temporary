@@ -3,15 +3,15 @@
 import { useState } from "react";
 import styles from "./copywalletaddress.module.scss";
 import { IoCopy } from "react-icons/io5";
-
+import { useAppContext } from "@/app/Context/AuthContext";
 
 interface DashboardProps {
-    userDetails: any | null;
-  }
+  userDetails: any | null;
+}
 
-const CopyWalletAddress:React.FC<DashboardProps> = ({userDetails}) => {
-
+const CopyWalletAddress: React.FC<DashboardProps> = ({ userDetails }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const { userData } = useAppContext();
   const handleCopyClick = (textToCopy: string) => {
     navigator.clipboard.writeText(textToCopy);
     setIsCopied(true);
@@ -28,10 +28,10 @@ const CopyWalletAddress:React.FC<DashboardProps> = ({userDetails}) => {
         style={{ marginBottom: "35px" }}
       >
         <span className={styles.sunChild}>
-          <span>priyeshsoni_297</span>
+          <span>{userData?.userName}</span>
           {
             <IoCopy
-              onClick={() => handleCopyClick("priyeshsoni_297")}
+              onClick={() => handleCopyClick(userData?.userName)}
               style={{ cursor: "pointer", color: "#fbc400" }}
             />
           }
