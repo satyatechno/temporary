@@ -1,10 +1,8 @@
 import Image from "next/image";
 import styles from "./userdetails.module.scss";
 import config from "../../../../config";
-// import { cardsData } from "@/utils/Utils";
 import CopyWalletAddress from "../CopyWalletAddress/CopyWalletAddress";
 import dynamic from "next/dynamic";
-// import EditUserName from "../EditUserName/EditUserName";
 
 const EditUserName = dynamic(() => import("../EditUserName/EditUserName"));
 

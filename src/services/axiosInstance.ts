@@ -40,7 +40,7 @@ axiosInstance.interceptors.response.use(
 
     if (error?.response?.data?.statusCode == '10003') {
       alert('Session Expired');
-      Cookies.clear();
+      Cookies.remove('userToken')
       window.location.href = '/';
     }
     throw error;

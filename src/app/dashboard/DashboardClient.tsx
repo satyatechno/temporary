@@ -5,10 +5,10 @@ import UserReferDetails from "@/components/Dashboard/UserReferSystem/UserReferDe
 import styles from "./dashboad.module.scss";
 
 interface DashboardProps {
-    userDetails: any | null;
-  }
+  userDetails: any | null;
+}
 
-const Dashboard: React.FC<DashboardProps>  = ({userDetails}) => {
+const Dashboard: React.FC<DashboardProps> = ({ userDetails }) => {
   return (
     <main className={styles.main_container}>
       <UserDetails userDetails={userDetails} />
@@ -20,13 +20,15 @@ const Dashboard: React.FC<DashboardProps>  = ({userDetails}) => {
         }}
         loadingGames={false}
         isAuthenticated={false}
-        openModal={function (): void {
-          throw new Error("Function not implemented.");
-        }}
       />
-      <DashboardTournamentHistory />
+       <DashboardTournamentHistory />
     </main>
   );
 };
 
 export default Dashboard;
+
+
+ // openModal={function (): void {
+        //   throw new Error("Function not implemented.");
+        // }}

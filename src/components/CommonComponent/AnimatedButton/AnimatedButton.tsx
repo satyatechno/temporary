@@ -1,4 +1,3 @@
-'use client'
 
 import React from "react";
 import "./animatedButton.module.scss";
@@ -15,16 +14,16 @@ interface ButtonProps {
   textClass?: string;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-  const { className = "", disabled = false, onClick, value, icon, imageClass = "", iconNew } = props;
+const Button: React.FC<ButtonProps> = ({className = "", disabled = false, onClick, value, icon, imageClass = "", iconNew}) => {
 
   return (
-    <button suppressHydrationWarning
+    <button
       className={`${styles.hz_linear_button} ${className}  ${
         disabled ? styles.disabled : ""
       }`}
       onClick={disabled ? undefined : onClick}
       disabled={disabled} 
+      value={value}
     >
       {icon && <img src={icon} alt="Icon" className={imageClass} />}
       <span>{value}</span>
@@ -35,5 +34,3 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 export default Button;
 
-
-// ${styles.btn_effect}

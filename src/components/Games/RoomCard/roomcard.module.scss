@@ -1,0 +1,120 @@
+.play_custom_card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // margin: 1rem;
+}
+
+.heading_section {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.tickets_available_h3 {
+    color: #ffff;
+}
+
+.select_a_board {
+  width: 100%;
+}
+
+.closeButton {
+  position: relative;
+  width: 50px; // Adjust the size of the button
+  height: 50px;
+  border: 2px solid white; // White border
+  border-radius: 50%; // Makes it circular
+  background: linear-gradient(180deg, #e91e63, #d81b60); // Background gradient
+  background: transparent;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); // Shadow effect
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1); // Slightly enlarges on hover
+  }
+
+  &:active {
+    transform: scale(0.95); // Shrinks slightly when clicked
+  }
+}
+
+.cross {
+  color: white; // White color for the cross
+  font-size: 2rem; // Size of the cross
+  font-weight: bold;
+  line-height: 1; // Keeps the cross vertically centered
+}
+
+.select_a_board_h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.424vw;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+.input_container {
+  max-width: 300px;
+  width: 100%;
+}
+
+.btn_style {
+  width: 30%;
+  margin: 1rem 0rem;
+}
+
+.input_box {
+  padding: 3px 20px;
+  width: 100%;
+  height: auto;
+  line-height: 45px;
+  margin: 0;
+  background: linear-gradient(
+    257.78deg,
+    rgb(255 1 1 / 59%) -5.79%,
+    rgb(255 255 255 / 68%) 113.95%
+  );
+  filter: drop-shadow(0vw 4.3286 0.909vw 9.513 0.212vw rgba(27, 27, 27, 0.16));
+  backdrop-filter: blur(22.431 0.333vw);
+  border-radius: 3.03vw;
+  // height: 3.636vw;
+  width: 100%;
+  border: 0.121vw solid #ffe600a1;
+  position: relative;
+  // margin-top: 1.212vw;
+  // padding: 2vw 14vw
+  display: flex;
+}
+
+.input_box::placeholder {
+  color: #ffff;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.bottom_heading {
+  content: "Create a Room";
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 4.79vw;
+  line-height: 108.02%;
+//   text-align: center;
+  letter-spacing: -0.045em;
+  text-transform: capitalize;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 85.56%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  mix-blend-mode: overlay;
+  margin: 10px;
+}

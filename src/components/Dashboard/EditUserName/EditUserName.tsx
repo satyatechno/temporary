@@ -13,39 +13,35 @@ interface DashboardProps {
   userDetails: any | null;
 }
 
-const EditUserName:React.FC<DashboardProps>  = ({userDetails}:any) => {
-  
+const EditUserName: React.FC<DashboardProps> = ({ userDetails }: any) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const closeModal = () => setIsPopupOpen(false);
-  const {userData,setUserData}=useAppContext();
-  const [userName,setUserName]=useState(userData?.userName);
+  const { userData, setUserData } = useAppContext();
+  const [userName, setUserName] = useState(userData?.userName);
 
-const token = Cookies.get("userToken");
-
+  const token = Cookies.get("userToken");
 
   const handleSubmit = async (data: Record<string, any>) => {
-    console.log("datadata",data)
-    const newUpdatedUserName={
-      userName:data
-    }
-
+    const newUpdatedUserName = {
+      userName: data,
+    };
     try {
       const response = await fetch(`${config.baseURL}user/update/usernames`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json",Authorization: `Bearer ${token}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify(newUpdatedUserName),
       });
       const result = await response.json();
-      setUserData(result?.data)
+      setUserData(result?.data);
     } catch (error) {
       console.error("Error submitting form data:", error);
     } finally {
       closeModal();
     }
   };
-
-
-
   return (
     <>
       <div
@@ -91,7 +87,6 @@ export default EditUserName;
   //       },
   //     }
   //   );
-
   //   if (response.status === 200) {
   //     setUserName(updateUserName);
   //     setIsPopupOpen(false);

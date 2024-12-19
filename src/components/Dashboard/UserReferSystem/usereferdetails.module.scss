@@ -56,6 +56,7 @@
   );
   width: fit-content;
   padding: 5px 10px 5px 5px;
+  align-items: center;
 }
 .how_refer_works {
   color: #fff;
@@ -82,6 +83,12 @@
   border: 1px solid #272fed;
   margin-top: 20px;
 //   height: 100%;
+.span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
 
 }
 .section4_text{
@@ -104,7 +111,7 @@
   margin-left: 10px;
   padding: 10px 0px 0px 20px;
   color:#fff;
-
+  
 }
 .referal_image_container{
     position: relative;
@@ -113,4 +120,23 @@
     width: 100%;
     height: 100%;
     
+}
+
+.levelBar_container{
+  position: relative;
+  width: 100%; /* Responsive container width */
+  max-width: 350px; /* Restrict the max width */
+  height: auto; /* Height scales with width */
+  // aspect-ratio: 363 / 570; /* Maintain the aspect ratio */
+  // margin: 0 auto; /* Center the container */
+  // border: 1px solid white;
+  overflow: hidden; /* Hide overflowing image */
+  left: -1rem;
+}
+
+
+
+
+.responsive_image {
+  object-fit: contain; /* Ensure image covers the container */
 }
