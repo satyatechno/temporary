@@ -1,20 +1,19 @@
 "use client";
-import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import styles from "./swiper.module.scss";
+import styles from "./openchallengeswiper.module.scss";
 
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
-import Image from "next/image";
-import GamesCard from "../Cards/GamesCards/GamesCards";
+import OpenChallengesCard from "../OpenChallengesCard/OpenChallengesCard";
 
-const SwiperCarousel = ({ data }: any) => {
+const OpenChallengesSwiperCarousel = ({ data }: any) => {
+  console.log("datadata", data);
   //   const swiper = useSwiper();
-  const swiperRef = useRef(null);
+  //   const swiperRef = useRef(null);
   return (
     <>
       <Swiper
@@ -65,9 +64,21 @@ const SwiperCarousel = ({ data }: any) => {
         className="mySwiper"
         style={{ width: "90%" }}
       >
-        {data?.map((details: any) => (
+        {data?.map((details) => (
           <SwiperSlide className={styles.swiper_slide} key={details?._id}>
-            <GamesCard detail={details} />
+            <OpenChallengesCard
+              name={details?.game?.name}
+              stage={details?.stage}
+              gameId={details?.gameId}
+              betAmount={details?.betAmount}
+              score={details?.player1?.score}
+              medium={details?.medium}
+              // customBetLength={customBets?.length}
+              gameIcon={details?.game?.IconImage}
+              loaderUrl={details?.buildUrl?.typeLoader}
+              frameworkUrl={details?.buildUrl?.typeFramework}
+              dataUrl={details?.buildUrl?.typeData}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -75,4 +86,4 @@ const SwiperCarousel = ({ data }: any) => {
   );
 };
 
-export default SwiperCarousel;
+export default OpenChallengesSwiperCarousel;

@@ -1,0 +1,229 @@
+.mySwiper {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+  }
+  
+  .swiper {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+  }
+  
+  .swiper_slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // max-width: 2400px;
+    // border: 1px solid black;
+    // padding: 9%;
+  }
+  
+  .swiper_slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper_button_next,
+  .swiper_button_prev {
+    // Style navigation buttons
+    color: #000; // Change the color of the arrows
+  }
+  
+  .sliderContainer {
+    position: relative; // Keep this for positioning buttons relative to the slider
+  
+    .navigationButtons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+  
+    .prevButton,
+    .nextButton {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #555;
+      }
+    }
+  }
+  
+  .arrowContainer {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .arrowContainerBackward,
+  .arrowContainerForward {
+    display: flex;
+    width: 36px; /* Slightly larger, easier to click on mobile */
+    height: 36px;
+    padding: 10px; /* Adjust padding to make the arrows larger */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Ensures a perfect circle */
+    border: 1px solid #cfd0db;
+    cursor: pointer;
+  }
+  
+  .arrowContainerBackward:hover,
+  .arrowContainerForward:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .topHeading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .rectangleDiv {
+    width: 100%;
+    width: 16px;
+    position: relative;
+    border-radius: 2px;
+    background-color: #a9abad;
+    height: 28px;
+  }
+  
+  .heading2 {
+    color: var(--Palette-Natural01-Dark, #1c1c1c);
+    // font-family: Poppins !important;
+    font-size: 43.3px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 54.43px; /* 110.938% */
+    white-space: nowrap;
+  }
+  .topSection {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    // border: 1px solid #000;
+  }
+  
+  // @media (max-width: 1441px) {
+  //   /* .section2{
+  //       width: 1174px;
+  //     } */
+  //   .topSection {
+  //     gap: 26rem;
+  //   }
+  // }
+  
+  // @media (max-width: 1600px) {
+  //   .topSection {
+  //     gap: 26rem;
+  //   }
+  // }
+  
+  // @media (max-width: 1165px) {
+  //   .topSection {
+  //     gap: 6rem;
+  //   }
+  // }
+  @media (max-width: 1025px) {
+    .section2 {
+      padding-left: 4rem;
+      /* width: 918px; */
+    }
+    // .topSection {
+    //   gap: 12rem;
+    // }
+  }
+  
+  @media (max-width: 1024px) {
+    .navigationButtons {
+      top: -35px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navigationButtons {
+      top: -30px;
+      justify-content: center;
+    }
+  
+    .prevButton,
+    .nextButton {
+      padding: 8px;
+      svg {
+        font-size: 1.25rem;
+      }
+    }
+  
+    .swiper_slide {
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .navigationButtons {
+      top: -25px;
+      justify-content: center;
+    }
+  
+    .prevButton,
+    .nextButton {
+      padding: 6px;
+      svg {
+        font-size: 1rem;
+      }
+    }
+  
+    .mySwiper {
+      padding-top: 40px;
+    }
+  
+    .swiper_slide {
+      padding: 0 5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rectangleDiv {
+      width: 100%;
+      width: 12px;
+      position: relative;
+      border-radius: 2px;
+      background-color: #a9abad;
+      height: 28px;
+    }
+  
+    .heading2 {
+      color: var(--Palette-Natural01-Dark, #1c1c1c);
+      // font-family: Poppins !important;
+      font-size: 1.924rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 38.69px; /* 110.938% */
+      white-space: nowrap;
+      margin: 1rem 0rem;
+    }
+    .topHeading > img{
+      width: 24px;
+      height: 24px;
+    }
+    .arrowContainer{
+      display: none;
+    }
+  }
+  

@@ -74,22 +74,19 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
       </button>
     );
 
-
-
   const repeatCount = 40; // Number of repetitions
   const text = "Play.Earn.Repeat";
   const symbol = "✦";
-  
+
   return (
     <main className={styles.main_container}>
-
       <div className={styles.marqueeContainer}>
         <div className={styles.marqueeTrack}>
           {marqueeImages.concat(marqueeImages).map((image, index) => (
             <div className={styles.marqueeImageWrapper} key={index}>
               <Image
                 src={image.src}
-                alt=""
+                alt="marquee-images"
                 height={0}
                 width={0}
                 sizes="100vw"
@@ -99,7 +96,6 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
           ))}
         </div>
       </div>
-
 
       <div className={styles.marqueeContainer2}>
         <div className={styles.marqueeTrack2}>
@@ -111,7 +107,6 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
           ))}
         </div>
       </div>
-     
 
       <Carousel
         renderArrowPrev={renderCustomArrowPrev}
@@ -127,12 +122,16 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
             <div className={styles.image_container}>
               <Image
                 src={data.backgroundImage}
-                alt={data.backgroundImageAlt}
+                alt={data.backgroundImageAlt || "games-image"}
                 fill
               />
             </div>
             <div className={styles.icon_image_container}>
-              <Image src={data.IconImage} alt={data.IconImageAlt} fill />
+              <Image
+                src={data.IconImage}
+                alt={data.IconImageAlt || "game-icons"}
+                fill
+              />
             </div>
             <div className={styles.playButton}>
               <Buttons

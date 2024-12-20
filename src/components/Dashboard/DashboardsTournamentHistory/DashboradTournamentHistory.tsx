@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./Dashboradtournamenthistory.module.scss";
 import config from "../../../../config";
 import moment from "moment";
+import { tournamentHistoryData } from "@/services/challenge";
 
 interface Tournament {
   serial: string;
@@ -34,9 +35,25 @@ const DashboardTournamentHistory: React.FC = () => {
   const [transaction, setTransaction] = useState<boolean>(false);
   const isAuthenticated: boolean = false;
 
-  function gameChanger(first: Tournament,second: boolean, third: string, fourth: string) {
- 
+  function gameChanger(
+    first: Tournament,
+    second: boolean,
+    third: string,
+    fourth: string
+  ) {}
+
+  async function fetchUserTournamentHistory() {
+    try {
+      const res = await tournamentHistoryData();
+      setTours(res?.data?.data);
+    } catch (error: any) {
+      console.error(error.message);
+    }
   }
+
+  useEffect(() => {
+    fetchUserTournamentHistory();
+  }, []);
 
   const status = (targetTime: string): string => {
     const targetDate = new Date(targetTime);
@@ -143,9 +160,7 @@ const DashboardTournamentHistory: React.FC = () => {
                           )}
                         </td>
                         <td>
-                          {item.freeEntry
-                            ? "Free"
-                            : item.tournament.entryFee}
+                          {item.freeEntry ? "Free" : item.tournament.entryFee}
                         </td>
                         <td>{item.score}</td>
                         <td>{item.rank || "--"}</td>

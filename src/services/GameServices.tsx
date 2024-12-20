@@ -14,7 +14,11 @@ export const fetchGames = async () => {
 
 export const activeWalletApi = async () => {
   try {
-    let { data } = await axiosInstance.get('user/wallet/active/wallet');
+    let { data } = await axiosInstance.get('user/wallet/active/wallet',{
+      headers: {
+        'Authorization': `Bearer ${Cookies.get('userToken')}`
+    }
+    });
     return data;
   } catch (error) {}
 };

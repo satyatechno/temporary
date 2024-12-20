@@ -9,7 +9,7 @@ const GamesCard = ({ detail }: any) => {
       onClick={() => router.push(`games/${detail?.name}`)}
       className={styles.card_container}
     >
-      <img src={detail?.thumbnail} alt={detail?.name} width={50} height={50} />
+      <Image src={detail?.thumbnail} alt={detail?.name ||"latestP2E-games"} fill />
     </div>
   );
 };
