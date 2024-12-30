@@ -123,11 +123,11 @@ const useGameModule = () => {
     if (betData) {
       bet = betData;
     } else {
-      if (isCustomBet) {
-        if (type == 'PlayWithFriend' && directJoin && code) {
+      if (isCustomBet == 'true') {
+        if (type == 'PlayWithFriend' && directJoin == 'true' && code) {
           // join room
           bet = await joinRoom({ address: wallet?.address, code });
-        } else if (type == 'OneVSOne' && directJoin && gameId) {
+        } else if (type == 'OneVSOne' && directJoin == 'true' && gameId) {
           // join open challenge
           bet = await joinOpenBet({ address: wallet?.address, gameId: gameId });
         } else {
@@ -145,14 +145,14 @@ const useGameModule = () => {
             setBetData(bet);
           }
         }
-      } else if (type == 'OneVSOne' && !isCustomBet) {
+      } else if (type == 'OneVSOne' && isCustomBet == 'false') {
         // create/join oneVsOne
         bet = await findChallenge({
           game,
           address: wallet?.address,
-          betAmount,
+          betAmount: parseFloat(betAmount),
           medium,
-          isCustomBet,
+          isCustomBet: JSON.parse(isCustomBet),
           stage,
           type,
         });

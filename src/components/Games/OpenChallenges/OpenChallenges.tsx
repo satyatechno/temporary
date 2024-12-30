@@ -58,7 +58,6 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
             isCustomBet: true,
             gameId: item?.gameId,
             medium: item?.medium,
-            buildUrl: item?.game?.buildUrl,
           },
         }}
       >

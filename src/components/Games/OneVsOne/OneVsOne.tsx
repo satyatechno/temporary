@@ -58,7 +58,18 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
       <Link
         href={{
           pathname: '/playgame',
-          query: { game: gameDetails?.name },
+          query: {
+            game: gameDetails?.name,
+            stage: index + 1,
+            value: item?.entryPrice,
+            name: gameDetails?.name,
+            gameType: 'OneVSOne',
+            landscape: gameDetails?.landscape ? true : false,
+            direct: false,
+            practice: false,
+            isCustomBet: false,
+            medium: 'ticket',
+          },
         }}
       >
         <span

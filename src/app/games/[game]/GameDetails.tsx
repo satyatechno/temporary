@@ -1,5 +1,6 @@
 'use client';
 
+import { useAppContext } from '@/app/Context/AuthContext';
 import { useGamesContext } from '@/app/Context/GamesContext';
 import BackgroundIcons from '@/components/Games/BackgroundIcons/BackgroundIcons';
 import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
@@ -12,8 +13,9 @@ const GameDetails = ({ game }: any) => {
   const router = useRouter();
   const [gameDetails, setGameDetails] = useState<any>(null);
   const { fetchGameDetails, games } = useGamesContext();
+  const { wallet } = useAppContext();
   useEffect(() => {
-    console.log('game=====>', game);
+    console.log('wallet=====>', wallet);
     let gameData = fetchGameDetails(game);
     if (gameData) {
       setGameDetails(gameData);

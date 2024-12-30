@@ -20,22 +20,23 @@ const PlayGame = () => {
   }, [games]);
 
   useEffect(() => {
-    if (searchParams.get('paymenySynced')) {
-      setPlayGame(true);
-    } else {
-      playChallenge({
-        betAmount: searchParams.get('value'),
-        type: searchParams.get('gameType'),
-        directJoin: searchParams.get('direct'),
-        game: searchParams.get('name'),
-        isCustomBet: searchParams.get('isCustomBet'),
-        gameId: searchParams.get('gameId'),
-        medium: searchParams.get('medium'),
-        stage: searchParams.get('stage'),
-        code: searchParams.get('code'),
-        betData: searchParams.get('betData'),
-      });
-    }
+    setPlayGame(true);
+    // if (searchParams.get('paymenySynced')) {
+    //   setPlayGame(true);
+    // } else {
+    //   playChallenge({
+    //     betAmount: searchParams.get('value'),
+    //     type: searchParams.get('gameType'),
+    //     directJoin: searchParams.get('direct'),
+    //     game: searchParams.get('name'),
+    //     isCustomBet: searchParams.get('isCustomBet'),
+    //     gameId: searchParams.get('gameId'),
+    //     medium: searchParams.get('medium'),
+    //     stage: searchParams.get('stage'),
+    //     code: searchParams.get('code'),
+    //     betData: searchParams.get('betData'),
+    //   });
+    // }
   }, []);
 
   if (loading || !playGame) {

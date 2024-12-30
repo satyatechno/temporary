@@ -1,8 +1,14 @@
-import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
-import RoomModal from "@/components/CommonComponent/RoomModal/RoomModal";
-import styles from "./roomcard.module.scss";
+import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
+import RoomModal from '@/components/CommonComponent/RoomModal/RoomModal';
+import styles from './roomcard.module.scss';
 
-const CreateABet = ({ onClose }: { onClose: () => void }) => {
+const CreateABet = ({
+  onClose,
+  gameDetails,
+}: {
+  onClose: () => void;
+  gameDetails: any;
+}) => {
   return (
     <RoomModal isOpen={true}>
       <div className={styles.heading_section}>

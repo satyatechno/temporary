@@ -1,3 +1,14 @@
+.input_container {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
 .play_custom_card_container {
   display: flex;
   flex-direction: column;
@@ -11,7 +22,7 @@
   margin: 1rem;
 }
 .tickets_available_h3 {
-    color: #ffff;
+  color: #ffff;
 }
 
 .select_a_board {
@@ -50,7 +61,7 @@
 }
 
 .select_a_board_h2 {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 2.424vw;
@@ -89,6 +100,8 @@
   // margin-top: 1.212vw;
   // padding: 2vw 14vw
   display: flex;
+  color: #ffff;
+  font-size: 1.5rem;
 }
 
 .input_box::placeholder {
@@ -98,13 +111,13 @@
 }
 
 .bottom_heading {
-  content: "Create a Room";
-  font-family: "Inter";
+  content: 'Create a Room';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 4.79vw;
   line-height: 108.02%;
-//   text-align: center;
+  //   text-align: center;
   letter-spacing: -0.045em;
   text-transform: capitalize;
   background: linear-gradient(
@@ -117,4 +130,14 @@
   background-clip: text;
   mix-blend-mode: overlay;
   margin: 10px;
+}
+.stages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.stage {
+  border-width: 2;
+  border-color: #d81b60;
+  border-style: solid;
 }

@@ -6,10 +6,14 @@ import { poppins } from '@/app/layout';
 import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
 import Footer from '@/components/Endgame/Footer/Footer';
 import BackgroundIcons from '@/components/Endgame/BackgroundIcons/BackgroundIcons';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 const EndGame = ({ game }: { game: any }) => {
   const router = useRouter();
-  useEffect(() => {}, []);
+  const searchParams = useSearchParams();
+  const data = JSON.parse(searchParams.get('data') ?? '');
+  useEffect(() => {
+    console.log('data=====>', data);
+  }, []);
   return (
     <div className={styles.container}>
       <BackgroundIcons

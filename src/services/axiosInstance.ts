@@ -1,7 +1,6 @@
 import axios from 'axios';
 import config from '../../config';
-import Cookies from 'js-cookie'; 
-
+import Cookies from 'js-cookie';
 
 const axiosInstance = axios.create({
   baseURL: config.baseURL,
@@ -16,9 +15,7 @@ axiosInstance.interceptors.request.use(
     console.log('config-params', config.params);
     console.log('config-header', Cookies.get('userToken'));
     if (Cookies.get('userToken')) {
-      config.headers['Authorization'] = `Bearer ${ Cookies.get(
-        'userToken'
-      )}`;
+      config.headers['Authorization'] = `Bearer ${Cookies.get('userToken')}`;
     }
     return config;
   },
@@ -32,16 +29,17 @@ axiosInstance.interceptors.response.use(
   (error) => {
     if (error?.response?.data) {
       console.log('error', error?.response?.data);
-      if (error?.response?.data?.message?.length)
-        alert(error?.response?.data?.message);
+      // if (error?.response?.data?.message?.length)
+      //   alert(error?.response?.data?.message);
     } else {
       console.log('error', error);
     }
 
     if (error?.response?.data?.statusCode == '10003') {
-      alert('Session Expired');
-      Cookies.remove('userToken')
-      window.location.href = '/';
+      // alert('Session Expired');
+      Cookies.remove('userToken');
+      localStorage.clear();
+      // window.location.href = '/';
     }
     throw error;
   }
