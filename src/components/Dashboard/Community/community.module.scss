@@ -1,0 +1,32 @@
+.community_container {
+}
+
+.community_header {
+  font-size: 20px;
+  line-height: 25px;
+  margin: 10 0;
+  color: #fff;
+}
+
+.main_container {
+  // margin: 20px 0;
+  background: #1b203c;
+  box-shadow: 0 8px 16px rgb(27 27 27 / 9%);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  // border-radius: 20px;
+  list-style: none;
+  color: #fff;
+  border: 2px solid #ffffff30;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+//   border-bottom:  #fff;
+}
+
+.upper_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

@@ -4,3 +4,20 @@
   gap: 3rem;
   margin: 5rem;
 }
+
+@media (max-width: 991px) {
+  .main_container {
+    margin: 1rem;
+  }
+  .desktop_components{
+    display: none;
+  }
+}
+
+
+
+@media (min-width:991px){
+  .community_links{
+    display: none;
+  }
+}

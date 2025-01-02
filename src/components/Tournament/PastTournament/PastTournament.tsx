@@ -72,11 +72,11 @@ export const TournamentCard = ({ cardValue, pastTournament }: any) => {
               height={0}
               width={0}
               sizes="100vw"
-              style={{
-                height: "100px",
-                width: "auto",
-                marginLeft: "-60px",
-              }}
+              // style={{
+              //   height: "100px",
+              //   width: "auto",
+              //   marginLeft: "-60px",
+              // }}
             />
             <p>{cardValue?.reward?.toFixed(2)}</p>
             <Image

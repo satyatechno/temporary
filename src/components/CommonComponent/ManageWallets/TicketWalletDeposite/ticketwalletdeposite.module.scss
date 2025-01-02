@@ -131,3 +131,9 @@
     width: 100%;
     text-align: center;
 }
+
+@media (max-width:991px){
+    .manageWallets__depositAndWithdraw{
+        display: none;
+    }
+}

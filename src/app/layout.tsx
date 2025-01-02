@@ -1,38 +1,39 @@
-import localFont from 'next/font/local';
-import { Inter, Montserrat, Poppins } from 'next/font/google';
-import './globals.css';
-import Header from '@/components/CommonComponent/Header/Header';
-import Footer from '@/components/CommonComponent/Footer/Footer';
-import styles from './page.module.css';
-import { AppProvider } from './Context/AuthContext';
-import { GamesProvider } from './Context/GamesContext';
-import { Suspense } from 'react';
-import Loading from '@/app/loading';
-import TransactionContextProvider from './Context/TransactionContext';
+import localFont from "next/font/local";
+import { Inter, Montserrat, Poppins } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/CommonComponent/Header/Header";
+import Footer from "@/components/CommonComponent/Footer/Footer";
+import styles from "./page.module.css";
+import { AppProvider } from "./Context/AuthContext";
+import { GamesProvider } from "./Context/GamesContext";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
+import TransactionContextProvider from "./Context/TransactionContext";
+import MobileFooter from "@/components/CommonComponent/Footer/Mobilefooter";
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
 });
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
 });
 export const glossBloom = localFont({
-  src: './fonts/Gloss_And_Bloom.ttf',
-  variable: '--font-gloss-and-bloom',
+  src: "./fonts/Gloss_And_Bloom.ttf",
+  variable: "--font-gloss-and-bloom",
 });
 export const inter = Inter({
-  variable: '--font-inter',
-  weight: ['900', '500', '600'],
+  variable: "--font-inter",
+  weight: ["900", "500", "600"],
 });
 export const poppins = Poppins({
-  variable: '--font-poppins',
-  weight: ['900', '500', '600'],
+  variable: "--font-poppins",
+  weight: ["900", "500", "600"],
 });
 export const montserrat = Montserrat({
-  variable: '--font-montserrat',
+  variable: "--font-montserrat",
 });
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
@@ -50,7 +51,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <TransactionContextProvider>
               <Header />
               <Suspense fallback={<Loading />}>{children}</Suspense>
-              <Footer />
+              <div className={styles.desktop_footer}>
+                <Footer />
+              </div>
+              <div className={styles.mobile_footer}>
+                <MobileFooter />
+              </div>
             </TransactionContextProvider>
           </GamesProvider>
         </AppProvider>

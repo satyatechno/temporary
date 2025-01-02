@@ -19,8 +19,9 @@ const CopyAddress = ({ textToCopy, className }: any) => {
     <div style={{ display: "flex" ,width:"100%",flexDirection:"column"}}>
       <IoCopy
         onClick={() => handleCopyClick(textToCopy)}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer" ,fontSize:"18px"}}
         className={className}
+
       />
       {isCopied && <p style={{ color: "white",fontSize:"10px",margin:'10px' }}>Copied !</p>}
     </div>

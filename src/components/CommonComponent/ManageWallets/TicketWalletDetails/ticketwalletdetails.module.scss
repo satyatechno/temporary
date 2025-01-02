@@ -1,138 +1,175 @@
-
 .manageWallets__activeWalletContainer {
-    // border-radius: 22px;
-    // border: 0.1px solid #ffffff46;
-    // background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
-    // box-shadow: 0px 4.547px 4.547px 0px rgba(107, 103, 103, 0.06);
-    // backdrop-filter: blur(15.43067741394043px);
-    // padding: 30px 50px;
-    // margin: 0px 0px 20px 0px;
+  // border-radius: 22px;
+  // border: 0.1px solid #ffffff46;
+  // background: linear-gradient(93deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.04) 105.23%);
+  // box-shadow: 0px 4.547px 4.547px 0px rgba(107, 103, 103, 0.06);
+  // backdrop-filter: blur(15.43067741394043px);
+  // padding: 30px 50px;
+  // margin: 0px 0px 20px 0px;
 }
 
 .ticket_balance_heading {
-    color: #FFF;
-    font-family: "Poppins";
-    font-size: 18px;
-    font-weight: 700;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .manageWallets__ticket {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
-    border: 0.484px solid #FF00D6;
-    background: rgba(205, 205, 205, 0.01);
-    margin: 10px 0px;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 0.484px solid #ff00d6;
+  background: rgba(205, 205, 205, 0.01);
+  margin: 10px 0px;
+  padding: 10px 20px;
 }
 
 .balance {
-    font-size: 14px;
-    font-family: "Poppins";
-    color: white;
+  font-size: 14px;
+  font-family: "Poppins";
+  color: white;
 }
 .manageWallets__walletContainer {
-    border-radius: 8px;
-    border: 0.484px solid #FF00D6;
-    background: rgba(205, 205, 205, 0.01);
-    margin-top: 10px;
+  border-radius: 8px;
+  border: 0.484px solid #ff00d6;
+  background: rgba(205, 205, 205, 0.01);
+  margin-top: 10px;
 }
 
 .manageWallets__walletContainer > hr {
-    margin-top: 0px;
-    margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .manageWallets__walletContainerTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: pink; */
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: pink; */
+  padding: 20px;
 }
 
 .manageWallets__defaultWallet {
-    display: flex;
-    justify-content: center;
-    // align-items: center;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
 }
 
 .walletIcon {
-    margin-top: 5px;
-    color: white;
-    font-size: 2rem;
+  margin-top: 5px;
+  color: white;
+  font-size: 2rem;
 }
 
 .manageWallets__defaultWalletEmail {
-    margin: 0px 10px;
+  margin: 0px 10px;
 }
 
 .manageWallets__defaultWalletEmail > h2 {
-    color: #FFF;
-    font-family: "Poppins";
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .manageWallets__defaultWalletEmail > p {
-    color: #FFF;
-    font-family: "Poppins";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .manageWallets__defaultWalletSettings {
-    /* margin-top: 5px; */
-    display: flex;
-    gap: 5px;
-    /* margin-left: -150px; */
+  /* margin-top: 5px; */
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  /* margin-left: -150px; */
 }
 
-
-
 .manageWallets__walletChain > div {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-radius: 50px;
-    border: 1px solid #CBCBCB;
-    padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 50px;
+  border: 1px solid #cbcbcb;
+  padding: 5px;
 }
 
 .manageWallets__walletChain > div > img {
-    height: 20px;
+  height: 20px;
 }
 
 .manageWallets__walletChain > div > p {
-    color: #FFF;
-    text-align: center;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.manageWallets__walletContainerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.manageWallets__walletContainerBottom > p {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.settingIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.polygon_icon_container{
+    height: 20px;
+    width: 20px;
+    position: relative;
+  }
+
+@media (max-width) {
+  .manageWallets__defaultWalletEmail > h2 {
+    color: #fff;
+    font-family: "Poppins";
+    font-size: clamp(10px,12px,16px);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .manageWallets__defaultWalletEmail > p {
+    color: #fff;
     font-family: "Poppins";
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    margin-right: 5px;
-}
+  }
 
-.manageWallets__walletContainerBottom {
+  .polygon_icon_container{
+    height: 15px;
+    width: 15px;
+    position: relative;
+  }
+
+  .manageWallets__walletContainerTop {
+    padding: 8px;
+  }
+
+  .manageWallets__defaultWallet {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: center;
+    width: min-content;
+  }
 }
-
-.manageWallets__walletContainerBottom > p {
-    color: #FFF;
-    font-family: "Poppins";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.settingIcon {
-    cursor: pointer;
-    color: white;
-    font-size: 1.5rem;
-}
-

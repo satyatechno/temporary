@@ -1,10 +1,9 @@
-
 import styles from "./ticketwalletdetails.module.scss";
 import { AiTwotoneWallet } from "react-icons/ai";
 import { IoMdSettings } from "react-icons/io";
 import { useAppContext } from "@/app/Context/AuthContext";
 import CopyAddress from "../../CopyAddress/CopyAddress";
-
+import Image from "next/image";
 
 // interface wallet {
 //   name: string;
@@ -22,9 +21,8 @@ import CopyAddress from "../../CopyAddress/CopyAddress";
 //   wallet: wallet{};
 // }
 
-const TicketWalletDetail = ({setActiveModal}:any) => {
-
-  const {wallet,userData}:any=useAppContext();
+const TicketWalletDetail = ({ setActiveModal }: any) => {
+  const { wallet, userData }: any = useAppContext();
 
   return (
     <div className={styles.manageWallets__containerRight}>
@@ -34,7 +32,9 @@ const TicketWalletDetail = ({setActiveModal}:any) => {
 
           <div className={styles.manageWallets__ticket}>
             <p className={styles.balance}>Balance</p>
-            <p style={{color:"white"}}>{userData?.tickets?.toFixed(4)} TICKET</p>
+            <p style={{ color: "white" }}>
+              {userData?.tickets?.toFixed(4)} TICKET
+            </p>
           </div>
           <p className={styles.ticket_balance_heading}>Active Wallet</p>
 
@@ -46,13 +46,23 @@ const TicketWalletDetail = ({setActiveModal}:any) => {
                   // fontSize="large"
                 />
                 <div className={styles.manageWallets__defaultWalletEmail}>
-                  <h2>{`${userData?.email || " "}${
-                    wallet?.name ? ` (${wallet.name})` : ""
-                  }`}</h2>
-                  <p>{wallet?.address}</p>
+                  <h2>{`${
+                    userData?.email
+                      ? `${userData?.email.substring(0, 10)}...`
+                      : "N/A"
+                  }${wallet?.name ? ` (${wallet.name})` : ""}`}</h2>
+                  <p>
+                    {" "}
+                    {wallet?.address
+                      ? `${wallet?.address.substring(0, 10)}...`
+                      : "N/A"}
+                  </p>
                 </div>
                 <div className={styles.manageWallets__defaultWalletSettings}>
-                  <CopyAddress textToCopy={wallet?.address} className={styles.settingIcon}/>
+                  <CopyAddress
+                    textToCopy={wallet?.address}
+                    className={styles.settingIcon}
+                  />
                   <IoMdSettings
                     className={styles.settingIcon}
                     fontSize="small"
@@ -63,10 +73,13 @@ const TicketWalletDetail = ({setActiveModal}:any) => {
               </div>
               <div className={styles.manageWallets__walletChain}>
                 <div>
-                  <img
-                    src="https://assets.gamingarcade.io/AssetspolygonChainIcon.webp"
-                    alt=""
-                  />
+                  <div className={styles.polygon_icon_container}>
+                    <Image
+                      src="https://assets.gamingarcade.io/AssetspolygonChainIcon.webp"
+                      alt="polygon"
+                      fill
+                    />
+                  </div>
                   <p>Polygon</p>
                 </div>
               </div>
@@ -79,18 +92,22 @@ const TicketWalletDetail = ({setActiveModal}:any) => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
 
 export default TicketWalletDetail;
 
-
-   {/* <CopyToClipboard text={wallet?.address}> */}
-    {/* <RiFileCopyFill
+{
+  /* <CopyToClipboard text={wallet?.address}> */
+}
+{
+  /* <RiFileCopyFill
       className={styles.settingIcon}
       onClick={handleCopy(wallet?.address)}
       fontSize="small"
-      /> */}
-    {/* </CopyToClipboard> */}
+      /> */
+}
+{
+  /* </CopyToClipboard> */
+}

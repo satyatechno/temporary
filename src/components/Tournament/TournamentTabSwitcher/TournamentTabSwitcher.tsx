@@ -72,7 +72,7 @@ const TournamentTabSwitcher = () => {
 
 
   return (
-    <main className={styles.main_containers}>
+    <main className={styles.main_container}>
       <div className={styles.wrapper}>
         <div
           className={`${styles.taebSwitch} ${

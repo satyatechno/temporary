@@ -1,7 +1,19 @@
-.body{
-position: relative;
-background-color:#000556;
-margin: 1px;
-overflow-x: hidden;
+.body {
+  position: relative;
+  background-color: #000556;
+  margin: 1px;
+  overflow-x: hidden;
 }
 
+
+@media (min-width: 991px) {
+  .mobile_footer {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .desktop_footer {
+    display: none;
+  }
+}

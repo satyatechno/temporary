@@ -10,37 +10,39 @@ import { useState } from "react";
 import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
 import Button from "../AnimatedButton/AnimatedButton";
 import config from "../../../../config";
-import Cookies from 'js-cookie'; 
+import Cookies from "js-cookie";
 import { useAppContext } from "@/app/Context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const hasSignedInToken = Cookies.get("userToken")
-  const {userData,wallet}=useAppContext();
-  const router=useRouter();
+  const hasSignedInToken = Cookies.get("userToken");
+  const { userData, wallet } = useAppContext();
+  const router = useRouter();
   const [activeButton, setActive] = useState("CURRENCY");
-
-
 
   const pathname = usePathname();
   const noHeaderFooterPaths = ["/userwallet"];
 
-  const absoulte_header=['/']
+  const absoulte_header = ["/"];
 
   const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
 
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
 
-  if(!shouldShowHeaderFooter){
+  if (!shouldShowHeaderFooter) {
     return null;
   }
-  
-// if(!hasSignedInToken){return null};
 
+  // if(!hasSignedInToken){return null};
 
   return (
-    <div className={styles.main_container} style={{ position: shouldShowHeaderFooterAbsolute ? "relative" : "absolute" }}>
+    <div
+      className={styles.main_container}
+      style={{
+        position: shouldShowHeaderFooterAbsolute ? "relative" : "absolute",
+      }}
+    >
       <div className={styles.image_container}>
         <Link href="/">
           <Image
@@ -61,7 +63,7 @@ const Header = () => {
       </div>
       <div className={styles.wallet_headers}>
         {/* togging of curreny logic */}
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div className={styles.wallet_currency_type}>
           {!hasSignedInToken ? null : wallet?.balance <= 0 ? (
             <div
               className={styles.toggleBtnContainerWeb}
@@ -120,24 +122,15 @@ const Header = () => {
           ) : null}
         </div>
 
-        <div>
+        <div className={styles.notification_image}>
           <Image
             src={`${config.imageDomain}AssetsnotificationBell.webp`}
-            alt=""
-            width={40}
-            height={15}
-            style={{
-              marginRight: "30px",
-              marginTop: "10px",
-              color: "white",
-              cursor: "pointer",
-              height: "40px",
-            }}
+            alt="notification-logo"
+            fill
           />
         </div>
 
         {hasSignedInToken ? (
-         
           <Button
             value="Wallet"
             icon={`${config.imageDomain}loading-images/wallet2.webp`}
@@ -156,7 +149,6 @@ const Header = () => {
             />
           </p>
         )}
-        
       </div>
       {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
     </div>
@@ -164,13 +156,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// will removed in future
-
-// <Login setIsModalOpen={setIsModalOpen} />
-{
-  /* {isModalOpen && (
-        <Register setIsModalOpen={setIsModalOpen}/>
-        
-      )} */
-}

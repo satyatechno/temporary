@@ -3,6 +3,8 @@ import DashboardTournamentHistory from "@/components/Dashboard/DashboardsTournam
 import UserDetails from "@/components/Dashboard/UserDetails/UserDetails";
 import UserReferDetails from "@/components/Dashboard/UserReferSystem/UserReferDetails";
 import styles from "./dashboad.module.scss";
+import CommunityLink from "@/components/Dashboard/Community/CommunityLink";
+import { communityAboutData, CommunityData } from "@/utils/Utils";
 
 interface DashboardProps {
   userDetails: any | null;
@@ -13,22 +15,23 @@ const Dashboard: React.FC<DashboardProps> = ({ userDetails }) => {
     <main className={styles.main_container}>
       <UserDetails userDetails={userDetails} />
       <UserReferDetails />
-      <DashboardGameHistory
+      {/* <DashboardGameHistory
         games={[]}
         user={{
           uuid: "",
         }}
         loadingGames={false}
         isAuthenticated={false}
-      />
-       <DashboardTournamentHistory />
+      /> */}
+      <div className={styles.desktop_components}>
+        <DashboardTournamentHistory />
+      </div>
+      <div className={styles.community_links}>
+        <CommunityLink header={"Community"} socialData={CommunityData} />
+        <CommunityLink header={"About"} socialData={communityAboutData} />
+      </div>
     </main>
   );
 };
 
 export default Dashboard;
-
-
- // openModal={function (): void {
-        //   throw new Error("Function not implemented.");
-        // }}

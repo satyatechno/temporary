@@ -191,3 +191,10 @@ p.std_p.light a {
     }
 
 }
+
+@media (max-width: 991px) {
+    .footerDesktop {
+      display: none;
+    }
+  }
+  

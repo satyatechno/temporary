@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./DashboardGameHistory.module.scss";
 import config from "../../../../config";
+// import { cookies } from "next/headers";
+import Cookies from "js-cookie";
+import { useCallback, useEffect, useState } from "react";
+import { challengeHistoryApi } from "@/services/challenge";
+import { useAppContext } from "@/app/Context/AuthContext";
 
-interface Game {
+interface tournameHistory {
   gameId: string;
   game: { gameName: string };
   type: string;
@@ -28,28 +35,65 @@ interface Game {
 }
 
 interface GameHistoryProps {
-  games: Game[];
+  tournameHistory: tournameHistory[];
   user: { uuid: string };
   loadingGames: boolean;
-  isAuthenticated: boolean;
-  openModal: () => void;
 }
 
-const DashboardGameHistory: React.FC<GameHistoryProps> = ({
-  games,
+const DashboardGameHistory: React.FC<GameHistoryProps> = async ({
   user,
   loadingGames,
-  isAuthenticated,
-  openModal,
 }) => {
+  const token = Cookies.get("userToken");
+
+  const [tournameHistory, setTournamentHistory] = useState();
+
+  const {userData}=useAppContext();
+  console.log("user-id",userData?.uuid)
+
   // Function to render game rows
+
+  // const medium = "CURRENCY" ? "currency" : "ticket";
+
+  const fetchDashboardTournamentHistoryData = useCallback(async () => {
+    
+    try {
+      const res = await challengeHistoryApi({
+        medium: 'ticket',
+      });
+      setTournamentHistory(res?.data?.data?.game ?? []);
+      console.log('open chalanges', res);
+    } catch (error: any) {
+      console.log('error', error);
+    }
+  }, []);
+
+  console.log("tournameHistory",tournameHistory)
+  // console.log("gamegamegame",game?.data?.data?.game)
+
+  // const res = await openChallengesApi({
+  //   gameName: gameDetails?.name,
+  //   medium: 'ticket',
+  // });
+
+  useEffect(() => {
+    // if (gameDetails?.name)
+       fetchDashboardTournamentHistoryData();
+  }, []);
+  // if (!openChallenges?.length) return null;
+
   const renderGameRows = () => {
     if (loadingGames) {
       return (
         <tr>
           <td colSpan={7} className={styles.emptyRow}>
             <div className={styles.loadingContainer}>
-              <Image src={`${config.imageDomain}/Assets/gameTbl.webp"`} alt="Loading" width={150} height={150} />
+              <Image
+                src={`${config.imageDomain}/Assets/gameTbl.webp"`}
+                alt="Loading"
+                width={150}
+                height={150}
+              />
               <h4>Loading...</h4>
             </div>
           </td>
@@ -57,7 +101,7 @@ const DashboardGameHistory: React.FC<GameHistoryProps> = ({
       );
     }
 
-    if (games?.length === 0) {
+    if (tournameHistory?.length === 0) {
       return (
         <tr>
           <td colSpan={7} className={styles.emptyRow}>
@@ -68,19 +112,21 @@ const DashboardGameHistory: React.FC<GameHistoryProps> = ({
                 width={150}
                 height={150}
               />
-              <h4>You are not playing any games. Start playing and start earning!</h4>
+              <h4>
+                You are not playing any games. Start playing and start earning!
+              </h4>
             </div>
           </td>
         </tr>
       );
     }
 
-    return games.map((game, index) => {
+    return tournameHistory?.map((game:any, index:any) => {
       const isUserPlayer1 = game.player1.uuid === user.uuid;
       const opponent = isUserPlayer1 ? game.player2 : game.player1;
-      const score = `${isUserPlayer1 ? game.player1.score : game.player2.score} / ${
-        isUserPlayer1 ? game.player2.score : game.player1.score
-      }`;
+      const score = `${
+        isUserPlayer1 ? game.player1.score : game.player2.score
+      } / ${isUserPlayer1 ? game.player2.score : game.player1.score}`;
       const result = game.winner?.uuid
         ? game.winner.uuid === user.uuid
           ? "Won"

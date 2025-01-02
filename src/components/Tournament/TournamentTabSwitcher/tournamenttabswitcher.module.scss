@@ -123,3 +123,24 @@
   width: 100%;
   max-width: 424px;
 }
+
+
+
+@media (max-width: 991px) {
+
+  .main_container {
+    padding: 1rem;
+  }
+
+  .wrapper {
+    padding: 0rem;
+  }
+  
+  .taeb {
+    padding: 12px 0;
+    font-size: 12px;
+    font-weight:500;
+  }
+
+
+}
