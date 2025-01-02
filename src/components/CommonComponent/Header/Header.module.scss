@@ -112,8 +112,8 @@
     width: 100%;
     // padding: 1rem;
     margin: 1.5rem auto;
-    // position: absolute;
-    z-index: 10;
+    position: relative !important;
+    // z-index: 10;
   }
 
   .toggler_page_header {

@@ -2,6 +2,7 @@ import AnimatedButton from "@/components/CommonComponent/AnimatedButton/Animated
 import config from "../../../../config";
 import AlphaPassCard from "./AlphaPassCard/AlphaPassCard";
 import styles from "./alphapass.module.scss";
+import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 
 const AlphaPass = () => {
   return (
@@ -15,7 +16,9 @@ const AlphaPass = () => {
               Players can collect unique NFTs that can be used in-game, traded
               on NFT Marketplaces or staked to receive steady rewards.
             </p>
-            <AnimatedButton text="Comming soon" />
+            {/* <AnimatedButton text="Comming soon" /> */}
+            <Button value="Comming soon" />
+
           </div>
 
           <div className={styles.alpha_pass_gif}>

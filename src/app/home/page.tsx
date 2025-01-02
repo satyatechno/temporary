@@ -1,13 +1,14 @@
-import AlphaPass from '@/components/Home/Alpha Pass/AlphaPass';
-import CommingSoon from '@/components/Home/Comming Soon/CommingSoon';
-import HomeCarousel from '@/components/Home/HomeCarousel/HomeCarousel';
-import LatestP2EGames from '@/components/Home/LatestP2EGames/LatestP2EGames';
-import MostPlayed from '@/components/Home/MostPlayed/MostPlayed';
-import OpenChallenges from '@/components/Home/OpenChallenges/OpenChallenges';
-import PlayBigWinBig from '@/components/Home/PlayBigWinBig/PlayBigWinBig';
-import PlayToEarn from '@/components/Home/PlayToEarn/PlayToEarn';
-import TopArcadian from '@/components/Home/TopArcadian/TopArcadian';
-
+import AlphaPass from "@/components/Home/Alpha Pass/AlphaPass";
+import CommingSoon from "@/components/Home/Comming Soon/CommingSoon";
+import HomeCarousel from "@/components/Home/HomeCarousel/HomeCarousel";
+import LatestP2EGames from "@/components/Home/LatestP2EGames/LatestP2EGames";
+import MostPlayed from "@/components/Home/MostPlayed/MostPlayed";
+import OpenChallenges from "@/components/Home/OpenChallenges/OpenChallenges";
+import PlayBigWinBig from "@/components/Home/PlayBigWinBig/PlayBigWinBig";
+import PlayToEarn from "@/components/Home/PlayToEarn/PlayToEarn";
+import TopArcadian from "@/components/Home/TopArcadian/TopArcadian";
+import styles from "./home.module.scss";
+import GameGrid from "@/components/Games/GamesGrid/GamesGrid";
 // import config from '../../../config';
 
 // type HomeData = {
@@ -32,15 +33,20 @@ const HomePage: React.FC = async () => {
   // const games = await fetchHomeData();
   return (
     <main>
-      <HomeCarousel />
-      <OpenChallenges />
-      <LatestP2EGames />
-      <AlphaPass />
-      <MostPlayed />
-      <PlayToEarn />
-      <CommingSoon />
-      <TopArcadian />
-      <PlayBigWinBig />
+      <div className={styles.desktop_screen}>
+        <GameGrid />
+      </div>
+      <div className={styles.mobile_screen}>
+        <HomeCarousel />
+        <OpenChallenges />
+        <LatestP2EGames />
+        <AlphaPass />
+        <MostPlayed />
+        <PlayToEarn />
+        <CommingSoon />
+        <TopArcadian />
+        <PlayBigWinBig />
+      </div>
     </main>
   );
 };
