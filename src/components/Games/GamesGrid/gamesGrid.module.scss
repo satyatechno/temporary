@@ -16,6 +16,11 @@
   flex-direction: row;
 }
 
+.row1 {
+  display: flex;
+  flex-direction: row;
+}
+
 .column {
   max-width: 680px;
   width: 100%;
@@ -49,4 +54,48 @@
   position: relative;
   aspect-ratio: 5 / 4;
   margin: 10;
+}
+
+.mob_row{
+  display: none;
+}
+
+@media (max-width: 911px) {
+  .row1 {
+    display: none;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .column {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .mob_row {
+    display: flex;
+    width: 100%;
+    max-width: 380px;
+  }
+  .imageContainer {
+    max-width: 215px;
+    max-height: 100%;
+    width: 100%;
+    // height: 100%;
+    position: relative;
+    aspect-ratio: 5 / 4;
+    margin: 10;
+  }
+
+  .imageContainer1 {
+    max-width: 135px;
+    max-height: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    aspect-ratio: 5 / 4;
+    margin: 10;
+  }
 }

@@ -3,6 +3,7 @@ import { useGamesContext } from '@/app/Context/GamesContext';
 import { poppins } from '@/app/layout';
 import Link from 'next/link';
 import styles from './gamesGrid.module.scss';
+import Image from 'next/image';
 const GamesGrid = ({ game }: { game: string }) => {
   const { games } = useGamesContext();
 
@@ -20,7 +21,7 @@ const GamesGrid = ({ game }: { game: string }) => {
               return (
                 <Link key={index?.toString()} href={`/games/${item?.name}`} replace>
                   <div className={styles.game}>
-                    <img src={item.thumbnail} alt="gaming" />
+                    <Image src={item.thumbnail} alt="gaming" fill />
                   </div>
                 </Link>
               );

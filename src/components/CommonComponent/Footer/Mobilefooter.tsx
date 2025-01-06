@@ -8,6 +8,19 @@ import styles from "./mobile_footer.module.scss";
 const MobileFooter = () => {
   const pathName = usePathname();
 
+
+  const noHeaderFooterPaths = ["/userwallet"];
+
+
+  const shouldShowHeaderFooter = !(
+    noHeaderFooterPaths.includes(pathName) || 
+    (pathName.startsWith("/games/") && pathName !== "/games")
+  );
+  
+  if (!shouldShowHeaderFooter) {
+    return null;
+  }
+
   // Define a mapping of routes to animation points
   const routeToPointMap = {
     "/tournament": styles.tournamentPoint,

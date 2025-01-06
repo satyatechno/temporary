@@ -43,10 +43,50 @@
   max-width: 16.34vw;
   //   margin-left: 2vw;
 }
-
-.game img {
+.game{
+  position: relative;
   height: 3.5vw;
   width: 3.5vw;
   cursor: pointer;
   margin: 5;
+}
+
+
+@media (max-width: 991px) {
+  .moreGameHeading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .moreGameHeading h4 {
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.849px;
+
+    font-style: normal;
+    font-weight: 900;
+    line-height: 108.02%;
+    text-align: left;
+    letter-spacing: -0.03em;
+    color: #fff;
+    height: auto;
+    position: relative;
+    margin-top: 10;
+    margin-bottom: 20;
+  }
+  .games {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 100%;
+  }
+
+  .game {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    margin: 5;
+  }
 }

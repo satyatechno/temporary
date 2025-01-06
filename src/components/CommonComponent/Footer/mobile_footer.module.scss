@@ -110,3 +110,38 @@ ul.mbFooterNav li .img {
 ul.mbFooterNav li.currentPage .img img {
   filter: brightness(0) invert(1);
 }
+
+
+ul.mbFooterNav li:is(:hover, :focus, .currentPage) .img {
+  transform: translateY(-15px);
+}
+ul.mbFooterNav li:is(:hover, :focus, .currentPage) .img::after {
+  background: linear-gradient(180deg, #ed4cbc 0%, #a4155f 100%);
+  transform: translate(-50%, -50%) scale(1);
+  
+}
+ul.mbFooterNav li.currentPage {
+  position: relative;
+}
+
+ul.mbFooterNav li.currentPage .img::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;/* Full height of the parent */
+  background: linear-gradient(180deg, #ed4cbc 0%, #a4155f 100%);
+  border-radius: 50%; /* Adjust if needed */
+  transform: translate(-50%, -50%) scale(1.5); /* Center and scale */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  z-index: -1; /* Push behind the content */
+}
+
+ul.mbFooterNav li.currentPage .img img {
+  filter: brightness(0) invert(1);
+}
+
+ul.mbFooterNav li.currentPage:hover .img {
+  transform: translateY(-27px); /* Hover animation */
+}
+
