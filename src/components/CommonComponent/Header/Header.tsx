@@ -26,7 +26,12 @@ const Header = () => {
 
   const absoulte_header = ["/"];
 
-  const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
+
+  
+
+  const shouldShowHeaderFooter = !( noHeaderFooterPaths.includes(pathname)  ||  (pathname.startsWith("/playgame") ) 
+  );
+  
 
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
 

@@ -155,17 +155,17 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link href={{ pathname: "/policy/terms-of-use" }}>
+                  <Link href={{ pathname: "/terms-of-use" }}>
                     Terms Of Use
                   </Link>
                 </li>
                 <li>
-                  <Link href={{ pathname: "/policy/cookie-policy" }}>
+                  <Link href={{ pathname: "/cookie-policy" }}>
                     Cookie Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href={{ pathname: "/policy/privacy-policy" }}>
+                  <Link href={{ pathname: "/privacy-policy" }}>
                     Privacy Policy
                   </Link>
                 </li>
@@ -234,7 +234,7 @@ const Footer = () => {
                 ©{new Date().getFullYear()}. All rights reserved. Gaming Arcade.
                 <Link
                   className="m-1"
-                  href={{ pathname: "/policy/terms-of-use" }}
+                  href={{ pathname: "/terms-of-use" }}
                 >
                   Terms & Condition
                 </Link>

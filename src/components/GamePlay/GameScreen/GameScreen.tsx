@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
-import useUnityDevicePixelRatio from '@/hooks/useUnityDevicePixelRatio';
-import { useEffect, useState } from 'react';
-import { Unity, useUnityContext } from 'react-unity-webgl';
-import ControlMenu from '../ControlMenu/ControlMenu';
-import GameLoading from '../GameLoading/GameLoading';
-import styles from './gameScreen.module.scss';
-import QuitPopup from '../QuitPopPup/QuitPopup';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { gameScoreApi } from '@/services/GameServices';
-import { useAppContext } from '@/app/Context/AuthContext';
+import useUnityDevicePixelRatio from "@/hooks/useUnityDevicePixelRatio";
+import { useEffect, useState } from "react";
+import { Unity, useUnityContext } from "react-unity-webgl";
+import ControlMenu from "../ControlMenu/ControlMenu";
+import GameLoading from "../GameLoading/GameLoading";
+import styles from "./gameScreen.module.scss";
+import QuitPopup from "../QuitPopPup/QuitPopup";
+import { useRouter, useSearchParams } from "next/navigation";
+import { gameScoreApi } from "@/services/GameServices";
+import { useAppContext } from "@/app/Context/AuthContext";
+import DragableMenu from "@/components/Games/DragableMenu/DragableMenu";
+import { Draggable } from "@/components/CommonComponent/DragableDemo/DragableDemo";
 
 const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   const {
@@ -48,39 +50,39 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   useEffect(() => {
     if (isLoaded === true) {
       sendMessage(
-        'LoadLevelManager',
-        'LoadLevel',
-        searchParams?.get('stage') ?? 1
+        "LoadLevelManager",
+        "LoadLevel",
+        searchParams?.get("stage") ?? 1
       );
     }
   }, [isLoaded, window.innerWidth]);
 
   const scoreSumbitter = async () => {
-    const gameId = localStorage.getItem('gameId');
+    const gameId = localStorage.getItem("gameId");
     try {
       let data: any = {};
       const res = await gameScoreApi(gameId);
       data = { ...res.data?.data?.game };
-      let player = '';
-      let oppenent = '';
+      let player = "";
+      let oppenent = "";
       if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
-        player = 'player1';
-        oppenent = 'player2';
+        player = "player1";
+        oppenent = "player2";
       } else {
-        player = 'player2';
-        oppenent = 'player1';
+        player = "player2";
+        oppenent = "player1";
       }
       if (res.data?.data?.game?.winner) {
         if (res.data?.data?.game?.winner?.uuid == userData?.uuid) {
-          data.status = 'win';
+          data.status = "win";
           data.score = res.data?.data?.game?.player2?.score;
         } else {
-          data.status = 'loose';
+          data.status = "loose";
           data.score = res.data?.data?.game?.player2?.score;
         }
       } else {
         data.score = res.data?.data?.game?.[player]?.score;
-        data.status = 'pending';
+        data.status = "pending";
       }
       //@ts-ignore
       router.replace(`/playgame/${data?.status}`, { state: data });
@@ -122,27 +124,27 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     // setTransaction(false);
   };
   useEffect(() => {
-    addEventListener('GameOver', handleGameOver);
-    addEventListener('QuitGame', handleQuitGame);
-    addEventListener('GameEnd', handleGameEnd);
+    addEventListener("GameOver", handleGameOver);
+    addEventListener("QuitGame", handleQuitGame);
+    addEventListener("GameEnd", handleGameEnd);
     return () => {
-      removeEventListener('GameOver', handleGameOver);
-      removeEventListener('QuitGame', handleQuitGame);
-      removeEventListener('GameEnd', handleGameEnd);
+      removeEventListener("GameOver", handleGameOver);
+      removeEventListener("QuitGame", handleQuitGame);
+      removeEventListener("GameEnd", handleGameEnd);
     };
   }, []);
   useEffect(() => {
     if (isLoaded === true) {
       let data = {
-        address: 'wallet?.address',
-        tourId: '',
+        address: "wallet?.address",
+        tourId: "",
         gameId: 1,
-        gameMode: true ? 'FreePlay' : 'OneVSOne',
-        entryId: '',
-        baseUrl: 'alpha.gamingarcade.io/api/v1',
+        gameMode: true ? "FreePlay" : "OneVSOne",
+        entryId: "",
+        baseUrl: "alpha.gamingarcade.io/api/v1",
       };
 
-      sendMessage('UnityReceiver', 'PlayerDetails', JSON.stringify(data));
+      sendMessage("UnityReceiver", "PlayerDetails", JSON.stringify(data));
       // console.log(window?.unityInstance, "unity instance");
       // console.log(userId, 0.001)
     }
@@ -151,15 +153,15 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     let data = { darkmode: mode, sound: mute, quit: quit };
     //@ts-ignore
     window.unityInstance.SendMessage(
-      'ReactHelper',
-      'SendMsg',
+      "ReactHelper",
+      "SendMsg",
       JSON.stringify(data)
     );
   };
   const resumeAgain = () => {
     setPopupValue(false);
     //@ts-ignore
-    window.unityInstance.SendMessage('PauseGameHandler', 'ResumeGame', 'true'); // resume
+    window.unityInstance.SendMessage("PauseGameHandler", "ResumeGame", "true"); // resume
   };
 
   const quitGame = () => {
@@ -167,10 +169,11 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     // const entryId = localStorage.getItem("entryId");
     setPopupValue(false);
     //@ts-ignore
-    window.unityInstance.SendMessage('PauseGameHandler', 'ResumeGame', 'false'); // quit
+    window.unityInstance.SendMessage("PauseGameHandler", "ResumeGame", "false"); // quit
     setTimeout(() => {
       scoreSumbitter();
     }, 3000);
+
     // unload();
     // setIsGameOver(true);
     // setIsNavigate(false);
@@ -191,7 +194,7 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
           <div className={styles.gameView}>
             <Unity
               unityProvider={unityProvider}
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: "100%", height: "100%" }}
               devicePixelRatio={devicePixelRatio}
             />
           </div>
@@ -207,6 +210,21 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
               }}
             />
           </div>
+
+          <div className={styles.DragableMenu}>
+            {/* <Draggable/> */}
+            {/* <DragableMenu
+              scoreToBeat={scoreToBeat}
+              actions={{
+                // fullScreen: requestFullscreen,x
+                quit: (param1: any, param2: any, param3: any) =>
+                  mode(param1, param2, param3),
+                darkMode: (param1: any, param2: any, param3: any) =>
+                  mode(param1, param2, param3),
+              }}
+            /> */}
+          </div>
+
           {!isLoaded && (
             <div className={styles.loading}>
               <GameLoading

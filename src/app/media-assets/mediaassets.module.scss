@@ -1,0 +1,2047 @@
+.mediaAsset h1 {
+    font-family: "gloss_and_bloomregular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 124.796px;
+    line-height: 125px;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #ff00d4;
+    transform: rotate(-3.65deg);
+    margin: 0px;
+}
+
+.mediaAsset h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 90.6627px;
+    line-height: 94.52%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    margin-top: -30px;
+}
+
+div div div .f70 {
+    font-size: 70px;
+    line-height: 84px;
+}
+
+.barCs1Mass {
+    background-image: url("https://assets.gamingarcade.io/Assets/banner-bg-mas.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+
+}
+
+section.bannerMas {
+    padding: 130px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+span.imgCs1Mas {
+    position: absolute;
+    top: -50px;
+    left: 50px;
+}
+
+.barCs1Mass .barImgMain {
+    position: relative;
+}
+
+.barCs1Mass span.imgCs11Mas {
+    position: absolute;
+    left: 180px;
+    bottom: -70px;
+}
+
+.barCs1Mass span.imgCs2Mas {
+    position: absolute;
+    top: -120px;
+    right: 130px;
+}
+
+span.imgCs22Mas {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+}
+
+.bar-ccs-mass img {
+    width: 100%;
+    height: 100%;
+}
+
+span.imgCs1Mas img {
+    width: 118px;
+    height: 119px;
+}
+
+.mediaAsset h3 {
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 70px;
+    /* identical to box height, or 140% */
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.mediaAsset p {
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.9329px;
+    line-height: 27px;
+    /* or 160% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.container1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section.brandTxtSec {
+    padding: 90px 0;
+}
+
+
+.mediaAsset h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25.6584px;
+    line-height: 26px;
+    /* identical to box height, or 100% */
+    letter-spacing: -0.183274px;
+    color: #FFFFFF;
+}
+
+
+.downloadFlexMas {
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 120px;
+    padding-top: 0px;
+    padding-right: 120px;
+    padding-bottom: 0px;
+    padding-left: 120px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    background-image: url("https://assets.gamingarcade.io/Assets/down-bg-mas.webp");
+
+}
+
+
+
+
+.mediaAsset .txtMas {
+    max-width: 293px;
+    transform: translateY(-20px);
+}
+
+.mediaAsset .imgDownMas {
+    max-width: 60px;
+    transform: translateY(-20px);
+}
+
+.mediaAsset .imgMas {
+    max-width: 400px;
+}
+
+.mediaAsset .checkMas {
+    color: #fff;
+}
+
+.mediaAsset label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 132% */
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    display: flex;
+    margin-top: 15px;
+    align-items: flex-end;
+}
+
+.mediaAsset input[type="checkbox"] {
+    margin-right: 13px;
+    width: 40px;
+    height: 40px;
+    border-radius: inherit;
+}
+
+
+.infographicsFlexMas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 0;
+}
+
+.infographicsFlexMas .txtMas {
+    max-width: 680px;
+}
+
+.infographicsFlexMas .imgMas {
+    max-width: 309px;
+}
+
+span.designDiamond {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+}
+
+.infographicsSectionMas {
+    position: relative;
+}
+
+/* hz css  */
+.hzTabLink {
+    background: transparent;
+    color: #9E9E9E;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.tabsLinksWrap h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    line-height: initial;
+    font-family: 'poppins';
+    margin: 40px 0 0;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.hzTabLink:hover {
+    color: #9E9E9E;
+}
+
+.tabsLinksWrap .hzTabLink[aria-selected="true"] {
+    background: transparent;
+    color: #9E9E9E;
+}
+
+.tabsLinksWrap .hzTabLink:before {
+    transition: all .5s cubic-bezier(0, 1.66, 1, 1);
+}
+
+.tabsLinksWrap .hzTabLink:hover:before {
+    width: 9px;
+    max-width: 9px;
+}
+
+.tabsLinksWrap .hzLinearButton {
+    width: max-content;
+    margin-bottom: 30px;
+}
+
+.hzTabLink {
+    background: transparent !important;
+    color: #9E9E9E !important;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.tabsLinksWrap h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    line-height: initial;
+    font-family: 'poppins';
+    margin: 40px 0 0;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.hzTabLink:hover {
+    color: #9E9E9E !important;
+}
+
+.tabsLinksWrap .hzTabLink[aria-selected="true"] {
+    background: transparent !important;
+    color: #9E9E9E !important;
+}
+
+.tabsLinksWrap .hzTabLink[aria-selected="true"]:before {
+    content: '';
+    width: 18px;
+    height: 2px;
+    background: #E924EF;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tabsLinksWrap .hzLinearButton {
+    width: max-content;
+    margin-bottom: 30px;
+}
+
+h2.hzGradientText,
+span.hzGradientText {
+    background: linear-gradient(90deg, #FF20F6 33.49%, #00E0FF 65.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.logoBox {
+    text-align: center;
+    position: relative;
+}
+
+.logoBox img {
+    max-width: 355px;
+}
+
+.logoBox h3 {
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.logText {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logText p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 40px;
+}
+
+section.hzMediaTabSec {
+    padding-top: 50px;
+}
+
+.logoGridBoxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    max-width: max-content;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.logoGridBoxes img {
+    max-height: 100px;
+}
+
+.mtic2 .logoBox {
+    margin-bottom: 70px;
+}
+
+span.colorBox {
+    width: 100%;
+    height: 160px;
+    display: block;
+    border-radius: inherit;
+}
+
+.yellowColor {
+    background: #FFC000;
+}
+
+.redColor {
+    background: #EC1C26;
+}
+
+.greenColor {
+    background: #2491AE;
+}
+
+.colorCopyBox {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.colorCopyBox h3 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    line-height: normal;
+}
+
+.colorCopyBox p {
+    font-size: 14px;
+    color: #000;
+    line-height: 2;
+    text-align: left;
+    margin: 0;
+}
+
+.colorInner {
+    padding: 40px 30px;
+}
+
+.colorCopyBox p span:first-child {
+    display: inline-block;
+    min-width: 50px;
+}
+
+.hz-figure-img figcaption {
+    font-size: 17px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.hz-figure-img {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hz-figure-img img {
+    max-width: 820px;
+}
+
+.founder-profile {
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(180deg, #0CF0FA 0.46%, rgba(164, 5, 191, 0) 71%);
+    border: 1px solid #368FA9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 23px;
+    box-shadow: 1px 3px 11px 1px #7A0887;
+}
+
+.founder-profile img {
+    width: 100%;
+}
+
+.founder-profile+h3 {
+    font-size: 14px;
+}
+
+.utilizing_the_brand_container_upper{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    width: 100%;
+    justify-content: space-between;
+    // margin: 2rem;
+    margin-top: 50px;
+
+}
+
+.utilizing_the_brand_container_lower{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    justify-content: space-between;
+    // margin: 2rem;
+    margin-top: 50px;
+    margin:  6rem 9rem;
+}
+
+.avoid_shedding_negative_light{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.avoid_shedding_negative_light h2{
+    display: flex;
+    align-items: center;
+    min-height: 290px;
+    background: linear-gradient(90deg, #EE00BA 0%, rgb(255 255 255 / 30%) 119.33%);
+    border-radius: 0 20px 20px 0;
+    padding:3rem 12rem;
+    font-size: 49px;
+    letter-spacing: -.434377px;
+    text-transform: capitalize;
+    line-break: anywhere;
+    line-height: 1.2;
+}
+
+.keep_gaming_arcade_container h2{
+    display: flex;
+    align-items: center;
+    min-height: 290px;
+    // background: linear-gradient(90deg, #EE00BA 0%, rgb(255 255 255 / 30%) 119.33%);
+    // border-radius: 0 20px 20px 0;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(-90deg, #00E0FF 0%, rgb(255 255 255 / 30%) 119.33%);
+    padding:3rem 12rem;
+    font-size: 39px;
+    letter-spacing: -.434377px;
+    text-transform: capitalize;
+    line-break: anywhere;
+    line-height: 1.2;
+}
+
+.utilizeSec h2.hzGradientText {
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+
+.utilizeSec p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+section.utilizeSec {
+    padding: 140px 0 30px;
+}
+
+.utilizeBoxText h2 {
+    font-size: 49px;
+    letter-spacing: -0.434377px;
+    text-transform: capitalize;
+    max-width: 420px;
+    line-break: anywhere;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.utilizeContent h3 {
+    font-size: 19px;
+    text-align: left;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+.utilizeContent {
+    text-align: left;
+}
+
+.utilizeContent ul li {
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.utilizeContent ul li::marker {
+    font-size: 0;
+}
+
+.utilizeContent ul li::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: -30px;
+    top: 10px;
+    background: #6FCB03;
+    font-size: 27px;
+    outline: 2px solid #6FCB03;
+    outline-offset: 1px;
+}
+
+.utilizeRow {
+    padding-top: 50px;
+}
+
+.utilizeContent p {
+    text-align: left;
+    margin-bottom: 40px;
+    width: 90%;
+
+
+}
+
+.utilizeBoxLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.utilizeBoxLeft,
+.utilizeBoxRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    min-height: 290px;
+    min-width: 46%;
+    border-radius: 0 20px 20px 0;
+    background: linear-gradient(90deg, #EE00BA 0%, rgb(255 255 255 / 30%) 119.33%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.utilizeBoxRight {
+    right: 0;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(-90deg, #00E0FF 0%, rgb(255 255 255 / 30%) 119.33%);
+}
+
+.utilizeBoxRight h2 {
+    font-size: 36px;
+    text-align: right;
+}
+
+.tvfilmContent h2 {
+    font-size: 50px;
+    text-align: left;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.tvfilmContent h2 span {
+    margin: 0;
+    font-size: inherit;
+    display: block;
+}
+
+.tvfilmContent p {
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.5;
+    width: 50%;
+}
+
+.laptopImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+}
+
+section.tvandfilms {
+    position: relative;
+    padding: 250px 0 100px;
+}
+
+.laptopImg img {
+    width: 100%;
+}
+
+.movieComContent h2 {
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 50px;
+}
+
+.movieComContent {
+    margin-top: 110px;
+}
+
+.movieComContent p {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+section.movieCommercial .Row {
+    margin-top: 70px;
+}
+
+.hzStepButton {
+    font-size: 53px;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #FF00C7 0%, #2FDAEC 100%);
+    border-radius: 15.2032px;
+    padding: 0 40px;
+    outline: 0;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.movieCommercial .utilizeContent ul {
+    margin-top: 70px;
+}
+
+.GALogo{
+    cursor: pointer;
+}
+
+
+
+.downloadIcon{
+    position: absolute;
+
+    font-size: 40px;
+    top:30px;
+    right: 30px;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.logoBox:hover .downloadIcon{
+    opacity: 1; /* Show the download icon on hover */
+    z-index: 10;
+}
+
+.hzStepButton:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: all .4s ease;
+    background: #FF00C7;
+    z-index: -1;
+}
+
+.hzStepButton:hover:before {
+    width: 100%;
+}
+
+.movieCommercial .utilizeContent ul li:before {
+    background: #FFC000;
+    outline-color: #FFC000;
+}
+
+.mediaAsset {
+    position: relative;
+}
+
+.mediaAsset:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: url('https://assets.gamingarcade.io/Assets/media-asset.webp') no-repeat center / 100% 100%;
+    top: -4%;
+    width: 100%;
+    height: calc(100% + 4%);
+    z-index: -1;
+}
+
+.mediaAsset .movieCommercial {
+    padding-bottom: 60px;
+}
+
+
+/* hz css  */
+
+@media (max-width: 1439px) {
+    span.imgCs1Mas img {
+        width: 98px;
+        height: 99px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 140px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 210px;
+    }
+
+    .mediaAsset h1 {
+        font-size: 104.796px;
+    }
+
+    .mediaAsset h2 {
+        font-size: 80.6627px;
+    }
+
+    section.bannerMas {
+        padding: 120px 0 30px 0;
+    }
+
+    section.brandTxtSec {
+        padding: 150px 0;
+    }
+
+    .mediaAsset h3 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .mediaAsset p {
+        font-size: 14.9329px;
+        line-height: 23px;
+    }
+
+    .imgMas img {
+        max-width: 320px;
+    }
+
+    .infographicsFlexMas {
+        padding: 110px 0;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+
+    .logoBox img {
+        max-width: 300px;
+    }
+
+    .logoBox h3 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .hzTabLink {
+        font-size: 15px;
+        padding: 2px 10px;
+    }
+
+    .tabsLinksWrap h2 {
+        font-size: 17px;
+        margin: 30px 0 0;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 55px;
+        line-height: 64px;
+        max-width: 490px;
+    }
+
+    span.designDiamond img {
+        max-width: 100px;
+    }
+
+    .logText img {
+        max-width: 220px;
+    }
+
+    .logText p {
+        font-size: 14px;
+    }
+
+    .logoGridBoxes img {
+        max-width: 80px;
+    }
+
+    .mtic2 .logoBox {
+        margin-bottom: 60px;
+    }
+
+    span.colorBox {
+        height: 150px;
+    }
+
+    .colorInner {
+        padding: 25px 20px;
+    }
+
+    .colorCopyBox h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .colorCopyBox p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .colorCopyBox {
+        border-radius: 15px;
+        max-width: 230px;
+    }
+
+    .hz-figure-img img {
+        max-width: 700px;
+    }
+
+    .hz-figure-img figcaption {
+        font-size: 14px;
+    }
+
+    .founder-profile {
+        width: 250px;
+        height: 250px;
+        padding: 20px;
+    }
+
+    .founder-profile+h3 {
+        font-size: 14px;
+    }
+
+    .utilizeSec h2.hzGradientText {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .utilizeContent h3 {
+        font-size: 19px;
+    }
+
+    .utilizeContent ul li {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 40px;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 250px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 34px;
+    }
+
+    .utilizeRow {
+        padding-top: 30px;
+    }
+
+    .utilizeRow.ur2 {
+        padding-top: 70px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    section.tvandfilms {
+        padding: 220px 0 80px;
+    }
+
+    .laptopImg {
+        top: 30px;
+    }
+
+    .movieComContent h2 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .hzStepButton {
+        font-size: 40px;
+        border-radius: 10.2032px;
+        padding: 0px 35px;
+    }
+
+    .movieCommercial .utilizeContent ul {
+        margin-top: 50px;
+    }
+
+    .utilizeContent ul li::before {
+        width: 10px;
+        height: 10px;
+    }
+
+    .mediaAsset .container1200 {
+        max-width: 85vw;
+    }
+}
+
+
+.movie_commercial_steps{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media (max-width: 1280px) {
+    section.bannerMas h1 {
+        font-size: 84.796px;
+    }
+
+    section.bannerMas h2 {
+        font-size: 60.6627px;
+    }
+
+    section.bannerMas {
+        padding: 110px 0 20px 0;
+    }
+
+    span.imgCs1Mas img {
+        width: 88px;
+        height: 89px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 120px;
+    }
+
+    .barCs1Mass span.imgCs11Mas {
+        left: 150px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 170px;
+    }
+
+    .barCs1Mass span.imgCs2Mas {
+        top: -90px;
+        right: 110px;
+    }
+
+    span.imgCs22Mas img {
+        max-width: 70px;
+    }
+
+    span.imgCs22Mas {
+        bottom: -30px;
+    }
+
+    section.brandTxtSec h3 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    section.brandTxtSec p {
+        font-size: 13.9329px;
+        line-height: 21px;
+    }
+
+    section.brandTxtSec {
+        padding: 110px 0;
+    }
+
+    .downloadSectionMas .txtMas h4 {
+        font-size: 20.6584px;
+    }
+
+    .downloadSectionMas .checkMas span {
+        font-size: 12px;
+    }
+
+    .downloadSectionMas input[type="checkbox"] {
+        width: 30px;
+        height: 30px;
+    }
+
+    .imgDownMas img {
+        max-width: 70px;
+    }
+
+    .imgMas img {
+        max-width: 270px;
+    }
+
+    .downloadFlexMas {
+        background-size: 100% auto;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 50px;
+        line-height: 60px;
+        max-width: 440px;
+    }
+
+    span.designDiamond img {
+        max-width: 90px;
+    }
+
+    .infographicsSectionMas .imgMas img {
+        max-width: 350px;
+    }
+
+    .infographicsFlexMas {
+        padding: 70px 0;
+    }
+
+    .hzTabLink {
+        font-size: 13px;
+        padding: 1px 6px;
+    }
+
+    .tabsLinksWrap .hzTabLink[aria-selected="true"]:before {
+        width: 14px;
+        left: -15px;
+    }
+
+    .tabsLinksWrap h2 {
+        font-size: 15px;
+        margin: 25px 0 0;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+
+    .founder-profile {
+        width: 220px;
+        height: 220px;
+        padding: 15px;
+    }
+
+    .founder-profile+h3 {
+        font-size: 12px;
+        font-size: 12px;
+    }
+
+    section.utilizeSec {
+        padding: 80px 0 20px;
+    }
+
+    .utilizeContent h3 {
+        font-size: 16px;
+    }
+
+    .utilizeContent ul li {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .utilizeContent ul li::before {
+        width: 8px;
+        height: 8px;
+        outline-width: 1px;
+        left: -20px;
+        top: 6px;
+    }
+
+    .utilizeContent ul {
+        padding-left: 20px;
+    }
+
+    .mediaAsset p {
+        font-size: 12.9329px;
+        line-height: 18px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 39px;
+        max-width: 330px;
+        margin: 0;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 200px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 26px;
+    }
+
+    .utilizeSec h2.hzGradientText {
+        font-size: 40px;
+    }
+
+    .utilizeSec p {
+        font-size: 13px;
+    }
+
+    section.tvandfilms {
+        padding: 170px 0 40px;
+    }
+
+    .movieComContent h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    section.movieCommercial .Row {
+        margin-top: 50px;
+    }
+
+    .hzStepButton {
+        font-size: 30px;
+        padding: 0px 30px;
+    }
+
+    .movieCommercial .utilizeContent ul {
+        margin-top: 30px;
+    }
+
+    .logoBox img {
+        max-width: 270px;
+    }
+
+    .logoGridBoxes img {
+        max-width: 70px;
+    }
+
+    .logoGridBoxes {
+        gap: 10px;
+    }
+
+    .mtic2 .logoBox {
+        margin-bottom: 40px;
+    }
+
+    .logoBox h3 {
+        font-size: 13px;
+        margin-top: 30px;
+        line-height: normal;
+    }
+
+    span.colorBox {
+        height: 130px;
+    }
+
+    .colorCopyBox h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .colorCopyBox p {
+        font-size: 11px;
+    }
+
+    .colorCopyBox p span:first-child {
+        min-width: 40px;
+    }
+
+    .colorInner {
+        padding: 20px 20px;
+    }
+
+    .colorCopyBox {
+        border-radius: 10px;
+        max-width: 200px;
+    }
+
+    .hz-figure-img img {
+        max-width: 590px;
+    }
+
+    .hz-figure-img figcaption {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .contactUs.absolute-bg {
+        padding-top: 30px;
+    }
+
+    .movieComContent br {
+        display: none;
+    }
+
+    .movieComContent p {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+    }
+
+    section.bannerMas h1 {
+        font-size: 54.796px;
+    }
+
+    section.bannerMas h2 {
+        font-size: 40.6627px;
+    }
+
+    span.imgCs1Mas img {
+        width: 78px;
+        height: 78px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 140px;
+    }
+
+    .barCs1Mass span.imgCs2Mas {
+        top: -80px;
+        right: 50px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 100px;
+    }
+
+    .barCs1Mass span.imgCs11Mas {
+        left: 90px;
+        bottom: -50px;
+    }
+
+    section.bannerMas {
+        padding: 50px 0 20px 0;
+    }
+
+    section.brandTxtSec h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    section.brandTxtSec {
+        padding: 80px 0;
+    }
+
+    .imgMas img {
+        max-width: 160px;
+    }
+
+    .mediaAsset .imgMas {
+        max-width: initial;
+        margin-right: 30px;
+    }
+
+    .downloadSectionMas .downloadFlexMas {
+        padding: 0 60px;
+    }
+
+    .downloadSectionMas .txtMas h4 {
+        font-size: 16.6584px;
+    }
+
+    .mediaAsset .txtMas {
+        transform: translateY(-15px);
+    }
+
+    .imgDownMas img {
+        max-width: 60px;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .infographicsSectionMas .imgMas img {
+        max-width: 300px;
+    }
+
+    span.designDiamond img {
+        max-width: 80px;
+    }
+
+    span.designDiamond {
+        left: 40%;
+    }
+
+    .infographicsFlexMas {
+        padding: 50px 0;
+    }
+
+    .logoBox img {
+        max-width: 100%;
+    }
+
+    .logoBox h3 {
+        margin-top: 20px;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        margin-bottom: 40px;
+    }
+
+    .logText img {
+        max-width: 180px;
+    }
+
+    .logText p {
+        margin-top: 20px;
+    }
+
+    .logoGridBoxes img {
+        max-width: 70px;
+    }
+
+    .mtic2 .logoBox {
+        margin-bottom: 30px;
+    }
+
+    span.colorBox {
+        height: 100px;
+    }
+
+    .colorCopyBox h3 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .colorCopyBox p {
+        font-size: 10px;
+    }
+
+    .mediaTabInnerContent.mtic2 .Row:last-child>div {
+        padding: 0 4px;
+    }
+
+    .colorInner {
+        padding: 14px;
+    }
+
+    .hz-figure-img img {
+        max-width: 100%;
+    }
+
+    .hz-figure-img {
+        margin-bottom: 30px;
+    }
+
+    .founder-profile {
+        width: 190px;
+        height: 190px;
+        padding: 13px;
+    }
+
+    .founder-profile+h3 {
+        letter-spacing: 0;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+    .utilizeSec h2.hzGradientText {
+        font-size: 30px;
+    }
+
+    .utilizeContent h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 32px;
+        line-break: unset;
+        max-width: 290px;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 180px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 23px;
+        line-break: anywhere;
+    }
+
+    .utilizeRow.ur2 {
+        padding-top: 50px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 31px;
+        margin-bottom: 20px;
+    }
+
+    .utilizeContent h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 32px;
+        line-break: unset;
+        max-width: 290px;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 180px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 23px;
+        line-break: anywhere;
+    }
+
+    .utilizeRow.ur2 {
+        padding-top: 50px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 31px;
+        margin-bottom: 20px;
+    }
+
+    section.tvandfilms {
+        padding: 140px 0 20px;
+    }
+
+    .laptopImg {
+        top: 40px;
+        max-width: 395px;
+    }
+
+    .movieComContent h2 {
+        font-size: 30px;
+    }
+
+    .movieComContent h2 br {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .utilizeContent h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 30px;
+        line-break: unset;
+        max-width: 290px;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 180px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 23px;
+        line-break: anywhere;
+    }
+
+    .utilizeRow.ur2 {
+        padding-top: 50px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 31px;
+        margin-bottom: 20px;
+    }
+
+    section.tvandfilms {
+        padding: 140px 0 20px;
+    }
+
+    .laptopImg {
+        top: 40px;
+        max-width: 395px;
+    }
+
+    .movieComContent h2 {
+        font-size: 30px;
+    }
+
+    .movieComContent h2 br {
+        display: none;
+    }
+
+    button.hzStepButton {}
+
+    section.bannerMas h1 {
+        font-size: 44.796px;
+        line-height: 105px;
+    }
+
+    section.bannerMas h2 {
+        font-size: 30.6627px;
+    }
+
+    span.imgCs1Mas img {
+        width: 70px;
+        height: 70px;
+    }
+
+    span.imgCs1Mas {
+        top: -20px;
+        left: 20px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 80px;
+    }
+
+    .barCs1Mass span.imgCs11Mas {
+        left: 60px;
+        bottom: -30px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 120px;
+    }
+
+    .barCs1Mass span.imgCs2Mas {
+        top: -50px;
+        right: 20px;
+    }
+
+    span.imgCs22Mas img {
+        max-width: 50px;
+    }
+
+    span.imgCs22Mas {
+        bottom: -20px;
+    }
+
+    section.bannerMas {
+        padding: 150px 0 20px 0;
+    }
+
+    section.brandTxtSec {
+        padding: 60px 0;
+    }
+
+    section.brandTxtSec h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    section.brandTxtSec p {
+        font-size: 12.9329px;
+    }
+
+    .mediaAsset .imgMas {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .downloadSectionMas .imgMas {
+        display: none;
+    }
+
+    .downloadSectionMas .downloadFlexMas {
+        background: none;
+        padding: 0;
+    }
+
+    .infographicsFlexMas {
+        flex-direction: column;
+        align-items: start;
+        padding: 30px 0;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 29px;
+        line-height: 35px;
+    }
+
+    .infographicsSectionMas .imgMas img {
+        max-width: initial;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        font-size: 22px;
+    }
+
+    .logoBox {
+        margin: 0 30px;
+    }
+
+    .mtic2 .logoBox {
+        margin-bottom: 20px;
+    }
+
+    .colorCopyBox {
+        margin-bottom: 20px;
+    }
+
+    .hz-figure-img {
+        margin: 0 20px 30px;
+    }
+
+    .tabsLinksWrap h2 {
+        font-size: 13px;
+        margin: 10px 0 0;
+        line-height: normal;
+    }
+
+    .hzTabLink {
+        font-size: 14px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        position: static;
+        transform: unset;
+        margin-top: 40px;
+        border-radius: 0;
+    }
+
+    .utilizeBoxText h2 {
+        max-width: 500px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 25px;
+    }
+
+    .utilizeContent h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .utilizeBoxText h2 {
+        font-size: 30px;
+        line-break: unset;
+        max-width: 290px;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        min-height: 180px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 23px;
+        line-break: anywhere;
+    }
+
+    .utilizeRow.ur2 {
+        padding-top: 50px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    section.tvandfilms {
+        padding: 140px 0 20px;
+    }
+
+    .laptopImg {
+        top: 70px;
+        max-width: 395px;
+    }
+
+    .movieComContent h2 {
+        font-size: 30px;
+    }
+
+    .movieComContent h2 br {
+        display: none;
+    }
+
+    button.hzStepButton {}
+
+    section.bannerMas h1 {
+        font-size: 44.796px;
+        line-height: 105px;
+    }
+
+    section.bannerMas h2 {
+        font-size: 30.6627px;
+    }
+
+    span.imgCs1Mas img {
+        width: 70px;
+        height: 70px;
+    }
+
+    span.imgCs1Mas {
+        top: -20px;
+        left: 20px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 80px;
+    }
+
+    .barCs1Mass span.imgCs11Mas {
+        left: 60px;
+        bottom: -30px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 120px;
+    }
+
+    .barCs1Mass span.imgCs2Mas {
+        top: -50px;
+        right: 20px;
+    }
+
+    span.imgCs22Mas img {
+        max-width: 50px;
+    }
+
+    span.imgCs22Mas {
+        bottom: -20px;
+    }
+
+    section.bannerMas {
+        padding: 150px 0 20px 0;
+    }
+
+    section.brandTxtSec {
+        padding: 60px 0;
+    }
+
+    section.brandTxtSec h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    section.brandTxtSec p {
+        font-size: 12.9329px;
+    }
+
+    .mediaAsset .imgMas {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .downloadSectionMas .imgMas {
+        display: none;
+    }
+
+    .downloadSectionMas .downloadFlexMas {
+        background: none;
+        padding: 0;
+    }
+
+    .infographicsFlexMas {
+        flex-direction: column;
+        align-items: start;
+        padding: 30px 0;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 29px;
+        line-height: 35px;
+    }
+
+    .infographicsSectionMas .imgMas img {
+        max-width: initial;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        font-size: 22px;
+    }
+
+    .logoBox {
+        margin: 0 30px;
+    }
+
+    .mtic2 .logoBox {
+        margin-bottom: 20px;
+    }
+
+    .colorCopyBox {
+        margin-bottom: 20px;
+    }
+
+    .hz-figure-img {
+        margin: 0 20px 30px;
+    }
+
+    .tabsLinksWrap h2 {
+        font-size: 13px;
+        margin: 10px 0 0;
+        line-height: normal;
+    }
+
+    .hzTabLink {
+        font-size: 14px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .utilizeBoxLeft,
+    .utilizeBoxRight {
+        position: static;
+        transform: unset;
+        margin-top: 40px;
+        border-radius: 0;
+    }
+
+    .utilizeBoxText h2 {
+        max-width: 500px;
+        /* font-size: 30px; */
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 25px;
+    }
+
+    .tvfilmContent h2 {
+        font-size: 25px;
+    }
+
+    .laptopImg {
+        top: 70px;
+    }
+
+    .movieComContent {
+        margin-top: 80px;
+    }
+
+    .mediaAsset .hzStepButton {
+        font-size: 18px;
+        padding: 4px 30px;
+        border-radius: 6px;
+    }
+
+    .mediaAsset .movieCommercial {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    section.bannerMas h1 {
+        font-size: 34.796px;
+        line-height: 95px;
+    }
+
+    section.bannerMas {
+        padding: 60px 0 20px 0;
+    }
+
+    span.imgCs1Mas img {
+        width: 50px;
+        height: 50px;
+    }
+
+    span.imgCs11Mas img {
+        max-width: 60px;
+    }
+
+    .barCs1Mass span.imgCs11Mas {
+        left: 0px;
+    }
+
+    span.imgCs2Mas img {
+        max-width: 90px;
+    }
+
+    .barCs1Mass span.imgCs2Mas {
+        top: -40px;
+        right: 0;
+    }
+
+    span.imgCs22Mas img {
+        max-width: 40px;
+    }
+
+    section.brandTxtSec h3 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    section.brandTxtSec p {
+        font-size: 11.9329px;
+    }
+
+    .mediaAsset label {
+        align-items: center;
+    }
+
+    .downloadSectionMas .downloadFlexMas {
+        align-items: center;
+    }
+
+    .infographicsSectionMas .infographicsFlexMas h4 {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .infographicsSectionMas .imgMas img {
+        max-width: 100%;
+    }
+
+    .hzTabLink {
+        font-size: 17px;
+    }
+
+    .tabsLinksWrap h2 {
+        font-size: 18px;
+    }
+
+    .tabsLinksWrap {
+        margin-bottom: 60px;
+    }
+
+    h2.hzGradientText,
+    span.hzGradientText {
+        margin-bottom: 30px;
+    }
+
+    .logoBox {
+        margin: 0;
+    }
+
+    .logoBox h3 {
+        font-size: 15px;
+    }
+
+    .hz-figure-img {
+        margin: 0 0 30px;
+    }
+
+    section.utilizeSec {
+        padding: 50px 0 0px;
+    }
+
+    .utilizeSec h2.hzGradientText {
+        font-size: 25px;
+    }
+
+    .utilizeBoxRight h2 {
+        font-size: 22px;
+        max-width: 260px;
+    }
+
+    .laptopImg {
+        position: static;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    section.tvandfilms {
+        padding: 90px 0 20px;
+    }
+
+    .movieComContent h2 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+}

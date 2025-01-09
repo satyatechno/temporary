@@ -10,7 +10,7 @@ const LiveTournament = ({ tournamentList }: any) => {
         <div className={styles.live_tournament_container} key={value?._id}>
           <div className={styles.left_container}>
             <div className={styles.top_image_container}>
-              <Image src={value?.thumbnail} fill alt="" />
+              <Image src={value?.thumbnail} fill alt="live-tournament-logo" />
             </div>
 
             <div>
@@ -118,36 +118,3 @@ const LiveTournament = ({ tournamentList }: any) => {
 };
 
 export default LiveTournament;
-
-{
-  // <div className={styles.card_main}>
-  //   <div className={styles.content_container}>
-  //     <div>
-  //       <div>
-  //         <Image src={value?.thumbnail} alt="" height={100} width={100} />
-  //       </div>
-  //       <div>
-  //         <div className={styles.ends}>
-  //           <h4>Tournament Ends In:</h4>
-  //           <div className={styles.timeline2}>
-  //           {112}
-  //         </div>
-  //           {!value.pastTournament ? (
-  //             <p
-  //               style={{
-  //                 marginTop: "40px",
-  //                 textAlign: "center",
-  //                 color: "white",
-  //                 fontSize: "14px",
-  //               }}
-  //             >
-  //               Entry closes 150 mins prior
-  //             </p>
-  //           ) : null}
-  //         </div>
-  //       </div>
-  //     </div>
-  //     <div></div>
-  //   </div>
-  // </div>
-}

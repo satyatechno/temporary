@@ -4,12 +4,11 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    border-radius: 8px;
+    border-radius: 30px 30px 9px 1px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
+    z-index: 999;
     transition: all 0.3s ease;
     height: 100vh;
-    /* background-color: pink; */
     backdrop-filter: blur(10px);
   }
   

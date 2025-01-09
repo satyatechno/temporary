@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: 100vh;
-  background-image: url('https://assets.gamingarcade.io/Assets/Gameplay-and-stages.webp');
+  background-image: url("https://assets.gamingarcade.io/Assets/Gameplay-and-stages.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -13,7 +13,7 @@
   width: 70%;
   height: 65%;
   position: relative;
-  background-color: red;
+  // background-color: red;
 }
 .gameView {
   background-color: blueviolet;
@@ -27,4 +27,32 @@
   width: 100%;
   top: 0;
   left: 0;
+}
+
+@media (max-width: 991px) {
+  .gameContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color:none;
+  }
+  .loading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .gameView {
+    background-color: blueviolet;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .controlBar{
+    display:  none;
+  }
+  // .DragableMenu{
+  //   position: relative;
+  // }
 }

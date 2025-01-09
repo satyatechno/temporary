@@ -1,0 +1,40 @@
+.comingPage {
+    margin-top: -9vw;
+    width: 100vw;
+    height: 100vh;
+}
+.comingPage:before {
+    content: "";
+    background: url("https://assets.gamingarcade.io/Assets/nft-coming-soon-desk.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.comingPage.cs2:before {
+    background: url("https://assets.gamingarcade.io/Assets/Tournament-coming-soon-desk.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+@media (max-width: 767px) {
+    .comingPage {
+        margin-top: -11.6vh;
+        height: calc(100vh + 4vw);
+    }
+    .comingPage.cs2:before {
+        background: url("https://assets.gamingarcade.io/Assets/Tournament-coming-soon-mbl.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .comingPage::before {
+        background: url("https://assets.gamingarcade.io/Assets/NFT-coming-soon-mbl.webp");
+        background-position: center;
+        background-size: cover;
+    }
+}

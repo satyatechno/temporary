@@ -14,7 +14,7 @@ const MobileFooter = () => {
 
   const shouldShowHeaderFooter = !(
     noHeaderFooterPaths.includes(pathName) || 
-    (pathName.startsWith("/games/") && pathName !== "/games")
+  (pathName.startsWith("/games/") && pathName !== "/games") ||  (pathName.startsWith("/playgame") ) 
   );
   
   if (!shouldShowHeaderFooter) {

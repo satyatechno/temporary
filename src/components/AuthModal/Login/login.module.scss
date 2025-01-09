@@ -1,38 +1,20 @@
 .signInModal {
   position: fixed;
-  /* bottom: 0; */
+  // bottom: 0;
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  /* width: 100%; */
-  /* max-width: 600px; */
-  /* background-color: white; */
-  /* padding: 20px; */
   border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  /* transition: opacity 0.3s ease, transform 0.3s ease; */
   transition: all 0.3s ease;
-
-  /* background-image: url("https://assets.gamingarcade.io/Assets/game-stage-mbl.webp");
-  background-repeat: no-repeat;
-  background-size: cover; */
   background-image: url("https://assets.gamingarcade.io/Assets/modalWebBg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background: pink; */
 }
 
 .signInModal__content {
-  /* border-radius: 30px 30px 0px 0px;
-  max-width: 100%;
-  background: rgba(0, 0, 3, 0.781);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-
   background: rgba(255, 255, 255, 0.047);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.081);
   backdrop-filter: blur( 4px );
@@ -41,6 +23,9 @@
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   max-width: 100%;
   padding: 10px;
+  width: 100%;
+  // position: fixed;
+  // bottom: 0;
 }
 
 .signInModal__content > hr {
@@ -212,3 +197,28 @@
   margin-left: 20px;
   margin-top: 2px;
 }
+
+@media (max-width:991px){
+  .signInModal{
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px 30px 9px 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-image: url("https://assets.gamingarcade.io/Assets/modalWebBg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .signInModal__content{
+    border-radius: 30px 30px 9px 1px;
+
+  }
+}
+

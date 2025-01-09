@@ -1,0 +1,270 @@
+.policyMain {
+    background-image: url(https://assets.gamingarcade.io/Assets/bg-min.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-top: -11%;
+    padding-top: 11%;
+    padding-bottom: 5%;
+}
+section.privacy {
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 0;
+}
+section.privacy:before {
+    content: "";
+    background-image: url(https://assets.gamingarcade.io/Assets/bar-img.webp);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-repeat: no-repeat;
+    top: 0;
+    background-size: cover;
+    z-index: -1;
+}
+section.privacy .pp_txt_d {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 7rem;
+}
+.lgTxt, .lgTxt2{
+    font-weight: 900;
+    font-size: 76.2512px;
+    line-height: 72px;
+    text-transform: uppercase;
+    font-family: 'Inter',sans-serif;
+    padding:20px 0px;
+    /* background: linear-gradient(270deg, #FFC000 0%, rgba(83, 22, 217, 0.00) 69.33%); */
+    /* background: linear-gradient(270deg, #FFC000 0%, rgba(83, 22, 217, 0.00) 69.33%); */
+}
+
+.lgTxt{
+        background: linear-gradient(24deg, #FFC000 0%, rgba(83, 22, 217, 0.00) 69.33%);
+
+}
+
+.lgTxt2{
+    background: linear-gradient(345deg, #FF00F5 0%, rgba(83, 22, 217, 0.00) 69.33%);
+}
+
+.privacy p{
+font-size: 15px;
+}
+
+.pp_txt_m {
+    display: none!important;
+}
+
+.privacyText h2, .privacyText p{
+/* color: #FFF; */
+font-family: Inter;
+font-style: normal;
+line-height: 30.4px;
+}
+
+.privacyText{
+    color:#fff;
+    margin: 0 7rem;
+}
+
+
+
+
+.privacyText h2{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.infomationTerms{
+   margin-top:30px;
+}
+
+.infomationTerms__text{
+    text-transform: uppercase;
+    font-size:25px;
+    font-family: 500 !important;
+}
+
+.personalInformation h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.personalInformation ol {
+    margin:20px 0px 0px 18px;
+}
+
+.personalInformation ol li{
+    margin-top:10px;
+}
+.typesOfData{
+ font-weight:600;
+ margin-top:40px;
+}
+
+.Data__list li{ 
+  margin-bottom:15px;
+}
+
+.Data__list{
+    margin-left: 30px;
+}
+
+.Data__list li span{
+    font-weight: 800;
+}
+
+.data_desc{
+    margin:15px 0px;
+    font-size: 15px;
+}
+
+.data_head{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.data_headBold{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.table{
+    border-collapse: collapse;
+    margin:50px 0px;
+    width:100%;
+    overflow-x: scroll;
+  }
+  .table td{
+    border: 1px solid white;
+    padding: 20px 50px; 
+    text-align: center;
+    vertical-align: middle;
+  }
+
+    
+
+  .cookie_desc{
+    margin-top: 30px;
+  }
+
+  .mainHead{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 30px 0px;
+  }
+
+  .list_head{
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 5px;
+  }
+
+
+  .privacy img{
+    width:20%;
+  }
+
+  .underlineLinks{
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+
+/* section.privacyText p, 
+section.privacyText ul li {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.3175px;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: left;
+}
+section.privacyText ul{
+    padding-left: 20px;
+    margin-top: 30px;
+}
+section.privacyText ul li{
+    margin-bottom: 10px !important;
+}
+.privacyText h3 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    text-align: left;
+} */
+
+@media(max-width:1600px){
+    .lgTxt {
+        font-size: 66px;
+        line-height: 64px;
+    }
+}
+
+@media(max-width:1440px){
+    .lgTxt {
+        font-size: 54px;
+        line-height: 58px;
+    }
+}
+
+@media(max-width:1024px){
+    section.privacy {
+        position: relative;
+        padding: 60px 0 30px;
+    }
+    .pp_txt_d {
+        display: none !important;
+    }
+    .pp_txt_m {
+        display: block !important;
+    }
+    .pp_txt_m h2{
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+@media(max-width:767px){
+    .policyMain {
+        margin-top: -22%;
+        padding-top: 22%;
+        padding-bottom: 10%;
+        
+    }
+    section.privacy {
+        margin: 0;
+        padding: 50px 0 20px;
+    }
+    .policyMain .pp_txt_m {
+        font-size: 20px;
+        color: #fff;
+    }
+    .privacyText{
+    margin: 0 2rem;
+
+    }
+    .pp_txt_d{
+    margin: 0 2rem;
+
+    }
+    
+    .policyMain section.privacyText p,
+    section.privacyText ul li {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    .policyMain .privacyText h3 {
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+}

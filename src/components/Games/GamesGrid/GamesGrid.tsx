@@ -2,6 +2,7 @@
 import { useGamesContext } from "@/app/Context/GamesContext";
 import GameCard, { LoadingCard } from "../GameCard/GameCard";
 import styles from "./gamesGrid.module.scss";
+import config from "../../../../config";
 const Game_Loader = "https://assets.gamingarcade.io/Assets/loader-img.webp";
 const GameGrid = () => {
   const { games: gameData, gamesLoading } = useGamesContext();
@@ -52,6 +53,13 @@ const GameGrid = () => {
   }
   return (
     <div className={styles.mainContainer}>
+       <div className={styles.homeMblNew__allGames}>
+        <h2>ALL GAMES!</h2>
+        <div className={styles.homeMblNew__allGamesHeading}>
+          <img src={`${config.imageDomain}Assets/dart.webp`} alt="" />
+          <h2>All Games</h2>
+        </div>
+      </div>
       {Array(Math.ceil(gameData.length / 6))
         .fill(" ")
         ?.map((game: any, index: number) => (

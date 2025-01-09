@@ -1,0 +1,330 @@
+
+
+.dropdownDrag {
+     position: absolute;
+    z-index: 9999999;
+    top: 0;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+
+/* .scoreBeat {
+  background-color: white;
+} */
+
+.scoreBeat {
+  backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    /* border-radius: 12px; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    padding: 5px 0px;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    right: 0;
+    height: 50px;
+    width: 100px;
+    /* width: 30%; */
+    /* position: absolute; */
+    z-index: 999;
+    margin-left: 70%;
+}
+
+.scoreBeat_h4 {
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+}
+
+.scoreBeat_p {
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+li.dropdownD button {
+
+    background: transparent;
+    outline: none;
+    border: 1px solid transparent;
+}
+.dropdownDrag i.fa.fa-angle-down {
+    color: #fbc400;
+    font-size: 20px;
+    font-family: 'FontAwesome';
+}
+button.btn.btn-sm.btn-toggle {
+    background: #000;
+}
+ul.inactiveDD li {
+  width: 0;
+
+}
+.dropdownDragDesk {
+  /* position: absolute; */
+  position: static;
+  bottom: 0;
+
+}
+.btn-toggle.btn-sm {
+    margin: 0 0.5rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 25px;
+    width: 60px;
+    border-radius: 1.5rem;
+  }
+  .btn-toggle.active {
+    background-color: #29b5a8;
+  }
+  .btn-toggle:before,
+  .btn-toggle:after {
+    color: #6b7381;
+  }
+  .btn-toggle.btn-sm:focus,
+  .btn-toggle.btn-sm.focus,
+  .btn-toggle.btn-sm:focus.active,
+  .btn-toggle.btn-sm.focus.active {
+    outline: none;
+  }
+  .btn-toggle {
+    margin: 0 4rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    color: #6b7381;
+    background: #bdc1c8;
+  }
+  .btn-toggle:focus,
+  .btn-toggle.focus,
+  .btn-toggle:focus.active,
+  .btn-toggle.focus.active {
+    outline: none;
+  }
+  .btn-toggle:before,
+  .btn-toggle:after {
+    line-height: 1.5rem;
+    width: 4rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.25s;
+  }
+  .btn-toggle:before {
+    content: 'Day';
+    left: -4rem;
+  }
+  .btn-toggle:after {
+    content: 'Night';
+    right: -4rem;
+    opacity: 0.5;
+  }
+  .btn-toggle > .handle {
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left 0.25s;
+  }
+  .btn-toggle.active {
+    transition: background-color 0.25s;
+  }
+  .btn-toggle.active > .handle {
+    left: 1.6875rem;
+    transition: left 0.25s;
+  }
+  .btn-toggle.active:before {
+    opacity: 0.5;
+  }
+  .btn-toggle.active:after {
+    opacity: 1;
+  }
+  .btn-toggle.btn-sm:before,
+  .btn-toggle.btn-sm:after {
+    line-height: -0.5rem;
+    color: #fff;
+    letter-spacing: 0.75px;
+    left: 0.4125rem;
+    width: 45px;
+  }
+  .btn-toggle.btn-sm:before {
+    text-align: right;
+  }
+  .btn-toggle.btn-sm:after {
+    text-align: left;
+    opacity: 0;
+  }
+  .btn-toggle.btn-sm.active:before {
+    opacity: 0;
+  }
+  .btn-toggle.btn-sm:before,
+  .btn-toggle.btn-sm:after {
+    line-height: 1.5rem;
+    width: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.25s;
+  }
+  .btn-toggle.btn-sm:before {
+    content: 'Day';
+    left: -0.5rem;
+  }
+  .btn-toggle.btn-sm:after {
+    content: 'Night';
+    right: -0.5rem;
+    opacity: 0.5;
+  }
+  .btn-toggle.btn-sm > .handle {
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left 0.25s;
+  }
+  .btn-toggle.btn-sm.active {
+    transition: background-color 0.25s;
+  }
+  .btn-toggle.btn-sm.active > .handle {
+    left: 1.6875rem;
+    transition: left 0.25s;
+  }
+  .btn-toggle.btn-sm.active:before {
+    opacity: 0.5;
+  }
+  .btn-toggle.btn-sm.active:after {
+    opacity: 1;
+  }
+  .btn-toggle.btn-sm.btn-sm:before,
+  .btn-toggle.btn-sm.btn-sm:after {
+    line-height: -0.5rem;
+    color: #fff;
+    letter-spacing: 0.75px;
+    left: 0.4125rem;
+    width: 2.325rem;
+  }
+  .btn-toggle.btn-sm.btn-sm:before {
+    text-align: right;
+  }
+  .btn-toggle.btn-sm.btn-sm:after {
+    text-align: left;
+    opacity: 0;
+  }
+  .btn-toggle.btn-sm.btn-sm.active:before {
+    opacity: 0;
+  }
+  .btn-toggle.btn-sm.btn-sm.active:after {
+    opacity: 1;
+  }
+  .dropdownDrag ul  {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+    transition: 0.3s ease-in-out all;
+}
+.activeDropDown{
+    left: 0;
+    position: absolute;
+}
+ .dropdownD button {
+    display: block;
+    background: #fff;
+    width: 80px;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-color: transparent;
+}
+
+  
+.inactiveDD{
+position: absolute;
+    left: 0;
+}
+
+.dropdownDrag .inactiveDD li span{
+  font-size: 0;
+}
+
+.dropdownDrag ul > li:nth-child(1) img {
+    width: 75%;
+}
+
+.dropdownDrag ul > li:nth-child(2) img, .dropdownDrag ul > li:nth-child(3) img {
+  width: 70%;
+}
+
+.dropdownD li {
+    background: #fff;
+    width: 80px;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+    transition: .5s all ease;
+}
+.dropdownDrag ul > li img {
+  width: 100%;
+}
+.dropdownD li span {
+    font-size: 10px;
+    line-height: 11px;
+    font-weight: 600;
+    margin-top: -12%;
+    padding-bottom: 12%;
+    color: #000;
+}
+
+
+
+.dropdownDrag i.fa.fa-angle-down {
+  color: #fbc400;
+  font-size: 16px;
+  font-family: 'FontAwesome';
+  transform: translateY(-10px);
+}
+
+
+
+@media (max-width: 991px) {
+
+
+.dropdownD button{
+  line-height: 65px;
+}
+.loading-pipe {
+  margin: 7px auto;
+}
+.dropdownD li {
+  margin: 7px 0;
+}
+
+  
+}

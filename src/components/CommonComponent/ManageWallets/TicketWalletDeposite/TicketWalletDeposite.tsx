@@ -174,7 +174,7 @@ const TicketWalletDeposite = () => {
                 Gas fees{" "}
                 <span>
                   {gasLoading ? "..." : parseFloat(gas).toFixed(5)}{" "}
-                  <img src="" alt="" />
+                  {/* <img src="" alt="" /> */}
                 </span>
               </p>
             </div>
@@ -192,7 +192,7 @@ const TicketWalletDeposite = () => {
               <p>
                 {gasLoading ? "..." : parseFloat(+amountText + +gas).toFixed(5)}{" "}
                 <span>
-                  <img src="" alt="" />
+                  {/* <img src="" alt="" /> */}
                 </span>
               </p>
             </div>
