@@ -141,3 +141,21 @@
   border-color: #d81b60;
   border-style: solid;
 }
+
+.tooltip {
+  position: absolute;
+  top: 150;
+  right: 10;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.97vw;
+  line-height: 121.5%;
+  /* or 1.152vw */
+  text-align: center;
+  text-transform: capitalize;
+  color: #000000;
+  border-radius: 6.061vw;
+  padding: 1.576vw 2.424vw;
+  background: #e9dff5;
+}

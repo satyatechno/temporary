@@ -1,6 +1,10 @@
 import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
 import RoomModal from '@/components/CommonComponent/RoomModal/RoomModal';
 import styles from './roomcard.module.scss';
+import Image from 'next/image';
+import config from '../../../../config';
+import { useAppContext } from '@/app/Context/AuthContext';
+import React from 'react';
 
 const CreateABet = ({
   onClose,
@@ -9,10 +13,60 @@ const CreateABet = ({
   onClose: () => void;
   gameDetails: any;
 }) => {
+  const { wallet, userData } = useAppContext();
+  const [selectedStage, setSelectedStage] = React.useState<any>('1');
+  const [selectedAmount, setSelectedAmount] = React.useState<any>();
+  const validation = () => {
+    if (!selectedAmount?.trim()) {
+      alert('Please enter a valid amount');
+    } else if (!selectedStage) {
+      alert('Please select a stage');
+    } else {
+      if (selectedAmount >= 1) handleBetCreate();
+    }
+  };
+  const handleBetCreate = () => {
+    let data: any = {
+      stage: selectedStage,
+      name: gameDetails?.name,
+      value: parseFloat(selectedAmount),
+      gameType: 'OneVSOne',
+      landscape: gameDetails.landscape ? true : false,
+      isCustomBet: true,
+      userId: wallet?.address,
+      practice: false,
+      direct: false,
+      medium: 'ticket',
+      buildUrl: gameDetails?.buildUrl,
+    };
+
+    onClose();
+    // setTimeout(() => {
+    //   navigate('GameScreen', data);
+    // }, 200);
+  };
   return (
     <RoomModal isOpen={true}>
       <div className={styles.heading_section}>
-        <p className={styles.tickets_available_h3}>Ticket Available</p>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Image
+            src={
+              false
+                ? `${config.imageDomain}Assets/matic.webp`
+                : 'https://assets.gamingarcade.io/Assetsticket.webp'
+            }
+            alt="matic"
+            height={20}
+            width={20}
+          />
+          <p className={styles.tickets_available_h3}>
+            {false
+              ? wallet?.balance?.toFixed(2)
+              : userData?.tickets?.toFixed(2)}
+          </p>
+          &nbsp;&nbsp;
+          <p className={styles.tickets_available_h3}> Ticket Available</p>
+        </div>
         <button className={styles.closeButton} onClick={onClose}>
           <span className={styles.cross}>×</span>
         </button>
@@ -21,14 +75,34 @@ const CreateABet = ({
         <p className={styles.select_a_board_h2}>Select A Board</p>
       </div>
 
-      <div></div>
+      <div className={styles.stages}>
+        {gameDetails?.stages?.map((stage: any, index: number) => (
+          <div
+            onClick={() => {
+              setSelectedStage(stage?.stage);
+            }}
+            className={selectedStage === stage?.stage ? styles.stage : ''}
+            key={index?.toString()}
+          >
+            <Image alt="stage" src={stage?.img} height={130} width={80} />
+          </div>
+        ))}
+      </div>
 
       <div className={styles.play_custom_card_container}>
         <p className={styles.select_a_board_h2}>Enter Amount</p>
         <div className={styles.input_container}>
-          <input placeholder="ENTER YOUR AMOUNT" className={styles.input_box} />
+          <input
+            placeholder="ENTER YOUR AMOUNT"
+            className={styles.input_box}
+            onChange={(e) => setSelectedAmount(e.target.value)}
+          />
         </div>
-        <Button value="Create Bet" className={styles.btn_style} />
+        <Button
+          onClick={validation}
+          value="Create Bet"
+          className={styles.btn_style}
+        />
       </div>
 
       <p className={styles.bottom_heading}>Create A Bet</p>

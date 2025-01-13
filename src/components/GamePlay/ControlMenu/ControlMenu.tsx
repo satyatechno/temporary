@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import config from '../../../../config';
 import styles from './controlDesk.module.scss';
 const ControlMenu = ({
-  scoreToBeat = 100,
+  scoreToBeat = '',
   tips = ['Tip1', 'Tip2'],
   actions,
 }: any) => {
@@ -19,12 +19,13 @@ const ControlMenu = ({
   return (
     <div className={styles.container}>
       <div className={styles.scoreContainer}>
-        {!(scoreToBeat == null) ? (
+        {scoreToBeat ? (
           <div className={styles.best}>
             <img
               src={`${config.imageDomain}Assets/trophyDesk.webp`}
               alt="vs-icon"
             />
+
             <div className={styles.scoreDiv}>
               <h4>Score to beat</h4>
               <h2>{scoreToBeat}</h2>
