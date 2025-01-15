@@ -94,15 +94,15 @@ Tracking policy"
           <div className="container-1280">
             <h3>Revised on February, 9, 2024</h3>
             <p className={styles.cookie_desc}>
-              This Cookie Policy outlines the practices adopted by Gaming Arcade
+              {`This Cookie Policy outlines the practices adopted by Gaming Arcade
               regarding its website(s) ("Website(s)"; "we"; "us" or "our")
               concerning the collection and dissemination of information through
               cookies. When we refer to "you" or "yours", we are addressing all
               users of our Website(s). Application(s), and other services
-              offered by Gaming Arcade.
+              offered by Gaming Arcade.`}
             </p>
             <p className={styles.cookie_desc}>
-              We utilize cookies, which are small text files containing
+              {`We utilize cookies, which are small text files containing
               alphanumeric characters placed on your computer, along with
               similar tracking technologies like web beacons, pixels, tags, and
               scripts. These technologies help uniquely identify visitors'
@@ -116,7 +116,7 @@ Tracking policy"
               affiliates, sub-contractors, business partners, advertisers,
               publishers, and advertising agencies, may also utilize such
               technologies in connection with services they perform on our
-              behalf
+              behalf`}
             </p>
             <p className={styles.cookie_desc}>
               Cookies, on their own, do not reveal your personally identifiable
@@ -137,17 +137,17 @@ Tracking policy"
               policy carefully.
             </p>
             <p className={styles.cookie_desc}>
-              Additionally, to enhance your experience on Gaming Arcade, we
+             {` Additionally, to enhance your experience on Gaming Arcade, we
               utilize cookies. This policy is a component of Gaming Arcade's
               overall privacy policy and addresses the interaction of cookies
-              between your device and our site.
+              between your device and our site.`}
             </p>
             <p className={styles.cookie_desc}>
-              If you prefer not to accept cookies from us, you can configure
-              your browser to reject cookies from Gaming Arcade's website,
-              application, and other services offered by Gaming Arcade. However,
-              please note that this may result in limitations to accessing
-              certain content and services.
+                {`If you prefer not to accept cookies from us, you can configure
+                your browser to reject cookies from Gaming Arcade's website,
+                application, and other services offered by Gaming Arcade. However,
+                please note that this may result in limitations to accessing
+                certain content and services.`}
             </p>
 
             <h1 className={styles.mainHead}>
@@ -157,9 +157,9 @@ Tracking policy"
               <span className={styles.list_head}>
                 1.1 Essential Operations:
               </span>
-              Gaming Arcade employs "technical" Cookies and similar trackers to
+              {`Gaming Arcade employs "technical" Cookies and similar trackers to
               perform activities crucial for the operation and delivery of the
-              service.
+              service.`}
             </p>
             <p>
               <span className={styles.list_head}>
@@ -188,10 +188,10 @@ Tracking policy"
               <span className={styles.list_head}>
                 1.5 Interaction with Third Parties:
               </span>
-              Users can directly interact with data collection platforms or
+             {` Users can directly interact with data collection platforms or
               other services from Gaming Arcade's pages to save and reuse data.
               Even if Users do not actively use the service, it may collect
-              browsing and usage data on the installed pages.
+              browsing and usage data on the installed pages.`}
             </p>
             <p>
               <span className={styles.list_head}>
@@ -264,14 +264,14 @@ Tracking policy"
             <h1 className={styles.mainHead}>3. THIRD PARTY COOKIES</h1>
             <p>
               <span className={styles.list_head}>3.1 Google Cookies:</span>We
-              utilize Google Analytics cookies to gather data on how visitors
+              {`utilize Google Analytics cookies to gather data on how visitors
               interact with our Gaming Arcade website(s) and application(s).
               This information aids us in compiling reports and enhancing the
               user experience. Google cookies, including Google Ads 360 cookies,
               enable us to recognize visitors on our site and provide them with
               relevant marketing and advertising content. For more information
               on Google's privacy policy and to opt-out of Google Analytics,
-              click{" "}
+              click`}
               <a
                 href="https://support.google.com/analytics/answer/6004245"
                 target="_blank"
@@ -292,11 +292,11 @@ Tracking policy"
             </p>
             <p>
               <span className={styles.list_head}>3.2 Facebook Cookies:</span>
-              These cookies support interest-based advertising by collecting
-              information from your website visits and enabling targeted ads on
-              Facebook platforms. To opt-out of Facebook's interest-based ads,
-              please follow the instructions provided on Facebook's privacy
-              policy, refer to the Facebook Privacy Policy
+              {`These cookies support interest-based advertising by collecting
+                information from your website visits and enabling targeted ads on
+                Facebook platforms. To opt-out of Facebook's interest-based ads,
+                please follow the instructions provided on Facebook's privacy
+                policy, refer to the Facebook Privacy Policy`}
               <a
                 href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
                 target="_blank"
@@ -309,12 +309,12 @@ Tracking policy"
             </p>
             <p>
               <span className={styles.list_head}>3.3 Bing Cookies:</span>Bing
-              cookies are employed to gather data on visitor interaction with
+             {` cookies are employed to gather data on visitor interaction with
               our website for marketing, advertising, and remarketing endeavors.
               They facilitate the recognition of visitors on our advertising
               partners' websites and the delivery of interest-related
               information or ads. For further insights into Microsoft/Bing
-              privacy practices, click{" "}
+              privacy practices, click`}
               <a
                 href="https://privacy.microsoft.com/en-us/privacystatement"
                 target="_blank"
@@ -409,12 +409,12 @@ Tracking policy"
               <span className={styles.list_head}>
                 5.1 Adjust Browser Settings:{" "}
               </span>{" "}
-              You can modify your browser settings to prevent cookies from being
+              {`You can modify your browser settings to prevent cookies from being
               downloaded to your device. Most browsers provide options to stop
               accepting new cookies, receive notifications when receiving a new
               cookie, and disable existing cookies. Instructions for adjusting
               these settings can usually be found in the "Help" section of your
-              browser's menu or by visiting{" "}
+              browser's menu or by visiting`}{" "}
               <a
                 className={styles.underlineLinks}
                 href="https://www.allaboutcookies.org/"
@@ -423,13 +423,13 @@ Tracking policy"
               >
                 All About Cookies | Online Privacy and Digital Security{" "}
               </a>{" "}
-              . Please note that disabling cookies may affect your ability to
-              access certain features of our website. Some browsers offer a
-              "private mode" option that automatically deletes cookies after
-              each browsing session. However, please be aware that using this
-              mode may impact your user experience, and some features may not
-              work optimally. You can learn more about managing cookie settings
-              in popular browsers:
+              {`.Please note that disabling cookies may affect your ability to
+                access certain features of our website. Some browsers offer a
+                "private mode" option that automatically deletes cookies after
+                each browsing session. However, please be aware that using this
+                mode may impact your user experience, and some features may not
+                work optimally. You can learn more about managing cookie settings
+                in popular browsers:`}
             </p>
             <ul style={{ marginLeft: "15px" }}>
               <a
@@ -469,10 +469,10 @@ Tracking policy"
               </a>
             </ul>
             <p style={{ marginTop: "15px" }}>
-              <span className={styles.list_head}>5.2 Opting Out:</span>You can
+              <span className={styles.list_head}>5.2 Opting Out:</span>{`You can
               opt out of certain types of cookies, such as those used for
               interest-based advertising, by visiting the Digital Advertising
-              Alliance's opt-out page{" "}
+              Alliance's opt-out page`}{" "}
               <a
                 className={styles.underlineLinks}
                 href="https://optout.aboutads.info/?c=2&lang=EN"
@@ -480,7 +480,7 @@ Tracking policy"
               >
                 (http://optout.aboutads.info)
               </a>{" "}
-              or the Network Advertising Initiative's opt-out tool
+             {` or the Network Advertising Initiative's opt-out tool`}
               <a
                 className={styles.underlineLinks}
                 href="https://optout.networkadvertising.org/?c=1"
@@ -488,9 +488,9 @@ Tracking policy"
               >
                 (http://www.networkadvertising.org/choices)
               </a>
-              . Additionally, certain mobile devices allow you to limit
+              {`. Additionally, certain mobile devices allow you to limit
               advertising and reset your advertising identifier within the
-              device's settings. 
+              device's settings. `}
             </p>
             <p>
               <span className={styles.list_head}>5.3 Manual Deletion:</span> You
@@ -534,9 +534,9 @@ Tracking policy"
               >
                 http://optout.aboutads.info
               </a>
-              . You may also opt out of receiving interest-based ads from
+              {`. You may also opt out of receiving interest-based ads from
               third-party websites and applications through the Network
-              Advertising Initiative's (NAI) Opt-Out Tool, available at{" "}
+              Advertising Initiative's (NAI) Opt-Out Tool, available at`}{" "}
               <a
                 className={styles.underlineLinks}
                 href="https://optout.networkadvertising.org/?c=1/"
@@ -544,9 +544,9 @@ Tracking policy"
               >
                 http://www.networkadvertising.org/choices
               </a>
-              . Additionally, certain mobile devices allow you to limit
+              {`. Additionally, certain mobile devices allow you to limit
               advertising and reset advertising identifiers within your device's
-              settings. For more information, visit{" "}
+              settings. For more information, visit`}
               <a
                 className={styles.underlineLinks}
                 href="https://youradchoices.com/appchoices"
@@ -585,9 +585,9 @@ Tracking policy"
             </p>
             <p>
               <span className={styles.list_head}>6.4 Right to Erasure:</span>:
-              Data subjects can request the deletion of their data if it's no
+            {` Data subjects can request the deletion of their data if it's no
               longer necessary or if consent is withdrawn, except when required
-              for legal obligations or public tasks.
+              for legal obligations or public tasks.`}
             </p>
             <p>
               <span className={styles.list_head}>
@@ -600,9 +600,9 @@ Tracking policy"
               <span className={styles.list_head}>
                 6.6 Right to Restrict Processing:
               </span>
-              Data subjects can limit the processing of their personal data for
+            {`Data subjects can limit the processing of their personal data for
               purposes they don't approve of, with compliance to the imposed
-              restrictions.
+              restrictions.`}
             </p>
             <p>
               <span className={styles.list_head}></span>
@@ -613,7 +613,7 @@ Tracking policy"
 
             <h1 className={styles.mainHead}>7. UPDATES TO OUR COOKIE POLICY</h1>
             <p>
-              We retain the right to modify this Cookie Policy at our
+             {` We retain the right to modify this Cookie Policy at our
               discretion. Any amendments to this policy will be communicated by
               updating the "Last Updated" section above. It is your
               responsibility to periodically review the Cookie Policy for any
@@ -622,7 +622,7 @@ Tracking policy"
               While we may choose to inform you of changes via email, it remains
               your obligation to regularly check this Cookie Policy for updates.
               Such communications do not diminish your responsibility to stay
-              informed about any changes made herein.
+              informed about any changes made herein.`}
             </p>
 
             <h1 className={styles.mainHead}>8. CONTACT US</h1>
