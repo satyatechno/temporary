@@ -3,40 +3,40 @@
 import Image from "next/image";
 import styles from "./DashboardGameHistory.module.scss";
 import config from "../../../../config";
-// import { cookies } from "next/headers";
-import Cookies from "js-cookie";
 import { useCallback, useEffect, useState } from "react";
 import { challengeHistoryApi } from "@/services/challenge";
 import { useAppContext } from "@/app/Context/AuthContext";
 
-interface tournameGameHistory {
-  gameId: string;
-  game: { gameName: string };
-  type: string;
-  betAmount: number;
-  player1: {
-    uuid: string;
-    score: number;
-    player_id: string;
-    status: string;
-    sync: boolean;
-  };
-  player2: {
-    uuid: string;
-    score: number;
-    player_id: string;
-    status: string;
-    sync: boolean;
-  };
-  winner: { uuid: string };
-  medium: string;
-  tx: string;
-  stage: string;
-}
+// interface tournameGameHistory {
+//   gameId: string;
+//   game: { gameName: string };
+//   type: string;
+//   betAmount: number;
+//   player1: {
+//     uuid: string;
+//     score: number;
+//     player_id: string;
+//     status: string;
+//     sync: boolean;
+//   };
+//   player2: {
+//     uuid: string;
+//     score: number;
+//     player_id: string;
+//     status: string;
+//     sync: boolean;
+//   };
+//   winner: { uuid: string };
+//   medium: string;
+//   tx: string;
+//   stage: string;
+// }
 
 interface GameHistoryProps {
-  tournameGameHistory: tournameGameHistory[];
+  // tournameGameHistory: tournameGameHistory[];
   loadingGames: boolean;
+  // games: any[]; 
+  // isAuthenticated:boolean;
 }
 
 const DashboardGameHistory: React.FC<GameHistoryProps> =  ({
@@ -44,7 +44,7 @@ const DashboardGameHistory: React.FC<GameHistoryProps> =  ({
 }) => {
   // const token = Cookies.get("userToken");
 
-  const [tournameGameHistory, setTournamentGameHistory] = useState();
+  const [tournameGameHistory, setTournamentGameHistory] = useState<any>();
 
   
   const {userData, activeButton }=useAppContext();

@@ -31,16 +31,20 @@ interface TourItem {
 
 const DashboardTournamentHistory: React.FC = () => {
   const [tours, setTours] = useState<TourItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [transaction, setTransaction] = useState<boolean>(false);
-  const isAuthenticated: boolean = false;
+  const [loading] = useState<boolean>(false);
+  
+  // const [setTransaction] = useState<boolean>(false);
+  // const isAuthenticated: boolean = false;
 
+  //need to change in in future
   function gameChanger(
     first: Tournament,
     second: boolean,
     third: string,
     fourth: string
-  ) {}
+  ) {
+    return[ first ,second, third, fourth]
+  }
 
   async function fetchUserTournamentHistory() {
     try {
@@ -186,7 +190,7 @@ const DashboardTournamentHistory: React.FC = () => {
                             <p
                               className={`${styles.buttonNew} ${styles.playAgain}`}
                               onClick={() => {
-                                setTransaction(true);
+                                // setTransaction(true);
                                 gameChanger(
                                   item.tournament,
                                   true,

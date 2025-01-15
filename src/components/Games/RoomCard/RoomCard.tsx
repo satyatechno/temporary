@@ -7,6 +7,8 @@ import useGameModule from '@/hooks/challengeService';
 import { useAppContext } from '@/app/Context/AuthContext';
 import config from '../../../../config';
 
+
+
 const PlayCustomRoomCard = ({
   onClose,
   gameDetails,
@@ -16,12 +18,12 @@ const PlayCustomRoomCard = ({
 }) => {
   const [selectedStage, setSelectedStage] = React.useState<any>('1');
   const [selectedAmount, setSelectedAmount] = React.useState<any>();
-  const [Loaded, setLoaded] = useState(false);
-  const [showCodeView, setShowCodeView] = useState(true);
+  // const [Loaded, setLoaded] = useState(false);
+  // const [showCodeView, setShowCodeView] = useState(true);
   const [invitelLink, setInviteLink] = useState('');
-  const [paramData, setParamData] = useState<any>();
+  // const [paramData, setParamData] = useState<any>();
   const [copyLink, setCopyLink] = useState<any>(false);
-  const { playChallenge, betData } = useGameModule();
+  const { playChallenge, betData } :any= useGameModule();
   const { wallet, userData } = useAppContext();
 
   const copyTextHandler = () => {
@@ -49,8 +51,8 @@ const PlayCustomRoomCard = ({
       userId: wallet?.address,
       direct: false,
     };
-    setParamData(data);
-    setLoaded(true);
+    // setParamData(data);
+    // setLoaded(true);
     playChallenge({
       betAmount: data?.value,
       type: data?.gameType,
@@ -67,12 +69,12 @@ const PlayCustomRoomCard = ({
 
   useEffect(() => {
     if (betData?.code) {
-      setLoaded(false);
-      setShowCodeView(true);
+      // setLoaded(false);
+      // setShowCodeView(true);
     }
   }, [betData]);
   const handleRoomPlay = () => {
-    setShowCodeView(false);
+    // setShowCodeView(false);
 
     onClose();
   };

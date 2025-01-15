@@ -22,7 +22,7 @@ const MobileFooter = () => {
   }
 
   // Define a mapping of routes to animation points
-  const routeToPointMap = {
+  const routeToPointMap: { [key: string]: string } = {
     "/tournament": styles.tournamentPoint,
     "/history": styles.historyPoint,
     "/games": styles.playPoint,

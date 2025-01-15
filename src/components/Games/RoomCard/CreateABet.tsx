@@ -26,19 +26,21 @@ const CreateABet = ({
     }
   };
   const handleBetCreate = () => {
-    let data: any = {
-      stage: selectedStage,
-      name: gameDetails?.name,
-      value: parseFloat(selectedAmount),
-      gameType: 'OneVSOne',
-      landscape: gameDetails.landscape ? true : false,
-      isCustomBet: true,
-      userId: wallet?.address,
-      practice: false,
-      direct: false,
-      medium: 'ticket',
-      buildUrl: gameDetails?.buildUrl,
-    };
+    //commenting unnecessary code
+    
+    // const data = {
+    //   stage: selectedStage,
+    //   name: gameDetails?.name,
+    //   value: parseFloat(selectedAmount),
+    //   gameType: 'OneVSOne',
+    //   landscape: gameDetails.landscape ? true : false,
+    //   isCustomBet: true,
+    //   userId: wallet?.address,
+    //   practice: false,
+    //   direct: false,
+    //   medium: 'ticket',
+    //   buildUrl: gameDetails?.buildUrl,
+    // };
 
     onClose();
     // setTimeout(() => {

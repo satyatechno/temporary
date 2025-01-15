@@ -14,7 +14,7 @@ const GameDetails = ({ game }: any) => {
   const { fetchGameDetails, games } = useGamesContext();
   // const { wallet } = useAppContext();
   useEffect(() => {
-    let gameData = fetchGameDetails(game);
+    const gameData = fetchGameDetails(game);
     if (gameData) {
       setGameDetails(gameData);
       console.log({ gameData });

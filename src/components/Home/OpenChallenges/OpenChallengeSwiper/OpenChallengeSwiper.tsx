@@ -62,7 +62,7 @@ const OpenChallengesSwiperCarousel = ({ data }: any) => {
         className="mySwiper"
         style={{ width: "90%" }}
       >
-        {data?.map((details) => (
+        {data?.map((details:any) => (
           <SwiperSlide className={styles.swiper_slide} key={details?._id}>
             <OpenChallengesCard
               name={details?.game?.name}

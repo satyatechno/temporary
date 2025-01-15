@@ -6,7 +6,7 @@ const CommunityLink = ({header,socialData}:any) => {
   return (
     <div className={styles.community_container}>
       <h3 className={styles.community_header}>{header}</h3>
-      {socialData?.map((data) => (
+      {socialData?.map((data:any) => (
         <Link href={data?.link} key={data?.id} target="_blank">
           <div className={styles.main_container}>
             <div className={styles.upper_container}>

@@ -13,11 +13,17 @@ import Cookies from "js-cookie";
 interface AppContextType {
   userData: any;
   setUserData: (user: any) => void;
+  setActive: (button: any) => void; 
   wallet: any;
   // setWallet: (user: string | null) => void;
   fetchUser: () => void;
   fetchActiveWallet: () => void;
+  setActiveButton: (value: string) => void;
   activeButton:any;
+  displayText:string;
+  loadingWallet: boolean;
+  userLoading: boolean;
+
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -103,7 +109,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         displayText,
         setActive,
         activeButton,
-        setActiveButton
+        setActiveButton,
+        loadingWallet,
+        userLoading
       }}
     >
       {children}

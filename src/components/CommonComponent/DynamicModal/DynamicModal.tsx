@@ -5,6 +5,11 @@ interface ModalProps {
   title: string;
   onClose: () => void;
   onSubmit: (data: Record<string, any>) => void;
+  userName:string;
+  setUserData: (user: any) => void; 
+  setUserName: React.Dispatch<React.SetStateAction<any>>;
+  newUserName: any;
+
 }
 
 const DynamicModal: React.FC<ModalProps> = ({

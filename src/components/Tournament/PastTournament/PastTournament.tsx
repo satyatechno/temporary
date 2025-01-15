@@ -10,7 +10,7 @@ const PastTournament = ({ tournamentList, pastTournament }: any) => {
   return (
     <div className={styles.main_container}>
       {tournamentList?.map((cardValue: any) => (
-        <TournamentCard cardValue={cardValue} pastTournament={pastTournament} />
+        <TournamentCard cardValue={cardValue} pastTournament={pastTournament} key={cardValue?._id} />
       ))}
     </div>
   );

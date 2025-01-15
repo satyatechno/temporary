@@ -18,9 +18,7 @@ const Dashboard: React.FC<DashboardProps> = ({ userDetails }) => {
       
       <div className={styles.desktop_components}>
       <DashboardGameHistory
-        games={[]}
         loadingGames={false}
-        isAuthenticated={false}
       />
         <DashboardTournamentHistory />
       </div>

@@ -11,8 +11,8 @@ import TournamentMiniCard from "../TournamentMiniCard/TournamentMiniCard";
 const TournamentTabSwitcher = () => {
   const [activeTab, setActiveTab] = useState<"left" | "right">("left");
   const [loading, setLoading] = useState(false);
-  const [tournamentList, setTournamentList] = useState();
-  const [pastTournamentList, setPastTournamentList] = useState();
+  const [tournamentList, setTournamentList] = useState<any>();
+  const [pastTournamentList, setPastTournamentList] = useState<any>();
   const [pastTournament, setPastTournament] = useState(false);
   // const [selectedCard, setSelectedCard] = useState(null);
   const [page, setPage] = useState(1);
@@ -28,7 +28,7 @@ const TournamentTabSwitcher = () => {
 
   const fetchTour = async () => {
     setLoading(true);
-    let { data } = await FetchTournament(userData?.uuid);
+    const { data } = await FetchTournament(userData?.uuid);
     setTournamentList(data);
     setPastTournament(false);
     setLoading(false);

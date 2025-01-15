@@ -22,7 +22,7 @@ interface TransactionContextType {
 }
 export const TransactionContext = createContext<TransactionContextType>({
   modalVisible: false,
-  setModalVisible: (a: boolean) => {},
+  setModalVisible: () => {},
   transactionDetials: {
     contractAddress: '',
     sender: '',
@@ -34,8 +34,8 @@ export const TransactionContext = createContext<TransactionContextType>({
     cancel: () => {},
   },
   confirmLoading: false,
-  setConfirmLoading: (a: any) => {},
-  setTransactionDetails: (a: any) => {},
+  setConfirmLoading: () => {},
+  setTransactionDetails: () => {},
   transactionPromise: undefined,
   setTransactionPromise: () => {},
 });

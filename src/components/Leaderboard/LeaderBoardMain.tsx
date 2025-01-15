@@ -39,7 +39,9 @@ const LeaderBoardMain = () => {
           <GameTraits tournamentData={tournamentData} timeLeft={timeLeft} participates={participates}/>
           <TopRankers topRankersData={topThreeParticipants}/>
         </div>
-        <LeaderBoardTable participates={participates}/>
+        <LeaderBoardTable 
+        // participates={participates}
+        />
       </div>
     </div>
   );

@@ -11,14 +11,14 @@ import { useAppContext } from "@/app/Context/AuthContext";
 
 
 const TicketWalletDeposite = () => {
-  const [address, setAddress] = useState(false);
+  const [address, setAddress] = useState('');
   const [gasLoading, setGasLoading] = useState(false);
   const [gas, setGas] = useState("");
   const [amountText, setAmountText] = useState("");
   const [insufficientBalanceText, setInsufficientBalanceText] = useState("");
   const [isWithdraw, setIsWithDraw] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [otp, setOtp] = useState("");
+  // const [loading, setLoading] = useState(false);
+  // const [otp, setOtp] = useState("");
 
 
 
@@ -68,7 +68,7 @@ const TicketWalletDeposite = () => {
   const handleWithdraw = async () => {
     setIsWithDraw(true);
     try {
-      setLoading(true);
+      // setLoading(true);
       const formData = {
         amount: amountText,
         to: address,
@@ -86,32 +86,32 @@ const TicketWalletDeposite = () => {
 
       // await getActiveWalletDetails();
       //   await fetchActiveWallet();
-      setAddress("");
+      setAddress('');
       setAmountText("");
-      setOtp("");
+      // setOtp("");
       setIsWithDraw(false);
       console.log("blank");
       //   onClose(true);
-    } catch (error) {
+    } catch (error:any) {
       //   console.error("Error during withdrawal", error);
       //   console.log("error message", error?.response?.data?.message);
-      setAddress("");
+      setAddress('');
       setAmountText("");
-      setOtp("");
+      // setOtp("");
       setInsufficientBalanceText(error?.response?.data?.message);
       setIsWithDraw(false);
       setTimeout(() => {
         setInsufficientBalanceText("");
       }, 3000);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
   const verifyOtp = async () => {
     // const isValid = validateOTP();
     // if (isValid) {
-    setLoading(true);
+    // setLoading(true);
     // const formData = {
     //   email: email,
     //   otp : "123456",
@@ -124,7 +124,7 @@ const TicketWalletDeposite = () => {
       // const response = await axios.post(`${config.apiURL}user/verifyOtp`, formData, {headers});
       handleWithdraw();
     } catch (error) {
-      setLoading(false);
+      // setLoading(false);
       console.error("Error verifying OTP", error);
     }
     // }
@@ -190,7 +190,7 @@ const TicketWalletDeposite = () => {
             <div>
               <p>Total</p>
               <p>
-                {gasLoading ? "..." : parseFloat(+amountText + +gas).toFixed(5)}{" "}
+              {gasLoading ? "..." : (parseFloat((+amountText + +gas).toFixed(5)))}
                 <span>
                   {/* <img src="" alt="" /> */}
                 </span>

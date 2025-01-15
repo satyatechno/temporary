@@ -15,8 +15,8 @@ const JoinARoom = ({
 }) => {
   const { wallet, userData } = useAppContext();
   const [joinCode, setCode] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [roomData, setRoomData] = useState();
+  // const [loading, setLoading] = useState(false);
+  // const [roomData, setRoomData] = useState();
   const [roomValid, setRoomValid] = useState('');
   const validation = () => {
     if (joinCode?.trim().length > 3) {
@@ -26,18 +26,18 @@ const JoinARoom = ({
     }
   };
   const checkRoom = async () => {
-    setLoading(true);
-    let response:any = await checkRoomApi({ code: joinCode });
+    // setLoading(true);
+    const response:any = await checkRoomApi({ code: joinCode });
     console.log('room join', JSON.stringify(response?.data));
     if (response?.data?.statusCode && response?.data?.statusCode === '10000') {
-      setRoomData(response?.data?.data?.game);
-      setLoading(false);
+      // setRoomData(response?.data?.data?.game);
+      // setLoading(false);
       setRoomValid('valid');
     } else {
       alert('Bet Error: ' + response.response.data.message);
 
       setRoomValid(response.response.data.message);
-      setLoading(false);
+      // setLoading(false);
     }
   };
   const handlePlay = () => {};

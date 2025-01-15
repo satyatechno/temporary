@@ -14,7 +14,7 @@ const GameTraits = ({ tournamentData, timeLeft, participates }: any) => {
     marginLeft: 50,
   };
 
-  const loadingBar = {
+  const loadingBar:any = {
     height: "100%",
     width: `${participates?.length}%`,
     maxWidth: "100%",

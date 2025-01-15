@@ -41,7 +41,11 @@ const OpenChallengesCard = ({
       gameId: gameId,
     };
 
-    router.push(`/playgame/match`, { state: gameData });
+       // Convert the gameData object to a query string
+       const queryString = new URLSearchParams(gameData as any).toString();
+
+       // Push the route with query parameters
+       router.push(`/playgame/match?${queryString}`);
   };
 
   return (

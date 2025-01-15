@@ -7,6 +7,7 @@ import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
 import Footer from '@/components/Endgame/Footer/Footer';
 import BackgroundIcons from '@/components/Endgame/BackgroundIcons/BackgroundIcons';
 import { useRouter } from 'next/navigation';
+
 const EndGame = () => {
   const router = useRouter();
   // const searchParams = useSearchParams();

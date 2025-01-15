@@ -33,9 +33,9 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { userData, wallet } = useAppContext();
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [ setIsGameOver] = useState<any>(false);//need to add in future 
   const [popupValue, setPopupValue] = useState(false);
-  const [isNavigate, setIsNavigate] = useState(true);
+  const [ setIsNavigate] = useState<any>(true);//need to add in future 
   useEffect(() => {
     //@ts-ignore
     window.unityInstance = UNSAFE__unityInstance;
@@ -62,13 +62,14 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
       const res = await gameScoreApi(gameId);
       data = { ...res.data?.data?.game };
       let player = '';
-      let oppenent = '';
+      
+      // let oppenent = '';
       if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
         player = 'player1';
-        oppenent = 'player2';
+        // oppenent = 'player2';
       } else {
+        // oppenent = 'player1';
         player = 'player2';
-        oppenent = 'player1';
       }
       if (res.data?.data?.game?.winner) {
         if (res.data?.data?.game?.winner?.uuid == userData?.uuid) {
@@ -90,8 +91,10 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     }
   };
 
-  const handleGameOver = (score: any, enc_score: any) => {
-    const score_obj = { enc_score: enc_score, score: score };
+  const handleGameOver = (
+    // score: any, enc_score: any
+  ) => {
+    // const score_obj = { enc_score: enc_score, score: score };
     unload();
     // setScore(score_obj);
     // const gameId = localStorage.getItem("gameId");
@@ -118,8 +121,12 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
       scoreSumbitter();
     }, 3000);
   };
-  const handleQuitGame = (score: any, enc_score: any) => {
-    const score_obj = { enc_score: enc_score, score: score };
+  const handleQuitGame = (
+    // score: any, enc_score: any
+  )=> {
+    //commenting unnecessary code 
+    
+    // const score_obj = { enc_score: enc_score, score: score };
     // setScore(score_obj);
     setPopupValue(true);
     // setTransaction(false);

@@ -3,7 +3,8 @@ import styles from "./forgetpassword.module.scss";
 import axios from "axios";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import config from "../../../../config";
-
+import { LuAlertCircle } from "react-icons/lu";
+import { FaCheck } from "react-icons/fa6";
 interface ForgotPasswordModalProps {
   openResetPasswordModal: () => void;
   onClose: () => void;
@@ -97,10 +98,11 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
                 <div>
                     <input placeholder="OTP" value={otp}  type="text" onChange={(e) => setOtp(e.target.value)} />
                     <p onClick={handleSendOtp}>Send OTP</p>
+                    {isOtpReceived ? (<p>Sent <FaCheck style={{color:"white", background:"green" , borderRadius:"100%", padding:"4px"}} /> </p>) : (!isOtpSent ? "Send Otp" : <LuAlertCircle color='#cdcdcd' />)}
                 </div>
             </div>
         </div>
-        <h3>Didn’t receive the code? <span onClick={handleSendOtp}>RESEND</span></h3>
+        <h3>Didn’t receive the code? { isResetEnabled ? (<span onClick={handleSendOtp}>RESEND</span> ) : (<span style={{color:"white", textDecorationLine:"none"}}>Resend Again in {timer} s </span>)} </h3>
         <div className={styles.forgotPasswordModal__contentVerify}>
             <Button value="Verify OTP" className={styles.forgotPasswordModal__contentVerifyBtn} onClick={handleVerifyOtp} />
         </div>

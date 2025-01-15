@@ -68,9 +68,8 @@ export const FetchPastTournament = async (page: any, limit = 9) => {
 
 export const TournamentData = async (
   tournament_id: any,
-  user_id = undefined,
-  page: any,
-  limit: any
+  page: any=1,
+  limit: any=10
 ) => {
   const useData = Cookies.get('user') ?? '';
   const user = JSON.parse(useData);
@@ -134,7 +133,7 @@ export const customBetsAll = async (medium: any) => {
       }
     );
     return data;
-  } catch (error) {
+  } catch (error:any) {
     console.log(error.message)
   }
 };
@@ -147,9 +146,9 @@ export const deviceApi = async (body: any) => {
       },
     });
     return data;
-  } catch (error) {
+  } catch (error:any) {
     console.log(error.message);
   }
 };
-export const gameScoreApi = async (gameId) =>
+export const gameScoreApi = async (gameId:any) =>
   axiosInstance.post(`challenge/score/${gameId}`);

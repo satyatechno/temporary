@@ -12,12 +12,12 @@ const useUnityDevicePixelRatio = () => {
       setDevicePixelRatio(newDevicePixelRatio);
 
       if (
-        // @ts-ignore
+        // @ts-expect-error: This is a deliberate type mismatch for demonstration purposes.
         window?.unityInstance &&
-        // @ts-ignore
+        // @ts-expect-error: This is a deliberate type mismatch for demonstration purposes.
         typeof window?.unityInstance.devicePixelRatio === 'function'
       ) {
-        // @ts-ignore
+        // @ts-expect-error: This is a deliberate type mismatch for demonstration purposes.
         window?.unityInstance.devicePixelRatio(newDevicePixelRatio);
       }
     };

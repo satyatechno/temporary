@@ -17,6 +17,8 @@ interface SignInModalProps {
   openForgotPasswordModal: () => void;
 }
 
+
+
 const SignInModal: React.FC<SignInModalProps> = ({
   openRegisterModal,
   onClose,
@@ -25,9 +27,17 @@ const SignInModal: React.FC<SignInModalProps> = ({
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
 
-  console.log("credential",email,password)
+  const isApiError = (error: unknown): error is { response: { data: { message: string } } } => {
+    return (
+      typeof error === "object" &&
+      error !== null &&
+      "response" in error &&
+      typeof (error as any).response?.data?.message === "string"
+    );
+  };
+
 
   const handleSubmit = async () => {
     // event.preventDefault();
@@ -40,7 +50,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
     };
 
     try {
-      setLoading(true);
+      // setLoading(true);
       const response = await axios.post(
         `${config.baseURL}user/signIn`,
         formData
@@ -60,15 +70,18 @@ const SignInModal: React.FC<SignInModalProps> = ({
       });
 
       if (response?.data?.statusCode === "10000") {
-        setLoading(false);
+        // setLoading(false);
         onClose();
       }
       setEmail("");
       setPassword("");
-    } catch (error) {
-      console.error("Error signing in:", error);
-      setError(error?.response?.data?.message || "An error occurred");
-      setLoading(false);
+    }catch (error: unknown) {
+      if (isApiError(error)) {
+        setError(error.response.data.message);
+      } else {
+        console.error("Error signing in:", error);
+        setError("An error occurred");
+      }
     }
   };
 

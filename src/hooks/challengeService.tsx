@@ -160,7 +160,7 @@ const useGameModule = () => {
         bet = await findChallenge({
           game,
           address: wallet?.address,
-          betAmount: parseFloat(betAmount),
+          betAmount: typeof betAmount === 'number' ? betAmount.toString() : parseFloat(betAmount).toString(),
           medium,
           isCustomBet: JSON.parse(isCustomBet),
           stage,

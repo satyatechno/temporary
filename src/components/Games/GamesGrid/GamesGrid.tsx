@@ -12,7 +12,7 @@ const GameGrid = () => {
       <div className={styles.mainContainer}>
         {Array(2)
           .fill(" ")
-          ?.map((game: any, index: number) => (
+          ?.map((_ , index: number) => (
             <div
               className={styles.container}
               style={{ flexDirection: index % 2 ? "row-reverse" : "row" }}
@@ -62,7 +62,7 @@ const GameGrid = () => {
       </div>
       {Array(Math.ceil(gameData.length / 6))
         .fill(" ")
-        ?.map((game: any, index: number) => (
+        ?.map((_,index: number) => (
           <>
             <div
               className={styles.container}

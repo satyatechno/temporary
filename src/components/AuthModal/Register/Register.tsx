@@ -83,8 +83,8 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
     setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
+    // event.preventDefault();
 
     if (validate()) {
       const formData = {
@@ -101,9 +101,8 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
         if (response?.data?.statusCode === "10000") {
           setOpenOtpModal(true);
         }
-      } catch (error) {
+      } catch (error:any) {
         setLoading(false);
-
         if (error.response?.data?.statusCode === '10001') {
           setErrors((prevErrors) => ({
             ...prevErrors,
@@ -168,8 +167,8 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
   
   // saving data in cookies
 
-const verifyOtp = async (event: React.FormEvent) => {
-  event.preventDefault();
+const verifyOtp = async () => {
+  // event.preventDefault();
 
   const formData = {
     email,
@@ -206,7 +205,7 @@ const verifyOtp = async (event: React.FormEvent) => {
 
       onClose(); 
     }
-  } catch (error) {
+  } catch (error:any) {
     console.error("Error verifying OTP:", error);
 
     if (error.response?.data?.statusCode === 10001) {
