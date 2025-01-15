@@ -126,6 +126,10 @@
   margin: 0px 0px 20px 0px;
 }
 
+.currency_deposite_send {
+  display: none;
+}
+
 @media (max-width: 991px) {
   .manage_wallet_container {
     background-image: url(https://assets.gamingarcade.io/Assets/mobile-bg.webp);
@@ -142,8 +146,8 @@
   .manageWallets__containerRight {
     width: 100%;
     border-radius: 22px;
-    border:none;
-    background:none;
+    border: none;
+    background: none;
     box-shadow: 0px 4.547px 4.547px 0px rgba(107, 103, 103, 0.06);
     backdrop-filter: blur(15.43067741394043px);
     padding: 0;
@@ -159,5 +163,15 @@
     display: flex;
     gap: 50px;
     margin: 0px 30px;
+  }
+  .currency_deposite_send {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .currency_deposite_send_btn {
+    max-width: 181px;
+    width: 100%;
   }
 }

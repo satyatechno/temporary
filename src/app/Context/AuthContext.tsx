@@ -50,9 +50,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         console.error("Error fetching currency balance:", error);
       }
     };
-
     fetchCurrencyBalance();
   }, []);
+
 
   const setActive = (button: any) => {
     setActiveButton(button);
@@ -100,8 +100,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         fetchActiveWallet,
         fetchUser,
         displayText,
-        activeButton,
         setActive,
+        activeButton,
+        setActiveButton
       }}
     >
       {children}

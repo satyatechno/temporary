@@ -97,7 +97,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
                 height={0}
                 width={0}
                 sizes="100vw"
-                style={{ height: "80px", width: "auto" }}
+                style={{ height: "80px", width: "auto",objectFit:"contain" }}
               />
             </div>
           ))}

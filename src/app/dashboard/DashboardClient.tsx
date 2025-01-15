@@ -15,15 +15,13 @@ const Dashboard: React.FC<DashboardProps> = ({ userDetails }) => {
     <main className={styles.main_container}>
       <UserDetails userDetails={userDetails} />
       <UserReferDetails />
-      {/* <DashboardGameHistory
+      
+      <div className={styles.desktop_components}>
+      <DashboardGameHistory
         games={[]}
-        user={{
-          uuid: "",
-        }}
         loadingGames={false}
         isAuthenticated={false}
-      /> */}
-      <div className={styles.desktop_components}>
+      />
         <DashboardTournamentHistory />
       </div>
       <div className={styles.community_links}>

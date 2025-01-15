@@ -7,6 +7,7 @@ import {
   challengeHistoryApi,
   tournamentHistoryData,
 } from "@/services/challenge";
+import { useAppContext } from "@/app/Context/AuthContext";
 
 const History = () => {
   const [activeTab, setActiveTab] = useState<"left" | "right">("left");
@@ -18,16 +19,17 @@ const History = () => {
   const headers2 = ["Trmt No", "Game", "Rank", "Result"];
 
   const [isLoading, setIsLoading] = useState(true);
+  const {activeButton }=useAppContext();
+
 
   const fetchGameHistoryData = useCallback(async () => {
     setIsLoading(true);
     try {
       const res = await challengeHistoryApi({
-        medium: "tickets",
+        medium: activeButton.toLowerCase(),
       });
       setGameHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);
-      console.log("fetchGameHistoryData", res?.data?.data?.game);
     } catch (error) {
       console.log("error", error);
     }
@@ -35,7 +37,7 @@ const History = () => {
 
   useEffect(() => {
     fetchGameHistoryData();
-  }, []);
+  }, [fetchGameHistoryData]);
 
   const fetchTournamentHistoryData = useCallback(async () => {
     setIsLoading(true);
@@ -45,7 +47,6 @@ const History = () => {
       });
       setTournamentHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);
-      console.log("fetchDashboardTournamentHistoryData", res?.data);
     } catch (error) {
       console.log("error", error);
     }

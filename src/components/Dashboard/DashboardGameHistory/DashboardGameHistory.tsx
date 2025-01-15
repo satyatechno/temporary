@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Image from "next/image";
 import styles from "./DashboardGameHistory.module.scss";
@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import { challengeHistoryApi } from "@/services/challenge";
 import { useAppContext } from "@/app/Context/AuthContext";
 
-interface tournameHistory {
+interface tournameGameHistory {
   gameId: string;
   game: { gameName: string };
   type: string;
@@ -35,51 +35,46 @@ interface tournameHistory {
 }
 
 interface GameHistoryProps {
-  tournameHistory: tournameHistory[];
-  user: { uuid: string };
+  tournameGameHistory: tournameGameHistory[];
   loadingGames: boolean;
 }
 
-const DashboardGameHistory: React.FC<GameHistoryProps> = async ({
-  user,
+const DashboardGameHistory: React.FC<GameHistoryProps> =  ({
   loadingGames,
 }) => {
   const token = Cookies.get("userToken");
 
-  const [tournameHistory, setTournamentHistory] = useState();
+  const [tournameGameHistory, setTournamentGameHistory] = useState();
 
-  const {userData}=useAppContext();
-  console.log("user-id",userData?.uuid)
+  
+  const {userData, activeButton }=useAppContext();
+  
 
   // Function to render game rows
 
-  // const medium = "CURRENCY" ? "currency" : "ticket";
 
   const fetchDashboardTournamentHistoryData = useCallback(async () => {
-    
     try {
       const res = await challengeHistoryApi({
-        medium: 'ticket',
+        medium: activeButton.toLowerCase(),
       });
-      setTournamentHistory(res?.data?.data?.game ?? []);
-      console.log('open chalanges', res);
-    } catch (error: any) {
-      console.log('error', error);
+      setTournamentGameHistory(res?.data?.data?.game ?? []);
+    } catch (error) {
+      console.error("Error fetching tournament history data:", error);
     }
-  }, []);
-
-  console.log("tournameHistory",tournameHistory)
-  // console.log("gamegamegame",game?.data?.data?.game)
-
-  // const res = await openChallengesApi({
-  //   gameName: gameDetails?.name,
-  //   medium: 'ticket',
-  // });
+  }, [activeButton]);
 
   useEffect(() => {
-    // if (gameDetails?.name)
-       fetchDashboardTournamentHistoryData();
-  }, []);
+    fetchDashboardTournamentHistoryData();
+  }, [fetchDashboardTournamentHistoryData]);
+
+
+
+
+  // useEffect(() => {
+  //   // if (gameDetails?.name)
+  //      fetchDashboardTournamentHistoryData();
+  // }, [activeButton]);
   // if (!openChallenges?.length) return null;
 
   const renderGameRows = () => {
@@ -101,7 +96,7 @@ const DashboardGameHistory: React.FC<GameHistoryProps> = async ({
       );
     }
 
-    if (tournameHistory?.length === 0) {
+    if (tournameGameHistory?.length === 0) {
       return (
         <tr>
           <td colSpan={7} className={styles.emptyRow}>
@@ -121,14 +116,14 @@ const DashboardGameHistory: React.FC<GameHistoryProps> = async ({
       );
     }
 
-    return tournameHistory?.map((game:any, index:any) => {
-      const isUserPlayer1 = game.player1.uuid === user.uuid;
+    return tournameGameHistory?.map((game:any, index:any) => {
+      const isUserPlayer1 = game.player1.uuid === userData?.uuid;
       const opponent = isUserPlayer1 ? game.player2 : game.player1;
       const score = `${
         isUserPlayer1 ? game.player1.score : game.player2.score
       } / ${isUserPlayer1 ? game.player2.score : game.player1.score}`;
       const result = game.winner?.uuid
-        ? game.winner.uuid === user.uuid
+        ? game.winner.uuid === userData?.uuid
           ? "Won"
           : "Lost"
         : "Pending...";

@@ -1,0 +1,214 @@
+.otpVerificationModal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.otpVerificationModal__content {
+  background: hsla(0, 0%, 100%, 0.047);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.081);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 30px 30px 0 0;
+  border: 1px solid hsla(0, 0%, 100%, 0.18);
+  max-width: 100%;
+  padding: 10px;
+}
+
+.otpVerificationModal__content > hr {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.otpVerificationModal__content > h3 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  margin:15px 20px;
+}
+
+.otpVerificationModal__content > h3 > span {
+  color: #4f7dff;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.otpVerificationModal__contentConnectBtn {
+  width: 100%;
+}
+
+.otpVerificationModal__content > span:hover,
+.otpVerificationModal__content > span:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.otpVerificationModal__contentClose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 0px 20px;
+}
+
+.otpVerificationModal__contentClose > p {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.442px;
+  // flex: 1;
+  text-align: center;
+}
+
+.otpVerificationModal__contentClose > span {
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.otpVerificationModal__contentEmail {
+  padding: 0px 20px 0px 20px;
+  margin: 15px 20px;
+  border-radius: 10px;
+  border: 0.5px solid #282a4d;
+  background: #1a1c3e;
+  box-shadow: 0 3.499px 6.997px 0 rgba(27, 27, 27, 0.3);
+  -webkit-backdrop-filter: blur(17.492538452148438px);
+  backdrop-filter: blur(17.492538452148438px);
+  padding: 20px;
+}
+.otpVerificationModal__contentEmail div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.otpVerificationModal__contentEmail div > p {
+  color: #ffff;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 10px;
+}
+
+.otpVerificationModal__contentEmailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.otpVerificationModal__contentEmailForm > input {
+  border-radius: 153.832px;
+  border: 0.5px solid #fff;
+  background: rgba(255, 255, 255, 0.08);
+  /* backdrop-filter: blur(23.43900489807129px);   */
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  margin-top: 15px;
+  outline: none;
+}
+
+.otpVerificationModal__contentEmailForm > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: pink; */
+  width: 100%;
+}
+
+.otpVerificationModal__contentEmailForm > div > p {
+  font-size: 14px;
+  margin-bottom: -20px;
+}
+
+.otpVerificationModal__contentEmailForm > div > input {
+  border-radius: 153.832px;
+  border: 0.5px solid #fff;
+  /* background: rgba(255, 255, 255, 0.08);   */
+  backdrop-filter: blur(23.43900489807129px);
+  width: 70%;
+  padding: 10px 20px;
+  color: white;
+  margin-top: 15px;
+  outline: none;
+}
+
+.otpVerificationModal__contentEmailForm > p {
+  color: #cdcdcd;
+  text-align: right;
+  font-family: "Inter";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  margin-top: 15px;
+  margin-left: -10px;
+}
+
+.otpVerificationModal__contentSave {
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+}
+
+.otpVerificationModal__contentSaveBtn {
+  width: 100%;
+  text-align: center;
+}
+
+.qr_code {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.custom_line {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  height: 1px;
+}
+
+@media (max-width: 991px) {
+  .otpVerificationModal {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px 30px 9px 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .otpVerificationModal__content {
+    border-radius: 30px 30px 9px 1px;
+  }
+}

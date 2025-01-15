@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("https://assets.gamingarcade.io/Assets/modalBg.webp");
-   background: linear-gradient(188.01deg, #c9006d 0.73%, #0066ff 94.65%); 
+  background: linear-gradient(188.01deg, #c9006d 0.73%, #0066ff 94.65%);
   box-shadow: 0vw 0.485vw 0.97vw rgba(27, 27, 27, 0.3);
   backdrop-filter: blur(2.424vw);
   /* Note: backdrop-filter has minimal browser support */
@@ -46,4 +46,26 @@
   position: relative;
   max-width: 35.152vw;
   width: 100%;
+}
+
+@media (max-width: 991px) {
+  .modal_content {
+    background: hsla(0, 0%, 100%, 0.047);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.081);
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    border: 1px solid hsla(0, 0%, 100%, 0.18);
+
+    background-image: url("https://assets.gamingarcade.io/Assets/modalBg.webp");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+
+    padding: 20px;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin: 1rem;
+  }
 }

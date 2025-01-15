@@ -11,7 +11,7 @@ interface DashboardProps {
 
 const CopyWalletAddress: React.FC<DashboardProps> = ({ userDetails }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const { userData } = useAppContext();
+  const { userData,wallet } = useAppContext();
   const handleCopyClick = (textToCopy: string) => {
     navigator.clipboard.writeText(textToCopy);
     setIsCopied(true);
@@ -28,7 +28,8 @@ const CopyWalletAddress: React.FC<DashboardProps> = ({ userDetails }) => {
         style={{ marginBottom: "35px" }}
       >
         <span className={styles.sunChild}>
-          <span>{userData?.userName}</span>
+          {/* <span>{userData?.userName}</span> */}
+          <span>{wallet?.address}</span>
           {
             <IoCopy
               onClick={() => handleCopyClick(userData?.userName)}

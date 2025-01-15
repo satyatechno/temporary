@@ -5,6 +5,7 @@ import { inter, poppins } from '@/app/layout';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useGamesContext } from '@/app/Context/GamesContext';
+import { useAppContext } from '@/app/Context/AuthContext';
 type TItem = {
   id: number;
   reward: number | string;
@@ -15,6 +16,7 @@ interface TOneVsOneCard {
   index: number;
   onClick: (item: TItem) => void;
   gameDetails: any;
+  activeButton:any;
 }
 const cardData = [
   {
@@ -38,7 +40,7 @@ const cardData = [
     entryPrice: 50,
   },
 ];
-const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
+const OneVsOneCard = ({ item, index, onClick, gameDetails, activeButton }: TOneVsOneCard) => {
   return (
     <div className={`${styles.card} ${styles['gradient' + (index % 4)]}`}>
       <div className={`${styles.leftBar} ${styles['leftBar' + (index % 4)]}`} />
@@ -48,9 +50,9 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
         <h2>{item.reward}</h2>
         <img
           src={
-            false
-              ? `https://assets.gamingarcade.io/Assets/matic.webp`
-              : 'https://assets.gamingarcade.io/Assetsticket.webp'
+            activeButton==="TICKETS"
+              ?'https://assets.gamingarcade.io/Assetsticket.webp'
+              :`https://assets.gamingarcade.io/Assets/matic.webp`
           }
           alt="Matic"
         />
@@ -68,7 +70,7 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
             direct: false,
             practice: false,
             isCustomBet: false,
-            medium: 'ticket',
+            medium: activeButton,
           },
         }}
       >
@@ -76,7 +78,7 @@ const OneVsOneCard = ({ item, index, onClick, gameDetails }: TOneVsOneCard) => {
           // onClick={() => onClick(item) }
           className={poppins.className}
         >
-          Play {item.entryPrice} {false ? 'Matic' : 'Ticket'}{' '}
+          Play {item.entryPrice} {activeButton==="TICKETS" ? 'Ticket' : 'Matic'}
           <img
             style={{ marginLeft: 10 }}
             src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
@@ -93,6 +95,9 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
     console.log(item.entryPrice, item.id, gameDetails?.name);
     router.push('/playgame?game=' + gameDetails?.name);
   };
+
+  const { activeButton }:any = useAppContext();
+
   return (
     <div className={styles.container}>
       <div className={styles.headingContainer}>
@@ -117,6 +122,7 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
             index={index}
             onClick={handlePlay}
             gameDetails={gameDetails}
+            activeButton={activeButton}
           />
         ))}
       </div>
