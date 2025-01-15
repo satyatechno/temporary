@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './joinCommunity.module.scss';
 import { glossBloom, inter, montserrat } from '@/app/layout';
-import { Inter } from 'next/font/google';
+
 const JoinCommunity = () => {
   return (
     <section className={styles.joinTextSection}>

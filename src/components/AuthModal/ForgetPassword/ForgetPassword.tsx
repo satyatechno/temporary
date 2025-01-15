@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./forgetpassword.module.scss";
 import axios from "axios";
-import { FaCheck } from "react-icons/fa6";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import config from "../../../../config";
 
@@ -61,9 +60,8 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
     }
   };
 
-  const handleVerifyOtp = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
+  const handleVerifyOtp = async () => {
+    // event.preventDefault();
     const formData = {
       email: email,
       otp: otp,

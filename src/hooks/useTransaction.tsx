@@ -3,9 +3,6 @@ import { estimateGasApi, sendTransactionApi } from '../services/transaction';
 import { useAppContext } from '@/app/Context/AuthContext';
 import { TransactionContext } from '@/app/Context/TransactionContext';
 import config from '../../config';
-// import { PaymentValidation } from "src/Context/PaymentState";
-// import { TransactionContext } from "src/Context/TransactionContext";
-// import { useCustomNavigation } from "src/helper/helper";
 type TChallengeArgs = {
   gameId: number | number;
   address: string;
@@ -27,15 +24,13 @@ type TEstimateOrTransaction = {
 
 const useTransaction = () => {
   const [estimateLoading, setEstimateLoading] = useState(false);
-  const [transactionLoading, setTransactionLoading] = useState(false);
+  // const [transactionLoading, setTransactionLoading] = useState(false);
   // const {setTransaction} = useContext(PaymentValidation);
   const { fetchActiveWallet } = useAppContext();
   const {
     setConfirmLoading,
     setModalVisible,
     setTransactionDetails,
-    setTransactionPromise,
-    transactionPromise,
   } = useContext(TransactionContext);
 
   const contractAddress = {
@@ -62,7 +57,7 @@ const useTransaction = () => {
         cancel: () => {},
       });
       setModalVisible(true);
-    } catch (error: any) {
+    } catch (error) {
       console.log('error estimation', error);
     } finally {
       setEstimateLoading(false);
@@ -77,7 +72,7 @@ const useTransaction = () => {
 
       // setTransaction(true)
       fetchActiveWallet();
-    } catch (error: any) {
+    } catch (error) {
       // setTransaction(false)
       console.log('error estimation', error);
     } finally {
@@ -90,7 +85,7 @@ const useTransaction = () => {
     estimateGas,
     sendTransaction,
     estimateLoading,
-    transactionLoading,
+    // transactionLoading,
   };
 };
 export default useTransaction;

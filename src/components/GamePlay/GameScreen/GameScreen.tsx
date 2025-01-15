@@ -10,8 +10,6 @@ import QuitPopup from '../QuitPopPup/QuitPopup';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { gameScoreApi } from '@/services/GameServices';
 import { useAppContext } from '@/app/Context/AuthContext';
-import DragableMenu from '@/components/Games/DragableMenu/DragableMenu';
-import { Draggable } from '@/components/CommonComponent/DragableDemo/DragableDemo';
 
 const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   const {
@@ -87,11 +85,13 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
       // const params = new URLSearchParams();
       //@ts-ignore
       router.replace(`/playgame/${data?.status}?data=${JSON.stringify(data)}`);
-    } catch (error) {}
+    } catch (error) {
+      console.log("errorrr",error)
+    }
   };
 
   const handleGameOver = (score: any, enc_score: any) => {
-    let score_obj = { enc_score: enc_score, score: score };
+    const score_obj = { enc_score: enc_score, score: score };
     unload();
     // setScore(score_obj);
     // const gameId = localStorage.getItem("gameId");
@@ -119,7 +119,7 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     }, 3000);
   };
   const handleQuitGame = (score: any, enc_score: any) => {
-    let score_obj = { enc_score: enc_score, score: score };
+    const score_obj = { enc_score: enc_score, score: score };
     // setScore(score_obj);
     setPopupValue(true);
     // setTransaction(false);
@@ -138,7 +138,7 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     if (isLoaded === true) {
       console.log('address at game screen', wallet);
       const gameId = localStorage.getItem('gameId');
-      let data = {
+      const data = {
         address: wallet?.address,
         tourId: '',
         gameId: gameId,
@@ -153,7 +153,7 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     }
   }, [isLoaded]);
   const mode = (mode: any, mute: any, quit: any) => {
-    let data = { darkmode: mode, sound: mute, quit: quit };
+    const data = { darkmode: mode, sound: mute, quit: quit };
     //@ts-ignore
     window.unityInstance.SendMessage(
       'ReactHelper',

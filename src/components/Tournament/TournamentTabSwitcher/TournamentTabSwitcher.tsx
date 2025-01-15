@@ -11,10 +11,10 @@ import TournamentMiniCard from "../TournamentMiniCard/TournamentMiniCard";
 const TournamentTabSwitcher = () => {
   const [activeTab, setActiveTab] = useState<"left" | "right">("left");
   const [loading, setLoading] = useState(false);
-  const [tournamentList, setTournamentList] = useState<any>();
-  const [pastTournamentList, setPastTournamentList] = useState<any>();
+  const [tournamentList, setTournamentList] = useState();
+  const [pastTournamentList, setPastTournamentList] = useState();
   const [pastTournament, setPastTournament] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null);
+  // const [selectedCard, setSelectedCard] = useState(null);
   const [page, setPage] = useState(1);
 
 
@@ -36,7 +36,7 @@ const TournamentTabSwitcher = () => {
 
   const fetchPastTour = async (page: any) => {
     // setLoading(true);
-    let { data } = await FetchPastTournament(page);
+    const { data } = await FetchPastTournament(page);
     if (page == 1) {
       // setTournamentList(data?.tournaments);
       setPastTournamentList(data?.tournaments)
@@ -52,9 +52,9 @@ const TournamentTabSwitcher = () => {
     setPage((prevPage) => prevPage + 1); // Increment page number
   };
 
-  const handleCardSelect = (card: any) => {
-    setSelectedCard(card);
-  };
+  // const handleCardSelect = (card: any) => {
+  //   setSelectedCard(card);
+  // };
 
   useEffect(() => {
     if (page > 1) {

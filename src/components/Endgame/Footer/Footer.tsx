@@ -17,7 +17,7 @@ import {
 import { poppins } from '@/app/layout';
 const Footer = ({ game }: any) => {
   const [clicked, setClicked] = useState(false);
-  let message = `Hey! I Have Scored 2000 in gameName, click here to play this game`;
+  const message = `Hey! I Have Scored 2000 in gameName, click here to play this game`;
   return (
     <div className={styles.container}>
       <div

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./otpverfication.module.scss";
-import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import axios from "axios";
 import config from "../../../../config";
 
@@ -74,8 +73,3 @@ const OTPVerificationModal: React.FC<OTPVerificationModalProps> = ({
 
 
 export default OTPVerificationModal;
-{/* <Button
-            value="Verify OTP"
-            className={styles.otpVerificationModal__contentSaveBtn}
-            onClick={handleSubmit}
-          /> */}

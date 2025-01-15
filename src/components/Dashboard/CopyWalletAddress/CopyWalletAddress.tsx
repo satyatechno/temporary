@@ -5,11 +5,11 @@ import styles from "./copywalletaddress.module.scss";
 import { IoCopy } from "react-icons/io5";
 import { useAppContext } from "@/app/Context/AuthContext";
 
-interface DashboardProps {
-  userDetails: any | null;
-}
+// interface DashboardProps {
+//   userDetails: any | null;
+// }
 
-const CopyWalletAddress: React.FC<DashboardProps> = ({ userDetails }) => {
+const CopyWalletAddress= () => {
   const [isCopied, setIsCopied] = useState(false);
   const { userData,wallet } = useAppContext();
   const handleCopyClick = (textToCopy: string) => {

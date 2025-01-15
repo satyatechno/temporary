@@ -1,19 +1,10 @@
 'use client'
-import { useState } from "react";
 import styles from "./maticurrencytoggler.module.scss";
 import Image from "next/image";
 import config from "../../../../config";
 // import { useAppContext } from "@/app/Context/AuthContext";
 
 const MaticCurrencyToggler = ({setActiveButton,totalTickets,walletBalance,activeButton}:any) => {
-  // const [activeTab, setActiveTab] = useState<"CURRENCY" | "TICKETS">(
-  //   "CURRENCY"
-  // );
-
-  // const { activeButton, setActiveButton }:any = useAppContext();
-
-  // console.log("activeButton",activeButton)
-  
   const handleTabClick = (direction: "TICKETS" | "CURRENCY") => {
     if (activeButton !== direction) {
       setActiveButton(direction);

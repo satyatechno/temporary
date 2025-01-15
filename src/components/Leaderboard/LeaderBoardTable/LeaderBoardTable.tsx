@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./leaderboardtable.module.scss";
 import config from "../../../../config";
 
-const LeaderBoardTable = ({ participate }: any) => {
+const LeaderBoardTable = () => {
   return (
     <div className={styles.right_container}>
       <div className={styles.leaderboard_img_container}>

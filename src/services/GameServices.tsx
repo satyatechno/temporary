@@ -14,29 +14,33 @@ export const fetchGames = async () => {
 
 export const activeWalletApi = async () => {
   try {
-    let { data } = await axiosInstance.get('user/wallet/active/wallet',{
+    const { data } = await axiosInstance.get('user/wallet/active/wallet',{
       headers: {
         'Authorization': `Bearer ${Cookies.get('userToken')}`
     }
     });
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log("erorr in fetching wallet data",error)
+  }
 };
 
 export const getUserApi = async () => {
   try {
-    let { data } = await axios.get(`${config.baseURL}user/get/details`, {
+    const { data } = await axios.get(`${config.baseURL}user/get/details`, {
       headers: {
         Authorization: `Bearer ${Cookies.get('userToken')}`,
       },
     });
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log("erorr in fetching user data",error)
+  }
 };
 
 export const FetchTournament = async (userId: any) => {
   try {
-    let { data } = await axios.get(
+    const { data } = await axios.get(
       `${config.baseURL}tournament?status=RUNNING&address=${userId}`,
       {
         headers: {
@@ -52,11 +56,14 @@ export const FetchTournament = async (userId: any) => {
 };
 export const FetchPastTournament = async (page: any, limit = 9) => {
   try {
-    let { data } = await axios.get(
+    const { data } = await axios.get(
       `${config.baseURL}tournament?status=PAST&page=${page}&limit=${limit}`
     );
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log("error fetching past tournament", error);
+
+  }
 };
 
 export const TournamentData = async (
@@ -68,7 +75,7 @@ export const TournamentData = async (
   const useData = Cookies.get('user') ?? '';
   const user = JSON.parse(useData);
   try {
-    let { data } = await axios.get(
+    const { data } = await axios.get(
       `${config.baseURL}tournament/participates/${tournament_id}?page=${page}&limit=${limit}`,
       {
         params: user?.uuid ? { uuid: user?.uuid } : {},
@@ -79,7 +86,10 @@ export const TournamentData = async (
     );
 
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log("error ", error);
+
+  }
 };
 
 // export const TournamentData = async (tournament_id, user_id = undefined, page, limit) => {
@@ -114,7 +124,7 @@ export const openChalangesApi = async (game: string) => {
 
 export const customBetsAll = async (medium: any) => {
   try {
-    let { data } = await axios.get(
+    const { data } = await axios.get(
       // `${config.apiURL}admin-panel/challenge?page=1&limit=20&status=Awaited`
       `${config.baseURL}challenge/open?medium=${medium}`,
       {
@@ -124,20 +134,22 @@ export const customBetsAll = async (medium: any) => {
       }
     );
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error.message)
+  }
 };
 
 export const deviceApi = async (body: any) => {
   try {
-    let data = await axios.post(`${config.baseURL}user/device/register`, body, {
+    const data = await axios.post(`${config.baseURL}user/device/register`, body, {
       headers: {
         Authorization: `Bearer ${Cookies.get('userToken')}`,
       },
     });
     return data;
-  } catch (error: any) {
+  } catch (error) {
     console.log(error.message);
   }
 };
-export const gameScoreApi = async (gameId: any) =>
+export const gameScoreApi = async (gameId) =>
   axiosInstance.post(`challenge/score/${gameId}`);

@@ -9,11 +9,11 @@ import config from "../../../../config";
 import { useAppContext } from "@/app/Context/AuthContext";
 import Cookies from "js-cookie";
 
-interface DashboardProps {
-  userDetails: any | null;
-}
+// interface DashboardProps {
+//   userDetails: any | null;
+// }
 
-const EditUserName: React.FC<DashboardProps> = ({ userDetails }: any) => {
+const EditUserName = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const closeModal = () => setIsPopupOpen(false);
   const { userData, setUserData } = useAppContext();

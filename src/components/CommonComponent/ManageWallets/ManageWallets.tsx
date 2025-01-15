@@ -4,7 +4,6 @@ import { IoIosArrowBack } from "react-icons/io";
 import TicketWalletDetail from "./TicketWalletDetails/TicketWalletDetails";
 import TicketWalletDeposite from "./TicketWalletDeposite/TicketWalletDeposite";
 import MyOtherWallets from "./MyOtherWallets/MyOtherWallets";
-import Link from "next/link";
 import WalletSidebar from "./WalletSidebar/WalletSidebar";
 import { useState } from "react";
 import ImportAccountModal from "./ImportAccountModal/ImportAccountModal";

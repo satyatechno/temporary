@@ -15,8 +15,8 @@ const GamesGrid = ({ game }: { game: string }) => {
       </div>
       <div className={styles.games}>
         {games
-          .filter((i, e) => game !== i.name)
-          .map((item: any, index) => {
+          .filter((i) => game !== i.name)
+          .map((item, index) => {
             if (index < 6) {
               return (
                 <Link key={index?.toString()} href={`/games/${item?.name}`} replace>

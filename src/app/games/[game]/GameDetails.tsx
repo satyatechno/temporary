@@ -1,21 +1,19 @@
 'use client';
 
-import { useAppContext } from '@/app/Context/AuthContext';
+// import { useAppContext } from '@/app/Context/AuthContext';
 import { useGamesContext } from '@/app/Context/GamesContext';
 import BackgroundIcons from '@/components/Games/BackgroundIcons/BackgroundIcons';
 import OneVsOne from '@/components/Games/OneVsOne/OneVsOne';
 import OpenChallenges from '@/components/Games/OpenChallenges/OpenChallenges';
 import PlayWithFriends from '@/components/Games/PlayWithFriends/PlayWithFriends';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const GameDetails = ({ game }: any) => {
-  const router = useRouter();
+  // const router = useRouter();
   const [gameDetails, setGameDetails] = useState<any>(null);
   const { fetchGameDetails, games } = useGamesContext();
-  const { wallet } = useAppContext();
+  // const { wallet } = useAppContext();
   useEffect(() => {
-    console.log('wallet=====>', wallet);
     let gameData = fetchGameDetails(game);
     if (gameData) {
       setGameDetails(gameData);

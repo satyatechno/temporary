@@ -10,10 +10,10 @@ import useGameModule from '@/hooks/challengeService';
 const PlayGame = () => {
   const searchParams = useSearchParams();
   const game = searchParams.get('game');
-  const [loading, setLoading] = useState<boolean>(false);
-  const [gameData, setGameData] = useState<any>(null);
+  // const [loading, setLoading] = useState<boolean>(false);
+  const [gameData, setGameData] = useState(null);
   const { fetchGameDetails, games } = useGamesContext();
-  const { playChallenge, playGame, setPlayGame, scoreToBeat } = useGameModule();
+  const {  playGame, setPlayGame, scoreToBeat } = useGameModule();
 
   useLayoutEffect(() => {
     setGameData(fetchGameDetails(game ?? '2048'));
@@ -39,7 +39,10 @@ const PlayGame = () => {
     // }
   }, []);
 
-  if (loading || !playGame) {
+  // if (loading || !playGame) {
+  //   return <LoadingScreen />;
+  // }
+   if (!playGame) {
     return <LoadingScreen />;
   }
   return (

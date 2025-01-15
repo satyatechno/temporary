@@ -8,9 +8,9 @@ import { TournamentData } from "@/services/GameServices";
 import { useSearchParams } from "next/navigation";
 
 const LeaderBoardMain = () => {
-  const [topPlayerRating, setTopPlayerRating] = useState();
+  // const [topPlayerRating, setTopPlayerRating] = useState();
   const [tournamentData, setTournamentData] = useState();
-  const [freeEntry,setFreeEntry]=useState();
+  // const [freeEntry,setFreeEntry]=useState();
   const [timeLeft,setTimeleft]=useState();
   const [participates,setParticipates]=useState();
   const [topThreeParticipants,setTopThreeParticipants]=useState();
@@ -25,7 +25,7 @@ const LeaderBoardMain = () => {
     setTopThreeParticipants(data?.topThreeParticipants);
     setTournamentData(data?.tournament);
     setTimeleft(data?.tournament?.endAt);
-    setFreeEntry(data?.freeEntry)
+    // setFreeEntry(data?.freeEntry)
   };
 
   useEffect(() => {

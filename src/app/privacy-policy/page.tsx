@@ -89,9 +89,9 @@ Personal information"
           <div className="container-1280">
             <h2>Last Revised On February 8, 2024</h2>
             <p>
-              This Privacy Policy (“Policy”) outlines how Gaming arcade, and its
+              {` This Privacy Policy (“Policy”) outlines how Gaming arcade, and its
               subsidiaries (collectively, “Gaming Arcade,” “we,” “us,” or “our”)
-              collect, use, and share information about users of our website
+              collect, use, and share information about users of our website`}
               <a
                 href="https://gamingarcade.io"
                 target="_blank"
@@ -99,11 +99,11 @@ Personal information"
               >
                 [Gaming Arcade: Play to Win Games | Hyper Casual Web3 Gaming ]
               </a>{" "}
-              (“Website”), our mobile application (“App”), should one be
+              {`(“Website”), our mobile application (“App”), should one be
               available, and all related platforms, as well as other online and
               offline interactions (collectively, the “Services”). <br></br>{" "}
               Your engagement with our Services is governed by our Terms of Use,
-              located at
+              located at`}
               <a
                 href="https://gamingarcade.io/policy/terms-of-use"
                 target="_blank"
@@ -111,12 +111,12 @@ Personal information"
               >
                 [Gaming Arcade: Terms of Use ]
               </a>
-              , which includes essential terms regarding limitations of
+              {` , which includes essential terms regarding limitations of
               liability and dispute resolution. By accessing and using the
               Services, you consent to the practices described in this Policy.
               If you disagree with any aspect of this Policy, please refrain
               from using the Services or providing us with your Personal
-              Information (as defined below).
+              Information (as defined below).`}
             </p>
             <div className={styles.infomationTerms}>
               <h2
@@ -130,16 +130,16 @@ Personal information"
                   1.1 Personal Information
                 </h3>
                 <p>
-                  In this Policy, "Personal Information" refers to any data that
+                  {` In this Policy, "Personal Information" refers to any data that
                   identifies or can be linked to an individual or household,
                   directly or indirectly, including but not limited to data
-                  protected under data privacy laws. 
+                  protected under data privacy laws. `}
                 </p>
                 <p>
-                  Your privacy is of utmost importance to us. Hence, we have
+                  {`Your privacy is of utmost importance to us. Hence, we have
                   crafted this Policy to provide you with a clear understanding
                   of how we collect, use, communicate, disclose, and utilize
-                  personal information. Here's an outline of our Privacy Policy:
+                  personal information. Here's an outline of our Privacy Policy:`}
                 </p>
                 <ol>
                   <li>
@@ -149,19 +149,19 @@ Personal information"
                   </li>
                   <li>
                     {" "}
-                    We will collect and utilize personal information solely to
+                    {` We will collect and utilize personal information solely to
                     fulfill the purposes specified by us and for other
                     compatible purposes, unless we obtain the individual's
-                    consent or as mandated by law.
+                    consent or as mandated by law.`}
                   </li>
                   <li>
                     Personal information will only be retained for as long as
                     necessary to fulfill those purposes.
                   </li>
                   <li>
-                    We will gather personal information through lawful and fair
+                    {` We will gather personal information through lawful and fair
                     means, and with the individual's knowledge or consent where
-                    appropriate.
+                    appropriate.`}
                   </li>
                   <li>
                     Personal data will be relevant to the purposes for which it
@@ -252,9 +252,9 @@ Personal information"
                   </li>
                   <li>
                     {" "}
-                    Profiles and Preferences: Inferences made from any of the
+                    {`  Profiles and Preferences: Inferences made from any of the
                     data mentioned above to form a profile that reflects an
-                    individual’s preferences and behavior.
+                    individual’s preferences and behavior.`}
                   </li>
                 </ul>
                 <h2 style={{ fontSize: "20px", marginTop: "35px" }}>
@@ -281,11 +281,11 @@ Personal information"
                     affiliates.
                   </li>
                   <li>
-                    Through Your Use of Our Services: We automatically collect
+                    {` Through Your Use of Our Services: We automatically collect
                     data when you navigate our website or interact with our
                     services, as well as derive insights about your preferences
                     and interests from the personal data we've gathered and our
-                    interactions with you.
+                    interactions with you.`}
                   </li>
                 </ul>
                 <h2 style={{ fontSize: "20px", marginTop: "35px" }}>
@@ -304,10 +304,10 @@ Personal information"
                     preferences and payment information you provide.
                   </li>
                   <li>
-                    Marketing Engagement: By opting into our marketing
+                    {` Marketing Engagement: By opting into our marketing
                     communications or participating in events we host, you're
                     giving us information like your name, contact details, and
-                    your interests.
+                    your interests.`}
                   </li>
                   <li>
                     Communications: Anytime you contact us through email, phone,
@@ -338,12 +338,12 @@ Personal information"
                     numbers or PayPal accounts.
                   </li>
                   <li>
-                    Social Media Integration: If you integrate or interact with
+                    {` Social Media Integration: If you integrate or interact with
                     our services via social media platforms, we're authorized to
                     access certain profile information. This extends to
                     interactions on social media pages or posts involving Gaming
                     Arcade, where we might collect data related to these
-                    engagements.
+                    engagements.`}
                   </li>
                   <li>
                     Additional Third-party Data: We may receive updated contact
@@ -361,7 +361,7 @@ Personal information"
                 <br />
                 <p style={{ marginTop: "20px" }}>
                   {" "}
-                  Digital Footprints: Gaming Arcade and our service partners
+                  {` Digital Footprints: Gaming Arcade and our service partners
                   employ various digital tracking tools, including cookies and
                   pixels, to gather data from your browser or device. This
                   includes but isn't limited to browser types, device
@@ -370,7 +370,7 @@ Personal information"
                   timestamps within our website, as well as IP addresses tied to
                   your activities. This automatically gathered information could
                   be integrated with other Personal Data we've compiled to
-                  enhance your service experience
+                  enhance your service experience`}
                 </p>
                 <h2 style={{ fontSize: "20px", marginTop: "35px" }}>
                   1.8 Utilization of Personal Data at Gaming Arcade
@@ -429,10 +429,11 @@ Personal information"
                     legitimate interest in defending our business.
                   </li>
                   <li>
-                    <span>Auditing and Governance: </span> Our operations
+                    <span>Auditing and Governance: </span>{" "}
+                    {`Our operations
                     undergo various audits and reviews to comply with financial,
                     legal, and operational obligations, supporting our
-                    business's legal and governance structures.
+                    business's legal and governance structures.`}
                   </li>
                   <li>
                     <span>Legal Compliance: </span> We adhere to legal
@@ -560,7 +561,7 @@ Personal information"
                   our Services or directly with us.
                 </p>
                 <h2 style={{ fontSize: "20px", marginTop: "35px" }}>
-                  1.12 Ensuring Your Information's Security
+                  {` 1.12 Ensuring Your Information's Security`}
                 </h2>
                 <p>
                   At Gaming Arcade, we prioritize the security of your personal
@@ -634,12 +635,12 @@ Personal information"
                     identify and address security vulnerabilities proactively.
                   </li>
                   <li>
-                    Intrusion Detection and Prevention: Google Cloud Platform's
+                    {`Intrusion Detection and Prevention: Google Cloud Platform's
                     intrusion detection and prevention systems (IDS/IPS) are
                     deployed to identify and mitigate unusual network patterns
                     or suspicious behaviour. We prioritise maintaining a secure
                     environment to prevent known threats and remedy dangerous
-                    situations promptly.
+                    situations promptly.`}
                   </li>
                 </ul>
                 <h2 style={{ fontSize: "20px", marginTop: "35px" }}>
@@ -696,10 +697,10 @@ Personal information"
                     <a href="mailto:hello@gamingarcade.io">
                       hello@gamingarcade.io
                     </a>
-                    with "Please delete my personal data" in the subject line.
+                    {`with "Please delete my personal data" in the subject line.
                     We will verify your request and delete the associated
                     personal data. We aim to respond to your request within 14
-                    days, but in any case, within 30 days of receiving it.
+                    days, but in any case, within 30 days of receiving it.`}
                   </li>
                 </ul>
                 <h4 style={{ fontWeight: "600" }}>2. AUTOMATED DECISIONS</h4>
@@ -739,11 +740,11 @@ Personal information"
                   or functionality of certain features on our website.
                 </p>
                 <p style={{ margin: "15px 0px" }}>
-                  3.2 Third-Party Cookies: Third parties may utilize cookies and
+                  {`3.2 Third-Party Cookies: Third parties may utilize cookies and
                   similar technologies to gather information from our site and
                   other online sources to deliver targeted advertisements. If
                   you wish to opt out of such advertising practices on the
-                  device you're currently using, please visit
+                  device you're currently using, please visit`}
                   <a
                     href="http://optout.aboutads.info"
                     target="_blank"
@@ -763,10 +764,10 @@ Personal information"
                   >
                     Home - NAI: Network Advertising Initiative.
                   </a>{" "}
-                  . Please note that opting out does not mean you'll cease to
+                  {`. Please note that opting out does not mean you'll cease to
                   receive online advertisements; it simply means that the
                   opted-out companies will no longer deliver ads tailored to
-                  your preferences and usage patterns.
+                  your preferences and usage patterns.`}
                 </p>
                 <p style={{ margin: "15px 0px" }}>
                   3.3 Pixel Tags and Embedded Scripts: Pixel tags, similar to
@@ -803,7 +804,7 @@ Personal information"
                   4. EXTERNAL WEBSITE LINKS
                 </h2>
                 <p>
-                  Within Gaming Arcade's services, you may encounter links to
+                 {` Within Gaming Arcade's services, you may encounter links to
                   various websites operated by third parties, including those
                   displaying Gaming Arcade trademarks. This Privacy Policy does
                   not govern third-party websites accessible through our
@@ -815,11 +816,11 @@ Personal information"
                   and data collection policies. We encourage you to review the
                   privacy policies of these external sites to understand how
                   they collect, use, share, and secure your information before
-                  providing any Personal Information.
+                  providing any Personal Information.`}
                 </p>
-                <h3>5. Minor's Privacy</h3>
+                <h3>{`5. Minor's Privacy`}</h3>
                 <p>
-                  Gaming Arcade restricts the use of its services to individuals
+                 {` Gaming Arcade restricts the use of its services to individuals
                   of legal age, and users under the age of 18 are prohibited
                   from accessing our services. Gaming Arcade does not knowingly
                   collect or retain Personal Information from individuals under
@@ -833,7 +834,7 @@ Personal information"
                   individuals under the age of 18, if your child has used our
                   services and you wish to review or delete their Personal
                   Information, you can make such a request by contacting us at
-                  the address or email provided under 'Contact Us' below.
+                  the address or email provided under 'Contact Us' below.`}
                 </p>
                 <h3>6. INTERNATIONAL  DATA TRANSFERS</h3>
                 <h4 className={styles.data_headBold}>
@@ -900,12 +901,12 @@ Personal information"
                   Privacy Policy
                 </p>
                 <p className={styles.data_desc}>
-                  It's important to note that privacy laws in these countries
+                 {` It's important to note that privacy laws in these countries
                   may differ from those in your home country. When transferring
                   data to a country without adequate data protection standards,
                   we ensure the implementation of security measures and approved
                   European or UK model clauses (accessible on the European
-                  Union’s legal website at{" "}
+                  Union’s legal website at{" "}`}
                   <a
                     href="https://eur-lex.europa.eu/"
                     target="_blank"
@@ -915,7 +916,7 @@ Personal information"
                     EUR-Lex — Access to European Union law — choose your
                     language{" "}
                   </a>{" "}
-                  and the UK's ICO website at{" "}
+                  and the {`UK's `}ICO website at{" "}
                   <a
                     href="https://eur-lex.europa.eu/"
                     target="_blank"
@@ -924,7 +925,7 @@ Personal information"
                   >
                     www.ico.gov.uk{" "}
                   </a>
-                  ), or other suitable safeguards to protect your Personal
+                  , or other suitable safeguards to protect your Personal
                   Information. Should you require further details about our data
                   transfer safeguards outside the UK/EEA, please contact us.
                 </p>
@@ -995,10 +996,10 @@ Personal information"
                     purposes they find inappropriate
                   </li>
                   <li>
-                    <span>Right to Erasure: </span> Data subjects can request
+                    <span>Right to Erasure: </span> {`Data subjects can request
                     the deletion of their data if it's no longer necessary or if
                     consent is withdrawn, except when required for legal
-                    obligations or public tasks.
+                    obligations or public tasks.`}
                   </li>
                   <li>
                     <span>Right to Rectification: </span> Individuals can
@@ -1006,10 +1007,10 @@ Personal information"
                     concerning them
                   </li>
                   <li>
-                    <span>Right to Restrict Processing: </span> Data subjects
+                    <span>Right to Restrict Processing: </span> {`Data subjects
                     can limit the processing of their personal data for purposes
                     they don't approve of, with compliance to the imposed
-                    restrictions.
+                    restrictions.`}
                   </li>
                   <li>
                     <span>Rights Related to Data Portability: </span> Upon
@@ -1028,10 +1029,10 @@ Personal information"
                   className={styles.data_headBold}
                   style={{ marginTop: "50px" }}
                 >
-                  6.5 California Residents' Privacy Rights
+                  {`6.5 California Residents' Privacy Rights`}
                 </h4>
                 <p className={styles.data_desc}>
-                  Under California’s “Shine the Light” law (Cal. Civ. Code §
+                  {`Under California’s “Shine the Light” law (Cal. Civ. Code §
                   1798.83), California residents providing us with certain
                   personal data have the right to request and receive, free of
                   charge, information about any personal data we have shared
@@ -1046,19 +1047,19 @@ Personal information"
                   respond to a customer request only once during any calendar
                   year. Please note that not all information sharing falls under
                   California’s “Shine the Light” law, and our response will only
-                  include information sharing covered by this law.
+                  include information sharing covered by this law.`}
                 </p>
                 <h4 className={styles.data_headBold}>
                   6.6 California Consumer Privacy Act Disclosures
                 </h4>
                 <p className={styles.data_desc}>
-                  In accordance with the California Consumer Privacy Act of 2018
+                  {`In accordance with the California Consumer Privacy Act of 2018
                   ("CCPA"), we offer additional insights into the types of
                   Personal Information we collect, utilize, and disclose about
                   California residents. This section is not applicable to our
                   job applicants, employees, contractors, owners, directors, or
                   officers, concerning Personal Information collected in
-                  relation to their current, former, or potential roles with us.
+                  relation to their current, former, or potential roles with us.`}
                 </p>
                 <h4 className={styles.data_headBold}>
                   6.7 Collection and Disclosure of Personal Information
@@ -1162,10 +1163,10 @@ Personal information"
                   </tbody>
                 </table>
                 <p>
-                  In the preceding 12 months, we have not engaged in the
+                 {` In the preceding 12 months, we have not engaged in the
                   "selling" or past "sale" of Personal Information as defined by
                   the CCPA. This includes refraining from any sale of Personal
-                  Information belonging to minors under the age of 16.
+                  Information belonging to minors under the age of 16.`}
                 </p>
                 <h4 className={styles.data_headBold}>
                   6.8 Privacy Policy - California Privacy Rights
@@ -1256,7 +1257,7 @@ Personal information"
                   6.11 Additional Information for Nevada Residents
                 </h4>
                 <p>
-                  If you reside in Nevada, you have the option to opt-out of the
+                  {`If you reside in Nevada, you have the option to opt-out of the
                   sale of specific Personal Information to third parties
                   intending to license or sell that data. You can exercise this
                   right by reaching out to us at Info@Tonohealth.com, using the
@@ -1265,7 +1266,7 @@ Personal information"
                   Please be aware that we presently do not engage in the sale of
                   your Personal Information as defined in Nevada Revised
                   Statutes Chapter 603A. Should you have any inquiries, feel
-                  free to contact us using the information provided below.
+                  free to contact us using the information provided below.`}
                 </p>
               </div>
               <h2

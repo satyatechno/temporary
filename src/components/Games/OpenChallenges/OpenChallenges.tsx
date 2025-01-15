@@ -2,7 +2,7 @@
 
 import { inter, poppins } from '@/app/layout';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import styles from './openChalanges.module.scss';
 import { openChallengesApi } from '@/services/challenge';
@@ -12,7 +12,7 @@ interface TChallengeCard {
   gameDetails: any;
 }
 const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <div
@@ -84,7 +84,7 @@ const OpenChallenges = ({ gameDetails }: { gameDetails: any }) => {
       });
       setOpenChallenges(res?.data?.data?.game ?? []);
       console.log('open chalanges', res);
-    } catch (error: any) {
+    } catch (error) {
       console.log('error', error);
     }
   }, [gameDetails?.name]);

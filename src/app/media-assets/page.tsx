@@ -49,30 +49,30 @@ const MediaAssets = () => {
               <h3> Brand Guidelines And Assets</h3>
               <div className="container-1085">
                 <p style={{ marginBottom: "20px" }}>
-                  Welcome to the authoritative guide for Gaming Arcade's Brand
+                 {` Welcome to the authoritative guide for Gaming Arcade's Brand
                   Guidelines and Assets. This resource is dedicated to ensuring
                   all representations of our brand faithfully echo the vision
                   and energy that define Gaming Arcade. We advise users to
                   strictly use the approved screenshots and logos from our Brand
                   Resource Center, following our comprehensive guidelines for
-                  uniform brand depiction across all media.
+                  uniform brand depiction across all media.`}
                 </p>
 
                 <p style={{ marginBottom: "20px" }}>
-                  For expansive uses beyond digital, such as in radio,
+               {`   For expansive uses beyond digital, such as in radio,
                   broadcast, print, or outdoor advertising exceeding 8.5 x 11
                   inches, we require a formal access request. These requests
                   should be composed in English and accompanied by a mock-up
                   showcasing the intended use of Gaming Arcade's logo, ensuring
-                  our brand is portrayed with integrity and distinction.
+                  our brand is portrayed with integrity and distinction.`}
                 </p>
                 <p style={{ marginBottom: "20px" }}>
-                  Embracing the power of iconic imagery, Gaming Arcade's logo,
+                  {`Embracing the power of iconic imagery, Gaming Arcade's logo,
                   much like the essence of our platform, combines dynamic
                   elements designed to be instantly recognizable. The logo pack,
                   available for download below, includes our signature assets,
                   tailored for various contexts while maintaining brand
-                  consistency.
+                  consistency.`}
                 </p>
               </div>
             </div>
@@ -174,31 +174,31 @@ const MediaAssets = () => {
                   <li>
                     <p>
                       {" "}
-                      When developing a website, app, or any product or service
+                     {` When developing a website, app, or any product or service
                       that utilizes Gaming Arcade or is in any way associated
                       with or compatible with Gaming Arcade, you are permitted
                       to use Gaming Arcade in a descriptive manner. For example,
                       you may state that your game is "designed and you can play
                       the game on Gaming Arcade" or that the name of your
-                      campaign is "on Gaming Arcade."
+                      campaign is "on Gaming Arcade."`}
                     </p>
                   </li>
 
                   <li>
                     <p>
                       {" "}
-                      Refrain from translating, abbreviating, or altering the
+                     {` Refrain from translating, abbreviating, or altering the
                       term "Gaming Arcade" into any other language using
                       non-English characters, and avoid substituting it with any
-                      of our logos.
+                      of our logos.`}
                     </p>
                   </li>
 
                   <li>
                     <p>
                       {" "}
-                      Avoid using the terms "Gaming" or "Arcade" in relation to
-                      your own brand.
+                    {`  Avoid using the terms "Gaming" or "Arcade" in relation to
+                      your own brand.`}
                     </p>
                   </li>
 
@@ -232,20 +232,20 @@ const MediaAssets = () => {
 
                   <li>
                     <p>
-                      Unless it is a general "Follow us on..." call-to-action,
+                      {`Unless it is a general "Follow us on..." call-to-action,
                       it is not appropriate to include other
                       blockchains/crypto/web3.0/De-Fi-based platforms in the
-                      same context as Gaming Arcade or its products.
+                      same context as Gaming Arcade or its products.`}
                     </p>
                   </li>
 
                   <li>
                     <p>
-                      When generating a hashtag incorporating the terms "Gaming"
+                      {`When generating a hashtag incorporating the terms "Gaming"
                       or "Arcade," it is essential to refrain from utilizing it
                       on alternative social platforms. Furthermore, it is
                       advisable not to invest any resources in enforcing or
-                      obtaining rights for such a hashtag.
+                      obtaining rights for such a hashtag.`}
                     </p>
                   </li>
                 </ul>
@@ -300,12 +300,12 @@ const MediaAssets = () => {
               Movies, Commercials <br /> & Shows
             </h2>
             <p className="text-left">
-              To maintain your presence on Gaming Arcade in any of its products
+             {` To maintain your presence on Gaming Arcade in any of its products
               or utilize screenshots of King's Charts and its product interface
               for commercial purposes, such as in short films, movies, weekly
               shows, TV or web series, and other videos, it is essential to
               adhere to our approval process. Please follow the steps outlined
-              below.
+              below.`}
             </p>
           </div>
           <div className={`${styles.movie_commercial_steps}`}>
@@ -395,7 +395,7 @@ const MediaAssets = () => {
             </p>
             <p>
               {" "}
-              Any attempt to register, use, or assert rights over any of Gaming
+             {` Any attempt to register, use, or assert rights over any of Gaming
               Arcade’s trademarks, whether as a service mark, trade name,
               trademark, company name, domain registration, or username, is
               strictly prohibited. You are prohibited from utilizing or claiming
@@ -403,14 +403,14 @@ const MediaAssets = () => {
               dilution of Gaming Arcade’s trademarks, either as a standalone
               trademark or as part of one. Please employ Gaming Arcade’s
               trademarks only for purposes that align with our Community
-              Standards and Terms of Service.
+              Standards and Terms of Service.`}
             </p>
             <p>
               {" "}
-              We retain the right to rescind authorization to use Gaming
+             {` We retain the right to rescind authorization to use Gaming
               Arcade’s trademarks at any given time. Gaming Arcade also reserves
               the right to reject content that it deems inconsistent with the
-              Gaming Arcade brand.
+              Gaming Arcade brand.`}
             </p>
           </div>
         </div>

@@ -11,9 +11,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import OpenChallengesCard from "../OpenChallengesCard/OpenChallengesCard";
 
 const OpenChallengesSwiperCarousel = ({ data }: any) => {
-  console.log("datadata", data);
-  //   const swiper = useSwiper();
-  //   const swiperRef = useRef(null);
+
   return (
     <>
       <Swiper

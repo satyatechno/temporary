@@ -13,7 +13,7 @@ const OpenChallenges = () => {
   const medium = "ticket";
 
   const FetchCustomBets = async () => {
-    let data = await customBetsAll(medium);
+    const data = await customBetsAll(medium);
     setCustomBets(data?.data?.game);
   };
 

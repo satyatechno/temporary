@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import config from "../../../config";
 import Dashboard from "./DashboardClient";
 
@@ -71,7 +70,7 @@ export async function fetchUserDetails(token: string): Promise<HomeData | null> 
 //   }
 // }
 
-export default async function Pages({ params }: any) {
+export default async function Pages() {
   const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0RW1haWwiOiJDbkQ1eTNIOFN1ZnhXR2tNcUlKMWJIb0RlNXRTVUVzbUlmMWJWWHRQcEJzPSIsImVuY3J5cHRVdWlkIjoiMnZ5V0ZET1A1aW9Lc09DbS9DK2tHei91dGg5ejhzcHdEWCtURytVMTducVVtbExmZnRYM0Fxb1N6NUJSd1NCZyIsImlhdCI6MTczMjc3MzE2MiwiZXhwIjoxNzMzMzc3OTYyfQ.SSoGy8buXyYIp5jcZ4aE9-PD4tna3ghwvsTNjlaCc04"
   const userDetails = await fetchUserDetails(token);
 

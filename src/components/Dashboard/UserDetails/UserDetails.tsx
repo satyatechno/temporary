@@ -84,9 +84,9 @@ const UserDetails: React.FC<dashboardProps> = ({ userDetails }) => {
       <div className={styles.form_layout}>
         <h3 className={styles.heading}>hello</h3>
         <p className={styles.user_headers_1}>User Name:</p>
-        <EditUserName userDetails={userDetails} />
+        <EditUserName />
         <p className={styles.user_headers_2}>Wallet Address:</p>
-        <CopyWalletAddress userDetails={userDetails} />
+        <CopyWalletAddress />
       </div>
 
       <div className={styles.hero_image_container}>

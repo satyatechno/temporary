@@ -18,7 +18,7 @@ const CustomDraggable: React.FC<CustomDraggableProps> = ({
   const draggableRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef<{ x: number; y: number }>(defaultPosition);
 
-  const onDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+  const onDragStart = () => {
     const element = draggableRef.current;
     if (element) {
       const rect = element.getBoundingClientRect();

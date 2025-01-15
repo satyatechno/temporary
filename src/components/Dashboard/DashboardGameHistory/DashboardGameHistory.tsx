@@ -42,7 +42,7 @@ interface GameHistoryProps {
 const DashboardGameHistory: React.FC<GameHistoryProps> =  ({
   loadingGames,
 }) => {
-  const token = Cookies.get("userToken");
+  // const token = Cookies.get("userToken");
 
   const [tournameGameHistory, setTournamentGameHistory] = useState();
 

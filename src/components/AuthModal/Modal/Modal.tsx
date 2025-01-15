@@ -1,7 +1,7 @@
 
 import styles from "./modal.module.scss";
 
-const Modal = ({ isOpen, onClose, children }:any) => {
+const Modal = ({ isOpen, children }:any) => {
   if (!isOpen) return null;
 
   return (

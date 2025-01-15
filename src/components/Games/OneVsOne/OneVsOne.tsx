@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './oneVsOne.module.scss';
 import { inter, poppins } from '@/app/layout';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useGamesContext } from '@/app/Context/GamesContext';
+// import { useGamesContext } from '@/app/Context/GamesContext';
 import { useAppContext } from '@/app/Context/AuthContext';
 type TItem = {
   id: number;
@@ -40,7 +40,7 @@ const cardData = [
     entryPrice: 50,
   },
 ];
-const OneVsOneCard = ({ item, index, onClick, gameDetails, activeButton }: TOneVsOneCard) => {
+const OneVsOneCard = ({ item, index, gameDetails, activeButton }: TOneVsOneCard) => {
   return (
     <div className={`${styles.card} ${styles['gradient' + (index % 4)]}`}>
       <div className={`${styles.leftBar} ${styles['leftBar' + (index % 4)]}`} />

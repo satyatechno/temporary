@@ -20,7 +20,7 @@ interface Player {
 
 const TopArcadian = () => {
   const [topPlayers, setTopPlayers] = useState<Player[]>([]);
-  const [sortBy, setSortBy] = useState<string | null>(null);
+  // const [sortBy, setSortBy] = useState<string | null>(null);
 
   // Fetch top users
   const getTopUsers = async (sortBy: string | null = "totalWinAmount") => {
@@ -37,19 +37,19 @@ const TopArcadian = () => {
   }, []);
 
   // Handle sorting by column
-  const handleSort = (columnName: keyof Player) => {
-    const sortedUsers = [...topPlayers].sort((a, b) => {
-      if ((a[columnName] || 0) < (b[columnName] || 0)) return -1;
-      if ((a[columnName] || 0) > (b[columnName] || 0)) return 1;
-      return 0;
-    });
+  // const handleSort = (columnName: keyof Player) => {
+  //   const sortedUsers = [...topPlayers].sort((a, b) => {
+  //     if ((a[columnName] || 0) < (b[columnName] || 0)) return -1;
+  //     if ((a[columnName] || 0) > (b[columnName] || 0)) return 1;
+  //     return 0;
+  //   });
 
-    if (sortBy === columnName) {
-      sortedUsers.reverse();
-    }
-    setTopPlayers(sortedUsers);
-    setSortBy(columnName);
-  };
+  //   if (sortBy === columnName) {
+  //     sortedUsers.reverse();
+  //   }
+  //   setTopPlayers(sortedUsers);
+  //   setSortBy(columnName);
+  // };
 
   return (
     <div className={styles.section10}>

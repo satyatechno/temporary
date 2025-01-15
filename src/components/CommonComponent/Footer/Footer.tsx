@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
@@ -7,13 +7,15 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  
   const pathname = usePathname();
-  const noHeaderFooterPaths = ["/userwallet",'/not-found'];
+  const noHeaderFooterPaths = ["/userwallet", "/not-found"];
 
-  const shouldShowHeaderFooter = !noHeaderFooterPaths.includes(pathname);
+  const shouldShowHeaderFooter = !(
+    noHeaderFooterPaths.includes(pathname) ||
+    (pathname.startsWith("/games/") && pathname !== "/games")
+  );
 
-  if(!shouldShowHeaderFooter){
+  if (!shouldShowHeaderFooter) {
     return null;
   }
 
@@ -35,12 +37,11 @@ const Footer = () => {
                   alt="Gaming Arcade Logo"
                   height={80}
                   width={80}
-                  style={{width:"100%"}}
+                  style={{ width: "100%" }}
                   // onClick={() => {
                   //   window.scrollTo(0, 0);
                   // }}
                 />
-                
               </Link>
             </div>
             <div className="col-lg-10">
@@ -96,7 +97,7 @@ const Footer = () => {
                   <Link href={{ pathname: "/tournament" }}> Tournament </Link>
                 </li>
                 <li>
-                  <Link href={{ pathname: "/nft" }}>NFT's</Link>
+                  <Link href={{ pathname: "/nft" }}>{`NFT's`}</Link>
                 </li>
                 <li>
                   <Link href={{ pathname: "/dashboard" }}>Dashboard</Link>
@@ -155,9 +156,7 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link href={{ pathname: "/terms-of-use" }}>
-                    Terms Of Use
-                  </Link>
+                  <Link href={{ pathname: "/terms-of-use" }}>Terms Of Use</Link>
                 </li>
                 <li>
                   <Link href={{ pathname: "/cookie-policy" }}>
@@ -190,7 +189,10 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://twitter.com/GamingArcade_io" target="_blank">
+                  <Link
+                    href="https://twitter.com/GamingArcade_io"
+                    target="_blank"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="1em"
@@ -232,10 +234,7 @@ const Footer = () => {
             <div className="col-lg-7">
               <p className={`${styles.std_p} ${styles.light}`}>
                 ©{new Date().getFullYear()}. All rights reserved. Gaming Arcade.
-                <Link
-                  className="m-1"
-                  href={{ pathname: "/terms-of-use" }}
-                >
+                <Link className="m-1" href={{ pathname: "/terms-of-use" }}>
                   Terms & Condition
                 </Link>
                 Applied

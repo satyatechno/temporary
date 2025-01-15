@@ -29,7 +29,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
 
   console.log("credential",email,password)
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async () => {
     // event.preventDefault();
 
     // Form data to send via API
@@ -65,7 +65,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
       }
       setEmail("");
       setPassword("");
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error signing in:", error);
       setError(error?.response?.data?.message || "An error occurred");
       setLoading(false);

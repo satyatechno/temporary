@@ -9,7 +9,6 @@ import { checkRoomApi } from '@/services/challenge';
 
 const JoinARoom = ({
   onClose,
-  gameDetails,
 }: {
   onClose: () => void;
   gameDetails: any;
@@ -17,8 +16,8 @@ const JoinARoom = ({
   const { wallet, userData } = useAppContext();
   const [joinCode, setCode] = useState('');
   const [loading, setLoading] = useState(false);
-  const [roomData, setRoomData] = useState<any>();
-  const [roomValid, setRoomValid] = useState<any>('');
+  const [roomData, setRoomData] = useState();
+  const [roomValid, setRoomValid] = useState('');
   const validation = () => {
     if (joinCode?.trim().length > 3) {
       checkRoom();
@@ -28,7 +27,7 @@ const JoinARoom = ({
   };
   const checkRoom = async () => {
     setLoading(true);
-    let response: any = await checkRoomApi({ code: joinCode });
+    let response:any = await checkRoomApi({ code: joinCode });
     console.log('room join', JSON.stringify(response?.data));
     if (response?.data?.statusCode && response?.data?.statusCode === '10000') {
       setRoomData(response?.data?.data?.game);

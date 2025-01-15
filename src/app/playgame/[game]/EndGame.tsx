@@ -1,19 +1,19 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './endGame.module.scss';
 import Image from 'next/image';
 import { poppins } from '@/app/layout';
 import Button from '@/components/CommonComponent/AnimatedButton/AnimatedButton';
 import Footer from '@/components/Endgame/Footer/Footer';
 import BackgroundIcons from '@/components/Endgame/BackgroundIcons/BackgroundIcons';
-import { useRouter, useSearchParams } from 'next/navigation';
-const EndGame = ({ game }: { game: any }) => {
+import { useRouter } from 'next/navigation';
+const EndGame = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const data = JSON.parse(searchParams.get('data') ?? '');
-  useEffect(() => {
-    console.log('data=====>', data);
-  }, []);
+  // const searchParams = useSearchParams();
+  // const data = JSON.parse(searchParams.get('data') ?? '');
+  // useEffect(() => {
+  //   console.log('data=====>', data);
+  // }, []);
   return (
     <div className={styles.container}>
       <BackgroundIcons

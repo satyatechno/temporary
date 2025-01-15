@@ -101,7 +101,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
         if (response?.data?.statusCode === "10000") {
           setOpenOtpModal(true);
         }
-      } catch (error: any) {
+      } catch (error) {
         setLoading(false);
 
         if (error.response?.data?.statusCode === '10001') {
@@ -206,7 +206,7 @@ const verifyOtp = async (event: React.FormEvent) => {
 
       onClose(); 
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error verifying OTP:", error);
 
     if (error.response?.data?.statusCode === 10001) {

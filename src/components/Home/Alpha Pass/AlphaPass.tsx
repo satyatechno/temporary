@@ -1,4 +1,3 @@
-import AnimatedButton from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import config from "../../../../config";
 import AlphaPassCard from "./AlphaPassCard/AlphaPassCard";
 import styles from "./alphapass.module.scss";

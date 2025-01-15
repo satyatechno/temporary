@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from "./dynamictable.module.scss";
-import { AiOutlineLoading } from "react-icons/ai";
 import Image from "next/image";
 import config from "../../../../config";
 

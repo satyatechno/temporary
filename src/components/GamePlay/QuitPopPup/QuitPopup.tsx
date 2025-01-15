@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import styles from './quitPopup.module.scss';
-import Modal from '@/components/AuthModal/Modal/Modal';
 import config from '../../../../config';
 import { poppins } from '@/app/layout';
 

@@ -850,7 +850,7 @@ function TermsOfUse() {
               email address, you consent to our using the email address to send
               you any notices required by law in lieu of communication by postal
               mail. <br />
-              TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, ALL
+              {`TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, ALL
               SERVICES, PRODUCTS, INFORMATION AND DATA PROVIDED OR MADE
               AVAILABLE BY US (INCLUDING WITHOUT LIMITATION THE SITE, Gaming
               Arcade App and Website) ARE PROVIDED ON AN "AS IS" BASIS AND
@@ -872,7 +872,7 @@ function TermsOfUse() {
               Website, ITS SERVERS, COMMUNICATIONS SENT FROM OR ON BEHALF OF US,
               OR ANY FILES AVAILABLE FOR DOWNLOADING FROM THE SITE ARE FREE OF
               VIRUSES, SCRIPTS, TROJAN HORSES, WORMS, MALWARE, TIMEBOMBS OR
-              OTHER HARMFUL COMPONENTS.
+              OTHER HARMFUL COMPONENTS.`}
             </p>
             <ul style={{ margin: "25px 0px 0px 15px" }}>
               <li>

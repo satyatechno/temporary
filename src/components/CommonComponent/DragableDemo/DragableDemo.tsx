@@ -9,7 +9,7 @@ const DraggableDemo: React.FC<DraggableProps> = ({ children }) => {
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const onMouseDown = (e: React.MouseEvent) => {
+  const onMouseDown = () => {
     setDragging(true);
   };
 

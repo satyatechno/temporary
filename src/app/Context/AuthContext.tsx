@@ -17,6 +17,7 @@ interface AppContextType {
   // setWallet: (user: string | null) => void;
   fetchUser: () => void;
   fetchActiveWallet: () => void;
+  activeButton:any;
 }
 
 const AppContext = createContext<AppContextType | null>(null);

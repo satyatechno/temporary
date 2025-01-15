@@ -131,6 +131,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
                 src={data.backgroundImage}
                 alt={data.backgroundImageAlt || "games-image"}
                 fill
+                priority
               />
             </div>
             <div className={styles.icon_image_container}>
@@ -138,6 +139,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = () => {
                 src={data.IconImage}
                 alt={data.IconImageAlt || "game-icons"}
                 fill
+                // priority
               />
             </div>
             <div className={styles.playButton}>

@@ -23,7 +23,9 @@ export const joinOpenBet = async (data: TJoin) => {
     // medium=ticket + sync=true ==> play //
     // medium=currency + sync=false ==> payment flow // sync true ==> play
     return res.data?.data?.game;
-  } catch (error: any) {}
+  } catch (error) {
+    console.log("error",error)
+  }
 };
 type TJoinRoom = {
   address: string;
@@ -36,7 +38,10 @@ export const joinRoom = async (data: TJoinRoom) => {
     return res.data?.data?.game;
     // medium=ticket + sync=true ==> play //
     // medium=currency + sync=false ==> payment flow // sync true ==> play
-  } catch (error: any) {}
+  } catch (error) {
+    console.log("error",error)
+
+  }
 };
 
 type TCreateCustom = {
@@ -58,7 +63,9 @@ export const createChallenge = async (data: TCreateCustom) => {
     // sync =  false  + medium=currnecy =>make payment & play
     //  sync = true => play
     return res.data?.data?.game;
-  } catch (error: any) {}
+  } catch (error) {
+    console.log("error -->", error);
+  }
 };
 type TFetch = {
   type: 'PlayWithFriend' | 'OneVSOne';
@@ -76,15 +83,18 @@ export const findChallenge = async (data: TFetch) => {
     // medium=ticket + sync=true ==> play //
     // medium=currency + sync=false ==> payment flow // sync true ==> play
     return res.data?.data?.game;
-  } catch (error: any) {}
+  } catch (error) {
+    console.log("error -->", error);
+
+  }
 };
 
-type TUrl = {
-  typeData: string;
-  typeFramework: string;
-  typeLoader: string;
-  typeWasm: string;
-};
+// type TUrl = {
+//   typeData: string;
+//   typeFramework: string;
+//   typeLoader: string;
+//   typeWasm: string;
+// };
 type TGameModule = {
   type: 'PlayWithFriend' | 'OneVSOne';
   betAmount: number | string;
@@ -100,8 +110,8 @@ type TGameModule = {
 };
 const useGameModule = () => {
   const [playGame, setPlayGame] = useState(false);
-  const [betData, setBetData] = useState<any>();
-  const [scoreToBeat, setScoreToBeat] = useState<any>();
+  const [betData, setBetData] = useState();
+  const [scoreToBeat, setScoreToBeat] = useState();
   const { wallet, userData } = useAppContext();
   const { fetchUser } = useAppContext();
   const { estimateGas } = useTransaction();
@@ -117,9 +127,9 @@ const useGameModule = () => {
     code,
     pause = false,
     betData,
-  }: TGameModule | any) => {
+  }: TGameModule ) => {
     stage = stage?.toString();
-    let bet: any = undefined;
+    let bet = undefined;
     if (betData) {
       bet = betData;
     } else {
