@@ -5,7 +5,7 @@ import Button from '../../AnimatedButton/AnimatedButton';
 
 const WalletOTPVerificationModal = ({ onClose, handleSubmit }:any) => {
 
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
 {
     // const handleSubmit = async (event) => {

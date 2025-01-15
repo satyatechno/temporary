@@ -2,31 +2,31 @@ import { cookies } from "next/headers";
 import config from "../../../config";
 import Dashboard from "./DashboardClient";
 
-type DashboardData = {
-  tournamentHistoryData?: any;
-};
+// type DashboardData = {
+//   tournamentHistoryData?: any;
+// };
 
-export async function fetchDashboardTournamentHistoryData(
-  token: string
-): Promise<DashboardData | null> {
-  const baseUrl = config.baseURL;
-  try {
-    const response = await fetch(`${baseUrl}tournament/user-history/main`, {
-      cache:"force-cache",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }); // Use `no-store` to avoid caching if needed
-    if (!response.ok) {
-      throw new Error("Failed to fetch home data");
-    }
-    const data = await response.json();
-    return data?.data?.participates;
-  } catch (error) {
-    console.error("Error fetching home data:", error);
-    return null;
-  }
-}
+// export async function fetchDashboardTournamentHistoryData(
+//   token: string
+// ): Promise<DashboardData | null> {
+//   const baseUrl = config.baseURL;
+//   try {
+//     const response = await fetch(`${baseUrl}tournament/user-history/main`, {
+//       cache:"force-cache",
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     }); // Use `no-store` to avoid caching if needed
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch home data");
+//     }
+//     const data = await response.json();
+//     return data?.data?.participates;
+//   } catch (error) {
+//     console.error("Error fetching home data:", error);
+//     return null;
+//   }
+// }
 
 type HomeData = {
   games?: any;
