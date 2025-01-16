@@ -3,7 +3,7 @@ import styles from "./forgetpassword.module.scss";
 import axios from "axios";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import config from "../../../../config";
-import { LuAlertCircle } from "react-icons/lu";
+import { FiLoader } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa6";
 interface ForgotPasswordModalProps {
   openResetPasswordModal: () => void;
@@ -98,7 +98,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
                 <div>
                     <input placeholder="OTP" value={otp}  type="text" onChange={(e) => setOtp(e.target.value)} />
                     <p onClick={handleSendOtp}>Send OTP</p>
-                    {isOtpReceived ? (<p>Sent <FaCheck style={{color:"white", background:"green" , borderRadius:"100%", padding:"4px"}} /> </p>) : (!isOtpSent ? "Send Otp" : <LuAlertCircle color='#cdcdcd' />)}
+                    {isOtpReceived ? (<p>Sent <FaCheck style={{color:"white", background:"green" , borderRadius:"100%", padding:"4px"}} /> </p>) : (!isOtpSent ? "Send Otp" : <FiLoader color='#cdcdcd' />)}
                 </div>
             </div>
         </div>
