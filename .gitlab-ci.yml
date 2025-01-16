@@ -10,15 +10,12 @@ build:
     - alpha
   
   stage: build
-
   image: docker:latest
 
-  before_script:
-    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
-
   script:
-    - DOCKER_BUILDKIT=1 docker buildx build --load -t $IMAGE_NAME:$IMAGE_TAG .
-      docker stop ga_front || true &&
-      docker rm ga_front || true &&
-      docker run -dit --name ga_front -p 2000:3000/tcp $IMAGE_NAME:$IMAGE_TAG 
+    - DOCKER_BUILDKIT=1 docker build -t $IMAGE_NAME:$IMAGE_TAG .    
+    - docker stop $IMAGE_TAG || true &&
+    - docker rm $IMAGE_TAG || true &&
+    - docker run -dit --name $IMAGE_TAG -p 2000:3000/tcp $IMAGE_NAME:$IMAGE_TAG 
+
 
