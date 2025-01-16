@@ -1,12 +1,9 @@
 variables:
-  GCP_TAG: asia-south1-docker.pkg.dev/gamingarcade/gamingarcade/ga:frontend
-  IMAGE_NAME: jainsiddharth1999/zeltatech
+  IMAGE_NAME: gaV3
   IMAGE_TAG: ga_frontend
 
 stages:
   - build
-  - deploy
-  - cleanup
 
 build:
   only:
@@ -16,49 +13,12 @@ build:
 
   image: docker:latest
 
-  services:
-    - docker:dind
-
   before_script:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 
   script:
     - DOCKER_BUILDKIT=1 docker buildx build --load -t $IMAGE_NAME:$IMAGE_TAG .
-    - docker tag $IMAGE_NAME:$IMAGE_TAG $GCP_TAG
-    - docker buildx build --push -t $GCP_TAG .
-
-deploy:
-  only:
-    - alpha
-  
-  stage: deploy
-
-  before_script:
-    - chmod 400 $SSH_KEY
-
-  script:
-    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY root@$ALPHA_SERVER_IP "
-      gcloud auth configure-docker asia-south1-docker.pkg.dev &&
-      docker login -u $REGISTRY_USER -p $REGISTRY_PASS &&
       docker stop ga_front || true &&
       docker rm ga_front || true &&
-      docker rmi $GCP_TAG || true &&
-      docker pull $GCP_TAG &&
-      docker run -dit --name ga_front -p 2000:3000/tcp $GCP_TAG &&
-      gcloud artifacts docker images delete --quiet "$GCP_TAG" || true "
+      docker run -dit --name ga_front -p 2000:3000/tcp $IMAGE_NAME:$IMAGE_TAG 
 
-cleanup:
-  only:
-    - alpha
-  
-
-  stage: cleanup
-
-  image: docker:latest
-
-  before_script:
-    - chmod 400 $SSH_KEY
-
-  script:
-    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY root@$ALPHA_SERVER_IP
-    - echo y | docker system prune
