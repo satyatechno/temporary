@@ -11,8 +11,7 @@ stages:
 build:
   only:
     - alpha
-  tags:
-    - alpha-ga
+  
   stage: build
 
   image: docker:latest
@@ -31,8 +30,7 @@ build:
 deploy:
   only:
     - alpha
-  tags:
-    - alpha-ga
+  
   stage: deploy
 
   before_script:
@@ -52,8 +50,7 @@ deploy:
 cleanup:
   only:
     - alpha
-  tags:
-    - alpha-ga
+  
 
   stage: cleanup
 
