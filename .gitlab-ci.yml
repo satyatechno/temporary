@@ -1,5 +1,5 @@
 variables:
-  IMAGE_NAME: gaV3
+  IMAGE_NAME: gav3
   IMAGE_TAG: ga_frontend
 
 stages:
