@@ -9,7 +9,6 @@ const CommingSoon = () => {
         <h3 className={styles.heading}>Coming Soon!</h3>
       </div>
       <div className={styles.section9__bottom}>
-        {/* <Zoom> */}
         {CommingSoondata?.map((value) => (
           <Image
             src={`${config.imageDomain}${value?.srcLink}`}

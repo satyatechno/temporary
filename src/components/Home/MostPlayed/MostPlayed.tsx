@@ -2,7 +2,21 @@ import styles from "./mostplayed.module.scss";
 import MostPlayedGame from "./MostPlayedGames";
 import MostTopPlayedGames from "./MostTopPlayedGames";
 
-const MostPlayed = () => {
+type GameData = {
+  _id: string;
+  backgroundImage: string;
+  backgroundImageAlt: string;
+  IconImage: string;
+  IconImageAlt: string;
+  name: string;
+};
+
+type HomeCarouselProps = {
+  gamesData?: GameData[];
+};
+
+
+const MostPlayed: React.FC<HomeCarouselProps>  = ({gamesData}:any) => {
   return (
     <div className={styles.section5}>
       <div className={styles.section5__heading}>
@@ -10,11 +24,12 @@ const MostPlayed = () => {
         <p>We’ve picked up a few games that will match your interest</p>
       </div>
       <div className={styles.section5__cards}>
-        <MostTopPlayedGames/>
-        <MostPlayedGame/>
+        <MostTopPlayedGames games={gamesData}/>
+        <MostPlayedGame games={gamesData?.slice(2, 8)}/>
       </div>
     </div>
   );
 };
 
 export default MostPlayed;
+

@@ -14,7 +14,6 @@ function AlphaPassCard({ text, img, height }:any) {
               sizes='100vw'
               style={{ height: height, width: "auto", marginRight: "20px", marginTop: "-30px" }}
             />
-            {/* <img src={img} alt="Play to earn" style={{ height: height }} /> */}
             <p>{text}</p>
         </div>
     </div>

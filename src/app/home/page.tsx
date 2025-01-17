@@ -39,9 +39,9 @@ const HomePage = async () => {
       <div className={styles.mobile_screen}>
         <HomeCarousel gamesData={games} />
         <OpenChallenges />
-        <LatestP2EGames />
+        <LatestP2EGames gamesData={games} />
         <AlphaPass />
-        <MostPlayed />
+        <MostPlayed  gamesData={games} />
         <PlayToEarn />
         <CommingSoon />
         <TopArcadian />
