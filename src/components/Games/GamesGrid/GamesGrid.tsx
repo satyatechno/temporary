@@ -152,7 +152,7 @@ const GameGrid = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.mob_row}>
+            <div className={styles.mob_row} key={index }>
               {gameData?.[index * 6 + 3] && (
                 <div className={styles.imageContainer2}>
                   <GameCard

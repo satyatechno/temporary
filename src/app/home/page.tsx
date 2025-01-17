@@ -9,35 +9,35 @@ import PlayToEarn from "@/components/Home/PlayToEarn/PlayToEarn";
 import TopArcadian from "@/components/Home/TopArcadian/TopArcadian";
 import styles from "./home.module.scss";
 import GameGrid from "@/components/Games/GamesGrid/GamesGrid";
-// import config from '../../../config';
+import config from "../../../config";
 
-// type HomeData = {
-//   games?: any;
-// };
-// export async function fetchHomeData(): Promise<HomeData | null> {
-//   const baseUrl = config.baseURL;
-//   try {
-//     const response = await fetch(`${baseUrl}games`, { cache: 'no-store' }); // Use `no-store` to avoid caching if needed
-//     if (!response.ok) {
-//       throw new Error('Failed to fetch home data');
-//     }
-//     const data = await response.json();
-//     return data?.data;
-//   } catch (error) {
-//     console.error('Error fetching home data:', error);
-//     return null;
-//   }
-// }
+async function fetchGames() {
+  const baseUrl = config.baseURL;
+  try {
+    const response = await fetch(`${baseUrl}games`, {
+      cache: "force-cache",
+    }); // Use `no-store` to avoid caching if needed
+    if (!response.ok) {
+      throw new Error("Failed to fetch home data");
+    }
+    const data = await response.json();
+    console.log("datadatadata", data);
+    return data?.data;
+  } catch (error) {
+    console.error("Error fetching home data:", error);
+    return null;
+  }
+}
 
-const HomePage: React.FC = async () => {
-  // const games = await fetchHomeData();
+const HomePage = async () => {
+  const games = await fetchGames();
   return (
     <main>
       <div className={styles.desktop_screen}>
         <GameGrid />
       </div>
       <div className={styles.mobile_screen}>
-        <HomeCarousel />
+        <HomeCarousel gamesData={games} />
         <OpenChallenges />
         <LatestP2EGames />
         <AlphaPass />

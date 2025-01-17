@@ -12,6 +12,9 @@ export const fetchGames = async () => {
   }
 };
 
+
+
+
 export const activeWalletApi = async () => {
   try {
     const { data } = await axiosInstance.get('user/wallet/active/wallet',{
