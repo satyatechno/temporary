@@ -58,6 +58,7 @@ const TopArcadian = () => {
         alt="Top Arcadians"
         height={100}
         width={300}
+        priority
       />
       <div className={styles.section10__tableContainer}>
         <div className={styles.section10__table}>

@@ -40,7 +40,7 @@
     color: white; // White color for the cross
     font-size: 2rem; // Size of the cross
     font-weight: bold;
-    line-height: 1; // Keeps the cross vertically centered
+    line-height: 1px; // Keeps the cross vertically centered
   }
   
   .select_a_board_h2 {
@@ -67,7 +67,7 @@
     width: 100%;
     height: auto;
     line-height: 45px;
-    margin: 0;
+    margin: 0px;
     background: linear-gradient(
       257.78deg,
       rgb(255 1 1 / 59%) -5.79%,

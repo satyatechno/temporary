@@ -6,6 +6,7 @@ import config from '../../../../config';
 import { useAppContext } from '@/app/Context/AuthContext';
 import { useState } from 'react';
 import { checkRoomApi } from '@/services/challenge';
+import { useRouter } from 'next/navigation';
 
 const JoinARoom = ({
   onClose,
@@ -18,6 +19,9 @@ const JoinARoom = ({
   // const [loading, setLoading] = useState(false);
   // const [roomData, setRoomData] = useState();
   const [roomValid, setRoomValid] = useState('');
+  // const [errorMessage,setErrorMessage]=useState('');
+
+  const router=useRouter();
   const validation = () => {
     if (joinCode?.trim().length > 3) {
       checkRoom();
@@ -34,13 +38,28 @@ const JoinARoom = ({
       // setLoading(false);
       setRoomValid('valid');
     } else {
-      alert('Bet Error: ' + response.response.data.message);
-
+      alert('Bet Error: ' + response.response);
       setRoomValid(response.response.data.message);
       // setLoading(false);
     }
   };
-  const handlePlay = () => {};
+  // console.log("roomDataroomData",roomData,joinCode,roomValid)
+
+  const handlePlay = () => {
+    const data = {
+      name: "priyesh",
+      age: "24",
+      city: "udaipur",
+    };
+  
+  const queryString = new URLSearchParams(data).toString();
+  
+    // Use the serialized string in the push method
+    router.push(`/tournament?${queryString}`);
+    onClose();
+
+  };
+
   return (
     <RoomModal isOpen={true}>
       <div>
@@ -80,7 +99,7 @@ const JoinARoom = ({
               className={styles.input_box}
             />
           </div>
-          {roomValid == 'valid' ? (
+          {roomValid === 'valid' ? (
             <Button
               value="Play Now"
               onClick={validation}

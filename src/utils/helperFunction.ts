@@ -22,3 +22,13 @@ export function getTimeLeft(targetTime:any) {
        `${formattedDays}d:${formattedHours}h:${formattedMinutes}m`
     )
   }
+
+
+
+// export function handleRouteData(data,pathName,){
+
+//   const queryString = new URLSearchParams(data).toString();
+//   router.push(`/tournament?${queryString}`);
+
+
+// }

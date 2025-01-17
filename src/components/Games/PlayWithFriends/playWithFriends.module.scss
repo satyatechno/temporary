@@ -12,12 +12,12 @@
   flex-direction: column;
 }
 .headingContainer h2 {
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
   color: #ffffff;
-  margin: 0, 0, 10, 0;
+  margin: 0px 0px 10px 0px;
   font-size: 2rem;
 }
 .playTextContainer {
@@ -38,7 +38,7 @@
   letter-spacing: -0.03em;
   color: #fff;
   max-width: 13vw;
-  margin: 0;
+  margin: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -57,7 +57,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0;
+  margin: 0px;
   margin-top: -10;
   position: relative;
 }
@@ -65,7 +65,7 @@
   content: "";
   background-image: url(https://assets.gamingarcade.io/Assets/line-2shades.webp);
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: -webkit-fill-available;
   height: 2px;
   display: flex;
@@ -81,8 +81,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  margin: 10;
-  padding: 10;
+  margin: 10px;
+  padding: 10px;
   align-items: center;
   position: relative;
   max-height: 13.15vw;
@@ -108,8 +108,8 @@
   height: 4.242vw;
 }
 .button {
-  padding: 7 15;
-  font-size: 12;
+  padding: 7px 15px;
+  font-size: 12px;
   font-weight: 500;
 }
 .imageContainer img {

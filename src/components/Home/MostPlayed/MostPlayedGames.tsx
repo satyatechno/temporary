@@ -3,11 +3,11 @@ import Image from "next/image";
 import styles from "./mostplayed.module.scss";
 import Button from "@/components/CommonComponent/AnimatedButton/AnimatedButton";
 import { useState } from "react";
-import { useGamesContext } from "@/app/Context/GamesContext";
+// import { useGamesContext } from "@/app/Context/GamesContext";
 import { useRouter } from "next/navigation";
 
-const MostPlayedGame = () => {
-  const { games } = useGamesContext();
+const MostPlayedGame = ({ games }: { games: any[] }) => {
+  // const { games } = useGamesContext();
 
   const [isHovering, setIsHovering] = useState<number | null>(null);
 
@@ -26,7 +26,7 @@ const MostPlayedGame = () => {
   };
   return (
     <div className={styles.section5__cardsRight}>
-      {games?.slice(2, 8)?.map((game, index) => (
+      {games?.map((game, index) => (
         <div
           className={styles.section5__cardRightContainer}
           style={{ cursor: "pointer" }}
