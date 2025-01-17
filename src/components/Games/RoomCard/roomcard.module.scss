@@ -2,7 +2,7 @@
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0;
+    margin: 0px;
   }
   input[type='number'] {
     -moz-appearance: textfield;
@@ -57,7 +57,7 @@
   color: white; // White color for the cross
   font-size: 2rem; // Size of the cross
   font-weight: bold;
-  line-height: 1; // Keeps the cross vertically centered
+  line-height: 1px; // Keeps the cross vertically centered
 }
 
 .select_a_board_h2 {
@@ -137,7 +137,7 @@
   justify-content: space-around;
 }
 .stage {
-  border-width: 2;
+  border-width: 2px;
   border-color: #d81b60;
   border-style: solid;
 }

@@ -4,12 +4,12 @@
 }
 
 .image {
-  border-radius: 10;
+  border-radius: 10px;
   object-fit: cover;
 }
 
 .video {
-  border-radius: 10;
+  border-radius: 10px;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -20,12 +20,12 @@
   font-weight: bold;
   color: white;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   z-index: 999;
   text-align: center;
   background-color: rgba($color: #b2acac, $alpha: 0.5);
   width: 100%;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0px 0px 10px 10px;
 }
 .videoContainer {
   display: flex;

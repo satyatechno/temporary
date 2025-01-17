@@ -51,6 +51,7 @@ const Header = () => {
             alt="gaming-arcde"
             src={`${config.imageDomain}/Assets/logo.webp`}
             fill
+            style={{objectFit:"contain"}}
           />
         </Link>
       </div>
