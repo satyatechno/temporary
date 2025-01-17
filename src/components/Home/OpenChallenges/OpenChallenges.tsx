@@ -1,16 +1,15 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import styles from "./openChallenges.module.scss";
-import { customBetsAll } from "@/services/GameServices";
-import OpenChallengesSwiperCarousel from "./OpenChallengeSwiper/OpenChallengeSwiper";
+import { useEffect, useState } from 'react';
+import styles from './openChallenges.module.scss';
+import { customBetsAll } from '@/services/GameServices';
+import OpenChallengesSwiperCarousel from './OpenChallengeSwiper/OpenChallengeSwiper';
+import { useAppContext } from '@/app/Context/AuthContext';
 
 const OpenChallenges = () => {
-  //   const { activeButton } = useContext(CurrencyContext);
   const [customBets, setCustomBets] = useState([]);
   // const [paymentPopUp, setPaymentPopup] = useState(false);
-
-  const medium = "ticket";
+  const { medium } = useAppContext();
 
   const FetchCustomBets = async () => {
     const data = await customBetsAll(medium);
@@ -22,9 +21,6 @@ const OpenChallenges = () => {
     // if (isAuthenticated) {
     // }
   }, [medium]);
-
-  
-
 
   return (
     <div className={styles.main_container}>

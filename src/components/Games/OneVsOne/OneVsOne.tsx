@@ -16,7 +16,7 @@ interface TOneVsOneCard {
   index: number;
   onClick: (item: TItem) => void;
   gameDetails: any;
-  activeButton:any;
+  medium: any;
 }
 const cardData = [
   {
@@ -40,7 +40,7 @@ const cardData = [
     entryPrice: 50,
   },
 ];
-const OneVsOneCard = ({ item, index, gameDetails, activeButton }: TOneVsOneCard) => {
+const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
   return (
     <div className={`${styles.card} ${styles['gradient' + (index % 4)]}`}>
       <div className={`${styles.leftBar} ${styles['leftBar' + (index % 4)]}`} />
@@ -50,9 +50,9 @@ const OneVsOneCard = ({ item, index, gameDetails, activeButton }: TOneVsOneCard)
         <h2>{item.reward}</h2>
         <img
           src={
-            activeButton==="TICKETS"
-              ?'https://assets.gamingarcade.io/Assetsticket.webp'
-              :`https://assets.gamingarcade.io/Assets/matic.webp`
+            medium === 'ticket'
+              ? 'https://assets.gamingarcade.io/Assetsticket.webp'
+              : `https://assets.gamingarcade.io/Assets/matic.webp`
           }
           alt="Matic"
         />
@@ -70,7 +70,7 @@ const OneVsOneCard = ({ item, index, gameDetails, activeButton }: TOneVsOneCard)
             direct: false,
             practice: false,
             isCustomBet: false,
-            medium: activeButton,
+            medium: medium,
           },
         }}
       >
@@ -78,7 +78,7 @@ const OneVsOneCard = ({ item, index, gameDetails, activeButton }: TOneVsOneCard)
           // onClick={() => onClick(item) }
           className={poppins.className}
         >
-          Play {item.entryPrice} {activeButton==="TICKETS" ? 'Ticket' : 'Matic'}
+          Play {item.entryPrice} {medium === 'ticket' ? 'Ticket' : 'Matic'}
           <img
             style={{ marginLeft: 10 }}
             src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
@@ -96,7 +96,7 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
     router.push('/playgame?game=' + gameDetails?.name);
   };
 
-  const { activeButton }:any = useAppContext();
+  const { medium } = useAppContext();
 
   return (
     <div className={styles.container}>
@@ -122,7 +122,7 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
             index={index}
             onClick={handlePlay}
             gameDetails={gameDetails}
-            activeButton={activeButton}
+            medium={medium}
           />
         ))}
       </div>

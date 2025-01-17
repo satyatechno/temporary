@@ -1,11 +1,16 @@
-'use client'
-import styles from "./maticurrencytoggler.module.scss";
-import Image from "next/image";
-import config from "../../../../config";
+'use client';
+import styles from './maticurrencytoggler.module.scss';
+import Image from 'next/image';
+import config from '../../../../config';
 // import { useAppContext } from "@/app/Context/AuthContext";
 
-const MaticCurrencyToggler = ({setActiveButton,totalTickets,walletBalance,activeButton}:any) => {
-  const handleTabClick = (direction: "TICKETS" | "CURRENCY") => {
+const MaticCurrencyToggler = ({
+  setActiveButton,
+  totalTickets,
+  walletBalance,
+  activeButton,
+}: any) => {
+  const handleTabClick = (direction: 'ticket' | 'currency') => {
     if (activeButton !== direction) {
       setActiveButton(direction);
     }
@@ -16,15 +21,15 @@ const MaticCurrencyToggler = ({setActiveButton,totalTickets,walletBalance,active
       <div className={styles.wrapper}>
         <div
           className={`${styles.taebSwitch} ${
-            activeButton === "TICKETS" ? styles.left : styles.right
+            activeButton === 'ticket' ? styles.left : styles.right
           }`}
         >
           <div
             className={`${styles.taeb} ${
-              activeButton === "TICKETS" ? styles.active : ""
+              activeButton === 'ticket' ? styles.active : ''
             }`}
             onClick={() => {
-              handleTabClick("TICKETS");
+              handleTabClick('ticket');
               // fetchPastTour(1);
             }}
           >
@@ -34,16 +39,16 @@ const MaticCurrencyToggler = ({setActiveButton,totalTickets,walletBalance,active
               alt=""
               height={15}
               width={15}
-              // onClick={() => setActive("TICKETS")}
+              // onClick={() => setActive("ticket")}
             />
           </div>
 
           <div
             className={`${styles.taeb} ${
-              activeButton === "CURRENCY" ? styles.active : ""
+              activeButton === 'currency' ? styles.active : ''
             }`}
             onClick={() => {
-              handleTabClick("CURRENCY");
+              handleTabClick('currency');
               // fetchTour();
             }}
           >
@@ -51,12 +56,11 @@ const MaticCurrencyToggler = ({setActiveButton,totalTickets,walletBalance,active
             <Image
               src={`${config.imageDomain}Assets/matic.webp`}
               alt=""
-              // onClick={() => set Active("CURRENCY")}
+              // onClick={() => set Active("currency")}
               height={15}
               width={15}
             />
           </div>
-          
         </div>
       </div>
 

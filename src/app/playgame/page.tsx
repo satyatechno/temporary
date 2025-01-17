@@ -13,7 +13,8 @@ const PlayGame = () => {
   // const [loading, setLoading] = useState<boolean>(false);
   const [gameData, setGameData] = useState(null);
   const { fetchGameDetails, games } = useGamesContext();
-  const {  playGame, setPlayGame, scoreToBeat } = useGameModule();
+  const { playGame, setPlayGame, scoreToBeat } = useGameModule();
+  const { playChallenge } = useGameModule();
 
   useLayoutEffect(() => {
     setGameData(fetchGameDetails(game ?? '2048'));
@@ -21,28 +22,28 @@ const PlayGame = () => {
 
   useEffect(() => {
     setPlayGame(true);
-    // if (searchParams.get('paymenySynced')) {
-    //   setPlayGame(true);
-    // } else {
-    //   playChallenge({
-    //     betAmount: searchParams.get('value'),
-    //     type: searchParams.get('gameType'),
-    //     directJoin: searchParams.get('direct'),
-    //     game: searchParams.get('name'),
-    //     isCustomBet: searchParams.get('isCustomBet'),
-    //     gameId: searchParams.get('gameId'),
-    //     medium: searchParams.get('medium'),
-    //     stage: searchParams.get('stage'),
-    //     code: searchParams.get('code'),
-    //     betData: searchParams.get('betData'),
-    //   });
-    // }
+    if (searchParams.get('paymenySynced')) {
+      setPlayGame(true);
+    } else {
+      playChallenge({
+        betAmount: searchParams.get('value'),
+        type: searchParams.get('gameType'),
+        directJoin: searchParams.get('direct'),
+        game: searchParams.get('name'),
+        isCustomBet: searchParams.get('isCustomBet'),
+        gameId: searchParams.get('gameId'),
+        medium: searchParams.get('medium'),
+        stage: searchParams.get('stage'),
+        code: searchParams.get('code'),
+        betData: searchParams.get('betData'),
+      });
+    }
   }, []);
 
   // if (loading || !playGame) {
   //   return <LoadingScreen />;
   // }
-   if (!playGame) {
+  if (!playGame) {
     return <LoadingScreen />;
   }
   return (

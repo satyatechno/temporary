@@ -1,33 +1,29 @@
-"use client";
-import { activeWalletApi, getUserApi } from "@/services/GameServices";
+'use client';
+import { activeWalletApi, getUserApi } from '@/services/GameServices';
 import React, {
   createContext,
   useContext,
   useState,
   ReactNode,
   useEffect,
-} from "react";
+} from 'react';
 
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 interface AppContextType {
   userData: any;
   setUserData: (user: any) => void;
-  setActive: (button: any) => void; 
   wallet: any;
-  // setWallet: (user: string | null) => void;
   fetchUser: () => void;
   fetchActiveWallet: () => void;
-  setActiveButton: (value: string) => void;
-  activeButton:any;
-  displayText:string;
+  setMedium: (value: any) => void;
+  medium: any;
   loadingWallet: boolean;
   userLoading: boolean;
-
 }
 
 const AppContext = createContext<AppContextType | null>(null);
-const token = Cookies.get("userToken");
+const token = Cookies.get('userToken');
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -38,32 +34,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const [userLoading, setUserLoading] = useState(false);
 
   //Active button state (ticket / currency)
-  const [displayText, setDisplayText] = useState("TICKETS");
-  const [activeButton, setActiveButton] = useState("TICKETS");
-
-  useEffect(() => {
-    const fetchCurrencyBalance = async () => {
-      try {
-        const response = await activeWalletApi();
-
-        if (response?.data?.data?.balance > 0) {
-          setDisplayText("CURRENCY");
-          setActiveButton("CURRENCY");
-        } else {
-          setDisplayText("TICKETS");
-          setActiveButton("TICKETS");
-        }
-      } catch (error) {
-        console.error("Error fetching currency balance:", error);
-      }
-    };
-    fetchCurrencyBalance();
-  }, []);
-
-
-  const setActive = (button: any) => {
-    setActiveButton(button);
-  };
+  const [medium, setMedium] = useState('ticket');
 
   // user details
   const fetchUser = async () => {
@@ -72,7 +43,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
       const res = await getUserApi();
       setUserData(res.data);
     } catch (error: any) {
-      console.log("error user details", error?.response?.data);
+      console.log('error user details', error?.response?.data);
     } finally {
       setUserLoading(false);
     }
@@ -87,8 +58,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
       setLoadingWallet(true);
       const res = await activeWalletApi();
       setWallet(res?.data); // Set wallet state
+      setMedium(res?.data?.balance > 0 ? 'currency' : 'ticket');
     } catch (error: any) {
-      console.log("error wallet details", error?.response?.data);
+      console.log('error wallet details', error?.response?.data);
     } finally {
       setLoadingWallet(false);
     }
@@ -106,12 +78,10 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         wallet,
         fetchActiveWallet,
         fetchUser,
-        displayText,
-        setActive,
-        activeButton,
-        setActiveButton,
+        setMedium,
+        medium,
         loadingWallet,
-        userLoading
+        userLoading,
       }}
     >
       {children}
@@ -122,7 +92,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error("useAppContext must be used within an AppProvider");
+    throw new Error('useAppContext must be used within an AppProvider');
   }
   return context;
 };

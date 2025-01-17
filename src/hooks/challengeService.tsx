@@ -24,7 +24,7 @@ export const joinOpenBet = async (data: TJoin) => {
     // medium=currency + sync=false ==> payment flow // sync true ==> play
     return res.data?.data?.game;
   } catch (error) {
-    console.log("error",error)
+    console.log('error', error);
   }
 };
 type TJoinRoom = {
@@ -39,8 +39,7 @@ export const joinRoom = async (data: TJoinRoom) => {
     // medium=ticket + sync=true ==> play //
     // medium=currency + sync=false ==> payment flow // sync true ==> play
   } catch (error) {
-    console.log("error",error)
-
+    console.log('error', error);
   }
 };
 
@@ -64,7 +63,7 @@ export const createChallenge = async (data: TCreateCustom) => {
     //  sync = true => play
     return res.data?.data?.game;
   } catch (error) {
-    console.log("error -->", error);
+    console.log('error -->', error);
   }
 };
 type TFetch = {
@@ -84,8 +83,7 @@ export const findChallenge = async (data: TFetch) => {
     // medium=currency + sync=false ==> payment flow // sync true ==> play
     return res.data?.data?.game;
   } catch (error) {
-    console.log("error -->", error);
-
+    console.log('error -->', error);
   }
 };
 
@@ -127,7 +125,7 @@ const useGameModule = () => {
     code,
     pause = false,
     betData,
-  }: TGameModule ) => {
+  }: TGameModule | any) => {
     stage = stage?.toString();
     let bet = undefined;
     if (betData) {
@@ -160,7 +158,10 @@ const useGameModule = () => {
         bet = await findChallenge({
           game,
           address: wallet?.address,
-          betAmount: typeof betAmount === 'number' ? betAmount.toString() : parseFloat(betAmount).toString(),
+          betAmount:
+            typeof betAmount === 'number'
+              ? betAmount.toString()
+              : parseFloat(betAmount).toString(),
           medium,
           isCustomBet: JSON.parse(isCustomBet),
           stage,
