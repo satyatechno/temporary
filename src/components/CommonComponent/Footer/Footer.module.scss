@@ -31,7 +31,7 @@
     max-width: 5.5vw;
 }
 ul.footerList {
-    padding: 0;
+    padding: 0px;
     list-style: none;
 }
 
@@ -67,7 +67,7 @@ footer.footerDesktop p.std_p {
 }
 
 .footerLogo {
-    padding: 50px 0;
+    padding: 50px 0px;
 }
 
 .light {
@@ -91,7 +91,7 @@ p.std_p.light {
 ul.footerList.icons i,  ul.footerList.icons svg{
     font-family: 'FontAwesome';
     font-size: 1.7vw;
-    margin: 1.2vw 1.2vw 0 0;
+    margin: 1.2vw 1.2vw 0px 0px;
 }
 
 ul.footerList.icons {
@@ -127,7 +127,7 @@ p.std_p.light a {
     ul.footerList.icons i {
         font-family: 'FontAwesome';
         font-size: 30px;
-        margin: 20px 20px 0 0;
+        margin: 20px 20px 0px 0px;
     }
     .footerDesktop p.std_p.light {
         text-align: center;
@@ -138,13 +138,13 @@ p.std_p.light a {
 @media (max-width: 767px) {
     .footerLogo {
         position: relative;
-        padding: 20px 0 0;
+        padding: 20px 0px 0px;
     }
     .footer_logo {
-        padding: 0;
+        padding: 0px;
     }
     div .footer_logo img {
-        margin-bottom: 0;
+        margin-bottom: 0px;
     }
 
     .footerLogo>div {
@@ -157,11 +157,11 @@ p.std_p.light a {
 
     div footer.footerDesktop {
         background: none;
-        padding: 10px 0;
+        padding: 10px 0px;
     }
 
     .footerLinksWraper>div {
-        padding-right: 0;
+        padding-right: 0px;
     }
 
     .footerDesktop ul.footerList li a {
@@ -170,7 +170,7 @@ p.std_p.light a {
     }
 
     .copyRihgtText>div {
-        padding-right: 0;
+        padding-right: 0px;
     }
 
     .copyRihgtText p.std_p.light {
@@ -180,11 +180,11 @@ p.std_p.light a {
     }
 
     .madeTxt p.std_p.light {
-        margin: 12px 0 15px;
+        margin: 12px 0px 15px;
         text-align-last: left;
     }
     .footerDesktop p.std_p {
-        margin: 12px 0 0;
+        margin: 12px 0px 0px;
     }
     footer.footerDesktop p.std_p {
         font-size: 14px;

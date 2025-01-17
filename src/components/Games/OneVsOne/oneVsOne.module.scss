@@ -11,9 +11,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20;
-  margin-top: 20;
-  padding-right: 20;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-right: 20px;
 }
 .heading {
   display: flex;
@@ -43,8 +43,8 @@
   background-clip: text;
   display: inline-block;
   font-weight: 400;
-  padding: 0;
-  border: 0;
+  padding: 0px;
+  border: 0px;
   vertical-align: baseline;
   display: inline-block;
 }
@@ -259,9 +259,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20;
-    margin-top: 20;
-    padding-right: 20;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-right: 20px;
     position: relative;
   }
 
