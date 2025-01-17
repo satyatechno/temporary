@@ -21,7 +21,6 @@ async function fetchGames() {
       throw new Error("Failed to fetch home data");
     }
     const data = await response.json();
-    console.log("datadatadata", data);
     return data?.data;
   } catch (error) {
     console.error("Error fetching home data:", error);
