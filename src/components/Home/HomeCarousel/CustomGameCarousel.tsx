@@ -25,6 +25,7 @@ const CustomGameCarousel = ({ children }: any) => {
     filter: "drop-shadow(rgba(110, 58, 255, 0.8) 0px 0px 28.067px",
     right: "15px"
   };
+  
   const customPrevArrowStyles: React.CSSProperties = { 
     position: "absolute",
     top: "50%",
