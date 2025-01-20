@@ -51,7 +51,7 @@ const DashboardTournamentHistory: React.FC = () => {
       const res = await tournamentHistoryData();
       setTours(res?.data?.data);
     } catch (error: any) {
-      console.error(error.message);
+      console.log(error.message);
     }
   }
 

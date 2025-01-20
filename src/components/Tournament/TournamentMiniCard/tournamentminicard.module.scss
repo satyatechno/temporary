@@ -30,11 +30,12 @@
     position: relative;
 }
 
-.tournamentCardPast__imageContainer > img {
+.tournamentCardPast__imageContainer {
     height: 100px;
     width: 100px;
     border-radius: 10px;
     object-fit: cover;
+    position: relative;
 }
 
 .tournamentCardPast__imageContainer > div {
@@ -50,9 +51,10 @@
     height: 100px;
 }
 
-.tournamentCardPast__imageContainer > div > img {
+.tournament_thumbnail{
     height: 35px;
-    width: auto;
+    width: 35px;
+    position: relative;
 }
 
 .tourCardMini__right {
@@ -82,8 +84,10 @@
     margin: 0px;
 }
 
-.tourCardMini__reward > img {
+.play_to_earn_img_container{
+    position: relative;
     height: 25px;
+    width: 25px;
     margin-left: 10px;
 }
 

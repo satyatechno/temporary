@@ -13,6 +13,7 @@ const WalletSidebar = ({setActiveModal}:any) => {
           alt="logo"
           height={60}
           width={80}
+          style={{objectFit:"contain"}}
           //   onClick={() => navigate.push("/")}
         />
         <div className={styles.manageWallets__sidebarOptions}>

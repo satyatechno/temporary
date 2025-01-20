@@ -65,6 +65,7 @@ const PlayCustomRoomCard = ({
       pause: true,
     });
   };
+  console.log(paramData)//need to add value in future
 
   useEffect(() => {
     if (betData?.code) {
