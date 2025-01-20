@@ -50,25 +50,30 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   };
   useEffect(() => {
     if (token) fetchUser();
-  }, [token]);
+  }, []);
 
   // active wallet data
   const fetchActiveWallet = async () => {
-    try {
-      setLoadingWallet(true);
-      const res = await activeWalletApi();
-      setWallet(res?.data); // Set wallet state
-      setMedium(res?.data?.balance > 0 ? 'currency' : 'ticket');
-    } catch (error: any) {
-      console.log('error wallet details', error?.response?.data);
-    } finally {
-      setLoadingWallet(false);
+    if(!token){
+      try {
+        setLoadingWallet(true);
+        const res = await activeWalletApi();
+        setWallet(res?.data); // Set wallet state
+        setMedium(res?.data?.balance > 0 ? 'currency' : 'ticket');
+      } catch (error: any) {
+        console.log('error wallet details', error?.response?.data);
+      } finally {
+        setLoadingWallet(false);
+      }
+    }
+    else{
+      console.error('user not authenticate')
     }
   };
 
   useEffect(() => {
     if (token) fetchActiveWallet();
-  }, [token]);
+  }, []);
 
   return (
     <AppContext.Provider

@@ -21,11 +21,17 @@
   align-items: center;
   justify-content: flex-start;
 }
-.heading img {
-  margin-right: 2vw;
+.battle_image_container{
+  position: relative;
   width: 9vw;
   height: 9vw;
 }
+// .heading img {
+//   margin-right: 2vw;
+//   width: 9vw;
+//   height: 9vw;
+// }
+
 .heading h1 {
   font-style: normal;
   font-weight: 900;
@@ -232,6 +238,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero_image_container{
+  position: relative;
+  width: 200px;
+  height: 16.061vw;
+
 }
 .anime img {
   width: auto;

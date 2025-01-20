@@ -6,16 +6,15 @@ import styles from "./dashboad.module.scss";
 import CommunityLink from "@/components/Dashboard/Community/CommunityLink";
 import { communityAboutData, CommunityData } from "@/utils/Utils";
 
-interface DashboardProps {
-  userDetails: any | null;
-}
+// interface DashboardProps {
+//   userDetails: any | null;
+// }
 
-const Dashboard: React.FC<DashboardProps> = ({ userDetails }) => {
+const Dashboard = () => {
   return (
     <main className={styles.main_container}>
-      <UserDetails userDetails={userDetails} />
+      <UserDetails  />
       <UserReferDetails />
-      
       <div className={styles.desktop_components}>
       <DashboardGameHistory
         loadingGames={false}

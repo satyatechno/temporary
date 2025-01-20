@@ -1,26 +1,36 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './openChallenges.module.scss';
 import { customBetsAll } from '@/services/GameServices';
 import OpenChallengesSwiperCarousel from './OpenChallengeSwiper/OpenChallengeSwiper';
 import { useAppContext } from '@/app/Context/AuthContext';
+import Cookies from 'js-cookie';
 
 const OpenChallenges = () => {
   const [customBets, setCustomBets] = useState([]);
   // const [paymentPopUp, setPaymentPopup] = useState(false);
   const { medium } = useAppContext();
 
-  const FetchCustomBets = async () => {
-    const data = await customBetsAll(medium);
-    setCustomBets(data?.data?.game);
-  };
-
+  const isAuthenticated = Cookies.get("userToken");
+  
+  const FetchCustomBets = useCallback(async () => {
+    try {
+      const data = await customBetsAll(medium);
+      setCustomBets(data?.data?.game || []);
+    } catch (error) {
+      console.error("Error fetching custom bets:", error);
+      setCustomBets([]);
+    }
+  }, [medium]); // Depend on 'medium'
+  
   useEffect(() => {
-    FetchCustomBets();
-    // if (isAuthenticated) {
-    // }
-  }, [medium]);
+    if (!isAuthenticated) {
+      setCustomBets([]);
+    } else {
+      FetchCustomBets();
+    }
+  }, [FetchCustomBets, isAuthenticated]); 
 
   return (
     <div className={styles.main_container}>

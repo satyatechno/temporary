@@ -1,3 +1,4 @@
+import Image from "next/image";
 import config from "../../../../config";
 import styles from "./tournamentminicard.module.scss";
 
@@ -13,9 +14,9 @@ const TournamentMiniCard = ({
           <div className={styles.tourCardMini__container}>
             <div className={styles.tourCardMini__left}>
               <div className={styles.tournamentCardPast__imageContainer}>
-                <img src={tour?.background} alt="Game fi" />
-                <div>
-                  <img src={tour?.thumbnail} alt="" />
+                <Image src={tour?.background} alt="Game fi" fill />
+                <div className={styles.tournament_thumbnail}>
+                  <Image src={tour?.thumbnail} alt="thumbnail" fill />
                 </div>
               </div>
             </div>
@@ -23,10 +24,13 @@ const TournamentMiniCard = ({
               <h3>Tournament Reward</h3>
               <div className={styles.tourCardMini__reward}>
                 <p>{tour?.reward}</p>
-                <img
+                <div className={styles.play_to_earn_img_container}>
+                <Image
                   src={`${config.imageDomain}/loading-images/matic1.webp`}
                   alt="Play to earn"
+                  fill
                 />
+                </div>
               </div>
               <p>{tour?.gameName} Game</p>
             </div>

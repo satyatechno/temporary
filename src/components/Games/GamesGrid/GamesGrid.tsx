@@ -3,6 +3,7 @@ import { useGamesContext } from "@/app/Context/GamesContext";
 import GameCard, { LoadingCard } from "../GameCard/GameCard";
 import styles from "./gamesGrid.module.scss";
 import config from "../../../../config";
+import React from "react";
 const Game_Loader = "https://assets.gamingarcade.io/Assets/loader-img.webp";
 const GameGrid = () => {
   const { games: gameData, gamesLoading } = useGamesContext();
@@ -12,7 +13,7 @@ const GameGrid = () => {
       <div className={styles.mainContainer}>
         {Array(2)
           .fill(" ")
-          ?.map((_ , index: number) => (
+          ?.map((_, index: number) => (
             <div
               className={styles.container}
               style={{ flexDirection: index % 2 ? "row-reverse" : "row" }}
@@ -53,7 +54,7 @@ const GameGrid = () => {
   }
   return (
     <div className={styles.mainContainer}>
-       <div className={styles.homeMblNew__allGames}>
+      <div className={styles.homeMblNew__allGames}>
         <h2>ALL GAMES!</h2>
         <div className={styles.homeMblNew__allGamesHeading}>
           <img src={`${config.imageDomain}Assets/dart.webp`} alt="" />
@@ -62,12 +63,12 @@ const GameGrid = () => {
       </div>
       {Array(Math.ceil(gameData.length / 6))
         .fill(" ")
-        ?.map((_,index: number) => (
-          <>
+        ?.map((_, index: number) => (
+          <React.Fragment key={`fragment-${index?.toString()}`}>
             <div
               className={styles.container}
               style={{ flexDirection: index % 2 ? "row-reverse" : "row" }}
-              key={index?.toString()}
+              // key={index?.toString()}
             >
               {gameData?.[index * 6 + 0] && (
                 <div className={styles.imageContainer}>
@@ -152,7 +153,7 @@ const GameGrid = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.mob_row} >
+            <div className={styles.mob_row}>
               {gameData?.[index * 6 + 3] && (
                 <div className={styles.imageContainer2}>
                   <GameCard
@@ -187,7 +188,7 @@ const GameGrid = () => {
                 </div>
               )}
             </div>
-          </>
+          </React.Fragment>
         ))}
     </div>
   );

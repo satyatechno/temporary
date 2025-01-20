@@ -1,11 +1,12 @@
-'use client';
-import React from 'react';
-import styles from './oneVsOne.module.scss';
-import { inter, poppins } from '@/app/layout';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import styles from "./oneVsOne.module.scss";
+import { inter, poppins } from "@/app/layout";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 // import { useGamesContext } from '@/app/Context/GamesContext';
-import { useAppContext } from '@/app/Context/AuthContext';
+import { useAppContext } from "@/app/Context/AuthContext";
+import Image from "next/image";
 type TItem = {
   id: number;
   reward: number | string;
@@ -26,7 +27,7 @@ const cardData = [
   },
   {
     id: 2,
-    reward: '09',
+    reward: "09",
     entryPrice: 5,
   },
   {
@@ -42,16 +43,16 @@ const cardData = [
 ];
 const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
   return (
-    <div className={`${styles.card} ${styles['gradient' + (index % 4)]}`}>
-      <div className={`${styles.leftBar} ${styles['leftBar' + (index % 4)]}`} />
+    <div className={`${styles.card} ${styles["gradient" + (index % 4)]}`}>
+      <div className={`${styles.leftBar} ${styles["leftBar" + (index % 4)]}`} />
       <h3 className={poppins.className}>REWARD</h3>
       <div className={styles.icon} />
       <div className={styles.matic}>
         <h2>{item.reward}</h2>
         <img
           src={
-            medium === 'ticket'
-              ? 'https://assets.gamingarcade.io/Assetsticket.webp'
+            medium === "ticket"
+              ? "https://assets.gamingarcade.io/Assetsticket.webp"
               : `https://assets.gamingarcade.io/Assets/matic.webp`
           }
           alt="Matic"
@@ -59,13 +60,13 @@ const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
       </div>
       <Link
         href={{
-          pathname: '/playgame',
+          pathname: "/playgame",
           query: {
             game: gameDetails?.name,
             stage: index + 1,
             value: item?.entryPrice,
             name: gameDetails?.name,
-            gameType: 'OneVSOne',
+            gameType: "OneVSOne",
             landscape: gameDetails?.landscape ? true : false,
             direct: false,
             practice: false,
@@ -78,7 +79,7 @@ const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
           // onClick={() => onClick(item) }
           className={poppins.className}
         >
-          Play {item.entryPrice} {medium === 'ticket' ? 'Ticket' : 'Matic'}
+          Play {item.entryPrice} {medium === "ticket" ? "Ticket" : "Matic"}
           <img
             style={{ marginLeft: 10 }}
             src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
@@ -93,7 +94,7 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
   const router = useRouter();
   const handlePlay = (item: TItem) => {
     console.log(item.entryPrice, item.id, gameDetails?.name);
-    router.push('/playgame?game=' + gameDetails?.name);
+    router.push("/playgame?game=" + gameDetails?.name);
   };
 
   const { medium } = useAppContext();
@@ -102,12 +103,16 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
     <div className={styles.container}>
       <div className={styles.headingContainer}>
         <div className={styles.heading}>
-          <img
-            src={`https://assets.gamingarcade.io/Assets/diamond.webp`}
-            alt="battle"
-          />
+          <div className={styles.battle_image_container}>
+            <Image
+              src={`https://assets.gamingarcade.io/Assets/diamond.webp`}
+              alt="battle"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
           <h1 className={inter.className}>
-            Play <div className={styles.gradient}>{'1 vs 1'}</div>
+            Play <div className={styles.gradient}>{"1 vs 1"}</div>
             <div className={styles.line} />
           </h1>
         </div>
@@ -129,10 +134,14 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
 
       <div className={styles.anime}>
         <div className={styles.gradientDiv} />
-        <img
-          src={`https://assets.gamingarcade.io/Assets/person.webp`}
-          alt="person"
-        />
+        <div className={styles.hero_image_container}>
+          <Image
+            src={`https://assets.gamingarcade.io/Assets/person.webp`}
+            alt="person"
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
       </div>
     </div>
   );

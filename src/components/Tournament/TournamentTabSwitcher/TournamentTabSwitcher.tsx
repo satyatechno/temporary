@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./tournamenttabswitcher.module.scss";
 import PastTournament from "../PastTournament/PastTournament";
 import { FetchPastTournament, FetchTournament } from "@/services/GameServices";
@@ -17,40 +17,50 @@ const TournamentTabSwitcher = () => {
   // const [selectedCard, setSelectedCard] = useState(null);
   const [page, setPage] = useState(1);
 
-
   const { userData }: any = useAppContext();
 
-  const handleTabClick = (direction: "left" | "right") => {
-    if (activeTab !== direction) {
-      setActiveTab(direction);
-    }
-  };
+  const handleTabClick = useCallback(
+    (direction: "left" | "right") => {
+      if (activeTab !== direction) {
+        setActiveTab(direction);
+      }
+    },
+    [activeTab]
+  );
 
-  const fetchTour = async () => {
+  const fetchTour = useCallback(async () => {
     setLoading(true);
     const { data } = await FetchTournament(userData?.uuid);
     setTournamentList(data);
     setPastTournament(false);
     setLoading(false);
-  };
+  }, [userData?.uuid]);
 
-  const fetchPastTour = async (page: any) => {
-    // setLoading(true);
+  // const fetchPastTour = async (page: any) => {
+  //   setLoading(true);
+  //   const { data } = await FetchPastTournament(page);
+  //   if (page == 1) {
+  //     // setTournamentList(data?.tournaments);
+  //     setPastTournamentList(data?.tournaments)
+  //   }
+  //    else {
+  //     setTournamentList((prevList) => [...prevList, ...data?.tournaments]);
+  //   }
+  //   setPastTournament(true);
+  //   setLoading(false);
+  // };
+
+  const fetchPastTour = useCallback(async (page: number) => {
     const { data } = await FetchPastTournament(page);
-    if (page == 1) {
-      // setTournamentList(data?.tournaments);
-      setPastTournamentList(data?.tournaments)
+    if (page === 1) {
+      setPastTournamentList(data?.tournaments);
     }
-    //  else {
-    //   setTournamentList((prevList) => [...prevList, ...data?.tournaments]);
-    // }
     setPastTournament(true);
-    // setLoading(false);
-  };
+  }, []);
 
-  const handleLoadMore = async () => {
-    setPage((prevPage) => prevPage + 1); // Increment page number
-  };
+  const handleLoadMore = useCallback(() => {
+    setPage((prevPage) => prevPage + 1);
+  }, []);
 
   // const handleCardSelect = (card: any) => {
   //   setSelectedCard(card);
@@ -66,10 +76,9 @@ const TournamentTabSwitcher = () => {
     fetchTour();
   }, []);
 
- const memoizedTournamentList = useMemo(() => {
-  return { tournamentList, pastTournamentList };
-}, [tournamentList, pastTournamentList]);
-
+  const memoizedTournamentList = useMemo(() => {
+    return { tournamentList, pastTournamentList };
+  }, [tournamentList, pastTournamentList]);
 
   return (
     <main className={styles.main_container}>
@@ -106,7 +115,9 @@ const TournamentTabSwitcher = () => {
 
       {activeTab === "right" ? (
         <div className={styles.past_tournament_container}>
-          <PastTournament tournamentList={memoizedTournamentList?.pastTournamentList} />
+          <PastTournament
+            tournamentList={memoizedTournamentList?.pastTournamentList}
+          />
           {memoizedTournamentList?.pastTournamentList?.length > 8 && (
             <div className={styles.load_more_btn}>
               <Button
@@ -120,15 +131,26 @@ const TournamentTabSwitcher = () => {
       ) : (
         <div className={styles.live_tournament_container}>
           <div className={styles.live_tournament_upper_container}>
-            <LiveTournament tournamentList={memoizedTournamentList?.tournamentList?.tournaments} />
+            <LiveTournament
+              tournamentList={
+                memoizedTournamentList?.tournamentList?.tournaments
+              }
+            />
             <div className={styles.tournament_minicard_container}>
               <TournamentMiniCard
-                tournamentList={memoizedTournamentList?.tournamentList?.tournaments}
+                tournamentList={
+                  memoizedTournamentList?.tournamentList?.tournaments
+                }
               />
             </div>
           </div>
           <div className={styles.live_tournament_lower_container}>
-          <PastTournament tournamentList={memoizedTournamentList?.tournamentList?.tournaments} pastTournament={pastTournament}/>
+            <PastTournament
+              tournamentList={
+                memoizedTournamentList?.tournamentList?.tournaments
+              }
+              pastTournament={pastTournament}
+            />
           </div>
         </div>
       )}

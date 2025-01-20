@@ -40,7 +40,7 @@ interface GameHistoryProps {
 }
 
 const DashboardGameHistory: React.FC<GameHistoryProps> = ({ loadingGames }) => {
-  // const token = Cookies.get("userToken");
+  
 
   const [tournameGameHistory, setTournamentGameHistory] = useState<any>();
 
@@ -54,8 +54,8 @@ const DashboardGameHistory: React.FC<GameHistoryProps> = ({ loadingGames }) => {
         medium: medium,
       });
       setTournamentGameHistory(res?.data?.data?.game ?? []);
-    } catch (error) {
-      console.error('Error fetching tournament history data:', error);
+    } catch (error:any) {
+      console.log('Error fetching tournament history data:', error);
     }
   }, [medium]);
 
