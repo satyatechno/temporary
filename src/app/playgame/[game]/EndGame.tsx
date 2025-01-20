@@ -21,7 +21,15 @@ const EndGame = ({ status }: any) => {
       <BackgroundIcons
         img={'https://assets.gamingarcade.io/game-bg-icon/2048.webp'}
       />
-      <div className={styles.gradientContainer}>
+      <div
+        className={styles.gradientContainer}
+        style={{
+          backgroundImage:
+            status !== 'pending'
+              ? 'url(https://assets.gamingarcade.io/Assets/winbg.webp)'
+              : 'url(https://assets.gamingarcade.io/Assets/score-back.webp',
+        }}
+      >
         <div className={styles.bigWin}>
           {status == 'win' ? (
             <Image
@@ -29,7 +37,7 @@ const EndGame = ({ status }: any) => {
               alt="big win"
               fill
             />
-          ) : status == 'lose' ? (
+          ) : status == 'loose' ? (
             <Image
               src={`${config.imageDomain}Assets/loose.webp`}
               alt="big win"
@@ -37,7 +45,7 @@ const EndGame = ({ status }: any) => {
             />
           ) : (
             <Image
-              src={'https://assets.gamingarcade.io/Assets/win1.webp'}
+              src={'https://assets.gamingarcade.io/Assets/score-main.webp'}
               alt="big win"
               fill
             />
@@ -47,22 +55,35 @@ const EndGame = ({ status }: any) => {
           <h3 className={poppins.className}>YOUR SCORE</h3>
           <h2 className={poppins.className}>{score}</h2>
         </div>
-        <div className={styles.reward}>
-          <h3 className={poppins.className}>You Won</h3>
-          <Image
-            alt="treasure"
-            src={'https://assets.gamingarcade.io/Assets/treasure.webp'}
-            height={70}
-            width={70}
-          />
-          <h3 className={poppins.className}>{betAmount}</h3>
-          <Image
-            alt="treasure"
-            src={'https://assets.gamingarcade.io/Assetsticket.webp'}
-            height={40}
-            width={50}
-          />
-        </div>
+        {status == 'pending' ? (
+          <p className={`${styles.pending} ${poppins.className}`}>
+            Winner will be Declared once the next player matches And submits the
+            score.
+          </p>
+        ) : (
+          <div className={styles.reward}>
+            <h3 className={poppins.className}>
+              {status == 'win' ? 'You Won' : 'You Lose'}
+            </h3>
+            <Image
+              alt="treasure"
+              src={'https://assets.gamingarcade.io/Assets/treasure.webp'}
+              height={70}
+              width={70}
+            />
+            <h3 className={poppins.className}>
+              {status == 'win'
+                ? (Number(betAmount) * 1.8)?.toString()
+                : betAmount}
+            </h3>
+            <Image
+              alt="treasure"
+              src={'https://assets.gamingarcade.io/Assetsticket.webp'}
+              height={40}
+              width={50}
+            />
+          </div>
+        )}
         <Image
           alt="polygon"
           src={'https://assets.gamingarcade.io/Assets/Poly-2.webp'}

@@ -1,7 +1,7 @@
 import React from 'react';
 import EndGame from './EndGame';
 
-const Page = ({ game }: any) => {
+const Page = ({ params: { game } }: any) => {
   return (
     <div>
       <EndGame status={game} />
