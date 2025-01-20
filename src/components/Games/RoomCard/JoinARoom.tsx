@@ -46,6 +46,7 @@ const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
       isCustomBet: true,
       direct: true,
       name: roomData?.game?.name,
+      game: roomData?.game?.name,
       value: parseFloat(roomData?.betAmount),
       landscape: roomData?.game?.landscape ? true : false,
       userId: wallet?.address,

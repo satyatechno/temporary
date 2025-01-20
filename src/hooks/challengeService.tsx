@@ -146,7 +146,7 @@ const useGameModule = () => {
             betAmount,
             type,
             stage,
-            isCustomBet,
+            isCustomBet: JSON.parse(isCustomBet),
             medium,
           });
           if (pause) {

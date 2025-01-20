@@ -44,11 +44,11 @@ const PlayCustomRoomCard = ({
       value: parseFloat(selectedAmount),
       gameType: 'PlayWithFriend',
       landscape: gameDetails.landscape ? true : false,
-      isCustomBet: true,
+      isCustomBet: 'true',
       medium: medium,
-      practice: false,
+      practice: 'false',
       userId: wallet?.address,
-      direct: false,
+      direct: 'false',
     };
     setParamData(data);
     setLoaded(true);
@@ -78,7 +78,8 @@ const PlayCustomRoomCard = ({
     setShowCodeView(false);
     const data = {
       ...paramData,
-      betData: betData,
+      game: gameDetails?.name,
+      betData: JSON.stringify(betData),
     };
 
     const queryString = new URLSearchParams(data).toString();

@@ -33,6 +33,7 @@ const CreateABet = ({
     const data = {
       stage: selectedStage,
       name: gameDetails?.name,
+      game: gameDetails?.name,
       value: parseFloat(selectedAmount),
       gameType: 'OneVSOne',
       landscape: gameDetails.landscape ? true : false,

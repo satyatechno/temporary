@@ -35,7 +35,7 @@ const PlayGame = () => {
         medium: searchParams.get('medium'),
         stage: searchParams.get('stage'),
         code: searchParams.get('code'),
-        betData: searchParams.get('betData'),
+        betData: JSON.parse(searchParams.get('betData') ?? ''),
       });
     }
   }, []);
