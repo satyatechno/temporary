@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import useGameModule from '@/hooks/challengeService';
 import { useAppContext } from '@/app/Context/AuthContext';
 import config from '../../../../config';
+import { useRouter } from 'next/navigation';
 
 const PlayCustomRoomCard = ({
   onClose,
@@ -22,8 +23,8 @@ const PlayCustomRoomCard = ({
   const [paramData, setParamData] = useState<any>();
   const [copyLink, setCopyLink] = useState<any>(false);
   const { playChallenge, betData }: any = useGameModule();
-  const { wallet, userData } = useAppContext();
-
+  const { wallet, userData, medium } = useAppContext();
+  const router = useRouter();
   const copyTextHandler = () => {
     setInviteLink(betData?.code);
     navigator?.clipboard?.writeText(betData?.code);
@@ -44,7 +45,7 @@ const PlayCustomRoomCard = ({
       gameType: 'PlayWithFriend',
       landscape: gameDetails.landscape ? true : false,
       isCustomBet: true,
-      medium: 'ticket',
+      medium: medium,
       practice: false,
       userId: wallet?.address,
       direct: false,
@@ -74,7 +75,14 @@ const PlayCustomRoomCard = ({
 
   const handleRoomPlay = () => {
     setShowCodeView(false);
+    const data = {
+      ...paramData,
+      betData: betData,
+    };
 
+    const queryString = new URLSearchParams(data).toString();
+    // Use the serialized string in the push method
+    router.push(`/playgame?${queryString}`);
     onClose();
   };
   return (
@@ -83,18 +91,18 @@ const PlayCustomRoomCard = ({
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Image
             src={
-              false
-                ? `${config.imageDomain}Assets/matic.webp`
-                : 'https://assets.gamingarcade.io/Assetsticket.webp'
+              medium === 'ticket'
+                ? 'https://assets.gamingarcade.io/Assetsticket.webp'
+                : `${config.imageDomain}Assets/matic.webp`
             }
             alt="matic"
             height={20}
             width={20}
           />
           <p className={styles.tickets_available_h3}>
-            {false
-              ? wallet?.balance?.toFixed(2)
-              : userData?.tickets?.toFixed(2)}
+            {medium === 'ticket'
+              ? userData?.tickets?.toFixed(2)
+              : wallet?.balance?.toFixed(2)}
           </p>
           &nbsp;&nbsp;
           <p className={styles.tickets_available_h3}> Ticket Available</p>

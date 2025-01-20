@@ -33,9 +33,9 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { userData, wallet } = useAppContext();
-  const [ setIsGameOver] = useState<any>(false);//need to add in future 
+  const [setIsGameOver] = useState<any>(false); //need to add in future
   const [popupValue, setPopupValue] = useState(false);
-  const [ setIsNavigate] = useState<any>(true);//need to add in future 
+  const [setIsNavigate] = useState<any>(true); //need to add in future
   useEffect(() => {
     //@ts-ignore
     window.unityInstance = UNSAFE__unityInstance;
@@ -62,7 +62,7 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
       const res = await gameScoreApi(gameId);
       data = { ...res.data?.data?.game };
       let player = '';
-      
+
       // let oppenent = '';
       if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
         player = 'player1';
@@ -83,33 +83,33 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
         data.score = res.data?.data?.game?.[player]?.score;
         data.status = 'pending';
       }
-      // const params = new URLSearchParams();
+      const queryString = new URLSearchParams(data).toString();
       //@ts-ignore
-      router.replace(`/playgame/${data?.status}?data=${JSON.stringify(data)}`);
+      router.replace(`/playgame/${data?.status}?${queryString}`);
     } catch (error) {
-      console.log("errorrr",error)
+      console.log('errorrr', error);
     }
   };
 
-  const handleGameOver = (
+  const handleGameOver = () =>
     // score: any, enc_score: any
-  ) => {
-    // const score_obj = { enc_score: enc_score, score: score };
-    unload();
-    // setScore(score_obj);
-    // const gameId = localStorage.getItem("gameId");
-    // const entryId = localStorage.getItem("entryId");
-    // setPopupValue(false);
-    //@ts-ignore
-    window?.unityInstance?.Quit();
-    setIsGameOver(true);
-    setIsNavigate(false);
-    // setTransaction(false);
+    {
+      // const score_obj = { enc_score: enc_score, score: score };
+      unload();
+      // setScore(score_obj);
+      // const gameId = localStorage.getItem("gameId");
+      // const entryId = localStorage.getItem("entryId");
+      // setPopupValue(false);
+      //@ts-ignore
+      window?.unityInstance?.Quit();
+      setIsGameOver(true);
+      setIsNavigate(false);
+      // setTransaction(false);
 
-    setTimeout(() => {
-      scoreSumbitter();
-    }, 3000);
-  };
+      setTimeout(() => {
+        scoreSumbitter();
+      }, 3000);
+    };
 
   const handleGameEnd = () => {
     setPopupValue(false);
@@ -121,16 +121,16 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
       scoreSumbitter();
     }, 3000);
   };
-  const handleQuitGame = (
+  const handleQuitGame = () =>
     // score: any, enc_score: any
-  )=> {
-    //commenting unnecessary code 
-    
-    // const score_obj = { enc_score: enc_score, score: score };
-    // setScore(score_obj);
-    setPopupValue(true);
-    // setTransaction(false);
-  };
+    {
+      //commenting unnecessary code
+
+      // const score_obj = { enc_score: enc_score, score: score };
+      // setScore(score_obj);
+      setPopupValue(true);
+      // setTransaction(false);
+    };
   useEffect(() => {
     addEventListener('GameOver', handleGameOver);
     addEventListener('QuitGame', handleQuitGame);

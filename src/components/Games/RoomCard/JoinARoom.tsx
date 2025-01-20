@@ -8,20 +8,15 @@ import { useState } from 'react';
 import { checkRoomApi } from '@/services/challenge';
 import { useRouter } from 'next/navigation';
 
-const JoinARoom = ({
-  onClose,
-}: {
-  onClose: () => void;
-  gameDetails: any;
-}) => {
+const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
   const { wallet, userData } = useAppContext();
   const [joinCode, setCode] = useState('');
   // const [loading, setLoading] = useState(false);
-  // const [roomData, setRoomData] = useState();
+  const [roomData, setRoomData] = useState<any>();
   const [roomValid, setRoomValid] = useState('');
   // const [errorMessage,setErrorMessage]=useState('');
 
-  const router=useRouter();
+  const router = useRouter();
   const validation = () => {
     if (joinCode?.trim().length > 3) {
       checkRoom();
@@ -31,10 +26,10 @@ const JoinARoom = ({
   };
   const checkRoom = async () => {
     // setLoading(true);
-    const response:any = await checkRoomApi({ code: joinCode });
+    const response: any = await checkRoomApi({ code: joinCode });
     console.log('room join', JSON.stringify(response?.data));
     if (response?.data?.statusCode && response?.data?.statusCode === '10000') {
-      // setRoomData(response?.data?.data?.game);
+      setRoomData(response?.data?.data?.game);
       // setLoading(false);
       setRoomValid('valid');
     } else {
@@ -47,17 +42,24 @@ const JoinARoom = ({
 
   const handlePlay = () => {
     const data = {
-      name: "priyesh",
-      age: "24",
-      city: "udaipur",
+      stage: roomData?.stage ? Number(roomData?.stage - 1) : 0,
+      isCustomBet: true,
+      direct: true,
+      name: roomData?.game?.name,
+      value: parseFloat(roomData?.betAmount),
+      landscape: roomData?.game?.landscape ? true : false,
+      userId: wallet?.address,
+      gameType: 'PlayWithFriend',
+      practice: false,
+      medium: roomData?.medium,
+      code: joinCode,
+      buildUrl: roomData?.game?.buildUrl,
     };
-  
-  const queryString = new URLSearchParams(data).toString();
-  
+    //@ts-ignore
+    const queryString = new URLSearchParams(data).toString();
     // Use the serialized string in the push method
-    router.push(`/tournament?${queryString}`);
+    router.push(`/playgame?${queryString}`);
     onClose();
-
   };
 
   return (
@@ -102,13 +104,13 @@ const JoinARoom = ({
           {roomValid === 'valid' ? (
             <Button
               value="Play Now"
-              onClick={validation}
+              onClick={handlePlay}
               className={styles.btn_style}
             />
           ) : (
             <Button
               value="Join Room"
-              onClick={handlePlay}
+              onClick={validation}
               className={styles.btn_style}
             />
           )}

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import config from '../../../../config';
 import { useAppContext } from '@/app/Context/AuthContext';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const CreateABet = ({
   onClose,
@@ -13,9 +14,10 @@ const CreateABet = ({
   onClose: () => void;
   gameDetails: any;
 }) => {
-  const { wallet, userData } = useAppContext();
+  const { wallet, userData, medium } = useAppContext();
   const [selectedStage, setSelectedStage] = React.useState<any>('1');
   const [selectedAmount, setSelectedAmount] = React.useState<any>();
+  const router = useRouter();
   const validation = () => {
     if (!selectedAmount?.trim()) {
       alert('Please enter a valid amount');
@@ -27,25 +29,25 @@ const CreateABet = ({
   };
   const handleBetCreate = () => {
     //commenting unnecessary code
-    
-    // const data = {
-    //   stage: selectedStage,
-    //   name: gameDetails?.name,
-    //   value: parseFloat(selectedAmount),
-    //   gameType: 'OneVSOne',
-    //   landscape: gameDetails.landscape ? true : false,
-    //   isCustomBet: true,
-    //   userId: wallet?.address,
-    //   practice: false,
-    //   direct: false,
-    //   medium: 'ticket',
-    //   buildUrl: gameDetails?.buildUrl,
-    // };
 
+    const data = {
+      stage: selectedStage,
+      name: gameDetails?.name,
+      value: parseFloat(selectedAmount),
+      gameType: 'OneVSOne',
+      landscape: gameDetails.landscape ? true : false,
+      isCustomBet: true,
+      userId: wallet?.address,
+      practice: false,
+      direct: false,
+      medium: medium,
+      buildUrl: gameDetails?.buildUrl,
+    };
+    //@ts-ignore
+    const queryString = new URLSearchParams(data).toString();
+    // Use the serialized string in the push method
+    router.push(`/playgame?${queryString}`);
     onClose();
-    // setTimeout(() => {
-    //   navigate('GameScreen', data);
-    // }, 200);
   };
   return (
     <RoomModal isOpen={true}>
@@ -53,7 +55,7 @@ const CreateABet = ({
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Image
             src={
-              false
+              medium == 'currency'
                 ? `${config.imageDomain}Assets/matic.webp`
                 : 'https://assets.gamingarcade.io/Assetsticket.webp'
             }
@@ -62,7 +64,7 @@ const CreateABet = ({
             width={20}
           />
           <p className={styles.tickets_available_h3}>
-            {false
+            {medium == 'currency'
               ? wallet?.balance?.toFixed(2)
               : userData?.tickets?.toFixed(2)}
           </p>

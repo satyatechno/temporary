@@ -1,37 +1,35 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useState } from "react";
-import styles from "./history.module.scss";
-import DynamicTable from "../CommonComponent/DynamicTable/DynamicTable";
+import { useCallback, useEffect, useState } from 'react';
+import styles from './history.module.scss';
+import DynamicTable from '../CommonComponent/DynamicTable/DynamicTable';
 import {
   challengeHistoryApi,
   tournamentHistoryData,
-} from "@/services/challenge";
-import { useAppContext } from "@/app/Context/AuthContext";
+} from '@/services/challenge';
+import { useAppContext } from '@/app/Context/AuthContext';
 
 const History = () => {
-  const [activeTab, setActiveTab] = useState<"left" | "right">("left");
+  const [activeTab, setActiveTab] = useState<'left' | 'right'>('left');
   const [tournamentHistory, setTournamentHistory] = useState([]);
   const [gameHistory, setGameHistory] = useState([]);
 
-
-  const headers = ["GameId", "Game", "Score", "Result"];
-  const headers2 = ["Trmt No", "Game", "Rank", "Result"];
+  const headers = ['GameId', 'Game', 'Score', 'Result'];
+  const headers2 = ['Trmt No', 'Game', 'Rank', 'Result'];
 
   const [isLoading, setIsLoading] = useState(true);
-  const {activeButton }=useAppContext();
-
+  const { medium } = useAppContext();
 
   const fetchGameHistoryData = useCallback(async () => {
     setIsLoading(true);
     try {
       const res = await challengeHistoryApi({
-        medium: activeButton.toLowerCase(),
+        medium: medium.toLowerCase(),
       });
       setGameHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   }, []);
 
@@ -43,12 +41,12 @@ const History = () => {
     setIsLoading(true);
     try {
       const res = await tournamentHistoryData({
-        medium: "currency",
+        medium: 'currency',
       });
       setTournamentHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   }, []);
 
@@ -56,7 +54,7 @@ const History = () => {
     fetchTournamentHistoryData();
   }, []);
 
-  const handleTabClick = (direction: "left" | "right") => {
+  const handleTabClick = (direction: 'left' | 'right') => {
     if (activeTab !== direction) {
       setActiveTab(direction);
     }
@@ -67,15 +65,15 @@ const History = () => {
       <div className={styles.wrapper}>
         <div
           className={`${styles.taebSwitch} ${
-            activeTab === "left" ? styles.left : styles.right
+            activeTab === 'left' ? styles.left : styles.right
           }`}
         >
           <div
             className={`${styles.taeb} ${
-              activeTab === "left" ? styles.active : ""
+              activeTab === 'left' ? styles.active : ''
             }`}
             onClick={() => {
-              handleTabClick("left");
+              handleTabClick('left');
               fetchGameHistoryData();
             }}
           >
@@ -83,10 +81,10 @@ const History = () => {
           </div>
           <div
             className={`${styles.taeb} ${
-              activeTab === "right" ? styles.active : ""
+              activeTab === 'right' ? styles.active : ''
             }`}
             onClick={() => {
-              handleTabClick("right");
+              handleTabClick('right');
               fetchTournamentHistoryData();
             }}
           >
@@ -95,7 +93,7 @@ const History = () => {
         </div>
       </div>
 
-      {activeTab === "right" ? (
+      {activeTab === 'right' ? (
         <DynamicTable
           headers={headers2}
           data={tournamentHistory}

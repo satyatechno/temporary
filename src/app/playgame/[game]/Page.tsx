@@ -1,10 +1,10 @@
 import React from 'react';
 import EndGame from './EndGame';
 
-const Page = () => {
+const Page = ({ game }: any) => {
   return (
     <div>
-      <EndGame/>
+      <EndGame status={game} />
     </div>
   );
 };
