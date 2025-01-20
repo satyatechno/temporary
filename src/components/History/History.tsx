@@ -19,14 +19,14 @@ const History = () => {
   const headers2 = ["Trmt No", "Game", "Rank", "Result"];
 
   const [isLoading, setIsLoading] = useState(true);
-  const {activeButton }=useAppContext();
+  const {medium }=useAppContext();
 
 
   const fetchGameHistoryData = useCallback(async () => {
     setIsLoading(true);
     try {
       const res = await challengeHistoryApi({
-        medium: activeButton.toLowerCase(),
+        medium: medium.toLowerCase(),
       });
       setGameHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);
