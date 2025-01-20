@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import styles from './openChalanges.module.scss';
 import { openChallengesApi } from '@/services/challenge';
+import { useAppContext } from '@/app/Context/AuthContext';
 interface TChallengeCard {
   item: any;
   index: number;
@@ -76,21 +77,22 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
 };
 const OpenChallenges = ({ gameDetails }: { gameDetails: any }) => {
   const [openChallenges, setOpenChallenges] = useState<Array<any>>([]);
+  const { medium } = useAppContext();
   const fetchOpenChallenges = useCallback(async () => {
     try {
       const res = await openChallengesApi({
         gameName: gameDetails?.name,
-        medium: 'ticket',
+        medium: medium,
       });
       setOpenChallenges(res?.data?.data?.game ?? []);
       console.log('open chalanges', res);
     } catch (error) {
       console.log('error', error);
     }
-  }, [gameDetails?.name]);
+  }, [gameDetails?.name, medium]);
   useEffect(() => {
     if (gameDetails?.name) fetchOpenChallenges();
-  }, [gameDetails]);
+  }, [gameDetails, medium]);
   if (!openChallenges?.length) return null;
   return (
     <section className={styles.challenges}>

@@ -37,7 +37,7 @@ const Header = () => {
   }
 
   // if(!hasSignedInToken){return null};
-
+  console.log('token---->', medium);
   return (
     <div
       className={styles.main_container}
@@ -51,7 +51,7 @@ const Header = () => {
             alt="gaming-arcde"
             src={`${config.imageDomain}/Assets/logo.webp`}
             fill
-            style={{objectFit:"contain"}}
+            style={{ objectFit: 'contain' }}
           />
         </Link>
       </div>
