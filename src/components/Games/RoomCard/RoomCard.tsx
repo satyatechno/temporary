@@ -18,7 +18,7 @@ const PlayCustomRoomCard = ({
   const [selectedStage, setSelectedStage] = React.useState<any>('1');
   const [selectedAmount, setSelectedAmount] = React.useState<any>();
   const [Loaded, setLoaded] = useState(false);
-  const [showCodeView, setShowCodeView] = useState(true);
+  const [showCodeView, setShowCodeView] = useState(false);
   const [invitelLink, setInviteLink] = useState('');
   const [paramData, setParamData] = useState<any>();
   const [copyLink, setCopyLink] = useState<any>(false);
@@ -65,7 +65,7 @@ const PlayCustomRoomCard = ({
       pause: true,
     });
   };
-  console.log(paramData)//need to add value in future
+  console.log(paramData); //need to add value in future
 
   useEffect(() => {
     if (betData?.code) {
