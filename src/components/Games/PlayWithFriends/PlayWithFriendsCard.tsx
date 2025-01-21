@@ -7,7 +7,7 @@ import PlayCustomRoomCard from "../RoomCard/RoomCard";
 import JoinARoom from "../RoomCard/JoinARoom";
 import CreateABet from "../RoomCard/CreateABet";
 import Image from "next/image";
-import TransactionModal from "@/components/Transaction/TransactionModal";
+// import TransactionModal from "@/components/Transaction/TransactionModal";
 
 interface CardProps {
     title?: string;
