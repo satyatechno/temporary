@@ -1,0 +1,75 @@
+.modal__container {
+  margin: 1rem;
+  color: #ffff;
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.heading {
+  font-size: large;
+}
+
+.upper_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.circle {
+  height: 100%;
+  width: 35px;
+  //   max-width: 35px;
+  background-color: rgb(28, 156, 73);
+  max-height: 53px;
+  border-radius: 100px;
+  content: "";
+}
+.circle2 {
+  height: 100%;
+  width: 35px;
+  //   max-width: 35px;
+  background-color: rgb(48, 113, 255);
+  max-height: 53px;
+  border-radius: 100px;
+  content: "";
+}
+
+.upper_container_content {
+  display: flex;
+  align-items: center;
+  background-color: #3c3c68c4;
+  border-radius: 22px;
+}
+.upper_container div {
+    padding: .5rem;
+    height: 100%;
+    max-height: 53px;
+    gap: 0.4rem;
+
+}
+
+.lower_container {
+  display: flex;
+  flex-direction: column;
+  color: #ffff;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  background-color: #3c3c68c4;
+  border-radius: 22px;
+  padding: 1rem;
+}
+
+.lower_container div {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+.transaction_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+}
