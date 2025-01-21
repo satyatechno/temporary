@@ -24,9 +24,17 @@ const Header = () => {
   const { userData, wallet, medium, setMedium } = useAppContext();
   const router = useRouter();
 
+  
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const accessToken = searchParams.get("accessToken");
+  const [accessToken, setAccessToken] = useState(null);
+
+  useEffect(() => {
+    const token:any = searchParams.get("accessToken");
+    setAccessToken(token);
+    console.log("Initial Access Token:", token);
+  }, [searchParams]);
 
   const noHeaderFooterPaths = ["/userwallet"];
 
@@ -39,6 +47,7 @@ const Header = () => {
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
 
   const fetchUserDetails = useCallback(async () => {
+    console.log('called',accessToken)
     try {
       const res = await getUserApi();
 
@@ -68,12 +77,8 @@ const Header = () => {
   }, [accessToken]); 
   
   useEffect(() => {
-    if (accessToken) {
-      fetchUserDetails();
-    } else {
-      console.log('No accessToken found in the query params.');
-    }
-  }, [accessToken,fetchUserDetails]);
+    fetchUserDetails();
+  }, [fetchUserDetails]);
 
 
   if (!shouldShowHeaderFooter) {
