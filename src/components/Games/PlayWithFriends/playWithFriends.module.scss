@@ -24,6 +24,16 @@
   display: flex;
   flex-direction: row;
 }
+
+.playTextContainer_img{
+  position: relative;
+  height: 6.806vw;
+  width: 6.458vw;
+  // margin-left: 50px;
+  margin-top: 5px;
+  object-fit: cover;
+}
+
 .playTextContainer img {
   height: 6.806vw;
   width: 6.458vw;
@@ -112,6 +122,17 @@
   font-size: 12px;
   font-weight: 500;
 }
+.card_image_container{
+  position: relative;
+  width: 70%;
+  height: 7vw;
+  object-fit: contain;
+  bottom: -3.448vw !important;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+
+}
 .imageContainer img {
   position: absolute;
   bottom: -3.448vw !important;
@@ -122,6 +143,7 @@
   transform: translateX(-50%);
   object-fit: contain;
 }
+
 .blurImg {
   filter: blur(0.4vw);
   z-index: -1;
@@ -310,6 +332,18 @@
   .cardContainer {
     display: grid;
     grid-template-columns: auto auto;
+  }
+
+  .card_image_container{
+    position: relative;
+    width: 82.74px;
+    height: 60px;
+    object-fit: contain;
+    bottom: -3.448vw !important;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+  
   }
 
 

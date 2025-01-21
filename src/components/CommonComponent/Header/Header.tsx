@@ -1,48 +1,88 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import styles from './Header.module.scss';
-import Link from 'next/link';
-import { header_element } from '@/utils/Utils';
-import { useState } from 'react';
+import Image from "next/image";
+import styles from "./Header.module.scss";
+import Link from "next/link";
+import { header_element } from "@/utils/Utils";
+import { useState, useEffect } from "react";
 // import Register from "@/components/AuthModal/Register/Register";
 // import Login from "@/components/AuthModal/Login/Login";
-import ModalWallet from '@/components/AuthModal/ModalWallet/ModalWallet';
-import Button from '../AnimatedButton/AnimatedButton';
-import config from '../../../../config';
-import Cookies from 'js-cookie';
-import { useAppContext } from '@/app/Context/AuthContext';
-import { usePathname, useRouter } from 'next/navigation';
-import MaticCurrencyToggler from '../MaticCurrencyToggler/MaticCurrencyToggler';
+import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
+import Button from "../AnimatedButton/AnimatedButton";
+import config from "../../../../config";
+import Cookies from "js-cookie";
+import { useAppContext } from "@/app/Context/AuthContext";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import MaticCurrencyToggler from "../MaticCurrencyToggler/MaticCurrencyToggler";
+import { deviceApi, getUserApi } from "@/services/GameServices";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const hasSignedInToken = Cookies.get('userToken');
+  const hasSignedInToken = Cookies.get("userToken");
   const { userData, wallet, medium, setMedium } = useAppContext();
   const router = useRouter();
 
   const pathname = usePathname();
-  const noHeaderFooterPaths = ['/userwallet'];
+  const searchParams = useSearchParams();
+  const accessToken = searchParams.get("accessToken");
 
-  const absoulte_header = ['/'];
+  const noHeaderFooterPaths = ["/userwallet"];
+
+  const absoulte_header = ["/"];
 
   const shouldShowHeaderFooter = !(
-    noHeaderFooterPaths.includes(pathname) || pathname.startsWith('/playgame')
+    noHeaderFooterPaths.includes(pathname) || pathname.startsWith("/playgame")
   );
 
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
+
+
+  
+  const fetchUserDetails = async () => {
+    try {
+      const res = await getUserApi();
+      if (!res || !res.data?.data?.user) {
+        console.error("Failed to fetch user details.");
+        return;
+      }
+      Cookies.set("userToken", accessToken || "", {
+        secure: true,
+        sameSite: "Strict",
+      });
+      Cookies.set("user", JSON.stringify(res.data.data.user), {
+        secure: true,
+        sameSite: "Strict",
+      });
+      await deviceApi({
+        fcm_token: Cookies.get("fcmToken") || "",
+        deviceType: "web",
+      });
+      console.log("User details and device information updated successfully.");
+    } catch (error) {
+      console.error("Error fetching user details or updating device info:", error);
+    }
+  };
+  
+  useEffect(() => {
+    const accessToken = searchParams.get("accessToken"); 
+    if (accessToken) {
+      fetchUserDetails();
+    } else {
+      console.log("No accessToken found in the query params.");
+    }
+  }, []);
+  
 
   if (!shouldShowHeaderFooter) {
     return null;
   }
 
-  // if(!hasSignedInToken){return null};
-  console.log('token---->', medium);
+  console.log("token---->", medium, accessToken);
   return (
     <div
       className={styles.main_container}
       style={{
-        position: shouldShowHeaderFooterAbsolute ? 'relative' : 'absolute',
+        position: shouldShowHeaderFooterAbsolute ? "relative" : "absolute",
       }}
     >
       <div className={styles.image_container}>
@@ -51,7 +91,7 @@ const Header = () => {
             alt="gaming-arcde"
             src={`${config.imageDomain}/Assets/logo.webp`}
             fill
-            style={{ objectFit: 'contain' }}
+            style={{ objectFit: "contain" }}
           />
         </Link>
       </div>
@@ -68,10 +108,10 @@ const Header = () => {
         <div className={styles.wallet_headers}>
           {/* togging of curreny logic */}
           <div className={styles.wallet_currency_type}>
-            {!hasSignedInToken ? null : wallet?.balance <= 0 ? (
+            {!hasSignedInToken || !accessToken ? null : wallet?.balance <= 0 ? (
               <div
                 className={styles.toggleBtnContainerWeb}
-                style={{ marginRight: '30px', padding: '10px 15px' }}
+                style={{ marginRight: "30px", padding: "10px 15px" }}
               >
                 <p>{userData?.tickets?.toFixed(2)}</p>
                 <Image
@@ -99,12 +139,12 @@ const Header = () => {
             />
           </div>
 
-          {hasSignedInToken ? (
+          {hasSignedInToken || accessToken ? (
             <Button
               value="Wallet"
               icon={`${config.imageDomain}loading-images/wallet2.webp`}
               imageClass={styles.walletImage}
-              onClick={() => router.push('/userwallet')}
+              onClick={() => router.push("/userwallet")}
             />
           ) : (
             <p
@@ -113,7 +153,7 @@ const Header = () => {
               }}
             >
               <Button
-                value={'Sign In'}
+                value={"Sign In"}
                 className={styles.otpVerificationModal__contentSaveBtn} // css class not in use
               />
             </p>
