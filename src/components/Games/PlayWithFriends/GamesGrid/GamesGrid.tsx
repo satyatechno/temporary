@@ -1,12 +1,14 @@
-'use client';
-import { useGamesContext } from '@/app/Context/GamesContext';
 import { poppins } from '@/app/layout';
 import Link from 'next/link';
 import styles from './gamesGrid.module.scss';
 import Image from 'next/image';
-const GamesGrid = ({ game }: { game: string }) => {
-  const { games } = useGamesContext();
+import { fetchGames } from '@/app/games/FetchGameServer';
 
+
+const GamesGrid =async ({ game }: { game: string }) => {
+
+  const games = await fetchGames();
+  
   return (
     <div className={styles.gamesContainer}>
       <div className={styles.moreGameHeading}>
@@ -15,8 +17,8 @@ const GamesGrid = ({ game }: { game: string }) => {
       </div>
       <div className={styles.games}>
         {games
-          .filter((i) => game !== i.name)
-          .map((item, index) => {
+          .filter((i:any) => game !== i.name)
+          .map((item:any, index:any) => {
             if (index < 6) {
               return (
                 <Link key={index?.toString()} href={`/games/${item?.name}`} replace>
