@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import { header_element } from "@/utils/Utils";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 // import Register from "@/components/AuthModal/Register/Register";
 // import Login from "@/components/AuthModal/Login/Login";
 import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
@@ -38,9 +38,7 @@ const Header = () => {
 
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
 
-
-  
-  const fetchUserDetails = async () => {
+  const fetchUserDetails = useCallback(async () => {
     try {
       const res = await getUserApi();
 
@@ -48,6 +46,7 @@ const Header = () => {
         console.error("Failed to fetch user details.");
         return;
       }
+
       Cookies.set("userToken", accessToken || "", {
         secure: true,
         sameSite: "Strict",
@@ -56,16 +55,17 @@ const Header = () => {
         secure: true,
         sameSite: "Strict",
       });
+
       await deviceApi({
         fcm_token: Cookies.get("fcmToken") || "",
         deviceType: "web",
       });
+
       console.log("User details and device information updated successfully.");
     } catch (error) {
       console.error("Error fetching user details or updating device info:", error);
     }
-  };
-  
+  }, [accessToken]); 
   
   useEffect(() => {
     if (accessToken) {
@@ -73,7 +73,7 @@ const Header = () => {
     } else {
       console.log('No accessToken found in the query params.');
     }
-  }, []);
+  }, [accessToken,fetchUserDetails]);
 
 
   if (!shouldShowHeaderFooter) {
@@ -111,7 +111,7 @@ const Header = () => {
         <div className={styles.wallet_headers}>
           {/* togging of curreny logic */}
           <div className={styles.wallet_currency_type}>
-            {!hasSignedInToken || !accessToken ? null : wallet?.balance <= 0 ? (
+            {!hasSignedInToken ? null : wallet?.balance <= 0 ? (
               <div
                 className={styles.toggleBtnContainerWeb}
                 style={{ marginRight: "30px", padding: "10px 15px" }}
@@ -142,7 +142,7 @@ const Header = () => {
             />
           </div>
 
-          {hasSignedInToken || accessToken ? (
+          {hasSignedInToken ? (
             <Button
               value="Wallet"
               icon={`${config.imageDomain}loading-images/wallet2.webp`}
