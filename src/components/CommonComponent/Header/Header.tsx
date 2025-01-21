@@ -26,7 +26,7 @@ const Header = () => {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const accessToken = searchParams.get("userToken");
+  const accessToken = searchParams.get("accessToken");
 
   const noHeaderFooterPaths = ["/userwallet"];
 
