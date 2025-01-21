@@ -16,7 +16,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import MaticCurrencyToggler from "../MaticCurrencyToggler/MaticCurrencyToggler";
 import { deviceApi, getUserApi } from "@/services/GameServices";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,17 +24,9 @@ const Header = () => {
   const { userData, wallet, medium, setMedium } = useAppContext();
   const router = useRouter();
 
-  
-
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [accessToken, setAccessToken] = useState(null);
-
-  useEffect(() => {
-    const token:any = searchParams.get("accessToken");
-    setAccessToken(token);
-    console.log("Initial Access Token:", token);
-  }, [searchParams]);
+  const accessToken = searchParams.get("accessToken");
 
   const noHeaderFooterPaths = ["/userwallet"];
 
@@ -47,8 +39,12 @@ const Header = () => {
   const shouldShowHeaderFooterAbsolute = !absoulte_header.includes(pathname);
 
   const fetchUserDetails = useCallback(async () => {
-    console.log('called',accessToken)
     try {
+      Cookies.set("userToken", accessToken || "", {
+        secure: true,
+        sameSite: "Strict",
+      });
+
       const res = await getUserApi();
 
       if (!res || !res.data?.data?.user) {
@@ -56,10 +52,6 @@ const Header = () => {
         return;
       }
 
-      Cookies.set("userToken", accessToken || "", {
-        secure: true,
-        sameSite: "Strict",
-      });
       Cookies.set("user", JSON.stringify(res.data.data.user), {
         secure: true,
         sameSite: "Strict",
@@ -72,14 +64,20 @@ const Header = () => {
 
       console.log("User details and device information updated successfully.");
     } catch (error) {
-      console.error("Error fetching user details or updating device info:", error);
+      console.error(
+        "Error fetching user details or updating device info:",
+        error
+      );
     }
-  }, [accessToken]); 
-  
-  useEffect(() => {
-    fetchUserDetails();
-  }, [fetchUserDetails]);
+  }, [accessToken]);
 
+  useEffect(() => {
+    if (!accessToken) {
+      console.log("No accessToken found in the query params.");
+    } else {
+      fetchUserDetails();
+    }
+  }, [accessToken, fetchUserDetails]);
 
   if (!shouldShowHeaderFooter) {
     return null;
