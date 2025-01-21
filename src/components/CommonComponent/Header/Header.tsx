@@ -16,6 +16,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import MaticCurrencyToggler from "../MaticCurrencyToggler/MaticCurrencyToggler";
 import { deviceApi, getUserApi } from "@/services/GameServices";
 
+export const dynamic = 'force-dynamic';
+
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasSignedInToken = Cookies.get("userToken");
@@ -24,7 +26,7 @@ const Header = () => {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const accessToken = searchParams.get("accessToken");
+  const accessToken = searchParams.get("userToken");
 
   const noHeaderFooterPaths = ["/userwallet"];
 
@@ -41,6 +43,7 @@ const Header = () => {
   const fetchUserDetails = async () => {
     try {
       const res = await getUserApi();
+
       if (!res || !res.data?.data?.user) {
         console.error("Failed to fetch user details.");
         return;
@@ -63,15 +66,15 @@ const Header = () => {
     }
   };
   
+  
   useEffect(() => {
-    const accessToken = searchParams.get("accessToken"); 
     if (accessToken) {
       fetchUserDetails();
     } else {
-      console.log("No accessToken found in the query params.");
+      console.log('No accessToken found in the query params.');
     }
   }, []);
-  
+
 
   if (!shouldShowHeaderFooter) {
     return null;

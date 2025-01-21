@@ -27,16 +27,16 @@ export const glossBloom = localFont({
 export const inter = Inter({
   variable: "--font-inter",
   weight: ["900", "500", "600"],
-  subsets: ["latin"], 
+  subsets: ["latin"],
 });
 export const poppins = Poppins({
   variable: "--font-poppins",
   weight: ["900", "500", "600"],
-  subsets: ["latin"], 
+  subsets: ["latin"],
 });
 export const montserrat = Montserrat({
   variable: "--font-montserrat",
-  subsets: ["latin"], 
+  subsets: ["latin"],
 });
 
 // export const metadata: Metadata = {
@@ -53,7 +53,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AppProvider>
           <GamesProvider>
             <TransactionContextProvider>
-              <Header />
+              <Suspense fallback={<Loading />}>
+                <Header />
+              </Suspense>
               <Suspense fallback={<Loading />}>{children}</Suspense>
               <div className={styles.desktop_footer}>
                 <Footer />

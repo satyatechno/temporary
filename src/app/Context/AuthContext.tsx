@@ -69,7 +69,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     if (token) fetchActiveWallet();
-  }, [token]);
+  }, []);
 
   return (
     <AppContext.Provider
