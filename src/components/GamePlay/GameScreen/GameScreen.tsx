@@ -106,7 +106,7 @@ const GameScreen = ({
       const entryId = localStorage.getItem('entryId');
 
       try {
-        let body = {
+        const body = {
           player_id: wallet?.address,
           score: '',
           enc_score: '',

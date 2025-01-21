@@ -22,8 +22,8 @@ function useTournament() {
     let errorMessage = '';
     if (message?.reason) {
       if (message?.reason?.includes('insufficient funds')) {
-        errorMessage =
-          'Insufficient balance. Please top up to continue the fun!';
+        errorMessage ='Insufficient balance. Please top up to continue the fun!';
+        console.log(errorMessage);
       }
     }
 
@@ -77,13 +77,13 @@ function useTournament() {
 
       localStorage.setItem('entryId', entryId?.toString());
       localStorage.setItem('tournamentId', serial?.toString());
-      let ref = '0x0346edeC853bCC92657734cE99045Eb0BA7B90Fb';
+      // let ref = '0x0346edeC853bCC92657734cE99045Eb0BA7B90Fb';
 
-      let options = {
-        tournamentId: serial,
-        ref,
-        entryId,
-      };
+      // let options = {
+      //   tournamentId: serial,
+      //   ref,
+      //   entryId,
+      // };
 
       await estimateGas({
         type: 'tournament',
