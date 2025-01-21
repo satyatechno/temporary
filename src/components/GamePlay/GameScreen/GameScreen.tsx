@@ -10,8 +10,18 @@ import QuitPopup from '../QuitPopPup/QuitPopup';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { gameScoreApi } from '@/services/GameServices';
 import { useAppContext } from '@/app/Context/AuthContext';
+import { tournamentScoreApi } from '@/services/tournament';
+import useTournament from '@/hooks/tournamentService';
 
-const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
+const GameScreen = ({
+  data,
+  scoreToBeat,
+  isTournament = false,
+}: {
+  data: any;
+  scoreToBeat?: any;
+  isTournament?: boolean;
+}) => {
   const {
     unityProvider,
     isLoaded,
@@ -28,9 +38,11 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     frameworkUrl: data?.buildUrl?.typeFramework,
     codeUrl: data?.buildUrl?.typeWasm,
     webglContextAttributes: { preserveDrawingBuffer: true },
+    ...{ streamingAssetsUrl: data?.streamingAssets },
   });
   const devicePixelRatio = useUnityDevicePixelRatio();
   const searchParams = useSearchParams();
+  const { setStartGame } = useTournament();
   const router = useRouter();
   const { userData, wallet } = useAppContext();
   const [setIsGameOver] = useState<any>(false); //need to add in future
@@ -56,38 +68,74 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
   }, [isLoaded, window.innerWidth]);
 
   const scoreSumbitter = async () => {
-    const gameId = localStorage.getItem('gameId');
-    try {
-      let data: any = {};
-      const res = await gameScoreApi(gameId);
-      data = { ...res.data?.data?.game };
-      let player = '';
+    if (!isTournament) {
+      const gameId = localStorage.getItem('gameId');
+      try {
+        let data: any = {};
+        const res = await gameScoreApi(gameId);
+        data = { ...res.data?.data?.game };
+        let player = '';
 
-      // let oppenent = '';
-      if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
-        player = 'player1';
-        // oppenent = 'player2';
-      } else {
-        // oppenent = 'player1';
-        player = 'player2';
-      }
-      if (res.data?.data?.game?.winner) {
-        if (res.data?.data?.game?.winner?.uuid == userData?.uuid) {
-          data.status = 'win';
-          data.score = res.data?.data?.game?.player2?.score;
+        // let oppenent = '';
+        if (res.data?.data?.game?.player1?.uuid == userData?.uuid) {
+          player = 'player1';
+          // oppenent = 'player2';
         } else {
-          data.status = 'loose';
-          data.score = res.data?.data?.game?.player2?.score;
+          // oppenent = 'player1';
+          player = 'player2';
         }
-      } else {
-        data.score = res.data?.data?.game?.[player]?.score;
-        data.status = 'pending';
+        if (res.data?.data?.game?.winner) {
+          if (res.data?.data?.game?.winner?.uuid == userData?.uuid) {
+            data.status = 'win';
+            data.score = res.data?.data?.game?.player2?.score;
+          } else {
+            data.status = 'loose';
+            data.score = res.data?.data?.game?.player2?.score;
+          }
+        } else {
+          data.score = res.data?.data?.game?.[player]?.score;
+          data.status = 'pending';
+        }
+        const queryString = new URLSearchParams(data).toString();
+        //@ts-ignore
+        router.replace(`/playgame/${data?.status}?${queryString}`);
+      } catch (error) {
+        console.log('errorrr', error);
       }
-      const queryString = new URLSearchParams(data).toString();
-      //@ts-ignore
-      router.replace(`/playgame/${data?.status}?${queryString}`);
-    } catch (error) {
-      console.log('errorrr', error);
+    } else {
+      const entryId = localStorage.getItem('entryId');
+
+      try {
+        let body = {
+          player_id: wallet?.address,
+          score: '',
+          enc_score: '',
+          tournament: searchParams?.get('serial'),
+          entryId: entryId,
+        };
+        console.log('tournament submit score', body);
+        const res = await tournamentScoreApi(body);
+        console.log('result tournament response', JSON.stringify(res.data));
+
+        setTimeout(() => {
+          // navigate('/leaderboard');
+          router.push(
+            `/tournament/${searchParams?.get(
+              'game'
+            )}?tournament=${searchParams?.get('serial')}`
+          );
+          setStartGame(false);
+        }, 2000);
+      } catch (e: any) {
+        setTimeout(() => {
+          // navigate('/home');
+          setStartGame(false);
+        }, 2000);
+
+        console.log('error ', e);
+        console.log('error response ', e?.response);
+        console.log('error data', e?.response?.data);
+      }
     }
   };
 
@@ -145,13 +193,24 @@ const GameScreen = ({ data, scoreToBeat }: { data: any; scoreToBeat: any }) => {
     if (isLoaded === true) {
       console.log('address at game screen', wallet);
       const gameId = localStorage.getItem('gameId');
+      const tourId = localStorage.getItem('tournamentId');
+      const entryId = localStorage.getItem('entryId');
       const data = {
         address: wallet?.address,
-        tourId: '',
-        gameId: gameId,
-        gameMode: true ? 'FreePlay' : 'OneVSOne',
-        entryId: '',
         baseUrl: 'alpha.gamingarcade.io/api/v1',
+        ...(isTournament
+          ? {
+              tourId: tourId,
+              gameId: '',
+              gameMode: 'Tournament',
+              entryId: entryId,
+            }
+          : {
+              gameId: gameId,
+              gameMode: 'OneVSOne',
+              tourId: '',
+              entryId: '',
+            }),
       };
 
       sendMessage('UnityReceiver', 'PlayerDetails', JSON.stringify(data));
