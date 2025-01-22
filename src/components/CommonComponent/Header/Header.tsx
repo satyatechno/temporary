@@ -14,7 +14,7 @@ import Cookies from "js-cookie";
 import { useAppContext } from "@/app/Context/AuthContext";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import MaticCurrencyToggler from "../MaticCurrencyToggler/MaticCurrencyToggler";
-import { deviceApi, getUserApi } from "@/services/GameServices";
+import { deviceApi } from "@/services/GameServices";
 
 export const dynamic = "force-dynamic";
 
