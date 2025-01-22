@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasSignedInToken = Cookies.get("userToken");
-  const { userData, wallet, medium, setMedium } = useAppContext();
+  const { userData, wallet, medium, setMedium ,fetchUser} = useAppContext();
   const router = useRouter();
 
   const pathname = usePathname();
@@ -44,24 +44,12 @@ const Header = () => {
         secure: true,
         sameSite: "Strict",
       });
-
-      const res = await getUserApi();
-
-      if (!res || !res.data?.data?.user) {
-        console.error("Failed to fetch user details.");
-        return;
-      }
-
-      Cookies.set("user", JSON.stringify(res.data.data.user), {
-        secure: true,
-        sameSite: "Strict",
-      });
+      fetchUser()
 
       await deviceApi({
         fcm_token: Cookies.get("fcmToken") || "",
         deviceType: "web",
       });
-
       console.log("User details and device information updated successfully.");
     } catch (error) {
       console.error(
@@ -70,6 +58,7 @@ const Header = () => {
       );
     }
   }, [accessToken]);
+
 
   useEffect(() => {
     if (!accessToken) {
