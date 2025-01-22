@@ -83,7 +83,6 @@ const Header = () => {
     return null;
   }
 
-  console.log("token---->", medium, accessToken);
   return (
     <div
       className={styles.main_container}
@@ -114,7 +113,7 @@ const Header = () => {
         <div className={styles.wallet_headers}>
           {/* togging of curreny logic */}
           <div className={styles.wallet_currency_type}>
-            {!hasSignedInToken ? null : wallet?.balance <= 0 ? (
+            {!hasSignedInToken || !accessToken ? null : wallet?.balance <= 0 ? (
               <div
                 className={styles.toggleBtnContainerWeb}
                 style={{ marginRight: "30px", padding: "10px 15px" }}
@@ -145,7 +144,7 @@ const Header = () => {
             />
           </div>
 
-          {hasSignedInToken ? (
+          {hasSignedInToken || accessToken  ? (
             <Button
               value="Wallet"
               icon={`${config.imageDomain}loading-images/wallet2.webp`}
