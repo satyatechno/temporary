@@ -4,25 +4,19 @@ import Image from "next/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import { header_element } from "@/utils/Utils";
-import { useState, useEffect, useCallback } from "react";
-// import Register from "@/components/AuthModal/Register/Register";
-// import Login from "@/components/AuthModal/Login/Login";
-import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
-import Button from "../AnimatedButton/AnimatedButton";
+import { useEffect, useCallback } from "react";
+
 import config from "../../../../config";
 import Cookies from "js-cookie";
 import { useAppContext } from "@/app/Context/AuthContext";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import MaticCurrencyToggler from "../MaticCurrencyToggler/MaticCurrencyToggler";
+import { usePathname, useSearchParams } from "next/navigation";
 import { deviceApi } from "@/services/GameServices";
+import WalletHeader from "./WalletHeader";
 
 export const dynamic = "force-dynamic";
 
 const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const hasSignedInToken = Cookies.get("userToken");
-  const { userData, wallet, medium, setMedium ,fetchUser} = useAppContext();
-  const router = useRouter();
+  const { fetchUser,fetchActiveWallet} = useAppContext();
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -44,7 +38,8 @@ const Header = () => {
         secure: true,
         sameSite: "Strict",
       });
-      fetchUser()
+      fetchUser();
+      fetchActiveWallet();
 
       await deviceApi({
         fcm_token: Cookies.get("fcmToken") || "",
@@ -99,63 +94,9 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <div className={styles.wallet_headers}>
-          {/* togging of curreny logic */}
-          <div className={styles.wallet_currency_type}>
-            {!hasSignedInToken || !accessToken ? null : wallet?.balance <= 0 ? (
-              <div
-                className={styles.toggleBtnContainerWeb}
-                style={{ marginRight: "30px", padding: "10px 15px" }}
-              >
-                <p>{userData?.tickets?.toFixed(2)}</p>
-                <Image
-                  src={`${config?.imageDomain}Assetsticket.webp`}
-                  alt=""
-                  height={20}
-                  width={20}
-                />
-              </div>
-            ) : wallet?.balance > 0 ? (
-              <MaticCurrencyToggler
-                setActiveButton={setMedium}
-                totalTickets={userData?.tickets?.toFixed(2)}
-                walletBalance={wallet?.balance?.toFixed(2)}
-                activeButton={medium}
-              />
-            ) : null}
-          </div>
-
-          <div className={styles.notification_image}>
-            <Image
-              src={`${config.imageDomain}AssetsnotificationBell.webp`}
-              alt="notification-logo"
-              fill
-            />
-          </div>
-
-          {hasSignedInToken || accessToken  ? (
-            <Button
-              value="Wallet"
-              icon={`${config.imageDomain}loading-images/wallet2.webp`}
-              imageClass={styles.walletImage}
-              onClick={() => router.push("/userwallet")}
-            />
-          ) : (
-            <p
-              onClick={() => {
-                setIsModalOpen(true);
-              }}
-            >
-              <Button
-                value={"Sign In"}
-                className={styles.otpVerificationModal__contentSaveBtn} // css class not in use
-              />
-            </p>
-          )}
-        </div>
+          <WalletHeader/>
       </div>
 
-      {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
