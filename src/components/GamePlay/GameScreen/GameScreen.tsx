@@ -22,6 +22,7 @@ const GameScreen = ({
   scoreToBeat?: any;
   isTournament?: boolean;
 }) => {
+  console.log('game screen data', data);
   const {
     unityProvider,
     isLoaded,
@@ -38,7 +39,14 @@ const GameScreen = ({
     frameworkUrl: data?.buildUrl?.typeFramework,
     codeUrl: data?.buildUrl?.typeWasm,
     webglContextAttributes: { preserveDrawingBuffer: true },
-    ...{ streamingAssetsUrl: data?.streamingAssets },
+    ...(data?.streamingAssets
+      ? {
+          streamingAssetsUrl: data?.streamingAssets?.replace(
+            'https://storage.googleapis.com/ga-site-assets',
+            'https://games.gamingarcade.io'
+          ),
+        }
+      : {}),
   });
   const devicePixelRatio = useUnityDevicePixelRatio();
   const searchParams = useSearchParams();
