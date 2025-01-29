@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Inter, Montserrat, Poppins, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/CommonComponent/Header/Header";
 import Footer from "@/components/CommonComponent/Footer/Footer";
@@ -38,6 +38,8 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
 });
+export const source_sans = Source_Sans_3({ subsets: ["latin"] });
+
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',

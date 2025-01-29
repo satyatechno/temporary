@@ -1,0 +1,704 @@
+.blogDetails {
+  overflow-x: hidden;
+}
+.blogContentContainer {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  padding-top: 2rem;
+}
+
+.arrowContainerLeft {
+  display: flex;
+  width: 36px; /* Slightly larger, easier to click on mobile */
+  height: 36px;
+  padding: 10px; /* Adjust padding to make the arrows larger */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Ensures a perfect circle */
+  border: 1px solid #cfd0db;
+  position: absolute;
+  margin-left: 13rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.arrowContainerLeft:hover {
+  background-color: #f5f5f5;
+}
+
+.hidden {
+  display: none;
+}
+
+.blogContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0rem 33rem 5rem 33rem; */
+}
+
+.blogTitle {
+  // color: var(--Palette-Natural01-Dark, #ff00c7);
+  color: #ff00c7;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 71px; /* 110.938% */
+}
+
+.contentDescription {
+  color: #fff5f5;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 41.64px */
+  margin-top: 0.8rem;
+  // font-family: Poppins !important;
+}
+
+.blogDescriptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4rem;
+}
+.authorData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.authorPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.authorName {
+  color: #ffc000;
+  font-family: "Space Grotesk" !important;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.postDate {
+  color: #87868c;
+  font-family: Poppins !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.customLink {
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.customLink:hover {
+  color: #13499f; /* New color on hover */
+}
+
+.blogCategory {
+  display: flex;
+  padding: 3px 40px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 36.876px;
+  background: linear-gradient(119deg, #5200ff 20.61%, #0500ff 73.97%);
+  color: #fff;
+  font-family: Poppins !important;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138.8%; /* 33.312px */
+}
+
+/* .blogImageContainer{
+  
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  } */
+
+.blogImageContainer > img {
+  width: 861px;
+  height: 528px;
+  object-fit: contain;
+}
+
+.blogContent {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 138.8%; /* 27.76px */
+  width: 862px;
+}
+
+.blogTagsContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.blogTag {
+  display: inline-flex;
+  padding: 8px 23px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 36.876px;
+  background: linear-gradient(119deg, #5200ff 20.61%, #0500ff 73.97%);
+  color: #fff;
+  font-family: "Space Grotesk" !important;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.iconsContainer {
+  display: flex;
+
+  flex-direction: column;
+  position: fixed;
+  left: 97rem;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #5b5a5a;
+}
+
+.socials > a:hover {
+  color: #000;
+}
+
+.topSectionContainer {
+  display: flex;
+}
+
+.arrowContainerUp {
+  display: flex;
+  width: 36px; /* Slightly larger, easier to click on mobile */
+  height: 36px;
+  padding: 10px; /* Adjust padding to make the arrows larger */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Ensures a perfect circle */
+  border: 1px solid #cfd0db;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease-in-out;
+  inset: auto 7% 8% auto;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* Support for older WebKit browsers */
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 15rem;
+  width: 1649px;
+}
+
+.moreBlogContainer {
+  display: flex;
+  flex-direction: column;
+}
+.mobileCarousel {
+  display: none;
+}
+
+.iconContainerMobile {
+  display: none;
+}
+.socialMobile {
+  display: none;
+}
+
+.iconsContainer,
+.arrowContainerUp {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arrowContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.arrowContainerBackward,
+.arrowContainerForward {
+  display: flex;
+  width: 36px; /* Slightly larger, easier to click on mobile */
+  height: 36px;
+  padding: 10px; /* Adjust padding to make the arrows larger */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Ensures a perfect circle */
+  border: 1px solid #cfd0db;
+}
+
+/* Add the following CSS to your BlogDetail.module.css file */
+
+/* Update styles for the slider container */
+.sliderContainer {
+  width: 100%;
+  overflow: hidden;
+}
+.browsebutton {
+  display: none;
+}
+
+/* Ensure that the cards are displayed in one row */
+.sliderInsideContainer {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of cards */
+}
+
+/* Update styles for individual cards */
+.blogCard {
+  flex: 0 0 auto; /* Ensure that cards don't grow or shrink */
+  margin-right: 20px; /* Adjust spacing between cards */
+}
+
+.authorImageContainer > img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+/* RichText.module.css */
+
+.htmlContent {
+  /* General styles for the content container */
+
+  border-radius: 8px;
+}
+
+/* Style for paragraphs */
+.htmlContent p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Style for headings */
+.htmlContent h1 {
+  font-size: 2rem;
+  color: #1e90ff;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.htmlContent h2 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.htmlContent h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+/* Style for links */
+.htmlContent a {
+  text-decoration: underline;
+}
+
+.htmlContent a:hover {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+/* Style for list items */
+.htmlContent ul,
+.htmlContent ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.htmlContent li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Style for bold text */
+.htmlContent strong {
+  font-weight: bold;
+}
+
+@media (max-width: 1681px) {
+  .arrowContainerUp {
+    left: 85rem;
+    top: 42rem;
+  }
+  .iconsContainer {
+    left: 84rem;
+  }
+}
+
+@media (max-width: 1441px) {
+  /* .blogContent{
+      padding: 0rem 18rem 5rem 18rem;
+  
+    } */
+
+  .iconsContainer {
+    left: 77rem;
+  }
+
+  .arrowContainerUp {
+    left: 77rem;
+  }
+  .section2 {
+    padding-left: 9rem;
+    width: 1260px;
+  }
+  .arrowContainerLeft {
+    margin-left: 6rem;
+  }
+}
+
+@media (max-width: 1388px) {
+  .arrowContainerUp {
+    left: 76rem;
+  }
+  .iconsContainer {
+    left: 77rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .arrowContainerUp {
+    left: 71rem;
+  }
+  .iconsContainer {
+    left: 71rem;
+  }
+}
+
+@media (max-width: 1167px) {
+  .blogContentContainer {
+    gap: 0rem;
+  }
+  .arrowContainerUp {
+    left: 63rem;
+  }
+  .arrowContainerLeft {
+    margin-left: 2rem;
+    margin-top: 0rem;
+  }
+  .iconsContainer {
+    left: 66rem;
+  }
+}
+
+@media (max-width: 1025px) {
+  .blogTitle {
+    font-size: 50px;
+  }
+  .blogContent {
+    font-size: 24px;
+    padding: 2rem 1rem 4rem 0rem;
+    /* padding: 0rem 7rem 5rem 7rem; */
+  }
+  /* .arrowContainerLeft{
+      position: absolute;
+      top: 14%;
+      left: 3%;
+    } */
+  .iconsContainer {
+    left: 60rem;
+    top: 9rem;
+  }
+  .arrowContainerUp {
+    left: 58rem;
+  }
+}
+
+@media (max-width: 1083px) {
+  .iconsContainer {
+    left: 59rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .blogContent {
+    width: 671px;
+  }
+}
+
+@media (max-width: 769px) {
+  .arrowContainerUp {
+    display: none;
+  }
+
+  .blogContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+    margin-top: 1rem;
+  }
+
+  .blogContent {
+    font-size: 24px;
+    padding: 0rem 0rem 0rem 0rem;
+
+    /* width: 671px; */
+  }
+  /* .arrowContainerLeft{
+      position: absolute;
+      top: 10%;
+      left: 3%;
+  
+    } */
+  .arrowContainerLeft {
+    margin-right: 40rem;
+  }
+  .iconsContainer {
+    display: none;
+  }
+  .iconContainerMobile {
+    display: flex;
+  }
+
+  .socialMobile {
+    display: flex;
+    gap: 1rem;
+    color: #5b5a5a;
+    margin-top: 2rem;
+    margin-left: -22rem;
+  }
+
+  .socialMobile > a:hover {
+    color: #000;
+  }
+
+  .blogImageContainer > img {
+    width: 700px;
+    height: auto;
+  }
+  .arrowContainerUp {
+    left: 40rem;
+  }
+  .mobileCarousel {
+    display: block;
+  }
+
+  .desktopCarousel {
+    display: none;
+  }
+  .browsebutton {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .browse {
+    display: inline-flex;
+    padding: 14px 33px;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    border-radius: 36.876px;
+    background: linear-gradient(0deg, #0501ff 0%, #0501ff 100%),
+      linear-gradient(119deg, #5200ff 20.61%, #0500ff 73.97%);
+    color: white;
+    font-family: "Source Sans Pro" !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 707px) {
+  .blogImageContainer > img {
+    width: 500px;
+    height: auto;
+  }
+  .arrowContainerLeft {
+    margin-right: 33rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .blogContent {
+    width: 500px;
+  }
+  .socialMobile {
+    margin-top: 2rem;
+    margin-left: -15rem;
+  }
+}
+
+@media (max-width: 592px) {
+  /* .arrowContainerLeft{
+      margin-right: 26rem;
+    } */
+}
+
+@media (max-width: 510px) {
+  .blogContent {
+    width: 400px;
+  }
+  .blogImageContainer > img {
+    width: 400px;
+  }
+  .socialMobile {
+    margin-top: 2rem;
+    margin-left: -12rem;
+  }
+}
+
+@media (max-width: 654px) {
+  .authorName {
+    font-size: 16px;
+  }
+  .authorPost {
+    gap: 0rem;
+  }
+  .blogCategory {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 426px) {
+  .blogDetails {
+    overflow-x: hidden;
+  }
+
+  .blogContentContainer {
+    margin-top: 0rem;
+  }
+
+  .arrowContainerLeft {
+    margin-left: 0.5rem;
+    // margin-top: 1rem
+  }
+  .blogTitle {
+    color: var(--Palette-Natural01-Dark, #1c1c1c);
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 138.907%; /* 41.672px */
+  }
+  .blogContent {
+    width: 388px;
+    font-size: 16px;
+    line-height: 138.8%;
+    padding-top: 0.5rem;
+    /* padding: 4rem 0rem 4rem 1rem; */
+  }
+  .contentDescription {
+    font-family: "Source Sans Pro";
+    font-size: 20px;
+  }
+  .authorImageContainer > img {
+    height: 50px;
+    width: 50px;
+  }
+  .blogCategory {
+    font-size: 14px;
+    padding: 3px 14px;
+  }
+  .authorName {
+    font-size: 16px;
+  }
+  .postDate {
+    font-size: 10px;
+  }
+  .authorPost {
+    gap: 0rem;
+  }
+  .blogImageContainer > img {
+    width: 350px;
+    height: auto;
+  }
+  .arrowContainerUp {
+    display: none;
+  }
+  .iconsContainer {
+    left: 3rem;
+    top: 55rem;
+  }
+  .socials {
+    display: flex;
+    flex-direction: row;
+  }
+  .blogTag {
+    padding: 3px 14px;
+    font-size: 14px;
+  }
+  .socialMobile {
+    margin-top: 2rem;
+    margin-left: -11rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .blogContent {
+    width: 340px;
+  }
+}
+
+@media (max-width: 364px) {
+  .blogImageContainer > img {
+    width: 280px;
+    height: auto;
+  }
+
+  .arrowContainerLeft {
+    margin-right: 17rem;
+  }
+  .socialMobile {
+    margin-top: 2rem;
+    margin-left: -9rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .blogContent {
+    width: 280px;
+  }
+  /* .socialMobile{
+      margin-top: 1rem;
+      margin-left: 0rem;
+    } */
+}
+
+@media (max-width: 320px) {
+  .arrowContainerLeft {
+    margin-right: 15rem;
+  }
+}

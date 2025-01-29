@@ -1,5 +1,59 @@
 // import config from "../../config";
 
+export const icons = {
+
+cross_icon: (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+    fill="none"
+  >
+    <path
+      d="M18.2324 6.98438L6.23242 18.9844M18.2324 18.9844L6.23242 6.98438"
+      stroke="black"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+),
+search_icon: (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="23"
+    height="23"
+    viewBox="0 0 29 29"
+    fill="none"
+  >
+    <path
+      d="M14.1853 26.2137C21.1104 26.2137 26.7242 20.5999 26.7242 13.6748C26.7242 6.74982 21.1104 1.13599 14.1853 1.13599C7.26032 1.13599 1.64648 6.74982 1.64648 13.6748C1.64648 20.5999 7.26032 26.2137 14.1853 26.2137Z"
+      stroke="white"
+      strokeWidth="2.15198"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+    />
+    <path
+      d="M23.209 22.6989L27.4699 26.9598"
+      stroke="white"
+      strokeWidth="2.15198"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+),
+
+}
+
+export const menuSlide = {
+  initial: { x: "calc(100% + 100px)" },
+  enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+  exit: {
+    x: "calc(100% + 100px)",
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+  },
+};
+
 export const header_element = [
   //   {
   //     title: "Home",

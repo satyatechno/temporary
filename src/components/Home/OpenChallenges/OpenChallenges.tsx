@@ -9,7 +9,6 @@ import Cookies from 'js-cookie';
 
 const OpenChallenges = () => {
   const [customBets, setCustomBets] = useState([]);
-  // const [paymentPopUp, setPaymentPopup] = useState(false);
   const { medium } = useAppContext();
 
   const isAuthenticated = Cookies.get("userToken");

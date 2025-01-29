@@ -1,0 +1,94 @@
+.blogcardContainer {
+    max-width: 20rem;
+    //max-height: 17rem;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #c4c4c4;
+    color: white !important;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .blogcardContainer:hover {
+    box-shadow: 0px 23px 55.2px -24px rgba(3, 3, 3, 3);
+    border: 2px solid #090505;
+    background: #FFF;
+  }
+  
+  
+  
+  .imageContainer {
+    display: flex;
+    border-bottom: 1px solid #c4c4c4;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  
+  .imageContainer > img {
+    width: 100%; 
+    height: auto; 
+    //aspect-ratio: 355/208;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 11.5px 11.5px 0 0;
+    object-fit: fill;
+  }
+  
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    height: 9rem;
+    gap: 2rem;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+  }
+  
+  .contentSection1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .postdate {
+    color: #000;
+    font-family: "Source Sans Pro" !important;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+  }
+  
+  
+  
+  .blogcategory {
+    font-family: "Space Mono", monospace !important;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000;
+  
+    background: linear-gradient(10deg, #8e00fea3 64%, #011aff8f 56%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .blogdescription {
+    color: #000;
+    // font-family: "Source Sans Pro" !important;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  
+  @media screen and (max-width: 1473px) {
+  
+    .blogcardContainer{
+      max-width: 18rem;
+    }
+  }
+  
