@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import config from '../../../../config';
-import styles from './controlDesk.module.scss';
+import React, { useState } from "react";
+import config from "../../../../config";
+import styles from "./controlDesk.module.scss";
+import Image from "next/image";
+
 const ControlMenu = ({
-  scoreToBeat = '',
-  tips = ['Tip1', 'Tip2'],
+  scoreToBeat = "",
+  tips = ["Tip1", "Tip2"],
   actions,
 }: any) => {
   const [sound, setSound] = useState(true);
@@ -21,9 +23,10 @@ const ControlMenu = ({
       <div className={styles.scoreContainer}>
         {scoreToBeat ? (
           <div className={styles.best}>
-            <img
+            <Image
               src={`${config.imageDomain}Assets/trophyDesk.webp`}
               alt="vs-icon"
+              fill
             />
 
             <div className={styles.scoreDiv}>
@@ -42,16 +45,23 @@ const ControlMenu = ({
           className={styles.listBtnS}
           onClick={() => actions.quit(mode, sound, true)}
         >
-          <img src={`${config.imageDomain}Assets/backDesk.png`} alt="vs-icon" />
+          <Image
+            width={50}
+            height={50}
+            src={`${config.imageDomain}Assets/backDesk.png`}
+            alt="vs-icon"
+          />
         </div>
         <div className={styles.listBtnS} onClick={modeChanger}>
           {true ? (
-            <img
+            <Image
+              fill
               src={`${config.imageDomain}Assets/lightDesk.webp`}
               alt="vs-icon"
             />
           ) : (
-            <img
+            <Image
+              fill
               src={`${config.imageDomain}Assets/nightDesk.webp`}
               alt="vs-icon"
             />
@@ -59,19 +69,22 @@ const ControlMenu = ({
         </div>
         <div className={styles.listBtnS} onClick={muteUnmute}>
           {true ? (
-            <img
+            <Image
+              fill
               src={`${config.imageDomain}Assets/unmuteDesk.webp`}
               alt="vs-icon"
             />
           ) : (
-            <img
+            <Image
+              fill
               src={`${config.imageDomain}Assets/muteDesk.webp`}
               alt="vs-icon"
             />
           )}
         </div>
         <div className={styles.listBtnS}>
-          <img
+          <Image
+            fill
             src={`${config.imageDomain}Assets/fullDesk.webp`}
             alt="vs-icon"
             onClick={() => actions.fullScreen(true)}

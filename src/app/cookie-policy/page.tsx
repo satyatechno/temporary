@@ -2,6 +2,7 @@
 import Head from "next/head";
 import styles from "./cookiespolicy.module.scss";
 import config from "../../../config";
+import Image from "next/image";
 
 // import { useRouter } from "next/router";
 
@@ -65,10 +66,12 @@ Tracking policy"
             >
               Cookie
             </h1>
-            <img
+            <Image
               className="col-lg-3"
               src={`${config.imageDomain}Assets/cookie-img.webp`}
               alt="Cookie Policy - Gaming Arcade"
+              width={200}
+              height={200}
             />
             <h2
               className={`white-color ${styles.lgTxt2} col-lg-3`}

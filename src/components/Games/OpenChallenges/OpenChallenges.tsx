@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from 'react';
 import styles from './openChalanges.module.scss';
 import { openChallengesApi } from '@/services/challenge';
 import { useAppContext } from '@/app/Context/AuthContext';
+import Image from 'next/image';
 interface TChallengeCard {
   item: any;
   index: number;
@@ -25,7 +26,7 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
         <h2 className={`${styles.joinBet} ${poppins.className}`}>Join Bet</h2>
         <div className={styles.reward}>
           <h3 className={poppins.className}>{item?.betAmount}</h3>
-          <img
+          <Image
             className={styles.matic}
             src={
               false
@@ -33,6 +34,8 @@ const ChallengeCard = ({ item, index, gameDetails }: TChallengeCard) => {
                 : 'https://assets.gamingarcade.io/Assetsticket.webp'
             }
             alt="matic"
+            width={60}
+            height={60}
           />
         </div>
 

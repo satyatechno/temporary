@@ -6,6 +6,7 @@ import { useAppContext } from "@/app/Context/AuthContext";
 import Button from "../../AnimatedButton/AnimatedButton";
 import { MdVisibilityOff } from "react-icons/md";
 import CopyAddress from "../../CopyAddress/CopyAddress";
+import Image from "next/image";
 const PrivateKeyModal = ({ onClose}: any) => {
   const [otp, setOtp] = useState("");
   const [showPrivateKey, setShowPrivateKey] = useState(false);
@@ -27,9 +28,11 @@ const PrivateKeyModal = ({ onClose}: any) => {
         <div className={styles.privateKeyModal__content}>
           <div className={styles.privateKeyModal__header}>
             <div>
-              <img
+              <Image
                 src="https://assets.gamingarcade.io//loading-images/wallet2.webp"
                 alt=""
+                width={30}
+                height={20}
               />
               <h2>Show Private Key</h2>
             </div>

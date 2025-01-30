@@ -104,10 +104,11 @@ const DashboardTournamentHistory: React.FC = () => {
                       <td colSpan={9}>
                         <div className={styles.alternateTbl}>
                           <div className={styles.altImg}>
-                            <img
+                            <Image
                               src={`${config.imageDomain}Assets/starTbl.webp`}
                               alt="Loading..."
-                              className={styles.imgFluid}
+                              // className={styles.imgFluid}
+                              fill
                             />
                           </div>
                           <div className={styles.sunWrap}>
@@ -123,10 +124,11 @@ const DashboardTournamentHistory: React.FC = () => {
                       <td colSpan={9}>
                         <div className={styles.alternateTbl}>
                           <div className={styles.altImg}>
-                            <img
+                            <Image
                               src={`${config.imageDomain}Assets/starTbl.webp`}
                               alt="No tournaments"
-                              className={styles.imgFluid}
+                              fill
+                              // className={styles.imgFluid}
                             />
                           </div>
                           <div className={styles.sunWrap}>

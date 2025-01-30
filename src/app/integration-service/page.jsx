@@ -3,13 +3,14 @@ import React from "react";
 import config from "../../../config";
 import Head from "next/head";
 import styles from "./integrationservice.module.scss";
+import Image from "next/image";
 // import { useRouter } from "next/router";
 
 function IntegrationService() {
   //   const { onSubmit, fields, setFields } = useIteraion();
   //   const router = useRouter();
-//   const canonicalUrl = `https://gamingarcade.io${router.asPath}`;
-//   console.log("canonical", canonicalUrl);
+  //   const canonicalUrl = `https://gamingarcade.io${router.asPath}`;
+  //   console.log("canonical", canonicalUrl);
 
   function schemaOrganisation() {
     return {
@@ -106,7 +107,7 @@ function IntegrationService() {
                 <div className={styles.customBody}>
                   <h3>Customized Games</h3>
                   <p>
-                   {` Empower developers with Gaming Arcade's SDK, allowing
+                    {` Empower developers with Gaming Arcade's SDK, allowing
                     effortless creation and customization of games tailored to
                     their specifications. Whether it's free-to-play, open play,
                     or customized stake-based gaming, easily integrate them onto
@@ -123,11 +124,14 @@ function IntegrationService() {
                   </p>
                 </div>
               </div>
+
               <div className={styles.column_lg_4}>
                 <div className={styles.imgBody}>
-                  <img
+                  <Image
                     src={`${config.imageDomain}Assets/mobile-new.webp`}
                     alt="INTELLIGENCE SUITE - Gaming Arcade"
+                    fill
+                    objectFit="cover"
                   />
                 </div>
               </div>
@@ -135,7 +139,7 @@ function IntegrationService() {
                 <div className={styles.customBody}>
                   <h3>Prizes & Rewards</h3>
                   <p>
-                   {` Utilize Gaming Arcade's Dev console to set prizes for your
+                    {` Utilize Gaming Arcade's Dev console to set prizes for your
                     games, seamlessly define winning metrics, and automatically
                     distribute rewards on-chain to the deserving winners.`}
                   </p>
@@ -174,10 +178,12 @@ function IntegrationService() {
                   gaming platforms.
                 </p> */}
               </div>
-              <div className="col-lg-6">
-                <img
+              <div className={styles.arcade_side}>
+                <Image
                   src={`${config.imageDomain}Assets/arcade-side.webp`}
                   alt="Powering"
+                  fill
+                  objectFit="cover"
                 />
               </div>
             </div>
@@ -223,15 +229,18 @@ function IntegrationService() {
                   <br /> Marketplace
                 </h2>
                 <p>
-                 {` Craft your gaming economy and effortlessly incorporate a
+                  {` Craft your gaming economy and effortlessly incorporate a
                   comprehensive marketplace for buying and selling in-game
                   assets using Gaming Arcade's SDK.`}
                 </p>
               </div>
-              <div className="col-lg-6">
-                <img
+              <div className={styles.FullyIntegerated_Marketplace}>
+                <Image
                   src={`${config.imageDomain}Assets/board.webp`}
                   alt="Fully Integerated Marketplace - Gaming Arcade"
+                  width={300}
+                  height={400}
+                  objectFit='cover'
                 />
               </div>
             </div>
@@ -239,11 +248,14 @@ function IntegrationService() {
         </section>
         <section className={`${styles.exploreGames} ${styles.playEarn}`}>
           <div className="container-1280">
-            <div  className={styles.upper_row}>
+            <div className={styles.upper_row}>
               <div className={`col-lg-6 ${styles.crpto}`}>
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/intelligence.webp`}
                   alt="INTELLIGENCE SUITE - Gaming Arcade"
+                  width={300}
+                  height={400}
+                  objectFit='cover'
                 />
               </div>
               <div className="col-lg-6">
@@ -272,14 +284,17 @@ function IntegrationService() {
                   <br /> Manager
                 </h2>
                 <p>
-                 {` Effortlessly deploy your in-game token with Gaming Arcade's
+                  {` Effortlessly deploy your in-game token with Gaming Arcade's
                   SDK. Easily mint, manage supply, and handle distribution.`}
                 </p>
               </div>
               <div className="col-lg-6">
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/token.webp`}
                   alt="Token Manager"
+                  width={300}
+                  height={400}
+                  objectFit='cover'
                 />
               </div>
             </div>
@@ -289,9 +304,12 @@ function IntegrationService() {
           <div className="container-1280">
             <div className="row align-items-center">
               <div className={`col-lg-6 ${styles.crpto}`}>
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/new.webp`}
                   alt="BUILT-IN COMPLIANCE - Gaming Arcade"
+                  width={300}
+                  height={400}
+                  objectFit='cover'
                 />
               </div>
               <div className="col-lg-6 ">
@@ -311,29 +329,44 @@ function IntegrationService() {
           </div>
         </section>
         <section className={styles.homeSec6}>
-          <div  className={styles.upper_row}>
+          <div className={styles.upper_row}>
             <div className="row">
               <div className="col-lg-12">
                 <h2>Our Partners</h2>
               </div>
               <div className={`col-lg-12 ${styles.partnerLogo}`}>
-                <img
+                <Image
+                  width={252}
+                  height={70}
+                  style={{ objectFit: "cover" }}
                   src={`${config.imageDomain}Assets/market-watch.webp`}
                   alt="Market Watch"
                 />
-                <img
+                <Image
+                  width={252}
+                  height={70}
+                  style={{ objectFit: "cover" }}
                   src={`${config.imageDomain}Assets/market-watch.webp`}
                   alt="Market Watch"
                 />
-                <img
+                <Image
+                  width={252}
+                  height={70}
+                  style={{ objectFit: "cover" }}
                   src={`${config.imageDomain}Assets/NewsBTC.webp`}
                   alt="NEWS BTC"
                 />
-                <img
+                <Image
+                  width={252}
+                  height={70}
+                  style={{ objectFit: "cover" }}
                   src={`${config.imageDomain}Assets/market-watch.webp`}
                   alt="Market Watch"
                 />
-                <img
+                <Image
+                  width={252}
+                  height={70}
+                  style={{ objectFit: "cover" }}
                   src={`${config.imageDomain}Assets/market-watch.webp`}
                   alt="Market Watch"
                 />
@@ -358,9 +391,12 @@ function IntegrationService() {
                 </ul>
               </div>
               <div className="col-lg-6 img-center-400">
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/laptop.webp`}
                   alt="Platform Functionalites - Gaming Arcade"
+                  width={350}
+                  height={300}
+                  objectFit="cover"
                 />
               </div>
               <div className={styles.getInTouchButton}>
@@ -429,9 +465,11 @@ function IntegrationService() {
                 </form> */}
               </div>
               <div className={`col-lg-6 ${styles.imgCenter400}`}>
-                <img
+                <Image
                   src={`${config.imageDomain}Assets/contact-robo.webp`}
                   alt="Contact Us - Gaming Arcade"
+                  fill
+                  objectFit="cover"
                 />
               </div>
             </div>

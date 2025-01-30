@@ -23,14 +23,14 @@ function GamesCard({ gameImg, playedCount, gameName, onClick }:any) {
         <h3>{gameName}</h3>
         <div className={styles.gamesCard__playCount}>
             <div className={styles.players} >
-                <div className="playe-profile">
-                    <img src={`${config.imageDomain}/loading-images/user1.webp`}alt="Game Fi" />
+                <div className={styles.playe_profile}>
+                    <Image src={`${config.imageDomain}/loading-images/user1.webp`}alt="Game Fi" fill style={{objectFit:"cover"}}/>
                 </div>
-                <div className="playe-profile">
-                    <img src={`${config.imageDomain}/loading-images/user2.webp`} alt="Game Fi" />
+                <div className={styles.playe_profile}>
+                    <Image src={`${config.imageDomain}/loading-images/user2.webp`} alt="Game Fi" fill style={{objectFit:"cover"}} />
                 </div>
-                <div className="playe-profile">
-                    <img src={`${config.imageDomain}/loading-images/user3.webp`} alt="Gaming Arcade" />
+                <div className={styles.playe_profile}>
+                    <Image src={`${config.imageDomain}/loading-images/user3.webp`} alt="Gaming Arcade"  fill style={{objectFit:"cover"}}/>
                 </div>
             </div>
             <p>{playedCount} Played</p>

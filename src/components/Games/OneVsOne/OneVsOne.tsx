@@ -49,13 +49,15 @@ const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
       <div className={styles.icon} />
       <div className={styles.matic}>
         <h2>{item.reward}</h2>
-        <img
+        <Image
           src={
             medium === "ticket"
               ? "https://assets.gamingarcade.io/Assetsticket.webp"
               : `https://assets.gamingarcade.io/Assets/matic.webp`
           }
           alt="Matic"
+          width={60}
+          height={60}
         />
       </div>
       <Link
@@ -80,10 +82,13 @@ const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
           className={poppins.className}
         >
           Play {item.entryPrice} {medium === "ticket" ? "Ticket" : "Matic"}
-          <img
+          <Image
             style={{ marginLeft: 10 }}
             src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
             alt="arrow"
+            width={24}
+            height={9}
+            quality={85}
           />
         </span>
       </Link>

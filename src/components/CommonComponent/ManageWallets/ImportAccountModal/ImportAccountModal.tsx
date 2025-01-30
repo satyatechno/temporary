@@ -4,6 +4,7 @@ import axios from 'axios';
 import config from '../../../../../config';
 import Button from '../../AnimatedButton/AnimatedButton';
 import Cookies from 'js-cookie';
+import Image from 'next/image';
 
 const ImportAccountModal = ({ onClose }:any) => {
 
@@ -69,7 +70,7 @@ const ImportAccountModal = ({ onClose }:any) => {
             <div className={styles.importAccountModal__content}>
                 <div className={styles.importAccountModal__header}>
                     <div>
-                        <img src={`${config.imageDomain}/loading-images/wallet2.webp`} alt="" />
+                        <Image src={`${config.imageDomain}/loading-images/wallet2.webp`} alt="wallet2." height={20} width={20}/>
                         <h2>Import account</h2>
                     </div>
                     <span onClick={onClose}>&times;</span>

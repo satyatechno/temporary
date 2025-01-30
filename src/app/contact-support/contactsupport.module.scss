@@ -1,710 +1,729 @@
 .contactSupportSec h1 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 4.4vw;
-    line-height: 4.5vw;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    max-width: 22vw;
-    margin: 3vw auto;
-    z-index: 2;
-    position: relative;
-    text-align: center;
-    width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 4.4vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  max-width: 22vw;
+  margin: 3vw auto;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .barCs1::before {
-    position: absolute;
-    width: 68.36vw;
-    height: 5vw;
-    left: 0;
-    top: 0;
-    background: linear-gradient(270.02deg,
-            #ff00f5 6.98%,
-            rgba(83, 22, 217, 0) 69.31%);
-    transform: matrix(-1, 0.01, 0.01, 1, 0, 0);
-    content: "";
+  position: absolute;
+  width: 68.36vw;
+  height: 5vw;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    270.02deg,
+    #ff00f5 6.98%,
+    rgba(83, 22, 217, 0) 69.31%
+  );
+  transform: matrix(-1, 0.01, 0.01, 1, 0, 0);
+  content: "";
 }
 
 section.contactSupportSec {
-    position: relative;
+  position: relative;
 }
 
 section.contactSupportSec::before {
-    position: absolute;
-    width: 54.1vw;
-    height: 5vw;
-    left: 0;
-    top: 6vw;
-    background: linear-gradient(270deg,
-            #efb30a 23.84%,
-            rgba(202, 147, 33, 0) 69.33%);
-    transform: matrix(-1, 0.01, 0.01, 1, 0, 0);
-    content: "";
+  position: absolute;
+  width: 54.1vw;
+  height: 5vw;
+  left: 0;
+  top: 6vw;
+  background: linear-gradient(
+    270deg,
+    #efb30a 23.84%,
+    rgba(202, 147, 33, 0) 69.33%
+  );
+  transform: matrix(-1, 0.01, 0.01, 1, 0, 0);
+  content: "";
 }
 
 .barCs1::after {
-    position: absolute;
-    width: 41.5vw;
-    height: 5vw;
-    right: 0;
-    top: 0;
-    background: linear-gradient(270deg,
-            #efb30a 23.84%,
-            rgba(202, 147, 33, 0) 69.33%);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-    content: "";
+  position: absolute;
+  width: 41.5vw;
+  height: 5vw;
+  right: 0;
+  top: 0;
+  background: linear-gradient(
+    270deg,
+    #efb30a 23.84%,
+    rgba(202, 147, 33, 0) 69.33%
+  );
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  content: "";
 }
 
 section.contactSupportSec::after {
-    position: absolute;
-    width: 70.6vw;
-    height: 5vw;
-    right: 0;
-    top: 6vw;
-    background: linear-gradient(269.89deg,
-            #ff00f5 5.54%,
-            rgba(83, 22, 217, 0) 57.18%);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-    content: "";
+  position: absolute;
+  width: 70.6vw;
+  height: 5vw;
+  right: 0;
+  top: 6vw;
+  background: linear-gradient(
+    269.89deg,
+    #ff00f5 5.54%,
+    rgba(83, 22, 217, 0) 57.18%
+  );
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  content: "";
 }
 
 .container-1440 {
-    max-width: 85.71vw;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 85.71vw;
+  width: 100%;
+  margin: 0 auto;
 }
 
 span.imgCs1 {
-    position: absolute;
-    left: 0;
-    top: 0.7vw;
+  position: absolute;
+  left: 0;
+  top: 0.7vw;
 }
 
 span.imgCs2 {
-    position: absolute;
-    right: 0;
-    top: 1vw;
-    z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 1vw;
+  z-index: 1;
 }
 
 .barCs1 .Row {
-    width: 58.8vw;
-    margin: 0 auto;
-    position: relative;
+  width: 58.8vw;
+  margin: 0 auto;
+  position: relative;
 }
 
 .formSec {
-    padding: 4vw 0;
+  padding: 4vw 0;
 
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .barCs1 img {
-    width: 9.28vw;
+  width: 9.28vw;
 }
 
 .formSec .container-1440 {
-    max-width: 64.22vw;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 64.22vw;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .formSec input,
 .formSec textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 1vw;
-    height: 3vw;
-    font-family: "Inter";
-    font-style: normal;
-    font-size: 0.79vw;
-    line-height: 81.52%;
-    letter-spacing: -0.03em;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-indent: 1vw;
-    font-weight: 500;
-    outline: none;
-    z-index: 1;
-    position: relative;
-    border: 0;
-    border-radius: 0.59vw;
-    background: linear-gradient(316deg,
-            rgb(0 238 253 / 20%) 1.92%,
-            rgba(250, 58, 178, 0) 101.96%);
-    /* background: url('./../../Assets/img/bg-cs.webp') ;*/
+  display: block;
+  width: 100%;
+  margin-bottom: 1vw;
+  height: 3vw;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 0.79vw;
+  line-height: 81.52%;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-indent: 1vw;
+  font-weight: 500;
+  outline: none;
+  z-index: 1;
+  position: relative;
+  border: 0;
+  border-radius: 0.59vw;
+  background: linear-gradient(
+    316deg,
+    rgb(0 238 253 / 20%) 1.92%,
+    rgba(250, 58, 178, 0) 101.96%
+  );
+  /* background: url('./../../Assets/img/bg-cs.webp') ;*/
 }
 
 .formSec input::placeholder,
 .formSec textarea::placeholder {
-    color: #fff;
-    font-family: "Inter";
-    font-style: normal;
-    outline: none;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  outline: none;
 }
 
 .csInput::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.59vw;
-    background: linear-gradient(348deg,
-            #212c66 -0.08%,
-            #216387 1.92%,
-            #020d3a 101.96%);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.59vw;
+  background: linear-gradient(
+    348deg,
+    #212c66 -0.08%,
+    #216387 1.92%,
+    #020d3a 101.96%
+  );
 }
 
 .csInput {
-    position: relative;
+  position: relative;
 }
 
 .csInput::before {
-    content: "";
-    border: 0 solid;
-    background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
-    position: absolute;
-    left: -0.059vw;
-    top: -0.059vw;
-    width: calc(100% + 0.12vw);
-    height: calc(100% + 0.12vw);
-    z-index: -1;
-    border-radius: 0.59vw;
+  content: "";
+  border: 0 solid;
+  background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
+  position: absolute;
+  left: -0.059vw;
+  top: -0.059vw;
+  width: calc(100% + 0.12vw);
+  height: calc(100% + 0.12vw);
+  z-index: -1;
+  border-radius: 0.59vw;
 }
 
 .formSec textarea {
-    height: 10vw;
-    padding-top: 1vw;
+  height: 10vw;
+  padding-top: 1vw;
 }
 
 .csInput.btnCs {
-    width: 12.2vw;
-    height: 3.15vw;
-    border-radius: 7vw;
+  width: 12.2vw;
+  height: 3.15vw;
+  border-radius: 7vw;
 }
 
 .csInput.btnCs button {
-    width: 12.2vw;
-    height: 3.4vw;
-    z-index: 2;
-    position: relative;
-    color: #fff;
-    filter: drop-shadow(0px 4.0651.059vw 0px #14185d);
-    border-radius: 4.29vw;
-    background: rgba(20, 24, 93, 1);
-    outline: none;
-    border: none;
-    top: 0.11vw;
+  width: 12.2vw;
+  height: 3.4vw;
+  z-index: 2;
+  position: relative;
+  color: #fff;
+  filter: drop-shadow(0px 4.0651.059vw 0px #14185d);
+  border-radius: 4.29vw;
+  background: rgba(20, 24, 93, 1);
+  outline: none;
+  border: none;
+  top: 0.11vw;
 }
 
 .imgRight {
-    width: 28vw;
-    margin-left: auto;
+  width: 28vw;
+  margin-left: auto;
 }
 
-.imgRight img {
-    width: 28vw;
+// .imgRight img {
+//   width: 28vw;
+// }
+.cs_girl_image_container {
+  position: relative;
+  width: 27vw;
+  height: 600px;
 }
 
 .csInput.btnCs::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10vw;
-    background: linear-gradient(348deg,
-            #212c66 -0.08%,
-            #216387 1.92%,
-            #020d3a 101.96%);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10vw;
+  background: linear-gradient(
+    348deg,
+    #212c66 -0.08%,
+    #216387 1.92%,
+    #020d3a 101.96%
+  );
 }
 
 .csInput.btnCs::before {
-    content: "";
-    border: 0 solid;
-    background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
-    position: absolute;
-    left: -0.17vw;
-    top: -0.17vw;
-    width: calc(12vw + 0.5vw);
-    height: calc(3.4vw + 0.5vw);
-    z-index: -1;
-    border-radius: 10vw;
+  content: "";
+  border: 0 solid;
+  background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
+  position: absolute;
+  left: -0.17vw;
+  top: -0.17vw;
+  width: calc(12vw + 0.5vw);
+  height: calc(3.4vw + 0.5vw);
+  z-index: -1;
+  border-radius: 10vw;
 }
 
 /* / Contact us page /  */
 .contactUs h1 {
-    max-width: initial;
+  max-width: initial;
 }
 
 .contactUs span.imgCs1 img {
-    width: 7.04vw;
-    top: 2vw;
+  width: 7.04vw;
+  top: 2vw;
 }
 
 .formSec .Row {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.contactUs .formSec>div,
-.mainCS .formSec>div {
-    max-width: 64.22vw;
-    width: 100%;
-    margin: 0 auto;
-    background: linear-gradient(316deg,
-            rgba(255, 0, 199, 0.3) 1.92%,
-            rgba(250, 58, 178, 0) 101.96%);
-    filter: drop-shadow(0px 30px 16px rgba(27, 27, 27, 0.16));
-    backdrop-filter: blur(40px);
-    border-radius: 2vw;
-    padding: 2.5vw;
-    border: 1px solid #ff20f6;
+.contactUs .formSec > div,
+.mainCS .formSec > div {
+  max-width: 64.22vw;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(
+    316deg,
+    rgba(255, 0, 199, 0.3) 1.92%,
+    rgba(250, 58, 178, 0) 101.96%
+  );
+  filter: drop-shadow(0px 30px 16px rgba(27, 27, 27, 0.16));
+  backdrop-filter: blur(40px);
+  border-radius: 2vw;
+  padding: 2.5vw;
+  border: 1px solid #ff20f6;
 }
 
 .contactUs .formSec input,
 .contactUs .formSec textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 1vw;
-    height: 3vw;
-    font-family: "Inter";
-    font-style: normal;
-    font-size: 0.89vw;
-    line-height: 81.52%;
-    letter-spacing: -0.03em;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-indent: 1vw;
-    font-weight: 500;
-    outline: none;
-    z-index: 1;
-    position: relative;
-    border: 0;
-    border-radius: 0.59vw;
-    background: linear-gradient(162deg,
-            #ff20f652 1.92%,
-            rgba(250, 58, 178, 0) 101.96%);
-
+  display: block;
+  width: 100%;
+  margin-bottom: 1vw;
+  height: 3vw;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 0.89vw;
+  line-height: 81.52%;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-indent: 1vw;
+  font-weight: 500;
+  outline: none;
+  z-index: 1;
+  position: relative;
+  border: 0;
+  border-radius: 0.59vw;
+  background: linear-gradient(
+    162deg,
+    #ff20f652 1.92%,
+    rgba(250, 58, 178, 0) 101.96%
+  );
 }
 
 .contactUs .formSec textarea {
-    height: 10vw;
-    resize: none;
+  height: 10vw;
+  resize: none;
 }
 
 .btnCs {
-    max-width: 12vw;
-    text-align: center;
+  max-width: 12vw;
+  text-align: center;
 }
 
 .btnCs .border-btn {
-    min-height: 3.57vw;
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s;
-    justify-content: center;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.95vw;
-    min-width: 8.92vw;
+  min-height: 3.57vw;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95vw;
+  min-width: 8.92vw;
 }
 
 .contactUs .csInput::before {
-    content: "";
-    border: 0 solid;
-    background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
-    position: absolute;
-    left: -0.059vw;
-    top: -0.059vw;
-    width: calc(100% + 0.1vw);
-    height: calc(100% + 0.12vw);
-    z-index: -1;
-    border-radius: 0.59vw;
+  content: "";
+  border: 0 solid;
+  background: linear-gradient(109.95deg, #ff20f6 0.9%, #27e2ee 99.14%);
+  position: absolute;
+  left: -0.059vw;
+  top: -0.059vw;
+  width: calc(100% + 0.1vw);
+  height: calc(100% + 0.12vw);
+  z-index: -1;
+  border-radius: 0.59vw;
 }
 
 .contactUs .formSec {
-    padding: 5vw 0;
+  padding: 5vw 0;
 }
 
 .btnCs {
-    position: relative;
+  position: relative;
 }
 
 .btnCs::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -0.556vw;
-    max-width: 2.292vw;
-    background: linear-gradient(90deg, #ff00c7 50%, #ffc000 50%);
-    border: none;
-    height: 0.208vw;
-    border-radius: 0.347vw;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.556vw;
+  max-width: 2.292vw;
+  background: linear-gradient(90deg, #ff00c7 50%, #ffc000 50%);
+  border: none;
+  height: 0.208vw;
+  border-radius: 0.347vw;
 }
 
 .btnCs button {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.042vw;
-    line-height: 1.25vw;
-    color: white;
-    letter-spacing: 0.069vw;
-    padding: 0 1.736vw;
-    min-height: 4vw;
-    display: flex;
-    align-items: center;
-    min-width: 10vw;
-    background-size: 100% 90%;
-    background-repeat: no-repeat;
-    background-image: url("https://assets.gamingarcade.io/Assets/btn-bg.webp");
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.042vw;
+  line-height: 1.25vw;
+  color: white;
+  letter-spacing: 0.069vw;
+  padding: 0 1.736vw;
+  min-height: 4vw;
+  display: flex;
+  align-items: center;
+  min-width: 10vw;
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-image: url("https://assets.gamingarcade.io/Assets/btn-bg.webp");
 
-    background-position: bottom;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    text-align: center;
-    justify-content: center;
+  background-position: bottom;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  justify-content: center;
 }
 
 .contactsupport {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .absoluteBg {
-    position: relative;
+  position: relative;
 }
 
 .absoluteBg:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -20vw;
-    width: 100%;
-    height: calc(100% + 20vw);
-    background: url('https://assets.gamingarcade.io/Assets/explore-games-bg.webp') no-repeat center / 100% 100%;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -20vw;
+  width: 100%;
+  height: calc(100% + 20vw);
+  background: url("https://assets.gamingarcade.io/Assets/explore-games-bg.webp")
+    no-repeat center / 100% 100%;
+  z-index: -1;
 }
 
-
 @media (max-width: 1024px) {
-    .contactUs.absoluteBg {
-        padding-top: 30px;
-    }
+  .contactUs.absoluteBg {
+    padding-top: 30px;
+  }
 
-    .contactUs .formSec>div,
-    .mainCS .formSec>div {
-        padding: 2vw;
+  .contactUs .formSec > div,
+  .mainCS .formSec > div {
+    padding: 2vw;
+  }
+
+  .imgRight {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .contactUs .formSec input,
+  .contactUs .formSec textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 2.5vw;
+    height: 6vw;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 2vw;
+    line-height: 81.52%;
+    letter-spacing: -0.001em;
+  }
+
+  .contactUs h1 {
+    margin-top: 3.5vw;
+  }
+
+  div .border-btn {
+    min-height: 8vw;
+  }
+
+  .barCs1 img {
+    width: 11.28vw;
+  }
+
+  span.imgCs2 {
+    top: 0vw;
+  }
+
+  .contactUs .formSec textarea {
+    height: 15vw !important;
+    padding-top: 2vw;
+  }
+
+  .contactUs .formSec {
+    padding: 8vw 0;
+  }
+
+  .formSec > div > div > div:first-child {
+    padding-top: 0rem !important;
+  }
+
+  div .contactUs .formSec > div,
+  .mainCS .formSec > div {
+    padding: 4vw 2vw;
+  }
+
+  .contactUs .formSec > div,
+  .mainCS .formSec > div {
+    max-width: 80%;
+  }
+
+  .barCs1 .Row {
+    width: 100%;
+  }
+
+  div .container-1440 {
+    width: 80%;
+    max-width: 80%;
+  }
+
+  div .container-1280 {
+    max-width: 80% !important;
+  }
+
+  @media (max-width: 1024px) {
+    .contactUs .formSec > div {
+      padding: 2vw;
     }
 
     .imgRight {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
 
     .contactUs .formSec input,
     .contactUs .formSec textarea {
-        display: block;
-        width: 100%;
-        margin-bottom: 2.5vw;
-        height: 6vw;
-        font-family: "Inter";
-        font-style: normal;
-        font-size: 2vw;
-        line-height: 81.52%;
-        letter-spacing: -0.001em;
+      display: block;
+      width: 100%;
+      margin-bottom: 2.5vw;
+      height: 6vw;
+      font-family: "Inter";
+      font-style: normal;
+      font-size: 2vw;
+      line-height: 81.52%;
+      letter-spacing: -0.001em;
     }
 
     .contactUs h1 {
-        margin-top: 3.5vw;
+      margin-top: 3.5vw;
     }
 
     div .border-btn {
-        min-height: 8vw;
+      min-height: 63px;
     }
 
     .barCs1 img {
-        width: 11.28vw;
+      width: 11.28vw;
     }
 
     span.imgCs2 {
-        top: 0vw;
+      top: 0vw;
     }
 
     .contactUs .formSec textarea {
-        height: 15vw !important;
-        padding-top: 2vw;
+      height: 15vw !important;
+      padding-top: 2vw;
     }
 
     .contactUs .formSec {
-        padding: 8vw 0;
+      padding: 8vw 0;
     }
 
-    .formSec>div>div>div:first-child {
-        padding-top: 0rem !important;
+    div .contactUs .formSec > div,
+    .mainCS .formSec > div {
+      padding: 4vw 2vw;
     }
 
-    div .contactUs .formSec>div,
-    .mainCS .formSec>div {
-        padding: 4vw 2vw;
-    }
-
-    .contactUs .formSec>div,
-    .mainCS .formSec>div {
-        max-width: 80%;
+    .contactUs .formSec > div,
+    .mainCS .formSec > div {
+      max-width: 80%;
     }
 
     .barCs1 .Row {
-        width: 100%;
-    }
-
-    div .container-1440 {
-        width: 80%;
-        max-width: 80%;
-    }
-
-    div .container-1280 {
-        max-width: 80% !important;
-    }
-
-    @media (max-width: 1024px) {
-        .contactUs .formSec>div {
-            padding: 2vw;
-        }
-
-        .imgRight {
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .contactUs .formSec input,
-        .contactUs .formSec textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 2.5vw;
-            height: 6vw;
-            font-family: "Inter";
-            font-style: normal;
-            font-size: 2vw;
-            line-height: 81.52%;
-            letter-spacing: -0.001em;
-        }
-
-        .contactUs h1 {
-            margin-top: 3.5vw;
-        }
-
-        div .border-btn {
-            min-height: 63px;
-        }
-
-        .barCs1 img {
-            width: 11.28vw;
-        }
-
-        span.imgCs2 {
-            top: 0vw;
-        }
-
-        .contactUs .formSec textarea {
-            height: 15vw !important;
-            padding-top: 2vw;
-        }
-
-        .contactUs .formSec {
-            padding: 8vw 0;
-        }
-
-        div .contactUs .formSec>div,
-        .mainCS .formSec>div {
-            padding: 4vw 2vw;
-        }
-
-        .contactUs .formSec>div,
-        .mainCS .formSec>div {
-            max-width: 80%;
-        }
-
-        .barCs1 .Row {
-            width: 100%;
-        }
-
-        div .formSec .container-1440 {
-            width: 80%;
-            max-width: 80%;
-        }
-
-        div .container-1280 {
-            max-width: 80% !important;
-        }
-
-        .contactUs .csInput::before {
-            left: -0.2vw;
-            top: -0.2vw;
-            width: calc(100% + 0.4vw);
-            height: calc(100% + 0.4vw);
-        }
-
-        .mainCS .contactSupportSec h1 {
-            margin: 2vw auto;
-        }
-
-        .formSec input,
-        .formSec textarea {
-            margin-bottom: 2vw;
-            height: 6vw;
-            font-size: 2vw;
-        }
-
-        .csInput::before {
-            left: -0.05vw;
-            top: -0.1vw;
-            width: calc(100% + 0.2vw);
-            height: calc(100% + 0.3vw);
-        }
-
-        div .formSec textarea {
-            height: 17vw;
-            padding-top: 2vw;
-            text-indent: 0;
-        }
-
-        .imgRight {
-            display: none;
-        }
-
-        .btnCs button {
-            font-size: 2vw;
-            line-height: 1.25vw;
-            min-height: 8vw;
-            min-height: 7vw;
-        }
-    }
-
-    @media (max-width: 767px) {
-        div .container-1280 {
-            max-width: 90% !important;
-        }
-
-        .imgRight {
-            display: none;
-        }
-
-        .contactUs .formSec input,
-        .contactUs .formSec textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 3vw;
-            height: 7vw;
-            font-size: 2.5vw;
-            line-height: 81.52%;
-            letter-spacing: -0.03em;
-        }
-
-        .contactUs .csInput::before {
-            left: -0.2vw;
-            top: -0.2vw;
-            width: calc(100% + 0.4vw);
-            height: calc(100% + 0.4vw);
-        }
-
-        .mainCS .contactSupportSec h1 {
-            font-size: 5vw;
-            line-height: 5vw;
-            font-size: 20px;
-            line-height: 1.2;
-            max-width: 50%;
-            margin: 0 auto;
-        }
-
-        .contactUs span.imgCs1 img {
-            width: 8vw;
-        }
-
-        .contactUs .formSec textarea {
-            height: 22vw !important;
-        }
-
-        div .contactUs .formSec>div,
-        .mainCS .formSec>div {
-            padding: 7vw 4vw;
-        }
-
-        .btnCs.contactBtn {
-            max-width: unset;
-        }
-    }
-
-}
-
-@media (max-width: 576px) {
-
-    .contactUs .formSec input,
-    .contactUs .formSec textarea {
-        margin-bottom: 3.5vw;
-        height: 30px;
-        font-size: 11px;
-        line-height: 81.52%;
-        padding-left: 8px;
-    }
-
-    div .contactUs .formSec>div,
-    .mainCS .formSec>div {
-        padding: 8vw 4vw;
-    }
-
-    .contactsupport {
-        padding-top: 50px;
+      width: 100%;
     }
 
     div .formSec .container-1440 {
-        width: 100%;
-        max-width: 90%;
+      width: 80%;
+      max-width: 80%;
     }
 
-    .contactsupport .csInput::before {
-        left: -1px;
-        top: -1px;
-        width: calc(100% + 2px);
-        height: calc(100% + 2px);
+    div .container-1280 {
+      max-width: 80% !important;
     }
 
-    .contactsupport .formSec input,
-    .contactsupport .formSec textarea {
-        height: 32px;
-        font-size: 12px;
-        line-height: 1.5;
-        margin-bottom: 10px;
-        padding-left: 10px;
+    .contactUs .csInput::before {
+      left: -0.2vw;
+      top: -0.2vw;
+      width: calc(100% + 0.4vw);
+      height: calc(100% + 0.4vw);
     }
 
-    .contactsupport .formSec textarea {
-        height: 78px;
+    .mainCS .contactSupportSec h1 {
+      margin: 2vw auto;
     }
 
-    .contactsupport .btnCs button,
-    .contactUs .btnCs button {
-        font-size: 12px;
-        line-height: initial;
-        min-width: 120px;
-        padding: 15px 20px;
+    .formSec input,
+    .formSec textarea {
+      margin-bottom: 2vw;
+      height: 6vw;
+      font-size: 2vw;
     }
 
-    .contactsupport .formSec {
-        margin-top: 20px;
+    .csInput::before {
+      left: -0.05vw;
+      top: -0.1vw;
+      width: calc(100% + 0.2vw);
+      height: calc(100% + 0.3vw);
     }
 
+    div .formSec textarea {
+      height: 17vw;
+      padding-top: 2vw;
+      text-indent: 0;
+    }
+
+    .imgRight {
+      display: none;
+    }
+
+    .btnCs button {
+      font-size: 2vw;
+      line-height: 1.25vw;
+      min-height: 8vw;
+      min-height: 7vw;
+    }
+  }
+
+  @media (max-width: 767px) {
+    div .container-1280 {
+      max-width: 90% !important;
+    }
+
+    .imgRight {
+      display: none;
+    }
+
+    .contactUs .formSec input,
+    .contactUs .formSec textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 3vw;
+      height: 7vw;
+      font-size: 2.5vw;
+      line-height: 81.52%;
+      letter-spacing: -0.03em;
+    }
+
+    .contactUs .csInput::before {
+      left: -0.2vw;
+      top: -0.2vw;
+      width: calc(100% + 0.4vw);
+      height: calc(100% + 0.4vw);
+    }
+
+    .mainCS .contactSupportSec h1 {
+      font-size: 5vw;
+      line-height: 5vw;
+      font-size: 20px;
+      line-height: 1.2;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+
+    .contactUs span.imgCs1 img {
+      width: 8vw;
+    }
+
+    .contactUs .formSec textarea {
+      height: 22vw !important;
+    }
+
+    div .contactUs .formSec > div,
+    .mainCS .formSec > div {
+      padding: 7vw 4vw;
+    }
+
+    .btnCs.contactBtn {
+      max-width: unset;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contactUs .formSec input,
+  .contactUs .formSec textarea {
+    margin-bottom: 3.5vw;
+    height: 30px;
+    font-size: 11px;
+    line-height: 81.52%;
+    padding-left: 8px;
+  }
+
+  div .contactUs .formSec > div,
+  .mainCS .formSec > div {
+    padding: 8vw 4vw;
+  }
+
+  .contactsupport {
+    padding-top: 50px;
+  }
+
+  div .formSec .container-1440 {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .contactsupport .csInput::before {
+    left: -1px;
+    top: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+  }
+
+  .contactsupport .formSec input,
+  .contactsupport .formSec textarea {
+    height: 32px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .contactsupport .formSec textarea {
+    height: 78px;
+  }
+
+  .contactsupport .btnCs button,
+  .contactUs .btnCs button {
+    font-size: 12px;
+    line-height: initial;
+    min-width: 120px;
+    padding: 15px 20px;
+  }
+
+  .contactsupport .formSec {
+    margin-top: 20px;
+  }
 }

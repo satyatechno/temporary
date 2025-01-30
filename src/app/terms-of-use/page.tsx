@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "./termsofuse.module.scss";
 import config from "../../../config";
+import Image from "next/image";
 // import { useRouter } from "next/router";
 
 function TermsOfUse() {
@@ -60,10 +61,12 @@ function TermsOfUse() {
                 >
                   Terms
                 </h1>
-                <img
+                <Image
                   className="col-lg-3"
                   src={`${config.imageDomain}Assets/terms_of_use.webp`}
                   alt="Terms of Use - Gaming Arcade"
+                  width={250}
+                  height={250}
                 />
                 <h2
                   className={`white-color ${styles.lgTxt} col-lg-3`}

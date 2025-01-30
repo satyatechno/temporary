@@ -4,6 +4,7 @@ import GameCard, { LoadingCard } from "../GameCard/GameCard";
 import styles from "./gamesGrid.module.scss";
 import config from "../../../../config";
 import React from "react";
+import Image from "next/image";
 const Game_Loader = "https://assets.gamingarcade.io/Assets/loader-img.webp";
 const GameGrid = () => {
   const { games: gameData, gamesLoading } = useGamesContext();
@@ -57,7 +58,7 @@ const GameGrid = () => {
       <div className={styles.homeMblNew__allGames}>
         <h2>ALL GAMES!</h2>
         <div className={styles.homeMblNew__allGamesHeading}>
-          <img src={`${config.imageDomain}Assets/dart.webp`} alt="" />
+          <Image src={`${config.imageDomain}Assets/dart.webp`} alt="game-dart" width={40} height={40} />
           <h2>All Games</h2>
         </div>
       </div>

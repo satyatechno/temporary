@@ -6,6 +6,7 @@ import { MdMoreVert } from "react-icons/md";
 import { MdSaveAlt } from "react-icons/md";
 import { MdContentCopy } from "react-icons/md";
 import { TbLinkOff } from "react-icons/tb";
+import Image from "next/image";
 
 interface Wallet {
   name: string;
@@ -112,10 +113,13 @@ const MyOtherWallets = ({ setActiveModal }: any) => {
             ))
           ) : (
             <div className={styles.maageWallets__noOtherWallets}>
-              <img
+              <span className={styles.manage_wallet_image_container}>
+              <Image
                 src="https://assets.gamingarcade.io//loading-images/wallet2.webp"
-                alt=""
+                alt="My_Other_Wallets"
+                fill
               />
+              </span>
               <p>You don’t have any other wallet</p>
             </div>
           )}

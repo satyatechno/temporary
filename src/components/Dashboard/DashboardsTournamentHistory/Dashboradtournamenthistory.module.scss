@@ -121,9 +121,10 @@
   border-radius: 8px;
 }
 
-.altImg img {
+.altImg  {
+  position: relative;
   width: 50px;
-  height: auto;
+  height: 50px;
   margin-bottom: 10px;
 }
 

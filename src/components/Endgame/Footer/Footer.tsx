@@ -15,6 +15,7 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 import { poppins } from '@/app/layout';
+import Image from 'next/image';
 const Footer = ({ game }: any) => {
   const [clicked, setClicked] = useState(false);
   const message = `Hey! I Have Scored 2000 in gameName, click here to play this game`;
@@ -25,7 +26,7 @@ const Footer = ({ game }: any) => {
         // onClick={() => openInNewTab("https://discord.gg/Y347B99a9g")}
         style={{ cursor: 'pointer' }}
       >
-        <img src={`${config.imageDomain}Assets/discord.webp`} alt="discord" />
+        <Image width={30} height={30} src={`${config.imageDomain}Assets/discord.webp`} alt="discord" />
         <h4 className={poppins.className}>
           Join The <br />
           Community
@@ -36,7 +37,7 @@ const Footer = ({ game }: any) => {
         <p className={poppins.className}>Game played till noww!</p>
       </div>
       <div className={styles.rightView} onClick={() => setClicked(!clicked)}>
-        <img src={`${config.imageDomain}Assets/share.webp`} alt="share" />
+        <Image width={30} height={30} src={`${config.imageDomain}Assets/share.webp`} alt="share" />
         <h4 className={poppins.className}>
           Share Your <br />
           Achievement

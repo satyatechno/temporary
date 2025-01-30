@@ -219,10 +219,12 @@ const Footer = () => {
                 <li>
                   <a href="https://discord.gg/BBYfBxf4aF" target="_blank">
                     {/* <i class="fab fa-discord"></i> */}
-                    <img
-                      style={{ height: "35px", marginBottom: "-32px" }}
+                    <Image
+                      style={{ marginBottom: "-32px" }}
                       src="https://assets.gamingarcade.io/loading-images/discordIconNew.webp"
-                      alt=""
+                      alt="discord-logo"
+                      width={35}
+                      height={35}
                     />
                   </a>
                   {/* https://www.youtube.com/@gamingarcade_io */}

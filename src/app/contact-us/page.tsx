@@ -2,9 +2,10 @@ import React from "react";
 import Head from "next/head";
 import styles from "./contactus.module.scss";
 import config from "../../../config";
+import Image from "next/image";
 
 const ContactUs = () => {
-//   const { sendNow, inputfields, setInputFields } = useContact();
+  //   const { sendNow, inputfields, setInputFields } = useContact();
   return (
     <>
       <Head>
@@ -46,16 +47,22 @@ const ContactUs = () => {
               <div className={`row ${styles.Row}`}>
                 <div className="col-lg-12">
                   <span className={styles.imgCs1}>
-                    <img
+                    <Image
+                      width={150}
+                      height={150}
                       src={`${config.imageDomain}Assets/call-cs.webp`}
                       alt="call"
+                      style={{ objectFit: "cover" }}
                     />
                   </span>
                   <h1>contact us</h1>
                   <span className={styles.imgCs2}>
-                    <img
+                    <Image
+                      width={150}
+                      height={150}
                       src={`${config.imageDomain}Assets/headphone-ccs.webp`}
                       alt="headphone"
+                      style={{ objectFit: "cover" }}
                     />
                   </span>
                 </div>
@@ -120,14 +127,16 @@ const ContactUs = () => {
                     <button type={styles.submit}>Send Now</button>
                   </div>
                 </form> */}
-
               </div>
 
               <div className="col-lg-6">
                 <div className={styles.imgRight}>
-                  <img
+                  <Image
                     src={`${config.imageDomain}Assets/man-css.webp`}
                     alt="Contact Us - Gaming Arcade"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    quality={85}
                   />
                 </div>
               </div>

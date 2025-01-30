@@ -1,855 +1,885 @@
 .integratServiceMain {
-    background-image: url(https://assets.gamingarcade.io/Assets/bg-min.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    margin-top: -11%;
-    padding-top: 11%;
+  background-image: url(https://assets.gamingarcade.io/Assets/bg-min.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: -11%;
+  padding-top: 11%;
 }
 
 section.sectionBanner {
-    height: 100vh;
-    width: 100vw;
-    padding-top: 33vh;
-    background-image: url(https://assets.gamingarcade.io/Assets/banner-back.webp);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    margin-top: -10vw;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 33vh;
+  background-image: url(https://assets.gamingarcade.io/Assets/banner-back.webp);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  margin-top: -10vw;
 }
 
 section.sectionBanner h2 {
-    font-family: 'gloss_and_bloomregular';
-    font-weight: 400;
-    font-size: 4.26vw;
-    line-height: 4.909vw;
-    color: #ff00d4;
-    -webkit-transform: rotate(-3.65deg);
-    transform: rotate(-3.65deg);
+  font-family: "gloss_and_bloomregular";
+  font-weight: 400;
+  font-size: 4.26vw;
+  line-height: 4.909vw;
+  color: #ff00d4;
+  -webkit-transform: rotate(-3.65deg);
+  transform: rotate(-3.65deg);
 }
 
 .sectionBanner h3,
 section.sectionBanner h2 {
-    font-style: normal;
-    text-align: center;
-    letter-spacing: -.03em;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: -0.03em;
 }
 
 .sectionBanner h3 {
-    font-size: 2.5vw;
+  font-size: 2.5vw;
 }
 
 .sectionBanner h3 {
-    font-family: Inter;
-    font-weight: 900;
-    line-height: 94.52%;
-    text-transform: uppercase;
-    color: #fff;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: 94.52%;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 section.sectionBanner p {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: .909vw;
-    line-height: 1.515vw;
-    letter-spacing: -.03em;
-    color: #fff;
-    text-align: center;
-    width: 55%;
-    margin: 1.818vw auto;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.909vw;
+  line-height: 1.515vw;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-align: center;
+  width: 55%;
+  margin: 1.818vw auto;
 }
 
 section.customContent .Row {
-    /* align-items: center; */
-    justify-content: center;
+  /* align-items: center; */
+  justify-content: center;
 }
 
-section.customContent .Row>div {
-    flex: 0 0 30%;
-    margin-right: 2%;
+section.customContent .Row > div {
+  flex: 0 0 30%;
+  margin-right: 2%;
 }
 
 .customBody {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 .customBody h1,
 .customBody h3 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 108.02%;
-    letter-spacing: -.03em;
-    background: linear-gradient(90.16deg, #ff00c7 -3.11%, #e41dcc 30.87%, #32d7ec 47.21%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    90.16deg,
+    #ff00c7 -3.11%,
+    #e41dcc 30.87%,
+    #32d7ec 47.21%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .customBody p {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    margin-top: 10px;
-    font-size: 15px;
-    line-height: 170.52%;
-    color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 170.52%;
+  color: #fff;
 }
 
 section.exploreGames.playEarn.nextGen {
-    align-items: center;
-    display: flex;
-    position: relative;
-    padding: 100px 0;
-    margin: 0;
+  align-items: center;
+  display: flex;
+  position: relative;
+  padding: 100px 0;
+  margin: 0;
 }
 
 section.exploreGames.playEarn.nextGen h1 {
-    font-family: 'gloss_and_bloomregular';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 80px;
-    text-align: left;
-    letter-spacing: -.03em;
-    color: #ff00d4;
-    -webkit-transform: rotate(-3.65deg);
-    transform: rotate(-3.65deg);
+  font-family: "gloss_and_bloomregular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 80px;
+  text-align: left;
+  letter-spacing: -0.03em;
+  color: #ff00d4;
+  -webkit-transform: rotate(-3.65deg);
+  transform: rotate(-3.65deg);
 }
 
 section.exploreGames.playEarn.nextGen h2 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 60px;
-    line-height: 94.52%;
-    letter-spacing: -.03em;
-    text-transform: capitalize;
-    color: #fff;
-    width: 90%;
-    margin-bottom: 25px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 94.52%;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  color: #fff;
+  width: 90%;
+  margin-bottom: 25px;
 }
 
 section.exploreGames.playEarn h2 span {
-    background: linear-gradient(90deg, #d101ad 37.83%, #1edaf3 89.01%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* text-transform: uppercase; */
-    font-size: 80px;
-    background-clip: text;
+  background: linear-gradient(90deg, #d101ad 37.83%, #1edaf3 89.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-transform: uppercase; */
+  font-size: 80px;
+  background-clip: text;
 }
 
 section.exploreGames.playEarn p {
-    font-size: 15px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 0 0;
-    line-height: 25px;
-    letter-spacing: -.03em;
-    color: #fff;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 0 0;
+  line-height: 25px;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
 }
 
 section.exploreGames.playEarn img {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translateY(-40%);
-    transform: translateY(-40%);
-    object-fit: contain;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-40%);
+  transform: translateY(-40%);
+  object-fit: contain;
 }
 
 section.exploreGames.playEarn .crpto img,
 section.exploreGames.playEarn img {
-    width: 40%;
-    max-width: 730px;
+  width: 40%;
+  max-width: 730px;
 }
 
 section.exploreGames.playEarn.nextGen img {
+  -webkit-transform: translateY(-60%);
+  transform: translateY(-60%);
+}
+
+.arcade_side{
+    position: absolute;
+    right: 0;
+    top: 90%;
+    -webkit-transform: translateY(-40%);
+    transform: translateY(-40%);
+    width: 70%;
+    height: 400px;
+    max-width: 730px;
     -webkit-transform: translateY(-60%);
     transform: translateY(-60%);
 }
 
+
+
 section.contactcInfo {
-    /* background: linear-gradient(90deg, #D101AD 50.01%, #0FF 99.93%);
+  /* background: linear-gradient(90deg, #D101AD 50.01%, #0FF 99.93%);
     -webkit-filter: drop-shadow(0 8.00199px 16.004px rgba(27, 27, 27, .16));
     filter: drop-shadow(0 8.00199px 16.004px rgba(27, 27, 27, .16));
     -webkit-backdrop-filter: blur(40.01px);
     backdrop-filter: blur(40.01px); */
-    border-radius: 88px;
-    width: 80%;
-    margin: 40px auto;
-    padding: 15px 0;
-    background: linear-gradient(90.81deg, #ff20f6 .71%, #0085ff 99.24%);
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter: blur(30px);
-    z-index: 11;
-    margin-bottom: 20px;
-    /* background: linear-gradient(90deg, #D101AD 50.01%, #0FF 99.93%);
+  border-radius: 88px;
+  width: 80%;
+  margin: 40px auto;
+  padding: 15px 0;
+  background: linear-gradient(90.81deg, #ff20f6 0.71%, #0085ff 99.24%);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  z-index: 11;
+  margin-bottom: 20px;
+  /* background: linear-gradient(90deg, #D101AD 50.01%, #0FF 99.93%);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent; */
 }
 
 section.contactcInfo h4 {
-    text-align: center;
-    letter-spacing: 1px;
-    background: linear-gradient(0deg, #fff, #fff), linear-gradient(90.26deg, #d101ad 50.01%, #0ff 99.93%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  background: linear-gradient(0deg, #fff, #fff),
+    linear-gradient(90.26deg, #d101ad 50.01%, #0ff 99.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 section.exploreGames.playEarn {
-    padding: 120px 0;
-    margin: 0;
-    position: relative;
+  padding: 120px 0;
+  margin: 0;
+  position: relative;
 }
 
-.contactUsButton{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top:81px;
-    cursor: pointer;
+.contactUsButton {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 81px;
+  cursor: pointer;
 }
 
 section.exploreGames.playEarn .crpto img {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    -webkit-transform: translateY(-35%);
-    /* transform: translateY(-35%); */
-    transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-35%);
+  /* transform: translateY(-35%); */
+  transform: translateY(-50%);
 }
 
 section.exploreGames.playEarn h2 {
-    font-size: 65px;
-    margin-bottom: 25px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    letter-spacing: -.03em;
-    color: #fff;
-    /* text-transform: uppercase; */
+  font-size: 65px;
+  margin-bottom: 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  /* text-transform: uppercase; */
 }
 
 .homeSec6 {
-    margin: 100px 0 0;
-    padding-bottom: 0;
+  margin: 100px 0 0;
+  padding-bottom: 0;
 }
 
 section.homeSec6 h2 {
-    font-family: Inter;
-    font-style: normal;
-    font-size: 80px;
-    line-height: 108.02%;
-    font-weight: 900;
-    text-align: center;
-    letter-spacing: -.03em;
-    color: #fff;
-    margin-bottom: 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-size: 80px;
+  line-height: 108.02%;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 div.partnerLogo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
 }
 
 div.partnerLogo img {
-    width: 252px;
-    height: 70px;
-    object-fit: contain;
-    padding: 15px 30px 20px;
-    margin: 0 !important;
+//   width: 252px;
+//   height: 70px;
+//   object-fit: contain;
+  padding: 20px 12px 19px;
+  margin: 0 !important;
 }
 
 div.partnerLogo img:hover {
-    background-image: url(https://assets.gamingarcade.io/Assets/logo-back.webp);
-    background-size: 100% 100%;
-    background-position: 50%;
-    transform: scale(1.1);
-    transition: all .5s ease-in-out;
+  background-image: url(https://assets.gamingarcade.io/Assets/logo-back.webp);
+  background-size: 100% 100%;
+  background-position: 50%;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
 }
 
 section.gameArcadePlatform {
-    margin: 50px 0;
-    display: flex;
-    justify-content: center;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
 }
 
 section.gameArcadePlatform .Row {
-    align-items: center;
-    background-image: url(https://assets.gamingarcade.io/Assets/back-rect.webp);
-    background-position: 50%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 40px;
-    position: relative;
-    display: flex;
+  align-items: center;
+  background-image: url(https://assets.gamingarcade.io/Assets/back-rect.webp);
+  background-position: 50%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 40px;
+  position: relative;
+  display: flex;
 }
 
-.getInTouchButton{
-    position: absolute;
-    bottom: 0;
-}
-
-section.gameArcadePlatform h3,
-section.gameArcadePlatform h3 span {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    line-height: 108.02%;
-    letter-spacing: -.03em;
-}
-
-section.gameArcadePlatform h3 span {
-    font-size: 96.5323px;
-    background: linear-gradient(90deg, #ff20f6 3.49%, #00e0ff 85.9%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.getInTouchButton {
+  position: absolute;
+  bottom: 0;
 }
 
 section.gameArcadePlatform h3,
 section.gameArcadePlatform h3 span {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 108.02%;
-    letter-spacing: -.03em;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
+}
+
+section.gameArcadePlatform h3 span {
+  font-size: 96.5323px;
+  background: linear-gradient(90deg, #ff20f6 3.49%, #00e0ff 85.9%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section.gameArcadePlatform h3,
+section.gameArcadePlatform h3 span {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
 }
 
 section.gameArcadePlatform h3 {
-    font-size: 45px;
-    color: #fff;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
+  font-size: 45px;
+  color: #fff;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
 }
 
 section.gameArcadePlatform ul {
-    padding: 20px;
+  padding: 20px;
 }
 
 section.gameArcadePlatform h2 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 70px;
-    line-height: 108.02%;
-    letter-spacing: -.03em;
-    color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 108.02%;
+  letter-spacing: -0.03em;
+  color: #fff;
 }
 
 section.gameArcadePlatform h2 span {
-    background: linear-gradient(90deg, #d101ad 77.76%, #0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  background: linear-gradient(90deg, #d101ad 77.76%, #0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section.gameArcadePlatform input {
-    background: linear-gradient(316deg, rgba(0, 238, 253, .3) 1.92%, rgba(250, 58, 178, 0) 101.96%) !important;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    height: 50px;
-    color: #fff;
+  background: linear-gradient(
+    316deg,
+    rgba(0, 238, 253, 0.3) 1.92%,
+    rgba(250, 58, 178, 0) 101.96%
+  ) !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 50px;
+  color: #fff;
 }
 
-.whiteText{
-    color:#fff !important;
+.whiteText {
+  color: #fff !important;
 }
-
-
 
 section.gameArcadePlatform input::placeholder,
 section.gameArcadePlatform textarea::placeholder {
-   
-
-    color: #fff;
-    font-family: "Inter";
-    font-style: normal;
-    outline: none;
-
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  outline: none;
 }
 
-
-
 section.gameArcadePlatform textarea {
-    background: linear-gradient(316deg, rgba(0, 238, 253, .3) 1.92%, rgba(250, 58, 178, 0) 101.96%) !important;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    height: 150px;
-    color: #fff;
+  background: linear-gradient(
+    316deg,
+    rgba(0, 238, 253, 0.3) 1.92%,
+    rgba(250, 58, 178, 0) 101.96%
+  ) !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+  color: #fff;
 }
 
 .white_color {
-    list-style: none; /* Remove default list bullets */
-    padding-left: 20px; /* Adjust padding for the custom bullets */
+  list-style: none; /* Remove default list bullets */
+  padding-left: 20px; /* Adjust padding for the custom bullets */
+}
+
+.white_color li {
+  position: relative; /* Necessary for positioning the ::before element */
+  margin-bottom: 10px;
+  color: #fff;
+  /* Optional: space between items */
+}
+
+.white_color li::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  left: -20px; /* Position to the left of the text */
+  top: 6px;
+  width: 10px; /* Width of the bullet */
+  height: 10px; /* Height of the bullet */
+  border-radius: 50%; /* Make it a circle */
+  background: linear-gradient(to right, #ff00c7, #2fdaec); /* Gradient */
+}
+
+@media (max-width: 1059px) {
+  .contactcInfo h4 {
+    font-size: 23px !important;
+    font-weight: 600 !important;
   }
+
+  .contactUsButton {
+    top: 80px;
+  }
+}
+
+.column_lg_4 {
+  display: flex;
+  flex-direction: column;
+}
+.column_lg_4 .imgBody {
+  position: relative;
+  height: 400px;
+  width: 300px;
+}
+
+.upper_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10rem;
+}
+
+.imgCenter400 {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+.Fully_Integerated_Marketplace{
+  // position: relative;
+  // width: 711px;
+  // height: 400px;
+  // object-fit: cover;
   
-  .white_color li {
-    position: relative; /* Necessary for positioning the ::before element */
-    margin-bottom: 10px; 
-    color: #fff;
-    /* Optional: space between items */
-  }
   
-  .white_color li::before {
-    content: ''; /* Required for pseudo-elements */
-    position: absolute;
-    left: -20px; /* Position to the left of the text */
-    top: 6px;
-    width: 10px; /* Width of the bullet */
-    height: 10px; /* Height of the bullet */
-    border-radius: 50%; /* Make it a circle */
-    background: linear-gradient(to right, #ff00c7, #2FDAEC); /* Gradient */
+}
+@media (max-width: 1024px) {
+  .integratServiceMain {
+    margin-top: -15%;
   }
 
-  @media(max-width: 1059px){
-
-  .contactcInfo h4{
-    font-size:23px !important;
-    font-weight:600 !important;
+  section.sectionBanner {
+    padding-top: 14vh;
+    background-size: 100% 120%;
+    height: auto;
+    background-position: bottom;
   }
 
-    .contactUsButton{
-        top:80px;
-    }
+  .integratServiceMain section.sectionBanner h2,
+  section.exploreGames.playEarn h1,
+  section.exploreGames.playEarn.nextGen h1 {
+    font-size: 52px;
+    line-height: 60px;
   }
 
+  .integratServiceMain .sectionBanner h3,
+  section.exploreGames.playEarn h2,
+  section.exploreGames.playEarn.nextGen h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
 
-  .column_lg_4{
+  .integratServiceMain .sectionBanner h3,
+  section.exploreGames.playEarn h2,
+  section.exploreGames.playEarn.nextGen span {
+    font-size: 50px;
+  }
+
+  .integratServiceMain section.sectionBanner p,
+  section.exploreGames.playEarn p,
+  section.playEarn p {
+    width: 70%;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  section.customContent .Row > div {
+    flex: 0 0 33%;
+    margin-right: 0;
+    width: 33%;
+    max-width: 33%;
+  }
+
+  .customBody p {
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: 10px;
+  }
+
+  .integratServiceMain .imgBody img {
+    width: 100%;
+  }
+
+  section.playEarn div > div > div:first-child {
+    max-width: 60%;
+    width: 60%;
+  }
+
+  .integratServiceMain section.exploreGames.playEarn {
+    padding: 60px 0;
+    margin-bottom: 50px;
+  }
+
+  section.exploreGames.playEarn p {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  section.playEarn div > div > div:last-child {
+    max-width: 60%;
+    width: 60%;
+    margin-left: auto;
+  }
+
+  section.exploreGames.playEarn .crpto img,
+  section.exploreGames.playEarn img {
+    width: 38% !important;
+  }
+
+  .homeSec6 {
+    margin: 60px 0 0;
+  }
+
+  section.homeSec6 h2 {
+    font-size: 40px;
+  }
+
+  div.partnerLogo {
+    margin-top: 30px;
+  }
+
+  div.partnerLogo img {
+    width: 140px;
+    height: 50px;
+    padding: 10px 20px;
+  }
+
+  section.gameArcadePlatform .Row {
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+  section.gameArcadePlatform h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  section.gameArcadePlatform h3 span {
+    font-size: 26px;
+  }
+
+  // .imgCenter400 {
+  //   text-align: center;
+  // }
+
+  .imgCenter400 {
+    position: relative;
+    width: 400px;
+    height: 500px;
+  }
+
+  section.gameArcadePlatform h2 {
+    font-size: 40px;
+  }
+
+  section.gameArcadePlatform img {
+    display: none;
+  }
+}
+
+@media (max-width: 972px) {
+  .contactcInfo h4 {
+    font-size: 22px !important;
+  }
+
+  .contactUsButton {
+    top: 76px;
+  }
+}
+
+@media (max-width: 932px) {
+  .contactcInfo h4 {
+    font-size: 18px !important;
+  }
+
+  .contactUsButton {
+    top: 65px;
+  }
+}
+
+@media (max-width: 776px) {
+  .contactcInfo h4 {
+    font-size: 14px !important;
+  }
+
+  .contactUsButton {
+    top: 55px;
+  }
+}
+
+@media (max-width: 767px) {
+  .integratServiceMain {
+    margin-top: -23%;
+    background-image: none;
+  }
+
+  .integratServiceMain .sectionBanner {
+    padding-top: 160px;
+    background-size: 100%;
+    background-position: top;
+  }
+
+  .integratServiceMain section.sectionBanner h2,
+  section.exploreGames.playEarn h1,
+  section.exploreGames.playEarn.nextGen h1 {
+    font-size: 32px;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .integratServiceMain .sectionBanner h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .integratServiceMain section.sectionBanner p,
+  section.exploreGames.playEarn p,
+  section.playEarn p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  section.customContent .Row {
+    width: 100%;
+    flex-flow: wrap;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .integratServiceMain section.customContent .Row > div {
+    flex: 0 0 100%;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .integratServiceMain .customContent .customBody {
+    margin-top: 40px;
+    padding: 0;
+    /* text-align: center; */
+  }
+
+  .integratServiceMain .customContent .customBody h3 {
+    font-size: 24px;
+  }
+
+  .integratServiceMain .customContent .customBody p {
+    font-size: 13px;
+    max-width: 100%;
+    line-height: 1.3;
+  }
+
+  .integratServiceMain .customContent .imgBody {
+    margin-top: 40px;
+  }
+
+  .integratServiceMain section.exploreGames.playEarn {
+    padding: 30px 0;
+    margin: 40px auto 0;
+  }
+
+  .integratServiceMain section.exploreGames.playEarn h2 {
+    font-size: 27px;
+    line-height: 39px;
+    width: 100%;
+  }
+
+  section.playEarn div > div > div:first-child {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .contactUsButton {
+    /* top:px; */
+  }
+
+  section.playEarn div > div > div:last-child {
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  .integratServiceMain section.exploreGames.playEarn .crpto img,
+  .integratServiceMain section.exploreGames.playEarn img {
+    width: 100% !important;
+    object-position: 0;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
+  section.exploreGames.playEarn img {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  section.exploreGames.playEarn.nextGen img {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+
+  section.exploreGames.playEarn h2 {
+    text-align: center;
+  }
+
+  section.exploreGames.playEarn p {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  div.crpto {
+    margin-top: 30%;
+  }
+
+  section.exploreGames.playEarn div > div > div:last-child {
+    width: 100%;
+    margin-bottom: -100px;
+  }
+
+  /* contact info sec */
+  .integratServiceMain section.contactcInfo {
+    margin-top: 110px;
+  }
+
+  .contactcInfo h4 {
+    font-size: 15px !important;
+  }
+
+  /* contact info sec end */
+
+  /* patner logo sec */
+  .integratServiceMain section.homeSec6 h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  section.homeSec6 div.partnerLogo {
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  section.gameArcadePlatform .Row {
+    background: #4b44b1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  section.gameArcadePlatform h3,
+  section.gameArcadePlatform h3 span {
+    font-size: 18px;
+    margin-bottom: 12px;
+    line-height: 24px;
+  }
+
+  .gameArcadePlatform ul li {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  section.gameArcadePlatform h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  section.gameArcadePlatform input {
+    margin-bottom: 15px;
+    height: 40px;
+    font-size: 13px;
+    line-height: 40px;
+  }
+
+  .playEarn span {
+    font-size: 45px !important;
+  }
+
+  section.gameArcadePlatform textarea {
+    font-size: 13px;
+  }
+
+  /* patner logo sec end */
+
+  /* image and text sec */
+  section.exploreGames.playEarn img {
+    right: 0;
+    object-fit: contain;
+  }
+
+  section.exploreGames.playEarn .crpto img {
+    position: relative;
+    left: 0;
+    top: 50%;
+    transform: none;
+    margin-top: 40px !important;
+  }
+
+  section.exploreGames > div > div {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center !important;
+  }
+
+  section.exploreGames.playEarn.nextGen > div > div {
     flex-direction: column;
+    justify-content: space-around;
   }
 
-  .upper_row{
-    display: flex;
-    justify-content: center;
-    margin: 0 10rem;
+  /* image and text sec end */
+}
+
+@media (max-width: 658px) {
+  .contactcInfo h4 {
+    font-size: 12px !important;
+    letter-spacing: 0px !important;
   }
 
-@media(max-width:1024px) {
-    .integratServiceMain {
-        margin-top: -15%;
-    }
-
-    section.sectionBanner {
-        padding-top: 14vh;
-        background-size: 100% 120%;
-        height: auto;
-        background-position: bottom;
-    }
-
-    .integratServiceMain section.sectionBanner h2,
-    section.exploreGames.playEarn h1,
-    section.exploreGames.playEarn.nextGen h1 {
-        font-size: 52px;
-        line-height: 60px;
-    }
-
-    .integratServiceMain .sectionBanner h3,
-    section.exploreGames.playEarn h2,
-    section.exploreGames.playEarn.nextGen h2 {
-        font-size: 26px;
-        line-height: 30px;
-    }
-
-    .integratServiceMain .sectionBanner h3,
-    section.exploreGames.playEarn h2,
-    section.exploreGames.playEarn.nextGen span{
-        font-size: 50px;
-    }
-
-    .integratServiceMain section.sectionBanner p,
-    section.exploreGames.playEarn p,
-    section.playEarn p {
-        width: 70%;
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    section.customContent .Row>div {
-        flex: 0 0 33%;
-        margin-right: 0;
-        width: 33%;
-        max-width: 33%;
-    }
-
-    .customBody p {
-        font-size: 14px;
-        line-height: 19px;
-        margin-top: 10px;
-    }
-
-    .integratServiceMain .imgBody img {
-        width: 100%;
-    }
-
-    section.playEarn div>div>div:first-child {
-        max-width: 60%;
-        width: 60%;
-    }
-
-    .integratServiceMain section.exploreGames.playEarn {
-        padding: 60px 0;
-        margin-bottom: 50px;
-    }
-
-    section.exploreGames.playEarn p {
-        font-size: 12px;
-        width: 100%;
-    }
-
-    section.playEarn div>div>div:last-child {
-        max-width: 60%;
-        width: 60%;
-        margin-left: auto;
-    }
-
-    section.exploreGames.playEarn .crpto img,
-    section.exploreGames.playEarn img {
-        width: 38% !important;
-    }
-
-    .homeSec6 {
-        margin: 60px 0 0;
-    }
-
-    section.homeSec6 h2 {
-        font-size: 40px;
-    }
-
-    div.partnerLogo {
-        margin-top: 30px;
-    }
-
-    div.partnerLogo img {
-        width: 140px;
-        height: 50px;
-        padding: 10px 20px;
-    }
-
-    section.gameArcadePlatform .Row {
-        background-size: cover;
-        border-radius: 10px;
-    }
-
-    section.gameArcadePlatform h3 {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
-
-    section.gameArcadePlatform h3 span {
-        font-size: 26px;
-    }
-
-    .imgCenter400 {
-        text-align: center;
-    }
-
-    .imgCenter400 img {
-        max-width: 400px;
-    }
-
-    section.gameArcadePlatform h2 {
-        font-size: 40px;
-    }
-
-    section.gameArcadePlatform img {
-        display: none;
-    }
+  .contactUsButton {
+    top: 45px;
+  }
 }
 
-@media(max-width: 972px){
-
-    .contactcInfo h4{
-      font-size:22px !important;
-      
-    }
-  
-      .contactUsButton{
-          top:76px;
-      }
-    }
-
-    @media(max-width: 932px){
-
-        .contactcInfo h4{
-          font-size:18px !important;
-          
-        }
-      
-          .contactUsButton{
-              top:65px;
-          }
-        }
-
-        @media(max-width: 776px){
-
-            .contactcInfo h4{
-              font-size:14px !important;
-              
-            }
-          
-              .contactUsButton{
-                  top:55px;
-              }
-            }
-
-@media(max-width:767px) {
-
-
-    .integratServiceMain {
-        margin-top: -23%;
-        background-image: none;
-    }
-
-    .integratServiceMain .sectionBanner {
-        padding-top: 160px;
-        background-size: 100%;
-        background-position: top;
-    }
-
-    .integratServiceMain section.sectionBanner h2,
-    section.exploreGames.playEarn h1,
-    section.exploreGames.playEarn.nextGen h1 {
-        font-size: 32px;
-        line-height: 60px;
-        text-align: center;
-    }
-
-    .integratServiceMain .sectionBanner h3 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-
-    .integratServiceMain section.sectionBanner p,
-    section.exploreGames.playEarn p,
-    section.playEarn p {
-        width: 100%;
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    section.customContent .Row {
-        width: 100%;
-        flex-flow: wrap;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .integratServiceMain section.customContent .Row>div {
-        flex: 0 0 100%;
-        margin-right: 0;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .integratServiceMain .customContent .customBody {
-        margin-top: 40px;
-        padding: 0;
-        /* text-align: center; */
-    }
-
-    .integratServiceMain .customContent .customBody h3 {
-        font-size: 24px;
-    }
-
-    .integratServiceMain .customContent .customBody p {
-        font-size: 13px;
-        max-width: 100%;
-        line-height: 1.3;
-    }
-
-    .integratServiceMain .customContent .imgBody {
-        margin-top: 40px;
-    }
-
-    .integratServiceMain section.exploreGames.playEarn {
-        padding: 30px 0;
-        margin: 40px auto 0;
-    }
-
-    .integratServiceMain section.exploreGames.playEarn h2 {
-        font-size: 27px;
-        line-height: 39px;
-        width: 100%;
-    }
-
-    section.playEarn div>div>div:first-child {
-        max-width: 100%;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .contactUsButton{
-        /* top:px; */
-    }
-
-    section.playEarn div>div>div:last-child {
-        max-width: 100%;
-        width: 100%;
-        margin-left: auto;
-    }
-
-    .integratServiceMain section.exploreGames.playEarn .crpto img,
-    .integratServiceMain section.exploreGames.playEarn img {
-        width: 100% !important;
-        object-position: 0;
-        margin: 0 auto;
-        max-width: 320px;
-    }
-
-    section.exploreGames.playEarn img {
-        width: 100%;
-        position: relative;
-        top: 0;
-    }
-
-    section.exploreGames.playEarn.nextGen img {
-        -webkit-transform: translateY(10%);
-        transform: translateY(10%);
-    }
-
-    section.exploreGames.playEarn h2 {
-        text-align: center;
-    }
-
-    section.exploreGames.playEarn p {
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    div.crpto {
-        margin-top: 30%;
-    }
-
-    section.exploreGames.playEarn div>div>div:last-child {
-        width: 100%;
-        margin-bottom: -100px;
-    }
-
-    /* contact info sec */
-    .integratServiceMain section.contactcInfo {
-        margin-top: 110px;
-    }
-
-    .contactcInfo h4{
-        font-size: 15px !important;
-    }
-
-    /* contact info sec end */
-
-    /* patner logo sec */
-    .integratServiceMain section.homeSec6 h2 {
-        font-size: 24px;
-        margin-bottom: 0;
-    }
-
-    section.homeSec6 div.partnerLogo {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 40px;
-    }
-
-    section.gameArcadePlatform .Row {
-        background: #4b44b1;
-        width: 100%;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-
-    section.gameArcadePlatform h3,
-    section.gameArcadePlatform h3 span {
-        font-size: 18px;
-        margin-bottom: 12px;
-        line-height: 24px;
-    }
-
-    .gameArcadePlatform ul li {
-        font-size: 13px;
-        line-height: 1.4;
-    }
-
-    section.gameArcadePlatform h2 {
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    section.gameArcadePlatform input {
-        margin-bottom: 15px;
-        height: 40px;
-        font-size: 13px;
-        line-height: 40px;
-    }
-
-    .playEarn span{
-        font-size: 45px !important;
-    }
-
-    section.gameArcadePlatform textarea {
-        font-size: 13px;
-    }
-
-    /* patner logo sec end */
-
-    /* image and text sec */
-    section.exploreGames.playEarn img {
-        right: 0;
-        object-fit: contain;
-    }
-
-    section.exploreGames.playEarn .crpto img {
-        position: relative;
-        left: 0;
-        top: 50%;
-        transform: none;
-        margin-top: 40px !important;
-    }
-
-    section.exploreGames>div>div {
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        align-items: center !important;
-    }
-
-    section.exploreGames.playEarn.nextGen>div>div {
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-
-    /* image and text sec end */
-
-}
-
-@media(max-width:658px){
-    .contactcInfo h4{
-        font-size: 12px !important;
-        letter-spacing: 0px !important;
-    }
-   
-    .contactUsButton{
-        top:45px;
-    }
-
-}
-
-@media(max-width:470px){
-    .contactUsButton{
-        top:62px;
-    }
+@media (max-width: 470px) {
+  .contactUsButton {
+    top: 62px;
+  }
 }

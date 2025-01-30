@@ -1,3 +1,4 @@
+import Image from "next/image";
 import config from "../../../config";
 import styles from "./mediaassets.module.scss";
 
@@ -10,13 +11,19 @@ const MediaAssets = () => {
             <div className="row">
               <div className={`col-lg-12 ${styles.barImgMain}`}>
                 <span className={styles.imgCs1Mas}>
-                  <img
+                  <Image
+                    width={118}
+                    height={100}
+                    objectFit="cover"
                     src={`${config.imageDomain}Assets/cube-mas.webp`}
                     alt="cube"
                   />
                 </span>
                 <span className={styles.imgCs11Mas}>
-                  <img
+                  <Image
+                    width={118}
+                    height={100}
+                    objectFit="cover"
                     src={`${config.imageDomain}Assets/rubix-mas.webp`}
                     alt="rubix"
                   />
@@ -24,14 +31,20 @@ const MediaAssets = () => {
                 <h1>Brand</h1>
                 <h2> Overview</h2>
                 <span className={styles.imgCs2Mas}>
-                  <img
+                  <Image
+                    width={118}
+                    height={100}
+                    objectFit="cover"
                     src={`${config.imageDomain}Assets/game1-mas.webp`}
                     alt="controller"
                   />
                 </span>
 
                 <span className={styles.imgCs22Mas}>
-                  <img
+                  <Image
+                    width={118}
+                    height={100}
+                    objectFit="cover"
                     src={`${config.imageDomain}Assets/cube-g-mas.webp`}
                     alt="cube"
                   />
@@ -49,7 +62,7 @@ const MediaAssets = () => {
               <h3> Brand Guidelines And Assets</h3>
               <div className="container-1085">
                 <p style={{ marginBottom: "20px" }}>
-                 {` Welcome to the authoritative guide for Gaming Arcade's Brand
+                  {` Welcome to the authoritative guide for Gaming Arcade's Brand
                   Guidelines and Assets. This resource is dedicated to ensuring
                   all representations of our brand faithfully echo the vision
                   and energy that define Gaming Arcade. We advise users to
@@ -59,7 +72,7 @@ const MediaAssets = () => {
                 </p>
 
                 <p style={{ marginBottom: "20px" }}>
-               {`   For expansive uses beyond digital, such as in radio,
+                  {`   For expansive uses beyond digital, such as in radio,
                   broadcast, print, or outdoor advertising exceeding 8.5 x 11
                   inches, we require a formal access request. These requests
                   should be composed in English and accompanied by a mock-up
@@ -84,9 +97,11 @@ const MediaAssets = () => {
         <div className={`container-1200 ${styles.container1200}`}>
           <div className={styles.downloadFlexMas}>
             <div className={styles.imgMas}>
-              <img
+              <Image
                 src={`${config.imageDomain}Assets/logo-circle.webp`}
                 alt="logo"
+                width={320}
+                height={320}
               />
             </div>
             <div className={styles.txtMas}>
@@ -103,10 +118,12 @@ const MediaAssets = () => {
             </div>
 
             <div className={styles.imgDownMas}>
-              <img
+              <Image
                 src={`${config.imageDomain}Assets/down-mass.webp`}
                 alt="down mass"
-                style={{ cursor: "pointer" }}
+                width={150}
+                height={150}
+                style={{ cursor: "pointer", objectFit: "cover" }}
                 //   onClick={handleDownload}
               />
             </div>
@@ -123,16 +140,22 @@ const MediaAssets = () => {
               </h4>
             </div>
             <div className={styles.imgMas}>
-              <img
+              <Image
                 src={`${config.imageDomain}Assets/game-mass.webp`}
                 alt="Game Controller - Gaming Arcade"
+                width={350}
+                height={350}
+                objectFit="cover"
               />
             </div>
 
             <span className={styles.designDiamond}>
-              <img
+              <Image
                 src={`${config.imageDomain}Assets/design-mas.webp`}
                 alt="puzzle"
+                width={110}
+                height={110}
+                objectFit="cover"
               />
             </span>
           </div>
@@ -174,7 +197,7 @@ const MediaAssets = () => {
                   <li>
                     <p>
                       {" "}
-                     {` When developing a website, app, or any product or service
+                      {` When developing a website, app, or any product or service
                       that utilizes Gaming Arcade or is in any way associated
                       with or compatible with Gaming Arcade, you are permitted
                       to use Gaming Arcade in a descriptive manner. For example,
@@ -187,7 +210,7 @@ const MediaAssets = () => {
                   <li>
                     <p>
                       {" "}
-                     {` Refrain from translating, abbreviating, or altering the
+                      {` Refrain from translating, abbreviating, or altering the
                       term "Gaming Arcade" into any other language using
                       non-English characters, and avoid substituting it with any
                       of our logos.`}
@@ -197,7 +220,7 @@ const MediaAssets = () => {
                   <li>
                     <p>
                       {" "}
-                    {`  Avoid using the terms "Gaming" or "Arcade" in relation to
+                      {`  Avoid using the terms "Gaming" or "Arcade" in relation to
                       your own brand.`}
                     </p>
                   </li>
@@ -255,15 +278,14 @@ const MediaAssets = () => {
         </div>
 
         <div
-        className={styles.keep_gaming_arcade_container}
-        //   className={`${styles.utilizeBoxText} ${styles.utilizeBoxRight} align-items-center m-0`}
+          className={styles.keep_gaming_arcade_container}
+          //   className={`${styles.utilizeBoxText} ${styles.utilizeBoxRight} align-items-center m-0`}
         >
           <h2>
             Keep Gaming Arcade <br /> Apart From others <br />
             blockchain/Crypto/ <br /> Web3.0/De-Fi Based <br /> Platforms
           </h2>
         </div>
-
       </section>
 
       <section className={styles.tvandfilms}>
@@ -286,9 +308,13 @@ const MediaAssets = () => {
           </div>
         </div>
         <div className={styles.laptopImg}>
-          <img
+          <Image
             src={`${config.imageDomain}Assets/laptop1.webp`}
             alt="Gaming Arcade Brand in TV and Film"
+            width={350}
+            height={750}
+            objectFit="cover"
+            quality={85}
           />
         </div>
       </section>
@@ -300,7 +326,7 @@ const MediaAssets = () => {
               Movies, Commercials <br /> & Shows
             </h2>
             <p className="text-left">
-             {` To maintain your presence on Gaming Arcade in any of its products
+              {` To maintain your presence on Gaming Arcade in any of its products
               or utilize screenshots of King's Charts and its product interface
               for commercial purposes, such as in short films, movies, weekly
               shows, TV or web series, and other videos, it is essential to
@@ -395,7 +421,7 @@ const MediaAssets = () => {
             </p>
             <p>
               {" "}
-             {` Any attempt to register, use, or assert rights over any of Gaming
+              {` Any attempt to register, use, or assert rights over any of Gaming
               Arcade’s trademarks, whether as a service mark, trade name,
               trademark, company name, domain registration, or username, is
               strictly prohibited. You are prohibited from utilizing or claiming
@@ -407,7 +433,7 @@ const MediaAssets = () => {
             </p>
             <p>
               {" "}
-             {` We retain the right to rescind authorization to use Gaming
+              {` We retain the right to rescind authorization to use Gaming
               Arcade’s trademarks at any given time. Gaming Arcade also reserves
               the right to reject content that it deems inconsistent with the
               Gaming Arcade brand.`}

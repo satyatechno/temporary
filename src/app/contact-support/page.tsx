@@ -6,6 +6,7 @@ import styles from "./contactsupport.module.scss";
 import Head from "next/head";
 // import { useRouter } from "next/router";
 import config from "../../../config";
+import Image from "next/image";
 
 const ContactSupport = () => {
   // const { send, dataFields, setDataFields } = useContactSupport();
@@ -62,16 +63,22 @@ const ContactSupport = () => {
             <div className={`row ${styles.Row}`}>
               <div className="col-lg-12">
                 <span className={styles.imgCs1}>
-                  <img
+                  <Image
                     src={`${config.imageDomain}Assets/chat-cs.webp`}
                     alt="chat"
+                    width={200}
+                    height={200}
+                    style={{objectFit:"cover"}}
                   />
                 </span>
                 <h1 style={{ margin: "1vw 16vw" }}>contact support</h1>
                 <span className={styles.imgCs2}>
-                  <img
+                  <Image
                     src={`${config.imageDomain}Assets/handfree-cs.webp`}
                     alt="talk"
+                    width={200}
+                    height={200}
+                    style={{objectFit:"cover"}}
                   />
                 </span>
               </div>
@@ -168,10 +175,15 @@ const ContactSupport = () => {
             </div>
             <div className="col-lg-6">
               <div className={styles.imgRight}>
-                <img
+                <div className={styles.cs_girl_image_container}>
+                <Image
                   src={`${config.imageDomain}Assets/cs-girl.webp`}
                   alt="Contact Support - Gaming Arcade"
+                  fill
+                  style={{objectFit:"cover"}}
                 />
+                </div>
+               
               </div>
             </div>
           </div>
