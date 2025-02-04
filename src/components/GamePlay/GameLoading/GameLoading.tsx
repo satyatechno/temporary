@@ -18,6 +18,7 @@ function GameLoading({
             alt="loading background"
             fill
             style={{ objectFit: "cover" }}
+            priority
           />
         </div>
         <div className={styles.logoContainer}>

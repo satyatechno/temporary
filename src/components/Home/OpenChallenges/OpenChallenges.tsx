@@ -30,6 +30,9 @@ const OpenChallenges = () => {
       FetchCustomBets();
     }
   }, [FetchCustomBets, isAuthenticated]); 
+  
+  if (!customBets?.length ) return null;
+  
 
   return (
     <div className={styles.main_container}>
