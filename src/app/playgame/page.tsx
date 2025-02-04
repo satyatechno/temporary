@@ -1,58 +1,15 @@
-'use client';
-import GameScreen from '@/components/GamePlay/GameScreen/GameScreen';
-import LoadingScreen from '@/components/GamePlay/LoadingScreen/LoadingScreen';
-import { useSearchParams } from 'next/navigation';
-// import { useRouter } from 'next/router';
-import { useEffect, useLayoutEffect, useState } from 'react';
-import { useGamesContext } from '../Context/GamesContext';
-import useGameModule from '@/hooks/challengeService';
+import { fetchGames } from "../games/FetchGameServer";
+import PlaygameClient from "./PlaygameClient";
 
-const PlayGame = () => {
-  const searchParams = useSearchParams();
-  const game = searchParams.get('game');
-  // const [loading, setLoading] = useState<boolean>(false);
-  const [gameData, setGameData] = useState(null);
-  const { fetchGameDetails, games } = useGamesContext();
-  const { playGame, setPlayGame, scoreToBeat } = useGameModule();
-  const { playChallenge } = useGameModule();
+const PlayGamePage = async ({ searchParams }: any) => {
+  const games = await fetchGames({ next: { revalidate: 60 } }); // ISR
 
-  useLayoutEffect(() => {
-    setGameData(fetchGameDetails(game ?? '2048'));
-  }, [games]);
+  const searchedGame = searchParams?.game;
 
-  useEffect(() => {
-    setPlayGame(true);
-    if (searchParams.get('paymenySynced')) {
-      setPlayGame(true);
-    } else {
-      playChallenge({
-        betAmount: searchParams.get('value'),
-        type: searchParams.get('gameType'),
-        directJoin: searchParams.get('direct'),
-        game: searchParams.get('name'),
-        isCustomBet: searchParams.get('isCustomBet'),
-        gameId: searchParams.get('gameId'),
-        medium: searchParams.get('medium'),
-        stage: searchParams.get('stage'),
-        code: searchParams.get('code'),
-        ...(searchParams.get('betData')
-          ? { betData: JSON.parse(searchParams.get('betData') ?? '') }
-          : {}),
-      });
-    }
-  }, []);
+  const gameDetails = games.find((item: any) => item?.name === searchedGame);
 
-  // if (loading || !playGame) {
-  //   return <LoadingScreen />;
-  // }
-  if (!playGame) {
-    return <LoadingScreen />;
-  }
-  return (
-    <div>
-      <GameScreen data={gameData} scoreToBeat={scoreToBeat} />
-    </div>
-  );
+  return <PlaygameClient games={gameDetails} />;
 };
 
-export default PlayGame;
+export default PlayGamePage;
+
