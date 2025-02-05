@@ -1,30 +1,27 @@
-import axios from 'axios';
-import config from '../../config';
-import axiosInstance from './axiosInstance';
-import Cookies from 'js-cookie';
+import axios from "axios";
+import config from "../../config";
+import axiosInstance from "./axiosInstance";
+import Cookies from "js-cookie";
 
 export const fetchGames = async () => {
   try {
-    const response = await axiosInstance.get('games');
+    const response = await axiosInstance.get("games");
     return response?.data?.data ?? [];
   } catch (error) {
     throw error;
   }
 };
 
-
-
-
 export const activeWalletApi = async () => {
   try {
-    const { data } = await axiosInstance.get('user/wallet/active/wallet',{
+    const { data } = await axiosInstance.get("user/wallet/active/wallet", {
       headers: {
-        'Authorization': `Bearer ${Cookies.get('userToken')}`
-    }
+        Authorization: `Bearer ${Cookies.get("userToken")}`,
+      },
     });
     return data;
   } catch (error) {
-    console.log("erorr in fetching wallet data",error)
+    console.log("erorr in fetching wallet data", error);
   }
 };
 
@@ -32,12 +29,12 @@ export const getUserApi = async () => {
   try {
     const { data } = await axios.get(`${config.baseURL}user/get/details`, {
       headers: {
-        Authorization: `Bearer ${Cookies.get('userToken')}`,
+        Authorization: `Bearer ${Cookies.get("userToken")}`,
       },
     });
     return data;
   } catch (error) {
-    console.log("erorr in fetching user data",error)
+    console.log("erorr in fetching user data", error);
   }
 };
 
@@ -47,11 +44,11 @@ export const FetchTournament = async (userId: any) => {
       `${config.baseURL}tournament?status=RUNNING&address=${userId}`,
       {
         headers: {
-          Authorization: `Bearer ${Cookies.get('userToken')}`,
+          Authorization: `Bearer ${Cookies.get("userToken")}`,
         },
       }
     );
-    console.log('bearer token', Cookies.get('userToken'));
+    console.log("bearer token", Cookies.get("userToken"));
     return data;
   } catch (error) {
     console.log(error);
@@ -65,16 +62,15 @@ export const FetchPastTournament = async (page: any, limit = 9) => {
     return data;
   } catch (error) {
     console.log("error fetching past tournament", error);
-
   }
 };
 
 export const TournamentData = async (
   tournament_id: any,
-  page: any=1,
-  limit: any=10
+  page: any = 1,
+  limit: any = 10
 ) => {
-  const useData = Cookies.get('user') ?? '';
+  const useData = Cookies.get("user") ?? "";
   const user = JSON.parse(useData);
   try {
     const { data } = await axios.get(
@@ -82,7 +78,7 @@ export const TournamentData = async (
       {
         params: user?.uuid ? { uuid: user?.uuid } : {},
         headers: {
-          Authorization: `Bearer ${Cookies.get('userToken')}`,
+          Authorization: `Bearer ${Cookies.get("userToken")}`,
         },
       }
     );
@@ -90,7 +86,6 @@ export const TournamentData = async (
     return data;
   } catch (error) {
     console.log("error ", error);
-
   }
 };
 
@@ -131,27 +126,65 @@ export const customBetsAll = async (medium: any) => {
       `${config.baseURL}challenge/open?medium=${medium}`,
       {
         headers: {
-          Authorization: `Bearer ${Cookies.get('userToken')}`,
+          Authorization: `Bearer ${Cookies.get("userToken")}`,
         },
       }
     );
     return data;
-  } catch (error:any) {
-    console.log(error.message)
+  } catch (error: any) {
+    console.log(error.message);
   }
 };
 
 export const deviceApi = async (body: any) => {
   try {
-    const data = await axios.post(`${config.baseURL}user/device/register`, body, {
-      headers: {
-        Authorization: `Bearer ${Cookies.get('userToken')}`,
-      },
-    });
+    const data = await axios.post(
+      `${config.baseURL}user/device/register`,
+      body,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("userToken")}`,
+        },
+      }
+    );
     return data;
-  } catch (error:any) {
+  } catch (error: any) {
     console.log(error.message);
   }
 };
-export const gameScoreApi = async (gameId:any) =>
+export const gameScoreApi = async (gameId: any) =>
   axiosInstance.post(`challenge/score/${gameId}`);
+
+
+
+// NOTIFICATION API'S
+
+export const getNotifications = async (imp: any) => {
+  try {
+    const { data } = await axiosInstance.get(
+      `${config.baseURL}notification/usr?imp=${imp}`,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+        },
+      }
+    );
+    return data;
+  } catch (error: any) {
+    console.log(error);
+  }
+};
+
+export const markedAsReadNotification = async (id: any) => {
+  try {
+    const response = await axiosInstance.put(
+      `${config.baseURL}notification/update/${id}`,
+      {
+        isMarkedAsRead: true,
+      }
+    );
+    return response;
+  } catch (error: any) {
+    console.log(error);
+  }
+};

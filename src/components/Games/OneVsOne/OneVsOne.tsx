@@ -1,24 +1,20 @@
-"use client";
+// "use client";
 import React from "react";
 import styles from "./oneVsOne.module.scss";
-import { inter, poppins } from "@/app/layout";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { inter } from "@/app/layout";
+// import { useRouter } from "next/navigation";
 // import { useGamesContext } from '@/app/Context/GamesContext';
-import { useAppContext } from "@/app/Context/AuthContext";
+// import { useAppContext } from "@/app/Context/AuthContext";
 import Image from "next/image";
-type TItem = {
-  id: number;
-  reward: number | string;
-  entryPrice: number;
-};
-interface TOneVsOneCard {
-  item: TItem;
-  index: number;
-  onClick: (item: TItem) => void;
-  gameDetails: any;
-  medium: any;
-}
+import OneVsOneCard from "./OneVsOneCard";
+// type TItem = {
+//   id: number;
+//   reward: number | string;
+//   entryPrice: number;
+// };
+
+import { headers } from 'next/headers';
+
 const cardData = [
   {
     id: 1,
@@ -41,68 +37,23 @@ const cardData = [
     entryPrice: 50,
   },
 ];
-const OneVsOneCard = ({ item, index, gameDetails, medium }: TOneVsOneCard) => {
-  return (
-    <div className={`${styles.card} ${styles["gradient" + (index % 4)]}`}>
-      <div className={`${styles.leftBar} ${styles["leftBar" + (index % 4)]}`} />
-      <h3 className={poppins.className}>REWARD</h3>
-      <div className={styles.icon} />
-      <div className={styles.matic}>
-        <h2>{item.reward}</h2>
-        <Image
-          src={
-            medium === "ticket"
-              ? "https://assets.gamingarcade.io/Assetsticket.webp"
-              : `https://assets.gamingarcade.io/Assets/matic.webp`
-          }
-          alt="Matic"
-          width={60}
-          height={60}
-        />
-      </div>
-      <Link
-        href={{
-          pathname: "/playgame",
-          query: {
-            game: gameDetails?.name,
-            stage: index + 1,
-            value: item?.entryPrice,
-            name: gameDetails?.name,
-            gameType: "OneVSOne",
-            landscape: gameDetails?.landscape ? true : false,
-            direct: false,
-            practice: false,
-            isCustomBet: false,
-            medium: medium,
-          },
-        }}
-      >
-        <span
-          // onClick={() => onClick(item) }
-          className={poppins.className}
-        >
-          Play {item.entryPrice} {medium === "ticket" ? "Ticket" : "Matic"}
-          <Image
-            style={{ marginLeft: 10 }}
-            src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
-            alt="arrow"
-            width={24}
-            height={9}
-            quality={85}
-          />
-        </span>
-      </Link>
-    </div>
-  );
-};
-const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
-  const router = useRouter();
-  const handlePlay = (item: TItem) => {
-    console.log(item.entryPrice, item.id, gameDetails?.name);
-    router.push("/playgame?game=" + gameDetails?.name);
-  };
 
-  const { medium } = useAppContext();
+const OneVsOne = async({ gameDetails }: { gameDetails: any }) => {
+
+  const headersList = headers();
+  const userAgent = (await headersList).get('user-agent') || '';
+  const isMobileDevice = /Mobile|Android|iPhone|iPad|iPod|Windows Phone/i.test(userAgent);
+  const isTabletDevice = /iPad|Android|Tablet/i.test(userAgent) && !isMobileDevice;
+  const isDesktopDevice = !isMobileDevice && !isTabletDevice;
+
+  console.log('isDesktopDevice',isDesktopDevice,isMobileDevice,isTabletDevice)
+
+
+  // const router = useRouter();
+  // const handlePlay = (item: TItem) => {
+  //   console.log(item.entryPrice, item.id, gameDetails?.name);
+  //   router.push("/playgame?game=" + gameDetails?.name);
+  // };
 
   return (
     <div className={styles.container}>
@@ -130,9 +81,11 @@ const OneVsOne = ({ gameDetails }: { gameDetails: any }) => {
             key={index?.toString()}
             item={item}
             index={index}
-            onClick={handlePlay}
+            // onClick={handlePlay}
             gameDetails={gameDetails}
-            medium={medium}
+            // medium={medium}
+            isDesktopDevice={isDesktopDevice}
+            isMobileDevice={isMobileDevice}
           />
         ))}
       </div>

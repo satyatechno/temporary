@@ -24,7 +24,7 @@ const History = () => {
     setIsLoading(true);
     try {
       const res = await challengeHistoryApi({
-        medium: medium.toLowerCase(),
+        medium: medium
       });
       setGameHistory(res?.data?.data?.game ?? []);
       setIsLoading(false);

@@ -10,6 +10,7 @@ import Image from "next/image";
 import config from "../../../../config";
 import ModalWallet from "@/components/AuthModal/ModalWallet/ModalWallet";
 import { useState } from "react";
+import Notifications from "../NotificationCenter/NotificationCenter";
 
 const WalletHeader = () => {
   const searchParams = useSearchParams();
@@ -18,6 +19,8 @@ const WalletHeader = () => {
   const { userData, wallet, medium, setMedium } = useAppContext();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isNotificationModalOpen,setIsNotificationModalOpen]=useState(false);
+
 
   const router = useRouter();
 
@@ -38,7 +41,7 @@ const WalletHeader = () => {
                 width={20}
               />
             </div>
-          ) : wallet?.balance > 0 ? (
+          ) : wallet?.balance >= 0 ? (
             <MaticCurrencyToggler
               setActiveButton={setMedium}
               totalTickets={userData?.tickets?.toFixed(2)}
@@ -48,7 +51,12 @@ const WalletHeader = () => {
           ) : null}
         </div>
 
-        <div className={styles.notification_image}>
+        <div
+          className={styles.notification_image}
+          onClick={() => {
+            setIsNotificationModalOpen(true);
+          }}
+        >
           <Image
             src={`${config.imageDomain}AssetsnotificationBell.webp`}
             alt="notification-logo"
@@ -78,6 +86,8 @@ const WalletHeader = () => {
       </div>
 
       {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
+      {isNotificationModalOpen && <Notifications onClose={() => setIsNotificationModalOpen(false)} />}
+
     </>
   );
 };

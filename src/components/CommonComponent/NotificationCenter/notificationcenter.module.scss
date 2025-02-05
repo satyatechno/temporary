@@ -1,0 +1,154 @@
+.modalOverlay {
+  position: fixed;
+  // top: 0;
+  // left: 0;
+  bottom: 2.5rem;
+  width: 100%;
+  height: 100%;
+  // background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+// Modal Box
+.modalContent {
+  // background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 550px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-in-out;
+  position: relative;
+
+  background: var(
+    --Field-F1,
+    linear-gradient(
+      93deg,
+      rgba(255, 255, 255, 0.08) -6.54%,
+      rgba(255, 255, 255, 0.04) 105.23%
+    )
+  );
+  border: 0.788px solid var(--Field-Stroke-FS2, #fff);
+  box-shadow: 0px 2.886px 10px 0px rgba(9, 9, 9, 0.16);
+  backdrop-filter: blur(83.586533546447754px);
+}
+
+.notifications__header {
+  /* background: linear-gradient(179.13deg, #2F0463 0.75%, rgba(128, 22, 255, 0) 167.78%); */
+  opacity: 0.7;
+  /* backdrop-filter: blur(58.5px); */
+  border-radius: 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: -3%;
+  margin-left: 22px;
+}
+
+.notifications__header > p {
+  /* font-family: 'Poppins'; */
+  /* font-weight: 600; */
+  /* font-size: 20px; */
+  /* letter-spacing: -0.01em; */
+  /* color: #FFFFFF; */
+  margin: 20px 10px;
+  color: var(--Color-2, #fff);
+  font-family: Poppins;
+  font-size: 22.011px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.011px;
+}
+
+/* .notifications__container {
+    background: linear-gradient(179.13deg, rgba(146, 145, 148, 0.15) 0.75%, rgba(128, 22, 255, 0) 167.78%);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    margin-top: 20px;
+    padding: 20px 50px;
+} */
+
+.notifications__tabs {
+  display: flex;
+  border-top: 1.172px solid #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(23.43900489807129px);
+}
+
+.notifications__tabs > p {
+  width: 50%;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0px 20px;
+}
+
+.active {
+  border-bottom: 3px solid #a644df;
+}
+
+/* .notifications__tabs > p:hover {
+    border-bottom: 1px solid #d289fd;
+} */
+
+.notifications__content {
+  height: 60vh;
+}
+
+.notifications__contentCard {
+  /* background: linear-gradient(92.86deg, rgba(255, 255, 255, 0.08) -6.54%, rgba(255, 255, 255, 0.0424) 105.23%); */
+  /* backdrop-filter: blur(18.5px); */
+  box-shadow: 0px 3.66063px 7.32126px rgba(27, 27, 27, 0.16);
+  /* border-radius: 15px; */
+  /* margin-top: 20px; */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* border: 0.2px solid rgba(245, 245, 245, 0.491); */
+}
+
+.notifications__contentCard > p {
+  /* Congratulations! You've won 10 Matic in the game(Game name)!Keep up the great work and keep gaming like a champion! 🎮🔥 #WinnerWinner #GamingArcade */
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.notifications__contentCardImage > img {
+  height: 50px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.notifications__notFound {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications__notFound > p {
+  color: white;
+}
+
+.unread {
+  /* background-color: #a644df; */
+  background: linear-gradient(
+    92.86deg,
+    rgba(255, 255, 255, 0.08) -6.54%,
+    rgba(255, 255, 255, 0.0424) 105.23%
+  );
+  backdrop-filter: blur(18.5px);
+}
