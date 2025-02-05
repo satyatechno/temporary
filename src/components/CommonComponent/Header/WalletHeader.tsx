@@ -19,8 +19,7 @@ const WalletHeader = () => {
   const { userData, wallet, medium, setMedium } = useAppContext();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isNotificationModalOpen,setIsNotificationModalOpen]=useState(false);
-
+  const [isNotificationModalOpen, setIsNotificationModalOpen] = useState(false);
 
   const router = useRouter();
 
@@ -51,18 +50,20 @@ const WalletHeader = () => {
           ) : null}
         </div>
 
-        <div
-          className={styles.notification_image}
-          onClick={() => {
-            setIsNotificationModalOpen(true);
-          }}
-        >
-          <Image
-            src={`${config.imageDomain}AssetsnotificationBell.webp`}
-            alt="notification-logo"
-            fill
-          />
-        </div>
+        {hasSignedInToken && (
+          <div
+            className={styles.notification_image}
+            onClick={() => {
+              setIsNotificationModalOpen(true);
+            }}
+          >
+            <Image
+              src={`${config.imageDomain}AssetsnotificationBell.webp`}
+              alt="notification-logo"
+              fill
+            />
+          </div>
+        )}
 
         {hasSignedInToken || accessToken ? (
           <Button
@@ -86,8 +87,9 @@ const WalletHeader = () => {
       </div>
 
       {isModalOpen && <ModalWallet onClose={() => setIsModalOpen(false)} />}
-      {isNotificationModalOpen && <Notifications onClose={() => setIsNotificationModalOpen(false)} />}
-
+      {isNotificationModalOpen && (
+        <Notifications onClose={() => setIsNotificationModalOpen(false)} />
+      )}
     </>
   );
 };
