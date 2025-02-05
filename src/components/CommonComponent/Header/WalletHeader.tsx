@@ -40,7 +40,7 @@ const WalletHeader = () => {
                 width={20}
               />
             </div>
-          ) : wallet?.balance >= 0 ? (
+          ) : wallet?.balance >0 ? (
             <MaticCurrencyToggler
               setActiveButton={setMedium}
               totalTickets={userData?.tickets?.toFixed(2)}
