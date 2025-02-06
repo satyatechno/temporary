@@ -1,0 +1,215 @@
+div .ReactModal__Content.nmh {
+    background: linear-gradient(188.01deg, #c9006d 0.73%, #0066ff 94.65%) !important;
+    box-shadow: 0vw 0.485vw 0.97vw rgba(27, 27, 27, 0.3) !important;
+    backdrop-filter: blur(2.424vw) !important;
+    /* Note: backdrop-filter has minimal browser support */
+    position: absolute;
+  
+    border-radius: 1.818vw;
+  
+    box-shadow: 0vw 0.485vw 0.97vw rgba(27, 27, 27, 0.3);
+    backdrop-filter: blur(2.424vw);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 1.818vw !important;
+    transform: rotate(-180deg);
+    display: inline-block;
+    width: 35.394vw;
+    text-align: center;
+    height: 25.091vw;
+    padding: 1.212vw 5.758vw !important;
+    overflow: visible !important;
+  }
+  
+  div .nmh p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.118vw;
+    line-height: 137.5%;
+    /* or 2.485vw */
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+  }
+  div .nmh .choice {
+    margin-top: -5%;
+  }
+  
+  .nmh button.closeModal {
+    background: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0.606vw;
+  }
+  
+  .nmh .blueBtn {
+    position: relative;
+    cursor: pointer;
+    color: white;
+    transition: all ease 0.5s;
+    font-family: "Inter";
+    font-style: normal;
+    background: transparent;
+    outline: none;
+    border: none;
+    vertical-align: bottom;
+    min-width: 10vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url('https://assets.gamingarcade.io/Assets/btn-bg.webp');
+    background-position: bottom;
+    padding: 0.89vw 0;
+    font-weight: 700;
+    font-size: 1.03vw;
+    line-height: 1.576vw;
+  }
+  .nmh .blueBtn:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.556vw;
+    max-width: 2.292vw;
+    background: linear-gradient(90deg, #ff00c7 50%, #ffc000 50%);
+    border: none;
+    height: 0.208vw;
+    border-radius: 0.347vw;
+  }
+  
+  .nmh .btnMainButton {
+    position: absolute;
+    bottom: -1.212vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background: rgba(255, 255, 255, 0.08) !important;
+    opacity: 1;
+    box-shadow: 0px 8px 16px rgb(27 27 27 / 30%);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(15px);
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 9999;
+  }
+  
+  div .ReactModal__Content.nmh {
+    width: 30%;
+    height: auto;
+    padding-bottom: 20px !important;
+  }
+  
+  .nmh p {
+    font-size: 12px;
+  }
+  
+  .nmh .blueBtn {
+    font-size: 12px;
+    line-height: 2em;
+    min-width: 130px;
+    padding: 8px 0;
+  }
+  
+  .nmh img.warn {
+    width: 36%;
+    height: auto;
+  }
+  
+  .nmh .closeModal img {
+    width: 2.916vw;
+    height: 2.916vw;
+  }
+  div .ReactModal__Content.nmh:focus-visible {
+    outline: none;
+  }
+  .nmh .practice_para {
+    color: #efff00;
+    text-transform: lowercase;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    .nmh {
+      width: 80%;
+    }
+  
+    .nmh-content .nmh-cancel img {
+      width: 70%;
+    }
+  
+    .nmh .btnMainButton {
+      bottom: -10%;
+    }
+  
+    .nmh .closeModal img {
+      width: 6.916vw;
+      height: 6.916vw;
+    }
+  
+    .nmh-content .nmh-img {
+      width: 30%;
+      margin: 30px auto;
+      text-align: center;
+    }
+  
+    .nmh-content .nmh-desc h2 {
+      font-size: 6vw !important;
+    }
+  
+    .nmh-content .nmh-img2 {
+      margin: 10px auto !important;
+      width: 80%;
+      text-align: center;
+    }
+  
+    .nmh-content .nmh-img2 img {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      left: 0;
+    }
+    .nmh-content .nmh-cancel {
+      position: absolute;
+      right: -5%;
+      top: 0.606vw;
+    }
+    div .ReactModal__Content.nmh {
+      width: 70%;
+      height: 180px;
+    }
+  
+    .nmh .closeModal img {
+      width: 50px;
+      height: 50px;
+    }
+    div .nmh p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+  
+    .nmh img.warn {
+      width: 30%;
+    }
+  }
+  
+
+
+  .cross_btn{
+    text-align: end;
+    
+  }
+  .warning_logo{
+    text-align: center;
+  }
+
+  .warning_descriptions{
+    text-align: center;
+    font-size: 30px;
+    color:#fff;
+    margin:2rem 0rem;
+    width:100%
+  }
+
+  

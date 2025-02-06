@@ -1,9 +1,12 @@
-'use client'
+"use client";
 import Image from "next/image";
 import styles from "./oneVsOne.module.scss";
-import Link from "next/link";
 import { poppins } from "@/app/layout";
 import { useAppContext } from "@/app/Context/AuthContext";
+import { useState } from "react";
+import PaymentPopUp from "@/components/CommonComponent/PaymentPopUp/PaymentPopUp";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 type TItem = {
   id: number;
@@ -14,15 +17,49 @@ type TItem = {
 interface TOneVsOneCard {
   item: TItem;
   index: number;
-//   onClick: (item: TItem) => void;
   gameDetails: any;
-  isMobileDevice:boolean;
-  isDesktopDevice:boolean;
-//   medium: any;
+  isMobileDevice: boolean;
+  isDesktopDevice: boolean;
 }
 
-const OneVsOneCard = ({ item, index, gameDetails ,isMobileDevice,isDesktopDevice}: TOneVsOneCard) => {
+const OneVsOneCard = ({
+  item,
+  index,
+  gameDetails,
+  isMobileDevice,
+  isDesktopDevice,
+}: TOneVsOneCard) => {
   const { medium } = useAppContext();
+  const router = useRouter();
+  const [showPaymentPopup, setShowPaymentPopup] = useState(false);
+  const token = Cookies.get('userToken');
+
+  // console.log("userDatatoken",token)
+
+  const handlePlayClick = () => {
+    if (!token) {
+      setShowPaymentPopup(true);
+      return;
+    }
+
+
+    const queryParams = new URLSearchParams({
+      game: gameDetails?.name || "",
+      stage: (index + 1).toString(),
+      value: item?.entryPrice.toString(),
+      name: gameDetails?.name || "",
+      gameType: "OneVSOne",
+      landscape: gameDetails?.landscape ? "true" : "false",
+      direct: "false",
+      practice: "false",
+      isCustomBet: "false",
+      medium: medium || "",
+      isMobileDevice: isMobileDevice.toString(),
+      isDesktopDevice: isDesktopDevice.toString(),
+    });
+    router.push(`/playgame?${queryParams.toString()}`);
+  };
+
   return (
     <div className={`${styles.card} ${styles["gradient" + (index % 4)]}`}>
       <div className={`${styles.leftBar} ${styles["leftBar" + (index % 4)]}`} />
@@ -41,41 +78,27 @@ const OneVsOneCard = ({ item, index, gameDetails ,isMobileDevice,isDesktopDevice
           height={60}
         />
       </div>
-      <Link
-        href={{
-          pathname: "/playgame",
-          query: {
-            game: gameDetails?.name,
-            stage: index + 1,
-            value: item?.entryPrice,
-            name: gameDetails?.name,
-            gameType: "OneVSOne",
-            landscape: gameDetails?.landscape ? true : false,
-            direct: false,
-            practice: false,
-            isCustomBet: false,
-            medium: medium,
-            isMobileDevice:isMobileDevice,
-            isDesktopDevice:isDesktopDevice
 
-          },
-        }}
+      <span
+        role="button"
+        tabIndex={0}
+        className={poppins.className}
+        onClick={handlePlayClick}
+        onKeyDown={(e) => e.key === "Enter" && handlePlayClick()}
+        style={{ cursor: "pointer" }}
       >
-        <span
-          // onClick={() => onClick(item) }
-          className={poppins.className}
-        >
-          Play {item.entryPrice} {medium === "ticket" ? "Ticket" : "Matic"}
-          <Image
-            style={{ marginLeft: 10 }}
-            src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
-            alt="arrow"
-            width={24}
-            height={9}
-            quality={85}
-          />
-        </span>
-      </Link>
+        Play {item.entryPrice} {medium === "ticket" ? "Ticket" : "Matic"}
+        <Image
+          style={{ marginLeft: 10 }}
+          src={`https://assets.gamingarcade.io/Assets/arrow-sm.webp`}
+          alt="arrow"
+          width={24}
+          height={9}
+          quality={85}
+        />
+      </span>
+
+      {showPaymentPopup && <PaymentPopUp onClose={() => setShowPaymentPopup(false)} />}
     </div>
   );
 };
