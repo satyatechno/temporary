@@ -13,6 +13,7 @@ import Cookies from 'js-cookie';
 interface AppContextType {
   userData: any;
   setUserData: (user: any) => void;
+  setErrorMessage: (error: any) => void;
   wallet: any;
   fetchUser: () => void;
   fetchActiveWallet: () => void;
@@ -20,6 +21,8 @@ interface AppContextType {
   medium: any;
   loadingWallet: boolean;
   userLoading: boolean;
+  token:any
+  errorMessage:any
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -32,6 +35,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const [loadingWallet, setLoadingWallet] = useState(false); // currently not in use
   const [userData, setUserData] = useState<any>(null);
   const [userLoading, setUserLoading] = useState(false);
+  const [errorMessage,setErrorMessage]=useState<string | null>(null);
+
 
   //Active button state (ticket / currency)
   const [medium, setMedium] = useState('ticket');
@@ -83,6 +88,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         medium,
         loadingWallet,
         userLoading,
+        token,
+        setErrorMessage,
+        errorMessage
       }}
     >
       {children}

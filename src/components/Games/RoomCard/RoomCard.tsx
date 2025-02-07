@@ -7,6 +7,7 @@ import useGameModule from '@/hooks/challengeService';
 import { useAppContext } from '@/app/Context/AuthContext';
 import config from '../../../../config';
 import { useRouter } from 'next/navigation';
+import ErrorModal from '@/components/CommonComponent/ErrorModal/ErrorModal';
 
 const PlayCustomRoomCard = ({
   onClose,
@@ -23,7 +24,7 @@ const PlayCustomRoomCard = ({
   const [paramData, setParamData] = useState<any>();
   const [copyLink, setCopyLink] = useState<any>(false);
   const { playChallenge, betData }: any = useGameModule();
-  const { wallet, userData, medium } = useAppContext();
+  const { wallet, userData, medium ,errorMessage,setErrorMessage} = useAppContext();
   const router = useRouter();
   const copyTextHandler = () => {
     setInviteLink(betData?.code);
@@ -34,7 +35,7 @@ const PlayCustomRoomCard = ({
     if (selectedAmount >= 1) {
       handleRoomCreate();
     } else {
-      alert('Please enter valid amount');
+      setErrorMessage('Please enter valid amount');
     }
   };
   const handleRoomCreate = () => {
@@ -217,6 +218,7 @@ const PlayCustomRoomCard = ({
           </div>
 
           <p className={styles.bottom_heading}>Create A Room</p>
+         {errorMessage && <ErrorModal message={errorMessage} onClose={() => setErrorMessage(null)} />}
         </>
       )}
     </RoomModal>

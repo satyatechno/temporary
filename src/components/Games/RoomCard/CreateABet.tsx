@@ -6,6 +6,7 @@ import config from '../../../../config';
 import { useAppContext } from '@/app/Context/AuthContext';
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import ErrorModal from '@/components/CommonComponent/ErrorModal/ErrorModal';
 
 const CreateABet = ({
   onClose,
@@ -14,15 +15,15 @@ const CreateABet = ({
   onClose: () => void;
   gameDetails: any;
 }) => {
-  const { wallet, userData, medium } = useAppContext();
+  const { wallet, userData, medium,errorMessage,setErrorMessage } = useAppContext();
   const [selectedStage, setSelectedStage] = React.useState<any>('1');
   const [selectedAmount, setSelectedAmount] = React.useState<any>();
   const router = useRouter();
   const validation = () => {
     if (!selectedAmount?.trim()) {
-      alert('Please enter a valid amount');
+      setErrorMessage('Please enter a valid amount');
     } else if (!selectedStage) {
-      alert('Please select a stage');
+      setErrorMessage('Please select a stage');
     } else {
       if (selectedAmount >= 1) handleBetCreate();
     }
@@ -111,6 +112,7 @@ const CreateABet = ({
       </div>
 
       <p className={styles.bottom_heading}>Create A Bet</p>
+      {errorMessage && <ErrorModal message={errorMessage} onClose={() => setErrorMessage(null)} />}
     </RoomModal>
   );
 };

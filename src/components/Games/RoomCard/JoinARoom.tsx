@@ -7,9 +7,10 @@ import { useAppContext } from '@/app/Context/AuthContext';
 import { useState } from 'react';
 import { checkRoomApi } from '@/services/challenge';
 import { useRouter } from 'next/navigation';
+import ErrorModal from '@/components/CommonComponent/ErrorModal/ErrorModal';
 
 const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
-  const { wallet, userData } = useAppContext();
+  const { wallet, userData,setErrorMessage,errorMessage } = useAppContext();
   const [joinCode, setCode] = useState('');
   // const [loading, setLoading] = useState(false);
   const [roomData, setRoomData] = useState<any>();
@@ -21,7 +22,7 @@ const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
     if (joinCode?.trim().length > 3) {
       checkRoom();
     } else {
-      alert('Please enter room code');
+      setErrorMessage('Please enter room code');
     }
   };
   const checkRoom = async () => {
@@ -33,7 +34,7 @@ const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
       // setLoading(false);
       setRoomValid('valid');
     } else {
-      alert('Bet Error: ' + response.response);
+      setErrorMessage('Bet Error: ' + response.response);
       setRoomValid(response.response.data.message);
       // setLoading(false);
     }
@@ -119,6 +120,7 @@ const JoinARoom = ({ onClose }: { onClose: () => void; gameDetails: any }) => {
 
         <p className={styles.bottom_heading}>Join A Room</p>
       </div>
+      {errorMessage && <ErrorModal message={errorMessage} onClose={() => setErrorMessage(null)} />}
     </RoomModal>
   );
 };

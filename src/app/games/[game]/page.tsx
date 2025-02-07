@@ -38,8 +38,6 @@ export async function generateStaticParams() {
     return games.map((game: any) => (
       {
       game: game.name.toString(), 
-      loadingImage:game.loadingImage,
-      thumbnail:game.thumbnail
     }));
   } catch (error) {
     console.error("Error fetching games for static params:", error);
