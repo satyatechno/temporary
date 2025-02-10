@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./notificationcenter.module.scss";
 
 import Head from "next/head";
@@ -18,18 +18,22 @@ const Notifications = ({ onClose }: any) => {
   const [loading, setLoading] = useState(false);
   //   const { userId } = useAuth();
 
-  const notificationsData = async () => {
-    const notificationType = activeTab === "General" ? false : true;
+  const notificationsData = async (notificationType: boolean) => {
     setLoading(true);
     const { data } = await getNotifications(notificationType);
-    console.log(data);
-    setNotification(data);
     setLoading(false);
+    return data;
   };
 
+  // Memoize the notifications to avoid unnecessary re-fetching
+  const cachedNotifications = useMemo(async () => {
+    const notificationType = activeTab === "General" ? false : true;
+    return await notificationsData(notificationType);
+  }, [activeTab]); 
+
   useEffect(() => {
-    notificationsData();
-  }, [activeTab]);
+    cachedNotifications.then(setNotification);
+  }, [cachedNotifications]);
 
   const handleTabClick = (tab: any) => {
     setActiveTab(tab);
@@ -55,7 +59,7 @@ const Notifications = ({ onClose }: any) => {
       <Head>
         <title>
           Gaming Arcade Notifications - Stay Updated on Crypto Gaming Alerts
-        </title>
+         </title>
         <meta
           name="title"
           content="Gaming Arcade Notifications - Stay Updated on Crypto Gaming Alerts"
