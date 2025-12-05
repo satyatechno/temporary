@@ -32,7 +32,7 @@ const config: ProcessConfig = {
     multiplayerContract: '0x1D20eA206c05D1198cD93D89Ceeb68b624056DB0',
   },
 };
-
+console.log(process.env.REACT_APP_ENV)
 const environment = (process.env.REACT_APP_ENV ||
   'development') as keyof ProcessConfig;
 
